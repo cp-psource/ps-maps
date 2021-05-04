@@ -1,8 +1,8 @@
 <?php
 /**
- * Integrates the WPMU Dev PostIndexer plugin:
- * Agm_PostIndexer is the local interface to communicate with the PostIndexer
- * plugin. Some Google Maps plugins will use this class, but not all.
+ * Integriert das PSOURCE PostIndexer-Plugin:
+ * Agm_PostIndexer ist die lokale Schnittstelle für die Kommunikation mit dem PostIndexer
+ * Plugin. Einige Google Maps-Plugins verwenden diese Klasse, aber nicht alle.
  */
 
 class Agm_PostIndexer {
@@ -74,5 +74,5 @@ class Agm_PostIndexer {
 	}
 
 }
-// Post Indexer (http://premium.wpmudev.org/project/post-indexer) integration
+// Post Indexer (https://n3rds.work/?post_type=piestingtal_source&p=33062&preview=true) integration
 define( 'AGM_USE_POST_INDEXER', Agm_PostIndexer::has_post_indexer() );
