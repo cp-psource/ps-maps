@@ -964,7 +964,9 @@ class AgmMapModel {
 	 * @access private
 	 */
 	public function _position_to_marker( $lat, $lon ) {
-		$url = "http://maps.google.com/maps/api/geocode/json?latlng={$lat},{$lon}&sensor=false";
+		//sensor entfernt
+		//$url = "http://maps.google.com/maps/api/geocode/json?latlng={$lat},{$lon}&sensor=false";
+		$url = "http://maps.google.com/maps/api/geocode/json?latlng={$lat},{$lon}";
 		$result = wp_remote_get( $url );
 		if ( is_wp_error( $result ) ) {
 			return false; // Request fail
@@ -1039,7 +1041,9 @@ class AgmMapModel {
 
 	public function geocode_address( $address ) {
 		$urladd = rawurlencode( $address );
-		$url = "http://maps.google.com/maps/api/geocode/json?address={$urladd}&sensor=false";
+		// sensor entfernt
+		//$url = "http://maps.google.com/maps/api/geocode/json?address={$urladd}&sensor=false";
+		$url = "http://maps.google.com/maps/api/geocode/json?address={$urladd}";
 		$result = wp_remote_get( $url );
 		if ( is_wp_error( $result ) ) {
 			return false; // Request fail
