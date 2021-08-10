@@ -30,7 +30,7 @@
  *     define( 'WDEV_SEND_P3P', 'CP="CAO OUR"' ) // Overwrite default P3P header
  */
 
-$version = '3.0.3';
+$version = '3.0.4';
 
 if ( ! function_exists( 'lib3' ) ) {
 	/**

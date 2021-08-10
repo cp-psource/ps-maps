@@ -8,7 +8,7 @@
 
 /**
  * Plugin Name: Center Map
- * Author:      Philipp Stracker (Incsub)
+ * Author:      DerN3rd (WMS N@W)
  *
  * Javascript component for ADMIN page of the center-map addon.
  */
@@ -40,7 +40,7 @@ jQuery(function() {
         var marker = jQuery('#agm_map_drop_marker', details),
             center = jQuery('<button type="button" class="button-secondary"></button>');
 
-        center.text('Set Center');
+        center.text('Zentriert setzen');
         center.prepend('<img src="' + _icon + '" style="height:20px;margin:3px;vertical-align:top" />');
         center.insertAfter(marker);
         center.on("click", set_center_marker);

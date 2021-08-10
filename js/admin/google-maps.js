@@ -708,7 +708,7 @@ jQuery(function() {
             }
 
             return '<div class="agm_mh_info_content">' +
-                '<a href="#" class="agm_mh_info_icon_switch"><img agm:marker_id="' + markerPosition + '" src="' + icon + '" class="marker-icon-32" /><br /><small>Icon</small></a>' +
+                '<a href="#" class="agm_mh_info_icon_switch"><img agm:marker_id="' + markerPosition + '" src="' + icon + '" class="marker-icon-32" /><br /><small>Symbol</small></a>' +
                 '<div class="agm_mh_info_text">' +
                 '<div><label for="">' + l10nStrings.title + '</label><br /><input type="text" agm:marker_id="' + markerPosition + '" class="agm_mh_info_title" value="' + title + '" /></div>' +
                 '<label for="">' + l10nStrings.body + '</label><textarea class="agm_mh_info_body" agm:marker_id="' + markerPosition + '">' + body + '</textarea>' +
