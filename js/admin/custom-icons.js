@@ -161,7 +161,7 @@ window.setTimeout(function init_icon_admin() {
     var media_library = function media_library(event) {
         //Prepare frame
         var frame = window.wp.media({
-            title: 'Choose an image',
+            title: 'Wähle ein Bild',
             multiple: false,
             library: { type: 'image' },
             button: { text: 'Symbol verwenden' },
