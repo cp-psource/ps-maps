@@ -164,7 +164,7 @@ window.setTimeout(function init_icon_admin() {
             title: 'Choose an image',
             multiple: false,
             library: { type: 'image' },
-            button: { text: 'Use icon' },
+            button: { text: 'Symbol verwenden' },
         });
 
         frame.on('close', function() {
