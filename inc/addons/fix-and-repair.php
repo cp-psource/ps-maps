@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Fixes and Reparieren
-Description: Tools zum Reparieren Deiner Google Maps Pro-Installation.
+Description: Tools zum Reparieren Deiner PS-Maps-Installation.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
 Author:      DerN3rd (WMS N@W)
@@ -9,7 +9,7 @@ Author:      DerN3rd (WMS N@W)
 
 class Agm_Far_FormRenderer {
 	public function create_fixes_section() {
-		_e( 'Verwende die Optionen in diesem Abschnitt, um Deine Google Maps Pro-Installation zu reparieren. <em>Möglicherweise möchtest Du zuerst Deine WordPress-Datenbank sichern.</em>', AGM_LANG );
+		_e( 'Verwende die Optionen in diesem Abschnitt, um Deine PS-Maps-Installation zu reparieren. <em>Möglicherweise möchtest Du zuerst Deine WordPress-Datenbank sichern.</em>', AGM_LANG );
 	}
 
 	public function create_reset_options_box() {

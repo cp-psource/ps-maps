@@ -31,7 +31,7 @@ class AgmGdpr {
 			return false;
 		}
 		wp_add_privacy_policy_content(
-			__( 'Google Maps Pro', AGM_LANG ),
+			__( 'PS-Maps', AGM_LANG ),
 			$this->get_policy_content()
 		);
 	}
@@ -45,11 +45,11 @@ class AgmGdpr {
 	 */
 	public function register_data_exporter( $exporters ) {
 		$exporters['agm_google_maps-autocreated'] = array(
-			'exporter_friendly_name' => __( 'Von Google Maps Pro automatisch erstellte Karten', AGM_LANG ),
+			'exporter_friendly_name' => __( 'Von PS-Maps automatisch erstellte Karten', AGM_LANG ),
 			'callback' => array( $this, 'export_autocreated_maps' ),
 		);
 		$exporters['agm_google_maps-associated'] = array(
-			'exporter_friendly_name' => __( 'Mit Google Maps Pro verknüpfte Karten', AGM_LANG ),
+			'exporter_friendly_name' => __( 'Mit PS-Maps verknüpfte Karten', AGM_LANG ),
 			'callback' => array( $this, 'export_associated_maps' ),
 		);
 		return $exporters;
@@ -64,11 +64,11 @@ class AgmGdpr {
 	 */
 	public function register_data_eraser( $erasers ) {
 		$erasers['agm_google_maps-autocreated'] = array(
-			'eraser_friendly_name' => __( 'Von Google Maps Pro automatisch erstellte Karten', AGM_LANG ),
+			'eraser_friendly_name' => __( 'Von PS-Maps automatisch erstellte Karten', AGM_LANG ),
 			'callback' => array( $this, 'erase_autocreated_maps' ),
 		);
 		$erasers['agm_google_maps-associated'] = array(
-			'eraser_friendly_name' => __( 'Mit Google Maps Pro verknüpfte Karten', AGM_LANG ),
+			'eraser_friendly_name' => __( 'Mit PS-Maps verknüpfte Karten', AGM_LANG ),
 			'callback' => array( $this, 'erase_associated_maps' ),
 		);
 		return $erasers;

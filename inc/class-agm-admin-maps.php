@@ -225,7 +225,7 @@ class AgmAdminMaps {
 	 */
 	public function create_admin_menu_entry() {
 		// Show branding for singular installs.
-		$title = is_multisite() ? __( 'Google Maps Pro', AGM_LANG ) : 'Google Maps Pro';
+		$title = is_multisite() ? __( 'PS-Maps', AGM_LANG ) : 'PS-Maps';
 
 		// Register our google maps options page.
 		$hook = add_options_page(
@@ -330,7 +330,7 @@ class AgmAdminMaps {
 				'preview_or_edit' => __( 'Vorschau/Bearbeiten', AGM_LANG ),
 				'delete_map' => __( 'Löschen', AGM_LANG ),
 				'add_map' => __( 'Karte hinzufügen', AGM_LANG ),
-				'google_maps' => __( 'Google Maps Pro', AGM_LANG ),
+				'google_maps' => __( 'PS-Maps', AGM_LANG ),
 				'load_next_maps' => __( 'Weiter &raquo;', AGM_LANG ),
 				'load_prev_maps' => __( '&laquo; Zurück', AGM_LANG ),
 				'existing_map' => __( 'Bestehende Karten', AGM_LANG ),
@@ -400,9 +400,9 @@ class AgmAdminMaps {
 				'map_title' => __( 'Gib hier den Kartentitel ein', AGM_LANG ),
 				'options' => __( 'Kartenoptionen', AGM_LANG ),
 				'options_help' => __( 'Verwende die Kartenoptionen, um Kartengröße, Erscheinungsbild, Ausrichtung und Bildstreifen zu ändern', AGM_LANG ),
-				'drop_marker' => __( 'Drop Marker', AGM_LANG ),
+				'drop_marker' => __( 'Setze Marker', AGM_LANG ),
 				'zoom_in_help' => __( 'Tipp: Für beste Kartenqualität <strong>zoome</strong>, um Deine Markierungen vor dem Speichern zu platzieren', AGM_LANG ),
-				'map_associate' => __( 'Ordne diesem Beitrag eine Karte zu', AGM_LANG ),
+				'map_associate' => __( 'Verknüpfe diese Karte mit diesem Inhalt', AGM_LANG ),
 				'already_associated_width' => __( 'Diese Karte ist diesen bereits zugeordnet', AGM_LANG ),
 				'association_help' => __( 'Durch das Verknüpfen einer Karte mit einem Beitrag kannst Du diese Karte auf erweiterte Weise verwenden, um sie dynamisch im Seitenleisten-Widget oder in einem erweiterten Mashup anzuzeigen', AGM_LANG ),
 				'map_size' => __( 'Kartengröße', AGM_LANG ),

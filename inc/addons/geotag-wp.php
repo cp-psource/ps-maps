@@ -53,7 +53,7 @@ class Agm_GwpAdminPages {
 	 */
 	public function register_data_eraser( $erasers ) {
 		$erasers['agm_google_maps-geotag_wp'] = array(
-			'eraser_friendly_name' => __( 'Mit Google Maps Pro Geotags versehene Beiträge', AGM_LANG ),
+			'eraser_friendly_name' => __( 'Mit PS-Maps Geotags versehene Beiträge', AGM_LANG ),
 			'callback' => array( $this, 'gdpr_erase_data' ),
 		);
 		return $erasers;

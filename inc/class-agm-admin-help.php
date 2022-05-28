@@ -30,7 +30,7 @@ class Agm_AdminHelp {
 				'title'   => __( 'Optionen', AGM_LANG ),
 				'content' => '' .
 					'<p>' . __(
-						'Hier kannst Du Google Maps Pro einrichten ' .
+						'Hier kannst Du PS-Maps einrichten ' .
 						'Standardeinstellungen.', AGM_LANG
 					) . '</p>'
 			),
@@ -59,7 +59,7 @@ class Agm_AdminHelp {
 
 	private function _get_default_sidebar() {
 		return '' .
-			'<h4>' . __( 'Google Maps Pro', AGM_LANG ) . '</h4>' .
+			'<h4>' . __( 'PS-Maps', AGM_LANG ) . '</h4>' .
 			'<ul>' .
 				'<li>' .
 					'<a href="https://n3rds.work/piestingtal-source-project/ps-gmaps/" target="_blank">' .

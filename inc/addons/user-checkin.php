@@ -108,7 +108,7 @@ class Agm_UCI_Shared {
 	 */
 	public function register_data_exporter( $exporters ) {
 		$exporters['agm_google_maps-checkins'] = array(
-			'exporter_friendly_name' => __( 'Google Maps Pro Check-ins', AGM_LANG ),
+			'exporter_friendly_name' => __( 'PS-Maps Check-ins', AGM_LANG ),
 			'callback' => array( $this, 'gdpr_export_data' ),
 		);
 		return $exporters;
@@ -123,7 +123,7 @@ class Agm_UCI_Shared {
 	 */
 	public function register_data_eraser( $erasers ) {
 		$erasers['agm_google_maps-checkins'] = array(
-			'eraser_friendly_name' => __( 'Google Maps Pro Check-ins', AGM_LANG ),
+			'eraser_friendly_name' => __( 'PS-Maps Check-ins', AGM_LANG ),
 			'callback' => array( $this, 'gdpr_erase_data' ),
 		);
 		return $erasers;

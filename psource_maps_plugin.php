@@ -3,7 +3,7 @@
  * Plugin Name: PS Google Maps
  * Plugin URI:  https://n3rds.work/piestingtal_source/ps-google-maps-plugin/
  * Description: Einfaches Einbetten, Anpassen und Verwenden von Google Maps auf Deiner WordPress-Seite - in Posts, Seiten oder als benutzerfreundliches Widget kannst Du lokale Bilder anzeigen und Deinen Seiten-Besuchern in Sekundenschnelle eine Interaktive Googlemap mit einer Unzahl an Optionen und Möglichkeiten geben.
- * Version:     3.0.5
+ * Version:     3.0.6
  * Requires at least: 4.6
  * Text Domain: agm_google_maps
  * Author:      WMS N@W
@@ -29,7 +29,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-require 'inc/external/psource-plugin-update/plugin-update-checker.php';
+require 'psource/psource-plugin-update/psource-plugin-updater.php';
 $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://n3rds.work/wp-update-server/?action=get_metadata&slug=ps-maps',
 	__FILE__, 

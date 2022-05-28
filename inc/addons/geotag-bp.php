@@ -256,7 +256,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 	function _agm_gwa_register_data_eraser( $erasers ) {
 		$data = new Agm_GwaModel();
 		$erasers['agm_google_maps-geotag_bp'] = array(
-			'eraser_friendly_name' => __( 'Google Maps Pro Aktivitäts-Geotags', AGM_LANG ),
+			'eraser_friendly_name' => __( 'PS-Maps Aktivitäts-Geotags', AGM_LANG ),
 			'callback' => array( $data, 'gdpr_erase_user_activity_meta' ),
 		);
 		return $erasers;

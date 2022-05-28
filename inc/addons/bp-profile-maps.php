@@ -161,7 +161,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 		public function register_data_eraser( $erasers ) {
 			$erasers['agm_google_maps-profile_maps'] = array(
-				'eraser_friendly_name' => __( 'Google Maps Pro Profilkarten', AGM_LANG ),
+				'eraser_friendly_name' => __( 'PS-Maps Profilkarten', AGM_LANG ),
 				'callback' => array( $this, 'erase_profile_maps_data' ),
 			);
 			return $erasers;

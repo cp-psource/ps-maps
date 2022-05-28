@@ -1,6 +1,6 @@
-/*! Google Maps Pro - v2.9.5
+/*! PS-Maps - v2.9.5
  * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018; * Licensed GPLv2+ */
+ * Copyright (c) 2018-2022; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global wpmUi:false */

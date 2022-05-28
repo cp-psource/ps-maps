@@ -25,7 +25,7 @@ class Agm_AdminFormRenderer {
 
 		return
 			'<label for="agm_cfyn_' . $name . '-yes">' .
-			'<input type="radio" name="agm_google_maps[custom_fields_options][' . $name . ']" id="agm_cfyn_' . $name . '-yes" value="1" ' . $state_yes . ' /> ' . __( 'JA', AGM_LANG ) .
+			'<input type="radio" name="agm_google_maps[custom_fields_options][' . $name . ']" id="agm_cfyn_' . $name . '-yes" value="1" ' . $state_yes . ' /> ' . __( 'Ja', AGM_LANG ) .
 			'</label>' .
 			'&nbsp;' .
 			'<label for="agm_cfyn_' . $name . '-no">' .
@@ -456,6 +456,7 @@ class Agm_AdminFormRenderer {
 				'Außerdem wird ein Widget hinzugefügt, mit dem Du Deiner Seitenleiste ' .
 				'Karten hinzufügen kannst (siehe Darstellungs-Widgets).', AGM_LANG
 			); ?>
+			<iframe style="width: 100%; min-height:600px" src="https://n3rds.work/piestingtal_source/ps-google-maps-plugin/" title="PS-Maps Projektseite"></iframe>
 		</p>
 		<?php
 		// Don't show this link for multisite blogs to keep the plugin white-labeled.
@@ -466,9 +467,9 @@ class Agm_AdminFormRenderer {
 					__(
 						'Ausführlichere Anweisungen zur Verwendung ' .
 						'findest Du unter <a target="_blank" href="%s">' .
-						'Anweisungen zur Installation und Verwendung von Google Maps Pro</a>.', AGM_LANG
+						'Anweisungen zur Installation und Verwendung von PS-Maps</a>.', AGM_LANG
 					),
-					'https://n3rds.work/wiki/piestingtal-source-wiki/ps-google-maps/'
+					'https://n3rds.work/docs/ps-google-maps-handbuch/'
 				); ?>
 			</p>
 			<?php
