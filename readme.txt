@@ -54,7 +54,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 = 3.0.7 = DerN3rd =
 
-* Fix Depraceted Code im Markercluster
+* Fix Deprecated Code im Markercluster
 
 = 3.0.6 = DerN3rd =
 
