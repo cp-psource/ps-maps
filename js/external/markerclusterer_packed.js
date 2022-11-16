@@ -5,8 +5,8 @@
 
 /**
  * @name MarkerClusterer for Google Maps v3
- * @version version 1.0.1
- * @author Luke Mahe
+ * @version version 1.0.2
+ * @author DerN3rd
  * @fileoverview
  * The library creates and manages per-zoom-level clusters for large amounts of
  * markers.
@@ -1089,8 +1089,12 @@ ClusterIcon.prototype.onAdd = function() {
   var panes = this.getPanes();
   panes.overlayMouseTarget.appendChild(this.div_);
 
-  var that = this;
+  /*var that = this;
   google.maps.event.addDomListener(this.div_, 'click', function() {
+    that.triggerClusterClick();
+  });*/
+  var that = this;
+  this.div_.addEventListener( 'click', function() {
     that.triggerClusterClick();
   });
 };
