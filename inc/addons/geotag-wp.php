@@ -53,7 +53,7 @@ class Agm_GwpAdminPages {
 	 */
 	public function register_data_eraser( $erasers ) {
 		$erasers['agm_google_maps-geotag_wp'] = array(
-			'eraser_friendly_name' => __( 'Mit PS-Maps Geotags versehene Beiträge', AGM_LANG ),
+			'eraser_friendly_name' => __( 'Mit PS-Maps Geotags versehene Beiträge', 'psmaps' ),
 			'callback' => array( $this, 'gdpr_erase_data' ),
 		);
 		return $erasers;
@@ -86,14 +86,14 @@ class Agm_GwpAdminPages {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_gwp',
-			__( 'Geotag meine Beiträge', AGM_LANG ),
+			__( 'Geotag meine Beiträge', 'psmaps' ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 
 		add_settings_field(
 			'agm_google_maps_fbnf_fb',
-			__( 'Geotagging-Metabox', AGM_LANG ),
+			__( 'Geotagging-Metabox', 'psmaps' ),
 			array( $this, 'create_post_types_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_gwp'
@@ -104,7 +104,7 @@ class Agm_GwpAdminPages {
 		$selected_types = $this->_data->get_option( 'post_types' );
 		$selected_types = $selected_types ? $selected_types : array();
 		$post_types = get_post_types( array( 'public' => true ), 'objects' );
-		echo '<label for="agm-gwp-post_types">' . __( 'Geotagging-Metabox anzeigen für', AGM_LANG ) . ':</label><br />';
+		echo '<label for="agm-gwp-post_types">' . __( 'Geotagging-Metabox anzeigen für', 'psmaps' ) . ':</label><br />';
 		foreach ( $post_types as $type => $obj ) : ?>
 			<label for="agm-gwp-post_type-<?php echo esc_attr( $type ); ?>">
 				<input type="checkbox"
@@ -124,7 +124,7 @@ class Agm_GwpAdminPages {
 		foreach ( $post_types as $type ) {
 			add_meta_box(
 				'',
-				__( 'Standort', AGM_LANG ),
+				__( 'Standort', 'psmaps' ),
 				array( $this, 'render_metabox' ),
 				$type,
 				'side',
@@ -285,7 +285,7 @@ class Agm_GwpModel {
 				$excerpt .
 			'</p>' .
 			'<a href="' . get_permalink( $post->ID ) . '">' .
-				__( 'Weiterlesen', AGM_LANG ) .
+				__( 'Weiterlesen', 'psmaps' ) .
 			'</a>';
 
 		return array(

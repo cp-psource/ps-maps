@@ -54,7 +54,9 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 = 3.0.7 = DerN3rd =
 
-* Fix Deprecated Code im Markercluster
+* Fix Deprecated: htmlspecialchars()
+* Getestet mit PhP8.1
+* Textdomain angepasst
 
 = 3.0.6 = DerN3rd =
 

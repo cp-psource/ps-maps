@@ -55,15 +55,15 @@ if ( ! is_admin() ) { // Doesn't work on admin
 			lib3()->ui->data(
 				'l10nStrings',
 				array(
-					'close' => __( 'Schließen', AGM_LANG ),
-					'get_directions' => __( 'Wegbeschreibung erhalten', AGM_LANG ),
-					'geocoding_error' => __( 'Beim Geokodieren Deines Standorts ist ein Fehler aufgetreten. Überprüfe die Adresse und versuche es erneut', AGM_LANG ),
-					'missing_waypoint' => __( 'Bitte gib Werte für Punkt A und Punkt B ein', AGM_LANG ),
-					'directions' => __( 'Wegbeschreibungen', AGM_LANG ),
-					'posts' => __( 'Beiträge', AGM_LANG ),
-					'showAll' => __( 'Alle zeigen', AGM_LANG ),
-					'hide' => __( 'Verbergen', AGM_LANG ),
-					'oops_no_directions' => __( 'Hoppla, wir konnten die Richtungen nicht berechnen', AGM_LANG ),
+					'close' => __( 'Schließen', 'psmaps' ),
+					'get_directions' => __( 'Wegbeschreibung erhalten', 'psmaps' ),
+					'geocoding_error' => __( 'Beim Geokodieren Deines Standorts ist ein Fehler aufgetreten. Überprüfe die Adresse und versuche es erneut', 'psmaps' ),
+					'missing_waypoint' => __( 'Bitte gib Werte für Punkt A und Punkt B ein', 'psmaps' ),
+					'directions' => __( 'Wegbeschreibungen', 'psmaps' ),
+					'posts' => __( 'Beiträge', 'psmaps' ),
+					'showAll' => __( 'Alle zeigen', 'psmaps' ),
+					'hide' => __( 'Verbergen', 'psmaps' ),
+					'oops_no_directions' => __( 'Hoppla, wir konnten die Richtungen nicht berechnen', 'psmaps' ),
 				),
 				'front'
 			);

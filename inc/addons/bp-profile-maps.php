@@ -110,7 +110,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		public function register_settings() {
 			add_settings_section(
 				'agm_google_bp_profile_fields',
-				__( 'BuddyPress Profil', AGM_LANG ),
+				__( 'BuddyPress Profil', 'psmaps' ),
 				array( $this, 'create_dependencies_box' ),
 				'agm_google_maps_options_page'
 			);
@@ -124,35 +124,35 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 			add_settings_field(
 				'agm_google_maps_bp_profile_address',
-				__( 'Adressprofilfeld', AGM_LANG ),
+				__( 'Adressprofilfeld', 'psmaps' ),
 				array( $this, 'create_address_field_mapping_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_show_in_profile',
-				__( 'Karte im Benutzerprofil anzeigen', AGM_LANG ),
+				__( 'Karte im Benutzerprofil anzeigen', 'psmaps' ),
 				array( $this, 'create_show_in_profile_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_show_in_members_list',
-				__( 'Karte in Mitgliederliste anzeigen', AGM_LANG ),
+				__( 'Karte in Mitgliederliste anzeigen', 'psmaps' ),
 				array( $this, 'create_show_in_members_list_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_avatars_as_markers',
-				__( 'Verwende Avatare als Kartenmarkierungen', AGM_LANG ),
+				__( 'Verwende Avatare als Kartenmarkierungen', 'psmaps' ),
 				array( $this, 'create_avatars_as_markers_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_global_members',
-				__( 'Weltkarte mit allen Mitgliedern', AGM_LANG ),
+				__( 'Weltkarte mit allen Mitgliedern', 'psmaps' ),
 				array( $this, 'create_global_members_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
@@ -161,7 +161,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 		public function register_data_eraser( $erasers ) {
 			$erasers['agm_google_maps-profile_maps'] = array(
-				'eraser_friendly_name' => __( 'PS-Maps Profilkarten', AGM_LANG ),
+				'eraser_friendly_name' => __( 'PS-Maps Profilkarten', 'psmaps' ),
 				'callback' => array( $this, 'erase_profile_maps_data' ),
 			);
 			return $erasers;
@@ -219,10 +219,10 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 			?>
 			<label for="agm-bp_profile_maps-address_field">
-				<?php _e( 'Dieses Profilfeld enthält die Adresse meiner Benutzer:', AGM_LANG ); ?>
+				<?php _e( 'Dieses Profilfeld enthält die Adresse meiner Benutzer:', 'psmaps' ); ?>
 			</label>
 			<select name="agm_google_maps[bp_profile_maps-address_field]" id="agm-bp_profile_maps-address_field">
-				<option value=""><?php _e( 'Bitte wähle ein Feld aus', AGM_LANG ); ?></option>
+				<option value=""><?php _e( 'Bitte wähle ein Feld aus', 'psmaps' ); ?></option>
 				<?php foreach ( $xfields as $group => $fields ) : ?>
 				<optgroup label="<?php echo esc_attr( $group ); ?>">
 					<?php foreach ( $fields as $field ) : ?>
@@ -240,9 +240,9 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		public function create_show_in_profile_box() {
 			$show_in_profile = $this->_get_options( 'show_in_profile' );
 			$values = array(
-				''       => __( 'Nicht im Profil anzeigen', AGM_LANG ),
-				'before' => __( 'Karte vor Profilfeldern anzeigen', AGM_LANG ),
-				'after'  => __( 'Karte nach Profilfeldern anzeigen', AGM_LANG ),
+				''       => __( 'Nicht im Profil anzeigen', 'psmaps' ),
+				'before' => __( 'Karte vor Profilfeldern anzeigen', 'psmaps' ),
+				'after'  => __( 'Karte nach Profilfeldern anzeigen', 'psmaps' ),
 			);
 
 			foreach ( $values as $key => $val ) {
@@ -263,9 +263,9 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		public function create_show_in_members_list_box() {
 			$show_in_members_list = $this->_get_options( 'show_in_members_list' );
 			$values = array(
-				''       => __( 'Nicht in der Mitgliederliste anzeigen', AGM_LANG ),
-				'before' => __( 'Karte vor Mitgliederliste anzeigen', AGM_LANG ),
-				'after'  => __( 'Karte nach Mitgliederliste anzeigen', AGM_LANG ),
+				''       => __( 'Nicht in der Mitgliederliste anzeigen', 'psmaps' ),
+				'before' => __( 'Karte vor Mitgliederliste anzeigen', 'psmaps' ),
+				'after'  => __( 'Karte nach Mitgliederliste anzeigen', 'psmaps' ),
 			);
 
 			foreach ( $values as $key => $val ) {
@@ -286,8 +286,8 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		public function create_avatars_as_markers_box() {
 			$avatars_as_markers = $this->_get_options( 'avatars_as_markers' );
 			$values = array(
-				''  => __( 'Nein', AGM_LANG ),
-				'1' => __( 'Ja', AGM_LANG ),
+				''  => __( 'Nein', 'psmaps' ),
+				'1' => __( 'Ja', 'psmaps' ),
 			);
 
 			foreach ( $values as $key => $val ) {
@@ -388,7 +388,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			global $bp;
 
 			if ( ! function_exists( 'xprofile_get_field_id_from_name' ) ) {
-				$this->admin_note( __( 'BuddyPress XProfile nicht aktiviert', AGM_LANG ) );
+				$this->admin_note( __( 'BuddyPress XProfile nicht aktiviert', 'psmaps' ) );
 				return false;
 			}
 
@@ -396,13 +396,13 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			$address = $this->_get_user_address( $user_id );
 
 			if ( ! $address ) {
-				$this->admin_note( __( 'Keine Adresse definiert', AGM_LANG ) );
+				$this->admin_note( __( 'Keine Adresse definiert', 'psmaps' ) );
 				return false;
 			}
 
 			$location = $this->_address_to_location( $user_id, $address );
 			if ( ! $location ) {
-				$this->admin_note( __( 'Für diese Adresse wurde keine Karte gefunden', AGM_LANG ) );
+				$this->admin_note( __( 'Für diese Adresse wurde keine Karte gefunden', 'psmaps' ) );
 				return false;
 			}
 

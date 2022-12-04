@@ -89,7 +89,7 @@ class Agm_Map_LocationShortcode extends AgmAddonBase {
 			$map_id = $model->autocreate_map( false, $lat, $lng, false, $post_id, $args );
 
 			if ( ! $map_id ) {
-				$this->admin_note( __( 'Karte konnte nicht aus Shortcode erstellt werden', AGM_LANG ) );
+				$this->admin_note( __( 'Karte konnte nicht aus Shortcode erstellt werden', 'psmaps' ) );
 				return $content;
 			}
 
@@ -120,7 +120,7 @@ class Agm_Map_LocationShortcode extends AgmAddonBase {
 			$map_id = $model->autocreate_map( false, false, false, $address, $post_id, $args );
 
 			if ( ! $map_id ) {
-				$this->admin_note( __( 'Karte konnte nicht aus Shortcode erstellt werden', AGM_LANG ) );
+				$this->admin_note( __( 'Karte konnte nicht aus Shortcode erstellt werden', 'psmaps' ) );
 				return $content;
 			}
 

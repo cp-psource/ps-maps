@@ -108,7 +108,7 @@ class Agm_UCI_Shared {
 	 */
 	public function register_data_exporter( $exporters ) {
 		$exporters['agm_google_maps-checkins'] = array(
-			'exporter_friendly_name' => __( 'PS-Maps Check-ins', AGM_LANG ),
+			'exporter_friendly_name' => __( 'PS-Maps Check-ins', 'psmaps' ),
 			'callback' => array( $this, 'gdpr_export_data' ),
 		);
 		return $exporters;
@@ -123,7 +123,7 @@ class Agm_UCI_Shared {
 	 */
 	public function register_data_eraser( $erasers ) {
 		$erasers['agm_google_maps-checkins'] = array(
-			'eraser_friendly_name' => __( 'PS-Maps Check-ins', AGM_LANG ),
+			'eraser_friendly_name' => __( 'PS-Maps Check-ins', 'psmaps' ),
 			'callback' => array( $this, 'gdpr_erase_data' ),
 		);
 		return $erasers;
@@ -151,18 +151,18 @@ class Agm_UCI_Shared {
 				$exports[] = array(
 					'item_id' => 'checkin-' . md5( serialize( $chk ) ),
 					'group_id' => 'agm-checkins',
-					'group_label' => __( 'Google Map Check-ins', AGM_LANG ),
+					'group_label' => __( 'Google Map Check-ins', 'psmaps' ),
 					'data' => array(
 						array(
-							'name' => __( 'Breitengrad', AGM_LANG ),
+							'name' => __( 'Breitengrad', 'psmaps' ),
 							'value' => $chk['lat'],
 						),
 						array(
-							'name' => __( 'Längengrad', AGM_LANG ),
+							'name' => __( 'Längengrad', 'psmaps' ),
 							'value' => $chk['lon'],
 						),
 						array(
-							'name' => __( 'Zeit', AGM_LANG ),
+							'name' => __( 'Zeit', 'psmaps' ),
 							'value' => date_i18n( 'r', $chk['created'] ),
 						),
 					),
@@ -857,14 +857,14 @@ class Agm_UCI_Shared {
 			if ( $user ) {
 				$Usernames[ $user_id ] = $user->display_name;
 			} else {
-				$Usernames[ $user_id ] = __( 'Guest', AGM_LANG );
+				$Usernames[ $user_id ] = __( 'Guest', 'psmaps' );
 			}
 		}
 
 		// Build the meta string.
-		$meta = __( 'Von %1$s, am %2$s', AGM_LANG );
+		$meta = __( 'Von %1$s, am %2$s', 'psmaps' );
 		$name = $Usernames[ $user_id ];
-		$time = date( __( 'j F, Y (G:i)', AGM_LANG ), $timestamp );
+		$time = date( __( 'j F, Y (G:i)', 'psmaps' ), $timestamp );
 		$meta = sprintf( $meta, $name, $time );
 
 		return $meta;
@@ -882,7 +882,7 @@ class Agm_UCI_Shared {
 		if ( is_user_logged_in() ) {
 			if ( get_current_user_id() == $checkin['user_id'] ) {
 				$checkin['marker']['body'] .= ' <a href="#" class="edit-marker" data-id="' . $checkin['id'] . '" data-identifier="' . $checkin['marker']['identifier'] . '">' .
-					__( 'Bearbeiten', AGM_LANG ) .
+					__( 'Bearbeiten', 'psmaps' ) .
 					'</a>';
 			}
 		}
@@ -994,33 +994,33 @@ class Agm_UCI_UserProfile extends Agm_UCI_Shared {
 
 		$alternate = '';
 		?>
-		<h3><?php _e( 'Google Maps: Checkins', AGM_LANG ); ?></h3>
+		<h3><?php _e( 'Google Maps: Checkins', 'psmaps' ); ?></h3>
 
 		<table class="form-table">
 			<tr>
 				<th><label for="">
-					<?php _e( 'Checke meinen Standort ein', AGM_LANG ); ?>
+					<?php _e( 'Checke meinen Standort ein', 'psmaps' ); ?>
 				</label></th>
 				<td>
 					<select name="agm_google_maps[checkin]">
-						<option value="off" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Sende niemals meinen Standort', AGM_LANG ); ?></option>
-						<option value="ask" <?php echo esc_html( $sel_ask ); ?>><?php _e( 'Frage mich immer, bevor Du meinen Standort angibst', AGM_LANG ); ?></option>
-						<option value="on" <?php echo esc_html( $sel_always ); ?>><?php _e( 'Sende meinen Standort und frage mich nicht', AGM_LANG ); ?></option>
+						<option value="off" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Sende niemals meinen Standort', 'psmaps' ); ?></option>
+						<option value="ask" <?php echo esc_html( $sel_ask ); ?>><?php _e( 'Frage mich immer, bevor Du meinen Standort angibst', 'psmaps' ); ?></option>
+						<option value="on" <?php echo esc_html( $sel_always ); ?>><?php _e( 'Sende meinen Standort und frage mich nicht', 'psmaps' ); ?></option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<th><?php _e( 'Default privacy setting', AGM_LANG ); ?></th>
+				<th><?php _e( 'Default privacy setting', 'psmaps' ); ?></th>
 				<td>
 					<select name="agm_google_maps[share]">
-						<option value="priv" <?php echo esc_html( $sel_priv ); ?>><?php _e( 'Nur ich kann meinen Standort sehen', AGM_LANG ); ?></option>
-						<option value="member" <?php echo esc_html( $sel_member ); ?>><?php _e( 'Nur angemeldete Benutzer können meinen Standort sehen', AGM_LANG ); ?></option>
-						<option value="pub" <?php echo esc_html( $sel_pub ); ?>><?php _e( 'Jeder kann meinen Standort sehen', AGM_LANG ); ?></option>
+						<option value="priv" <?php echo esc_html( $sel_priv ); ?>><?php _e( 'Nur ich kann meinen Standort sehen', 'psmaps' ); ?></option>
+						<option value="member" <?php echo esc_html( $sel_member ); ?>><?php _e( 'Nur angemeldete Benutzer können meinen Standort sehen', 'psmaps' ); ?></option>
+						<option value="pub" <?php echo esc_html( $sel_pub ); ?>><?php _e( 'Jeder kann meinen Standort sehen', 'psmaps' ); ?></option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<th><?php _e( 'My locations', AGM_LANG ); ?></th>
+				<th><?php _e( 'My locations', 'psmaps' ); ?></th>
 				<td>
 		<?php if ( count( $checkins->checkins ) ) : ?>
 			<ul class="lst-checkins">
@@ -1066,7 +1066,7 @@ class Agm_UCI_UserProfile extends Agm_UCI_Shared {
 							<i class="dashicons dashicons-location"></i>
 							<span class="lat"><?php echo esc_attr( $checkin['lat'] ); ?></span> / <span class="lng"><?php echo esc_attr( $checkin['lng'] ); ?></span>
 							<?php if ( $checkin['count'] > 1 ) : ?>
-								(<?php _e( 'Zähler', AGM_LANG ); ?>:
+								(<?php _e( 'Zähler', 'psmaps' ); ?>:
 								<?php echo esc_html( $checkin['count'] ); ?>)
 							<?php endif; ?>
 							<?php if ( $edit_details ) : ?>
@@ -1075,51 +1075,51 @@ class Agm_UCI_UserProfile extends Agm_UCI_Shared {
 						</div>
 						<span class="item-actions">
 							<select class="share" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][share]">
-								<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Nur ich', AGM_LANG ); ?></option>
-								<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Angemeldete Benutzer', AGM_LANG ); ?></option>
-								<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Jeder', AGM_LANG ); ?></option>
+								<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Nur ich', 'psmaps' ); ?></option>
+								<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Angemeldete Benutzer', 'psmaps' ); ?></option>
+								<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Jeder', 'psmaps' ); ?></option>
 							</select>
 							<input type="hidden" class="trash-flag" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][trash]" value="0" />
 							<?php if ( $edit_details ) : ?>
-								<a class="edit button button-small" href="#"><?php _e( 'Bearbeiten', AGM_LANG ); ?></a>
+								<a class="edit button button-small" href="#"><?php _e( 'Bearbeiten', 'psmaps' ); ?></a>
 							<?php endif; ?>
-							<a class="small trash" href="#"><?php _e( 'Löschen', AGM_LANG ); ?></a>
-							<a class="small restore" href="#" style="display:none"><?php _e( 'Nicht löschen', AGM_LANG ); ?></a>
+							<a class="small trash" href="#"><?php _e( 'Löschen', 'psmaps' ); ?></a>
+							<a class="small restore" href="#" style="display:none"><?php _e( 'Nicht löschen', 'psmaps' ); ?></a>
 						</span>
 					</div>
 					<?php if ( $edit_details ) : ?>
 						<div class="form" style="display:none">
 							<span class="the-preview the-preview-l"></span>
 							<div class="row">
-								<label for="lat-<?php echo esc_attr( $id ); ?>"><?php _e( 'Lat', AGM_LANG ); ?>:</label>
+								<label for="lat-<?php echo esc_attr( $id ); ?>"><?php _e( 'Lat', 'psmaps' ); ?>:</label>
 								<span class="lat"><?php echo esc_attr( $checkin['lat'] ); ?></span>
 							</div>
 							<div class="row">
-								<label for="lng-<?php echo esc_attr( $id ); ?>"><?php _e( 'Long', AGM_LANG ); ?>:</label>
+								<label for="lng-<?php echo esc_attr( $id ); ?>"><?php _e( 'Long', 'psmaps' ); ?>:</label>
 								<span class="lng"><?php echo esc_attr( $checkin['lng'] ); ?></span>
 							</div>
 							<div class="row">
-								<label for="title-<?php echo esc_attr( $id ); ?>"><?php _e( 'Titel', AGM_LANG ); ?>:</label>
+								<label for="title-<?php echo esc_attr( $id ); ?>"><?php _e( 'Titel', 'psmaps' ); ?>:</label>
 								<input type="text" id="title-<?php echo esc_attr( $id ); ?>" data-readonly=".title" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][title]" value="<?php echo esc_attr( $checkin['title'] ); ?>" />
 							</div>
 							<div class="row">
-								<label for="desc-<?php echo esc_attr( $id ); ?>"><?php _e( 'Beschreibung', AGM_LANG ); ?>:</label>
+								<label for="desc-<?php echo esc_attr( $id ); ?>"><?php _e( 'Beschreibung', 'psmaps' ); ?>:</label>
 								<input type="text" id="desc-<?php echo esc_attr( $id ); ?>" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][description]" value="<?php echo esc_attr( $checkin['description'] ); ?>" />
 							</div>
 							<div class="row">
-								<label><?php _e( 'Zuletzt geändert', AGM_LANG ); ?>:</label>
+								<label><?php _e( 'Zuletzt geändert', 'psmaps' ); ?>:</label>
 								<span>
 									<?php echo esc_attr( $modified ); ?> -
 									<?php if ( $is_modified ) : ?>
-										<?php _e( 'created on', AGM_LANG ); ?> <?php echo esc_attr( $created ); ?> -
+										<?php _e( 'created on', 'psmaps' ); ?> <?php echo esc_attr( $created ); ?> -
 									<?php endif; ?>
-									<?php _e( 'Zähler', AGM_LANG ); ?> <?php echo esc_html( $checkin['count'] ); ?>
+									<?php _e( 'Zähler', 'psmaps' ); ?> <?php echo esc_html( $checkin['count'] ); ?>
 								</span>
 							</div>
 
 							<div class="form-actions">
-								<a class="save button button-small" href="#"><?php _e( 'OK', AGM_LANG ); ?></a>
-								<a class="small cancel" href="#"><?php _e( 'Abbrechen', AGM_LANG ); ?></a>
+								<a class="save button button-small" href="#"><?php _e( 'OK', 'psmaps' ); ?></a>
+								<a class="small cancel" href="#"><?php _e( 'Abbrechen', 'psmaps' ); ?></a>
 							</div>
 						</div>
 					<?php endif; ?>
@@ -1315,14 +1315,14 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_uci',
-			__( 'Benutzer-Check-ins', AGM_LANG ),
+			__( 'Benutzer-Check-ins', 'psmaps' ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 
 		add_settings_field(
 			'agm_google_maps_uci_usage',
-			__( 'Übersicht', AGM_LANG ),
+			__( 'Übersicht', 'psmaps' ),
 			array( $this, 'render_settings_box_usage' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1330,7 +1330,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_allowed_checkin',
-			__( 'Check-ins zulassen', AGM_LANG ),
+			__( 'Check-ins zulassen', 'psmaps' ),
 			array( $this, 'render_settings_box_allowed_data' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1338,7 +1338,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_edit_details',
-			__( 'Check-in Details', AGM_LANG ),
+			__( 'Check-in Details', 'psmaps' ),
 			array( $this, 'render_settings_box_details' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1347,7 +1347,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		/*
 		add_settings_field(
 			'agm_google_maps_uci_linking',
-			__( 'Connect checkins to content', AGM_LANG ),
+			__( 'Connect checkins to content', 'psmaps' ),
 			array( $this, 'render_settings_box_linking' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1356,7 +1356,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_limits',
-			__( 'Check-in Limit', AGM_LANG ),
+			__( 'Check-in Limit', 'psmaps' ),
 			array( $this, 'render_settings_box_limits' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1364,7 +1364,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_map',
-			__( 'Map-Standardeinstellungen', AGM_LANG ),
+			__( 'Map-Standardeinstellungen', 'psmaps' ),
 			array( $this, 'render_settings_box_map' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1380,29 +1380,29 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		$shortcode_tag = 'agm_map' == AgmMapModel::get_config( 'shortcode_map' ) ? 'agm_map' : 'map';
 		?>
 		<p>
-			<?php _e( 'Shortcode', AGM_LANG ); ?> <code>[agm_add_checkin]</code><br />
-			<?php _e( 'Versuche den Benutzerstandort auf der Seite zu erfassen, ohne eine Karte anzuzeigen. Keine Optionen verfügbar.', AGM_LANG ); ?>
+			<?php _e( 'Shortcode', 'psmaps' ); ?> <code>[agm_add_checkin]</code><br />
+			<?php _e( 'Versuche den Benutzerstandort auf der Seite zu erfassen, ohne eine Karte anzuzeigen. Keine Optionen verfügbar.', 'psmaps' ); ?>
 		<p>
 		</p>
-			<?php _e( 'Shortcode', AGM_LANG ); ?> <code>[agm_show_checkins]</code><br />
+			<?php _e( 'Shortcode', 'psmaps' ); ?> <code>[agm_show_checkins]</code><br />
 			<?php printf(
 				__(
 					'Zeige eine Google-Karte mit den angegebenen Standorten an. ' .
 					'Der Shortcode unterstützt alle Optionen des Shortcodes <code>[%s]</code>. ' .
-					'Zusätzlich stehen folgende Optionen zur Verfügung:', AGM_LANG
+					'Zusätzlich stehen folgende Optionen zur Verfügung:', 'psmaps'
 				),
 				$shortcode_tag
 			); ?>
 			<ul style="padding-left: 20px; margin-top: 5px; list-style: disc">
-			<li><?php _e( '<code>user="1,2"</code>: (Filter) Zeigt die Standorte dieser Benutzer nach Benutzer-ID an.', AGM_LANG ); ?><br />
-			<li><?php _e( '<code>role="admin,editor"</code>: (Filter) Zeigt die Standorte der Benutzer in diesen Rollen an.', AGM_LANG ); ?></li>
-			<li><?php _e( '<code>group="group1,group2"</code>: (Filter, BuddyPress) Zeigt die Standorte der Benutzer in diesen Gruppen an.', AGM_LANG ); ?></li>
-			<li><?php _e( '<code>guest="true"</code>: (Filter) True zeigt zusätzlich die Standorte der Gäste an. False zeigt nur Standorte registrierter Benutzer an.', AGM_LANG ); ?></li>
-			<li><?php _e( '<code>last_hour="24"</code>: (Filter, Zeit) Zeigt Orte an, die in den letzten X Stunden hinzugefügt oder aktualisiert wurden.', AGM_LANG ); ?></li>
-			<li><?php _e( '<code>automatic="true"</code>: Versuche den Benutzerstandort beim Laden der Seite zu erfassen (wie bei <code>[agm_add_checkin]</code>.', AGM_LANG ); ?></li>
-			<li><?php _e( '<code>show_button="true"</code>: Füge unter der Karte eine Schaltfläche hinzu, mit der der Benutzer seinen Standort manuell übermitteln kann.', AGM_LANG ); ?></li>
+			<li><?php _e( '<code>user="1,2"</code>: (Filter) Zeigt die Standorte dieser Benutzer nach Benutzer-ID an.', 'psmaps' ); ?><br />
+			<li><?php _e( '<code>role="admin,editor"</code>: (Filter) Zeigt die Standorte der Benutzer in diesen Rollen an.', 'psmaps' ); ?></li>
+			<li><?php _e( '<code>group="group1,group2"</code>: (Filter, BuddyPress) Zeigt die Standorte der Benutzer in diesen Gruppen an.', 'psmaps' ); ?></li>
+			<li><?php _e( '<code>guest="true"</code>: (Filter) True zeigt zusätzlich die Standorte der Gäste an. False zeigt nur Standorte registrierter Benutzer an.', 'psmaps' ); ?></li>
+			<li><?php _e( '<code>last_hour="24"</code>: (Filter, Zeit) Zeigt Orte an, die in den letzten X Stunden hinzugefügt oder aktualisiert wurden.', 'psmaps' ); ?></li>
+			<li><?php _e( '<code>automatic="true"</code>: Versuche den Benutzerstandort beim Laden der Seite zu erfassen (wie bei <code>[agm_add_checkin]</code>.', 'psmaps' ); ?></li>
+			<li><?php _e( '<code>show_button="true"</code>: Füge unter der Karte eine Schaltfläche hinzu, mit der der Benutzer seinen Standort manuell übermitteln kann.', 'psmaps' ); ?></li>
 			</ul>
-			<?php _e( 'Wenn kein Filter definiert ist, werden alle Standorte auf der Karte angezeigt.', AGM_LANG ); ?>
+			<?php _e( 'Wenn kein Filter definiert ist, werden alle Standorte auf der Karte angezeigt.', 'psmaps' ); ?>
 		</p>
 		<?php
 	}
@@ -1431,29 +1431,29 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		?>
 		<p>
 			<label for="agm-uci-automatic_checkin">
-			<?php _e( 'Sammel Standortdaten im Hintergrund', AGM_LANG ); ?>:
+			<?php _e( 'Sammel Standortdaten im Hintergrund', 'psmaps' ); ?>:
 			</label>
 			<select id="agm-uci-automatic_checkin" name="agm_google_maps[uci-automatic_checkin]">
-				<option value="never" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Niemals (diese Funktion deaktivieren)', AGM_LANG ); ?></option>
-				<option value="once" <?php echo esc_html( $sel_once ); ?>><?php _e( 'Ein Check-in pro Benutzer', AGM_LANG ); ?></option>
-				<option value="always" <?php echo esc_html( $sel_always ); ?>><?php _e( 'Auf jeder Seite', AGM_LANG ); ?></option>
-				<option value="manual" <?php echo esc_html( $sel_manual ); ?>><?php _e( 'Manuell via Shortcode [agm_add_checkin]', AGM_LANG ); ?></option>
+				<option value="never" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Niemals (diese Funktion deaktivieren)', 'psmaps' ); ?></option>
+				<option value="once" <?php echo esc_html( $sel_once ); ?>><?php _e( 'Ein Check-in pro Benutzer', 'psmaps' ); ?></option>
+				<option value="always" <?php echo esc_html( $sel_always ); ?>><?php _e( 'Auf jeder Seite', 'psmaps' ); ?></option>
+				<option value="manual" <?php echo esc_html( $sel_manual ); ?>><?php _e( 'Manuell via Shortcode [agm_add_checkin]', 'psmaps' ); ?></option>
 			</select><br /><em>
-			<?php _e( 'Standortdaten werden nur mit Zustimmung des Nutzers erhoben.<br />Die Gäste werden gebeten, den Ort bei jedem Besuch anzugeben. Angemeldete Benutzer können zusätzlich wählen, ob sie ihren Standort immer oder nie angeben möchten.', AGM_LANG ) ?>
+			<?php _e( 'Standortdaten werden nur mit Zustimmung des Nutzers erhoben.<br />Die Gäste werden gebeten, den Ort bei jedem Besuch anzugeben. Angemeldete Benutzer können zusätzlich wählen, ob sie ihren Standort immer oder nie angeben möchten.', 'psmaps' ) ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-allow_guest_checkin-off">
 			<input type="radio" id="agm-uci-allow_guest_checkin-off" name="agm_google_maps[uci-allow_guest_checkin]" value="0" <?php echo esc_html( $check_guest_on ); ?> />
-			<?php _e( 'Nur angemeldete Benutzer können ihren Standort einchecken', AGM_LANG ); ?>
+			<?php _e( 'Nur angemeldete Benutzer können ihren Standort einchecken', 'psmaps' ); ?>
 			</label>
 		</p>
 
 		<p>
 			<label for="agm-uci-allow_guest_checkin-on">
 			<input type="radio" id="agm-uci-allow_guest_checkin-on" name="agm_google_maps[uci-allow_guest_checkin]" value="1" <?php echo esc_html( $check_guest_off ); ?> />
-			<?php _e( 'Gäste können ihren Standort einchecken', AGM_LANG ); ?>
+			<?php _e( 'Gäste können ihren Standort einchecken', 'psmaps' ); ?>
 			</label>
 		</p>
 		<?php
@@ -1473,16 +1473,16 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		<p>
 			<label for="agm-uci-edit_details-off">
 			<input type="radio" id="agm-uci-edit_details-off" name="agm_google_maps[uci-edit_details]" value="0"  <?php echo esc_html( $check_edit_off ); ?> />
-			<?php _e( 'Speichere nur den Ort', AGM_LANG ); ?>
+			<?php _e( 'Speichere nur den Ort', 'psmaps' ); ?>
 			</label>
 		</p>
 
 		<p>
 			<label for="agm-uci-edit_details-on">
 			<input type="radio" id="agm-uci-edit_details-on" name="agm_google_maps[uci-edit_details]" value="1" <?php echo esc_html( $check_edit_on ); ?> />
-			<?php _e( 'Benutzer können Standorte bearbeiten und zusätzliche Informationen hinzufügen', AGM_LANG ); ?>
+			<?php _e( 'Benutzer können Standorte bearbeiten und zusätzliche Informationen hinzufügen', 'psmaps' ); ?>
 			</label><br /><em>
-			<?php _e( 'Angemeldete Benutzer können optional einen Titel und eine Beschreibung für ihre Check-Ins eingeben und die Standortdetails später bearbeiten.', AGM_LANG ); ?>
+			<?php _e( 'Angemeldete Benutzer können optional einen Titel und eine Beschreibung für ihre Check-Ins eingeben und die Standortdetails später bearbeiten.', 'psmaps' ); ?>
 			</em>
 		</p>
 		<?php
@@ -1504,18 +1504,18 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		<p>
 			<label for="agm-uci-link_pages">
 			<input type="checkbox" id="agm-uci-link_pages" name="agm_google_maps[uci-link_pages]" value="1" <?php echo esc_html( $check_link_pages ); ?> />
-			<?php _e( 'Checkins sind mit dem aktuellen Beitrag/der aktuellen Seite verknüpft', AGM_LANG ); ?>
+			<?php _e( 'Checkins sind mit dem aktuellen Beitrag/der aktuellen Seite verknüpft', 'psmaps' ); ?>
 			</label><br /><em>
-			<?php _e( 'Wenn diese Option aktiviert ist, sind alle Checkins mit dem aktuellen Beitrag oder der aktuellen Seite verknüpft.<br />Funktioniert nur auf einzelnen Seiten, nicht auf speziellen Seiten wie Suchergebnissen, Archiv oder Startseite.', AGM_LANG ); ?>
+			<?php _e( 'Wenn diese Option aktiviert ist, sind alle Checkins mit dem aktuellen Beitrag oder der aktuellen Seite verknüpft.<br />Funktioniert nur auf einzelnen Seiten, nicht auf speziellen Seiten wie Suchergebnissen, Archiv oder Startseite.', 'psmaps' ); ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-link_comments">
 			<input type="checkbox" id="agm-uci-link_comments" name="agm_google_maps[uci-link_comments]" value="1" <?php echo esc_html( $check_link_comments ); ?> />
-			<?php _e( 'Aktiviere das Geotagging von Kommentaren', AGM_LANG ); ?>
+			<?php _e( 'Aktiviere das Geotagging von Kommentaren', 'psmaps' ); ?>
 			</label><br /><em>
-			<?php _e( 'Bei Aktivierung wird ein neues Kontrollkästchen angezeigt, mit dem Du diesen Kommentar <code>im Kommentarformular</code> mit einem Geotag versehen kannst.', AGM_LANG ); ?>
+			<?php _e( 'Bei Aktivierung wird ein neues Kontrollkästchen angezeigt, mit dem Du diesen Kommentar <code>im Kommentarformular</code> mit einem Geotag versehen kannst.', 'psmaps' ); ?>
 			</em>
 		</p>
 		<?php
@@ -1534,34 +1534,34 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		?>
 		<p>
 			<label for="agm-uci-max_checkins">
-				<?php _e( 'Maximale Anzahl von Eincheckvorgängen für einen einzelnen Benutzer', AGM_LANG ); ?>
+				<?php _e( 'Maximale Anzahl von Eincheckvorgängen für einen einzelnen Benutzer', 'psmaps' ); ?>
 			</label>
 			<input type="number" min="1" max="100" maxlength="3" id="agm-uci-max_checkins" name="agm_google_maps[uci-max_checkins]" value="<?php echo esc_attr( $max_checkins ); ?>" />
 			<br />
 			<em>
-			<?php _e( 'Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird ein älterer Standort aus der Benutzersammlung entfernt.<br />Ein hoher Wert kann zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-100', AGM_LANG ); ?>
+			<?php _e( 'Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird ein älterer Standort aus der Benutzersammlung entfernt.<br />Ein hoher Wert kann zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-100', 'psmaps' ); ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-max_guest_checkins">
-				<?php _e( 'Max anonyme Gäste Check-ins behalten', AGM_LANG ); ?>
+				<?php _e( 'Max anonyme Gäste Check-ins behalten', 'psmaps' ); ?>
 			</label>
 			<input type="number" min="1" max="1000" maxlength="4" id="agm-uci-max_guest_checkins" name="agm_google_maps[uci-max_guest_checkins]" value="<?php echo esc_attr( $max_guest_checkins ); ?>" />
 			<br />
 			<em>
-			<?php _e( 'Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird der älteste Standort aus der Gästesammlung entfernt.<br />Ein hoher Wert kann zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-1000', AGM_LANG ); ?>
+			<?php _e( 'Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird der älteste Standort aus der Gästesammlung entfernt.<br />Ein hoher Wert kann zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-1000', 'psmaps' ); ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-merge_distance">
-				<?php _e( 'Fange doppelte Check-Ins ab, die näher als sind', AGM_LANG ); ?>
+				<?php _e( 'Fange doppelte Check-Ins ab, die näher als sind', 'psmaps' ); ?>
 			</label>
 			<input type="number" min="0" max="100" maxlength="3" id="agm-uci-merge_distance" name="agm_google_maps[uci-merge_distance]" value="<?php echo esc_attr( $merge_distance ); ?>" /> Meter
 			<br />
 			<em>
-			<?php _e( 'Wenn ein Benutzer einen neuen Ort eincheckt, speichert das Plugin den Ort nicht, wenn er näher als diese Entfernung zu einem bereits eingecheckten Ort liegt.<br />Es werden nur die Standorte des aktuellen Benutzers überprüft. Wert zwischen 1-100', AGM_LANG ); ?>
+			<?php _e( 'Wenn ein Benutzer einen neuen Ort eincheckt, speichert das Plugin den Ort nicht, wenn er näher als diese Entfernung zu einem bereits eingecheckten Ort liegt.<br />Es werden nur die Standorte des aktuellen Benutzers überprüft. Wert zwischen 1-100', 'psmaps' ); ?>
 			</em>
 		</p>
 		<?php
@@ -1579,9 +1579,9 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		<p>
 			<label for="agm-uci-show_empty_map">
 			<input type="checkbox" id="agm-uci-show_empty_map" name="agm_google_maps[uci-show_empty_map]" value="1" <?php echo esc_html( $check_show_empty_map ); ?> />
-			<?php _e( 'Karten ohne Markierungen anzeigen', AGM_LANG ); ?>
+			<?php _e( 'Karten ohne Markierungen anzeigen', 'psmaps' ); ?>
 			</label><br /><em>
-			<?php _e( 'Wähle aus, ob eine Karte ohne Standortmarkierungen angezeigt werden soll oder nicht.<br />Wenn eine leere Karte angezeigt wird, ist das Kartenzentrum standardmäßig nicht definiert. Gib daher eine Standardposition an (z. B. über "<code>Wo bin ich?</code>" oder "<code>Karte zentrieren vor Ort</code>" Erweiterung).', AGM_LANG ); ?>
+			<?php _e( 'Wähle aus, ob eine Karte ohne Standortmarkierungen angezeigt werden soll oder nicht.<br />Wenn eine leere Karte angezeigt wird, ist das Kartenzentrum standardmäßig nicht definiert. Gib daher eine Standardposition an (z. B. über "<code>Wo bin ich?</code>" oder "<code>Karte zentrieren vor Ort</code>" Erweiterung).', 'psmaps' ); ?>
 			</em>
 		</p>
 		<?php
@@ -1798,28 +1798,28 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 			<?php if ( $edit_details ) : ?>
 				<div class="row">
-					<label for="title-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Titel', AGM_LANG ); ?>:</label>
+					<label for="title-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Titel', 'psmaps' ); ?>:</label>
 					<input type="text" id="title-<?php echo esc_attr( $cid ); ?>" class="title" value="<?php echo esc_attr( $checkin['title'] ); ?>" />
 				</div>
 				<div class="row">
-					<label for="desc-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Beschreibung', AGM_LANG ); ?>:</label>
+					<label for="desc-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Beschreibung', 'psmaps' ); ?>:</label>
 					<input type="text" id="desc-<?php echo esc_attr( $cid ); ?>" class="desc" value="<?php echo esc_attr( $checkin['description'] ); ?>" />
 				</div>
 			<?php endif; ?>
 
 			<div class="row">
-				<label for="share-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Sichtbar für', AGM_LANG ); ?>:</label>
+				<label for="share-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Sichtbar für', 'psmaps' ); ?>:</label>
 				<select class="share" id="share-<?php echo esc_attr( $cid ); ?>">
-					<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Nur ich', AGM_LANG ); ?></option>
-					<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Angemeldete Benutzer', AGM_LANG ); ?></option>
-					<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Jeder', AGM_LANG ); ?></option>
+					<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Nur ich', 'psmaps' ); ?></option>
+					<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Angemeldete Benutzer', 'psmaps' ); ?></option>
+					<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Jeder', 'psmaps' ); ?></option>
 				</select>
 			</div>
 
 			<div class="agm-form-buttons">
-				<button type="button" class="agm-form-delete pull-left"><?php _e( 'Löschen', AGM_LANG ); ?></button>
-				<button type="button" class="agm-form-cancel"><?php _e( 'Abbrechen', AGM_LANG ); ?></button>
-				<button type="button" class="agm-form-save"><?php _e( 'Speichern', AGM_LANG ); ?></button>
+				<button type="button" class="agm-form-delete pull-left"><?php _e( 'Löschen', 'psmaps' ); ?></button>
+				<button type="button" class="agm-form-cancel"><?php _e( 'Abbrechen', 'psmaps' ); ?></button>
+				<button type="button" class="agm-form-save"><?php _e( 'Speichern', 'psmaps' ); ?></button>
 			</div>
 		</div>
 		<?php
@@ -1993,14 +1993,14 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 
 				// Add translations that are used in javascript.
 				$lang = array(
-					'title' => __( 'Standort senden?', AGM_LANG ),
-					'ask_checkin' => __( 'Die Webseite möchte wissen, wo Du Dich befindest. Sende Deinen Standort?', AGM_LANG ),
-					'yes' => __( 'Ja', AGM_LANG ),
-					'no' => __( 'Nein', AGM_LANG ),
-					'remember' => __( 'Frag mich nicht noch einmal.', AGM_LANG ),
-					'status_sending' => __( 'Sende Deinen Standort...', AGM_LANG ),
-					'status_saved' => __( 'Standort gespeichert!', AGM_LANG ),
-					'status_submit' => __( 'Sende meinen aktuellen Standort', AGM_LANG ),
+					'title' => __( 'Standort senden?', 'psmaps' ),
+					'ask_checkin' => __( 'Die Webseite möchte wissen, wo Du Dich befindest. Sende Deinen Standort?', 'psmaps' ),
+					'yes' => __( 'Ja', 'psmaps' ),
+					'no' => __( 'Nein', 'psmaps' ),
+					'remember' => __( 'Frag mich nicht noch einmal.', 'psmaps' ),
+					'status_sending' => __( 'Sende Deinen Standort...', 'psmaps' ),
+					'status_saved' => __( 'Standort gespeichert!', 'psmaps' ),
+					'status_submit' => __( 'Sende meinen aktuellen Standort', 'psmaps' ),
 				);
 
 				/*

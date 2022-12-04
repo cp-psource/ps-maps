@@ -27,30 +27,30 @@ class Agm_AdminHelp {
 		return array(
 			array(
 				'id'      => 'agm_google_maps-options',
-				'title'   => __( 'Optionen', AGM_LANG ),
+				'title'   => __( 'Optionen', 'psmaps' ),
 				'content' => '' .
 					'<p>' . __(
 						'Hier kannst Du PS-Maps einrichten ' .
-						'Standardeinstellungen.', AGM_LANG
+						'Standardeinstellungen.', 'psmaps'
 					) . '</p>'
 			),
 			array(
 				'id'      => 'agm_google_maps-custom_fields',
-				'title'   => __( 'Benutzerdefinierte Felder', AGM_LANG ),
+				'title'   => __( 'Benutzerdefinierte Felder', 'psmaps' ),
 				'content' => '' .
 					'<p>' . __(
 						'Hier kannst Du die automatische Erstellung von neuen Google Maps  ' .
 						'einrichten, die durch Deine vorhandenen ' .
-						' benutzerdefinierten Standortfelder ausgelöst wird.', AGM_LANG
+						' benutzerdefinierten Standortfelder ausgelöst wird.', 'psmaps'
 					) . '</p>'
 			),
 			array(
 				'id'      => 'agm_google_maps-addons',
-				'title'   => __( 'Erweiterungen', AGM_LANG ),
+				'title'   => __( 'Erweiterungen', 'psmaps' ),
 				'content' => '' .
 					'<p>' . __(
 						'Dies sind die optionalen Ergänzungen für Google Maps.' .
-						'Maps. Aktiviere oder deaktiviere sie nach Bedarf.', AGM_LANG
+						'Maps. Aktiviere oder deaktiviere sie nach Bedarf.', 'psmaps'
 					) . '</p>'
 			),
 
@@ -59,21 +59,21 @@ class Agm_AdminHelp {
 
 	private function _get_default_sidebar() {
 		return '' .
-			'<h4>' . __( 'PS-Maps', AGM_LANG ) . '</h4>' .
+			'<h4>' . __( 'PS-Maps', 'psmaps' ) . '</h4>' .
 			'<ul>' .
 				'<li>' .
 					'<a href="https://n3rds.work/piestingtal-source-project/ps-gmaps/" target="_blank">' .
-						__( 'Projektseite', AGM_LANG ) .
+						__( 'Projektseite', 'psmaps' ) .
 					'</a>' .
 				'</li>' .
 				'<li>' .
 					'<a href="https://n3rds.work/wiki/piestingtal-source-wiki/ps-google-maps/" target="_blank">' .
-						__( 'Installations- und Anleitungswiki', AGM_LANG ) .
+						__( 'Installations- und Anleitungswiki', 'psmaps' ) .
 					'</a>' .
 				'</li>' .
 				'<li>' .
 					'<a href="https://n3rds.work/forenindex/nw-forum/" target="_blank">' .
-						__( 'Support Forum', AGM_LANG ) .
+						__( 'Support Forum', 'psmaps' ) .
 					'</a>' .
 				'</li>' .
 			'</ul>' .
@@ -122,7 +122,7 @@ class Agm_AdminHelp {
 	public function add_settings_link( $links ) {
 
 		$plugin_link = array(
-			'<a href="' . admin_url( 'options-general.php?page=agm_google_maps' ) . '">' . __( "Einstellungen", AGM_LANG ) . '</a>',
+			'<a href="' . admin_url( 'options-general.php?page=agm_google_maps' ) . '">' . __( "Einstellungen", 'psmaps' ) . '</a>',
 		);
 
 		return array_merge( $plugin_link, $links );

@@ -25,11 +25,11 @@ class Agm_AdminFormRenderer {
 
 		return
 			'<label for="agm_cfyn_' . $name . '-yes">' .
-			'<input type="radio" name="agm_google_maps[custom_fields_options][' . $name . ']" id="agm_cfyn_' . $name . '-yes" value="1" ' . $state_yes . ' /> ' . __( 'Ja', AGM_LANG ) .
+			'<input type="radio" name="agm_google_maps[custom_fields_options][' . $name . ']" id="agm_cfyn_' . $name . '-yes" value="1" ' . $state_yes . ' /> ' . __( 'Ja', 'psmaps' ) .
 			'</label>' .
 			'&nbsp;' .
 			'<label for="agm_cfyn_' . $name . '-no">' .
-			'<input type="radio" name="agm_google_maps[custom_fields_options][' . $name . ']" id="agm_cfyn_' . $name . '-no" value="0" ' . $state_no . ' /> ' . __( 'Nein', AGM_LANG ) .
+			'<input type="radio" name="agm_google_maps[custom_fields_options][' . $name . ']" id="agm_cfyn_' . $name . '-no" value="0" ' . $state_no . ' /> ' . __( 'Nein', 'psmaps' ) .
 			'</label>'
 		;
 	}
@@ -55,10 +55,10 @@ class Agm_AdminFormRenderer {
 	public function create_map_type_box() {
 		$opt = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
 		$items = array(
-			'ROADMAP' => __( 'STRAßENKARTE', AGM_LANG ),
-			'SATELLITE' => __( 'SATELLIT', AGM_LANG ),
-			'HYBRID' => __( 'HYBRID', AGM_LANG ),
-			'TERRAIN' => __( 'TERRAIN', AGM_LANG ),
+			'ROADMAP' => __( 'STRAßENKARTE', 'psmaps' ),
+			'SATELLITE' => __( 'SATELLIT', 'psmaps' ),
+			'HYBRID' => __( 'HYBRID', 'psmaps' ),
+			'TERRAIN' => __( 'TERRAIN', 'psmaps' ),
 		);
 		echo '<select id="map_type" name="agm_google_maps[map_type]">';
 		foreach ( $items as $item => $lbl ) {
@@ -77,24 +77,24 @@ class Agm_AdminFormRenderer {
 
 		echo '<input type="text" class="widefat" name="agm_google_maps[map_api_key]" value="' . esc_attr($value) . '"> ';
 		printf(
-			__('Hole Dir Deinen API-Schlüssel <a href="%s" target="_blank">hier</a>', AGM_LANG),
+			__('Hole Dir Deinen API-Schlüssel <a href="%s" target="_blank">hier</a>', 'psmaps'),
 			esc_url('https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend&keyType=CLIENT_SIDE&reusekey=true')
 		);
 		echo ' ';
 		printf(
-			__('(Du kannst auch auf den <a href="%s" target="_blank">offiziellen Google-Dokumentationsseiten</a> etwas mehr recherchieren)', AGM_LANG),
+			__('(Du kannst auch auf den <a href="%s" target="_blank">offiziellen Google-Dokumentationsseiten</a> etwas mehr recherchieren)', 'psmaps'),
 			esc_url('https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key')
 		);
 	}
 
 	public function create_map_zoom_box() {
 		$items = array(
-			'1' => __( 'Erde', AGM_LANG ),
-			'3' => __( 'Kontinent', AGM_LANG ),
-			'5' => __( 'Region', AGM_LANG ),
-			'7' => __( 'Nahe Städte', AGM_LANG ),
-			'12' => __( 'Stadtplan', AGM_LANG ),
-			'15' => __( 'Details', AGM_LANG ),
+			'1' => __( 'Erde', 'psmaps' ),
+			'3' => __( 'Kontinent', 'psmaps' ),
+			'5' => __( 'Region', 'psmaps' ),
+			'7' => __( 'Nahe Städte', 'psmaps' ),
+			'12' => __( 'Stadtplan', 'psmaps' ),
+			'15' => __( 'Details', 'psmaps' ),
 		);
 		$opt = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
 		$zoom = ! empty( $opt['zoom'] ) && is_numeric( $opt['zoom'] ) ? (int) $opt['zoom'] : 1;
@@ -115,10 +115,10 @@ class Agm_AdminFormRenderer {
 				</option>
 			<?php endforeach; ?>
 			</select>
-			&nbsp;<a href="#agm-advanced_zoom" id="agm-advanced_zoom-toggler"><?php _e( 'Erweitert', AGM_LANG ); ?></a>
+			&nbsp;<a href="#agm-advanced_zoom" id="agm-advanced_zoom-toggler"><?php _e( 'Erweitert', 'psmaps' ); ?></a>
 			<?php _e(
-				'<div>Bitte beachte, dass diese Titel nur Näherungswerte sind, aber '.
-				'aber im Allgemeinen zur Beschreibung passen.</div>', AGM_LANG
+				'<div>Bitte beachte, dass diese Titel nur Näherungswerte sind, '.
+				'jedoch im Allgemeinen zur Beschreibung passen.</div>', 'psmaps'
 			); ?>
 		</div>
 		<?php
@@ -132,8 +132,8 @@ class Agm_AdminFormRenderer {
 				value="<?php echo esc_attr( $zoom ); ?>"
 				id="agm-zoom-advanced"
 				<?php echo '' . $advanced_disabled; ?> />
-			&nbsp;<a href="#agm-advanced_zoom" id="agm-basic_zoom-toggler"><?php _e( 'Basismodus', AGM_LANG ); ?></a>
-			<?php _e( '<div>Bitte gib den numerischen Zoomwert ein.</div>', AGM_LANG ); ?>
+			&nbsp;<a href="#agm-advanced_zoom" id="agm-basic_zoom-toggler"><?php _e( 'Basismodus', 'psmaps' ); ?></a>
+			<?php _e( '<div>Bitte gib den numerischen Zoomwert ein.</div>', 'psmaps' ); ?>
 		</div>
 		<?php
 
@@ -171,8 +171,8 @@ class Agm_AdminFormRenderer {
 	public function create_map_units_box() {
 		$opt = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
 		$items = array(
-			'METRIC' => __( 'Metrisch', AGM_LANG ),
-			'IMPERIAL' => __( 'Imperial', AGM_LANG ),
+			'METRIC' => __( 'Metrisch', 'psmaps' ),
+			'IMPERIAL' => __( 'Imperial', 'psmaps' ),
 		);
 		echo '<select id="zoom" name="agm_google_maps[units]">';
 		foreach ( $items as $item => $label ) {
@@ -180,17 +180,17 @@ class Agm_AdminFormRenderer {
 			echo '<option value="' . $item .'" ' . $selected . '>' . $label . '</option>';
 		}
 		echo '</select>';
-		_e( '<div>Diese Einheiten werden verwendet, um Entfernungen für Richtungen auszudrücken</div>', AGM_LANG );
+		_e( '<div>Diese Einheiten werden verwendet, um Entfernungen für Richtungen auszudrücken</div>', 'psmaps' );
 	}
 
 	public function create_image_size_box() {
 		$opt = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
 		$items = array(
-			'small' => __( 'Klein', AGM_LANG ),
-			'medium' => __( 'Mittel', AGM_LANG ),
-			'thumbnail' => __( 'Thumbnail', AGM_LANG ),
-			'square' => __( 'Quadrat', AGM_LANG ),
-			'mini_square' => __( 'Mini Quadrat', AGM_LANG ),
+			'small' => __( 'Klein', 'psmaps' ),
+			'medium' => __( 'Mittel', 'psmaps' ),
+			'thumbnail' => __( 'Thumbnail', 'psmaps' ),
+			'square' => __( 'Quadrat', 'psmaps' ),
+			'mini_square' => __( 'Mini Quadrat', 'psmaps' ),
 		);
 		echo '<select id="image_size" name="agm_google_maps[image_size]">';
 		foreach ( $items as $item => $lbl ) {
@@ -211,7 +211,7 @@ class Agm_AdminFormRenderer {
 			<?php checked( 'left' == $pos ); ?> />
 		<label for="map_alignment_left">
 			<img src="<?php echo esc_attr( AGM_PLUGIN_URL ); ?>img/system/left.png" />
-			<?php _e( 'Links', AGM_LANG ); ?>
+			<?php _e( 'Links', 'psmaps' ); ?>
 		</label><br />
 
 		<input type="radio"
@@ -221,7 +221,7 @@ class Agm_AdminFormRenderer {
 			<?php checked( 'center' == $pos ); ?> />
 		<label for="map_alignment_center">
 			<img src="<?php echo esc_attr( AGM_PLUGIN_URL ); ?>img/system/center.png" />
-			<?php _e( 'Zentriert', AGM_LANG ); ?>
+			<?php _e( 'Zentriert', 'psmaps' ); ?>
 		</label><br />
 
 		<input type="radio"
@@ -231,7 +231,7 @@ class Agm_AdminFormRenderer {
 			<?php checked( 'right' == $pos ); ?> />
 		<label for="map_alignment_right">
 			<img src="<?php echo esc_attr( AGM_PLUGIN_URL ); ?>img/system/right.png" />
-			<?php _e( 'Rechts', AGM_LANG ); ?>
+			<?php _e( 'Rechts', 'psmaps' ); ?>
 		</label><br />
 		<?php
 	}
@@ -239,7 +239,7 @@ class Agm_AdminFormRenderer {
 	public function create_custom_css_box() {
 		$opt = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
 		$css = @$opt['additional_css'];
-		$css = htmlspecialchars( $css );  // preserve the original formating
+		$css = htmlspecialchars( $css ??'' );  // preserve the original formating
 		?>
 		<textarea name="agm_google_maps[additional_css]" class="widefat" rows="4" cols="32"><?php
 		echo esc_textarea( $css );
@@ -247,7 +247,7 @@ class Agm_AdminFormRenderer {
 		<?php
 		_e(
 			'<p>In diesem Feld kannst Du einige schnelle Stiländerungen hinzufügen,  ' .
-			'um das Erscheinungsbild der Karten besser mit Deinem Theme zu kombinieren.</p>', AGM_LANG
+			'um das Erscheinungsbild der Karten besser mit Deinem Theme zu kombinieren.</p>', 'psmaps'
 		);
 		_e(
 			'<p>Möglicherweise möchtest Du Stile für einige dieser Selektoren festlegen: ' .
@@ -256,7 +256,7 @@ class Agm_AdminFormRenderer {
 			'<code>a.agm_mh_marker_item_directions</code>, ' .
 			'<code>.agm_mh_marker_list</code>, ' .
 			'<code>.agm_mh_marker_item</code>, ' .
-			'<code>.agm_mh_marker_item_content</code></p>', AGM_LANG
+			'<code>.agm_mh_marker_item_content</code></p>', 'psmaps'
 		);
 	}
 
@@ -270,7 +270,7 @@ class Agm_AdminFormRenderer {
 			id="agm_snapping-yes"
 			value="1"
 			<?php checked( $use ); ?> />
-			<?php _e( 'Ja', AGM_LANG ); ?>
+			<?php _e( 'Ja', 'psmaps' ); ?>
 		</label>
 		&nbsp; | &nbsp;
 		<label for="agm_snapping-no">
@@ -279,7 +279,7 @@ class Agm_AdminFormRenderer {
 			id="agm_snapping-no"
 			value="0"
 			<?php checked( ! $use ); ?> />
-			<?php _e( 'Nein', AGM_LANG ); ?>
+			<?php _e( 'Nein', 'psmaps' ); ?>
 		</label>
 		<?php
 	}
@@ -297,7 +297,7 @@ class Agm_AdminFormRenderer {
 			value="map"
 			<?php checked( ! $use ); ?> />
 			<code>[map]</code>
-			<?php _e( '(Standard)', AGM_LANG ); ?>
+			<?php _e( '(Standard)', 'psmaps' ); ?>
 		</label>
 		&nbsp; | &nbsp;
 		<label for="shortcode_map-no">
@@ -312,7 +312,7 @@ class Agm_AdminFormRenderer {
 		<p>
 			<?php _e(
 				'Wenn die Karte nicht auf Deiner Seite angezeigt wird, versuche ' .
-				'den alternativen Shortcode <code>[agm_map]</code> zu verwenden.', AGM_LANG
+				'den alternativen Shortcode <code>[agm_map]</code> zu verwenden.', 'psmaps'
 			); ?>
 			<div class="alt-hint" style="display:none;color: #900;margin: 10px 0px;">
 			<?php _e(
@@ -320,7 +320,7 @@ class Agm_AdminFormRenderer {
 				'die Erweiterung "Fixes und Reparaturen" und überprüfe den Status von ' .
 				'"Map Shortcode umbenennen". Bei Bedarf aktualisiert dieses Tool ' .
 				'automatisch alle Ihre Seiten und Beiträge, um den ' .
-				'neuen Shortcode zu verwenden.', AGM_LANG
+				'neuen Shortcode zu verwenden.', 'psmaps'
 			); ?>
 			</div>
 		</p>
@@ -347,7 +347,7 @@ class Agm_AdminFormRenderer {
 			id="agm_directions_snapping-yes"
 			value="1"
 			<?php checked( $use ); ?> />
-			<?php _e( 'Ja', AGM_LANG ); ?>
+			<?php _e( 'Ja', 'psmaps' ); ?>
 		</label>
 		&nbsp; | &nbsp;
 		<label for="agm_directions_snapping-no">
@@ -356,7 +356,7 @@ class Agm_AdminFormRenderer {
 			id="agm_directions_snapping-no"
 			value="0"
 			<?php checked( ! $use ); ?> />
-			<?php _e( 'Nein', AGM_LANG ); ?>
+			<?php _e( 'Nein', 'psmaps' ); ?>
 		</label>
 		<?php
 	}
@@ -372,7 +372,7 @@ class Agm_AdminFormRenderer {
 			id="agm_use_custom_fields-yes"
 			value="1"
 			<?php checked( $use ); ?> />
-			<?php _e( 'Ja', AGM_LANG ); ?>
+			<?php _e( 'Ja', 'psmaps' ); ?>
 		</label>
 		&nbsp; | &nbsp;
 		<label for="agm_use_custom_fields-no">
@@ -381,7 +381,7 @@ class Agm_AdminFormRenderer {
 			id="agm_use_custom_fields-no"
 			value="0"
 			<?php checked( ! $use ); ?> />
-			<?php _e( 'Nein', AGM_LANG ); ?>
+			<?php _e( 'Nein', 'psmaps' ); ?>
 		</label>
 		<?php
 	}
@@ -392,15 +392,15 @@ class Agm_AdminFormRenderer {
 		$lon_field = @$opt['custom_fields_map']['longitude_field'];
 		$add_field = @$opt['custom_fields_map']['address_field'];
 
-		echo '<div><b>' . __( 'Meine Beiträge haben Breiten-/Längengrade', AGM_LANG ) . '</b></div>';
-		_e( 'Breitengrad Feldname:', AGM_LANG );
+		echo '<div><b>' . __( 'Meine Beiträge haben Breiten-/Längengrade', 'psmaps' ) . '</b></div>';
+		_e( 'Breitengrad Feldname:', 'psmaps' );
 		echo ' <input type="text" name="agm_google_maps[custom_fields_map][latitude_field]" size="12" value="' . esc_attr( $lat_field ) . '" />';
 		echo '<br />';
-		_e( 'Längengrad Feldname:', AGM_LANG );
+		_e( 'Längengrad Feldname:', 'psmaps' );
 		echo ' <input type="text" name="agm_google_maps[custom_fields_map][longitude_field]" size="12" value="' . esc_attr( $lon_field ) . '" />';
 
-		echo '<div><b>' . __( 'Meine Beiträge haben ein Adressfeld', AGM_LANG ) . '</b></div>';
-		_e( 'Adressfeldname(n):', AGM_LANG );
+		echo '<div><b>' . __( 'Meine Beiträge haben ein Adressfeld', 'psmaps' ) . '</b></div>';
+		_e( 'Adressfeldname(n):', 'psmaps' );
 		echo ' <input type="text" name="agm_google_maps[custom_fields_map][address_field]" size="24" value="' . esc_attr( $add_field ) . '" />';
 
 		$discard = @$opt['custom_fields_map']['discard_old'] ? 'checked="checked"' : '';
@@ -408,16 +408,16 @@ class Agm_AdminFormRenderer {
 		echo '<input type="hidden" name="agm_google_maps[custom_fields_map][discard_old]" value="" />';
 		echo '<input type="checkbox" id="agm-custom_fields-discard_old" name="agm_google_maps[custom_fields_map][discard_old]" value="1" ' . $discard . ' />';
 		echo '&nbsp;';
-		echo '<label for="agm-custom_fields-discard_old">' . __( 'Alte Karte verwerfen, wenn sich der Wert meiner benutzerdefinierten Felder ändert', AGM_LANG ) . '</label>';
+		echo '<label for="agm-custom_fields-discard_old">' . __( 'Alte Karte verwerfen, wenn sich der Wert meiner benutzerdefinierten Felder ändert', 'psmaps' ) . '</label>';
 	}
 
 	public function create_custom_fields_options_box() {
 		$opt = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
 		$opt = @$opt['custom_fields_options'];
-		echo '<div><small>' . __( '(Eine neue Karte wird automatisch mit den oben angegebenen Standardeinstellungen erstellt )', AGM_LANG ) . '</small></div>';
-		_e( 'Ordne die neue Karte dem Beitrag zu:', AGM_LANG );
+		echo '<div><small>' . __( '(Eine neue Karte wird automatisch mit den oben angegebenen Standardeinstellungen erstellt )', 'psmaps' ) . '</small></div>';
+		_e( 'Ordne die neue Karte dem Beitrag zu:', 'psmaps' );
 		echo ' ' . $this->_create_cfyn_box( 'associate_map', @$opt['associate_map'] ) . '<br />';
-		_e( 'Karte automatisch anzeigen:', AGM_LANG );
+		_e( 'Karte automatisch anzeigen:', 'psmaps' );
 		echo ' ' . $this->_create_cfyn_box( 'autoshow_map', @$opt['autoshow_map'] ) . '<br />';
 
 		$positions = array(
@@ -426,12 +426,12 @@ class Agm_AdminFormRenderer {
 		);
 		$select = '<select name="agm_google_maps[custom_fields_options][map_position]">';
 		foreach ( $positions as $key => $lbl ) {
-			$select .= "<option value='{$key}' " . (( $key == @$opt['map_position'] ) ? 'selected="selected"' : '' ) . '>' . __( $lbl, AGM_LANG ) . '</option>';
+			$select .= "<option value='{$key}' " . (( $key == @$opt['map_position'] ) ? 'selected="selected"' : '' ) . '>' . __( $lbl, 'psmaps' ) . '</option>';
 		}
 		$select .= '</select>';
 
 		printf(
-			__( 'Wenn die vorherige Option auf "Ja" gesetzt ist, wird die neue Karte %s im Beitrags-Inhalt angezeigt', AGM_LANG ),
+			__( 'Wenn die vorherige Option auf "Ja" gesetzt ist, wird die neue Karte %s im Beitrags-Inhalt angezeigt', 'psmaps' ),
 			$select
 		);
 	}
@@ -454,7 +454,7 @@ class Agm_AdminFormRenderer {
 		<p>
 			<?php _e(
 				'Außerdem wird ein Widget hinzugefügt, mit dem Du Deiner Seitenleiste ' .
-				'Karten hinzufügen kannst (siehe Darstellungs-Widgets).', AGM_LANG
+				'Karten hinzufügen kannst (siehe Darstellungs-Widgets).', 'psmaps'
 			); ?>
 			<iframe style="width: 100%; min-height:600px" src="https://n3rds.work/piestingtal_source/ps-google-maps-plugin/" title="PS-Maps Projektseite"></iframe>
 		</p>
@@ -467,7 +467,7 @@ class Agm_AdminFormRenderer {
 					__(
 						'Ausführlichere Anweisungen zur Verwendung ' .
 						'findest Du unter <a target="_blank" href="%s">' .
-						'Anweisungen zur Installation und Verwendung von PS-Maps</a>.', AGM_LANG
+						'Anweisungen zur Installation und Verwendung von PS-Maps</a>.', 'psmaps'
 					),
 					'https://n3rds.work/docs/ps-google-maps-handbuch/'
 				); ?>
@@ -490,17 +490,17 @@ class Agm_AdminFormRenderer {
 		?>
 		<p class="subsubsub">
 			<a href="#add-ons" class="agm-addons-all current">
-				<?php _e( 'Alle', AGM_LANG ); ?>
+				<?php _e( 'Alle', 'psmaps' ); ?>
 				<span class="count">(<?php echo esc_html( $count_all ); ?>)</span>
 			</a>
 			|
 			<a href="#add-ons" class="agm-addons-active">
-				<?php _e( 'Aktive', AGM_LANG ); ?>
+				<?php _e( 'Aktive', 'psmaps' ); ?>
 				<span class="count">(<?php echo esc_html( $count_active ); ?>)</span>
 			</a>
 			|
 			<a href="#add-ons" class="agm-addons-inactive">
-				<?php _e( 'Inaktiv', AGM_LANG ); ?>
+				<?php _e( 'Inaktiv', 'psmaps' ); ?>
 				<span class="count">(<?php echo esc_html( $count_inactive ); ?>)</span>
 			</a>
 		</p>
@@ -512,8 +512,8 @@ class Agm_AdminFormRenderer {
 			<?php echo '<' . $section . '>'; ?>
 			<tr>
 			<th width="10" class="check-column">&nbsp;</th>
-			<th width="30%"><?php _e( 'Erweiterungsname', AGM_LANG ); ?></th>
-			<th width="70%"><?php _e( 'Erweiterung Beschreibung', AGM_LANG ); ?></th>
+			<th width="30%"><?php _e( 'Erweiterungsname', 'psmaps' ); ?></th>
+			<th width="70%"><?php _e( 'Erweiterung Beschreibung', 'psmaps' ); ?></th>
 			</tr>
 			<?php echo '</' . $section . '>'; ?>
 		<?php endforeach;
@@ -558,7 +558,7 @@ class Agm_AdminFormRenderer {
 					class="agm_plugin"
 					data-action="agm_deactivate_plugin"
 					data-plugin="<?php echo esc_attr( $data['key'] ); ?>" >
-				<?php _e( 'Deaktivieren', AGM_LANG ); ?>
+				<?php _e( 'Deaktivieren', 'psmaps' ); ?>
 				</a>
 			<?php else : ?>
 				<?php if ( $can_use ) : ?>
@@ -566,13 +566,13 @@ class Agm_AdminFormRenderer {
 					class="agm_plugin"
 					data-action="agm_activate_plugin"
 					data-plugin="<?php echo esc_attr( $data['key'] ); ?>" >
-					<?php _e( 'Aktivieren', AGM_LANG ); ?>
+					<?php _e( 'Aktivieren', 'psmaps' ); ?>
 					</a>
 				<?php endif; ?>
 			<?php endif; ?>
 			<?php if ( ! $can_use && strlen( @$data['requires'] ) ) : ?>
 				<div>
-					<?php _e( 'Benötigt ', AGM_LANG ); ?>
+					<?php _e( 'Benötigt ', 'psmaps' ); ?>
 					<?php echo esc_html( $data['requires'] ); ?>
 				</div>
 			<?php endif; ?>
@@ -584,7 +584,7 @@ class Agm_AdminFormRenderer {
 				</p>
 				<?php if ( ! empty( $data['example'] ) ) : ?>
 					<p class="example">
-					<?php _e( 'Beispiel:', AGM_LANG ); ?><br />
+					<?php _e( 'Beispiel:', 'psmaps' ); ?><br />
 					<code><?php echo '' . implode( '</code>, <code>', $data['example'] ); ?></code>
 					</p>
 				<?php endif; ?>

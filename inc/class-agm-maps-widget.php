@@ -53,12 +53,12 @@ class AgmMapsWidget extends WP_Widget {
 		$show_posts = $show_posts ? $show_posts : 1;
 
 		$zoom_items = array(
-			'1' => __( 'Erde', AGM_LANG ),
-			'3' => __( 'Kontinent', AGM_LANG ),
-			'5' => __( 'Region', AGM_LANG ),
-			'7' => __( 'Nahe Städte', AGM_LANG ),
-			'12' => __( 'Stadtplan', AGM_LANG ),
-			'15' => __( 'Details', AGM_LANG ),
+			'1' => __( 'Erde', 'psmaps' ),
+			'3' => __( 'Kontinent', 'psmaps' ),
+			'5' => __( 'Region', 'psmaps' ),
+			'7' => __( 'Nahe Städte', 'psmaps' ),
+			'12' => __( 'Stadtplan', 'psmaps' ),
+			'15' => __( 'Details', 'psmaps' ),
 		);
 
 		// Load *all* map titles/ids

@@ -55,7 +55,7 @@ class Agm_Traffic_AdminPages {
 	public function load_scripts() {
 		$data = array(
 			'lang' => array(
-				'show_traffic' => __( 'Verkehr anzeigen', AGM_LANG ),
+				'show_traffic' => __( 'Verkehr anzeigen', 'psmaps' ),
 			),
 		);
 

@@ -39,7 +39,7 @@ class Agm_DZ_AdminPages {
 
 		$data = array(
 			'lang' => array(
-				'disable_scroll' => __( 'Bildlauf deaktivieren', AGM_LANG ),
+				'disable_scroll' => __( 'Bildlauf deaktivieren', 'psmaps' ),
 			),
 		);
 

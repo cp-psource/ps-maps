@@ -30,7 +30,7 @@ class AgmAdminMaps {
 		// Overview
 		add_settings_section(
 			'agm_google_maps_overview',
-			__( 'Übersicht', AGM_LANG ),
+			__( 'Übersicht', 'psmaps' ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
@@ -45,14 +45,14 @@ class AgmAdminMaps {
 		// Options
 		add_settings_section(
 			'agm_google_maps',
-			__( 'Optionen', AGM_LANG ),
+			__( 'Optionen', 'psmaps' ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 
 		add_settings_field(
 			'agm_google_maps_default_map_api_key',
-			__( 'Google Maps API-Schlüssel', AGM_LANG ),
+			__( 'Google Maps API-Schlüssel', 'psmaps' ),
 			array( $form, 'create_map_api_key_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
@@ -60,21 +60,21 @@ class AgmAdminMaps {
 
 		add_settings_field(
 			'agm_google_maps_default_height',
-			__( 'Standardkartenhöhe', AGM_LANG ),
+			__( 'Standardkartenhöhe', 'psmaps' ),
 			array( $form, 'create_height_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
 		);
 		add_settings_field(
 			'agm_google_maps_default_width',
-			__( 'Standardkartenbreite', AGM_LANG ),
+			__( 'Standardkartenbreite', 'psmaps' ),
 			array( $form, 'create_width_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
 		);
 		add_settings_field(
 			'agm_google_maps_default_map_type',
-			__( 'Standardkartentyp', AGM_LANG ),
+			__( 'Standardkartentyp', 'psmaps' ),
 			array( $form, 'create_map_type_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
@@ -82,7 +82,7 @@ class AgmAdminMaps {
 
 		add_settings_field(
 			'agm_google_maps_default_map_zoom',
-			__( 'Standard-Kartenzoom', AGM_LANG ),
+			__( 'Standard-Kartenzoom', 'psmaps' ),
 			array( $form, 'create_map_zoom_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
@@ -90,7 +90,7 @@ class AgmAdminMaps {
 
 		add_settings_field(
 			'agm_google_maps_default_map_units',
-			__( 'Standardkarteneinheiten', AGM_LANG ),
+			__( 'Standardkarteneinheiten', 'psmaps' ),
 			array( $form, 'create_map_units_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
@@ -98,14 +98,14 @@ class AgmAdminMaps {
 		/*
 		add_settings_field(
 			'agm_google_maps_default_image_size',
-			__( 'Default image size', AGM_LANG ),
+			__( 'Default image size', 'psmaps' ),
 			array( $form, 'create_image_size_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
 		);
 		add_settings_field(
 			'agm_google_maps_default_image_limit',
-			__( 'Default image limit', AGM_LANG ),
+			__( 'Default image limit', 'psmaps' ),
 			array( $form, 'create_image_limit_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
@@ -113,35 +113,35 @@ class AgmAdminMaps {
 		*/
 		add_settings_field(
 			'agm_google_maps_default_map_alignment',
-			__( 'Standardkartenausrichtung', AGM_LANG ),
+			__( 'Standardkartenausrichtung', 'psmaps' ),
 			array( $form, 'create_alignment_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
 		);
 		add_settings_field(
 			'agm_google_maps_snapping',
-			__( 'Snapping', AGM_LANG ),
+			__( 'Snapping', 'psmaps' ),
 			array( $form, 'create_snapping_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
 		);
 		add_settings_field(
 			'agm_google_maps_directions_snapping',
-			__( 'Richtungen Snapping', AGM_LANG ),
+			__( 'Richtungen Snapping', 'psmaps' ),
 			array( $form, 'create_directions_snapping_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
 		);
 		add_settings_field(
 			'agm_google_maps_custom_css',
-			__( 'Zusätzliches CSS', AGM_LANG ),
+			__( 'Zusätzliches CSS', 'psmaps' ),
 			array( $form, 'create_custom_css_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
 		);
 		add_settings_field(
 			'agm_google_maps_shortcode',
-			__( 'Shortcode ändern', AGM_LANG ),
+			__( 'Shortcode ändern', 'psmaps' ),
 			array( $form, 'create_alt_shortcode_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps'
@@ -150,27 +150,27 @@ class AgmAdminMaps {
 		// Section
 		add_settings_section(
 			'agm_google_maps_fields',
-			__( 'Benutzerdefinierte Felder', AGM_LANG ),
+			__( 'Benutzerdefinierte Felder', 'psmaps' ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 		add_settings_field(
 			'agm_google_maps_use_custom_fields',
-			__( 'Verwende die Unterstützung für benutzerdefinierte Post-Meta-Felder', AGM_LANG ),
+			__( 'Verwende die Unterstützung für benutzerdefinierte Post-Meta-Felder', 'psmaps' ),
 			array( $form, 'create_use_custom_fields_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_fields'
 		);
 		add_settings_field(
 			'agm_google_maps_custom_fields_map',
-			__( 'Ordne benutzerdefinierte Felder zu', AGM_LANG ),
+			__( 'Ordne benutzerdefinierte Felder zu', 'psmaps' ),
 			array( $form, 'create_custom_fields_map_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_fields'
 		);
 		add_settings_field(
 			'agm_google_maps_custom_fields_options',
-			__( 'Wenn diese Felder gefunden werden, möchte ich', AGM_LANG ),
+			__( 'Wenn diese Felder gefunden werden, möchte ich', 'psmaps' ),
 			array( $form, 'create_custom_fields_options_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_fields'
@@ -184,7 +184,7 @@ class AgmAdminMaps {
 
 			add_settings_section(
 				'agm_google_maps_plugins',
-				__( 'Erweiterungen', AGM_LANG ),
+				__( 'Erweiterungen', 'psmaps' ),
 				'__return_false',
 				'agm_google_maps_options_page'
 			);
@@ -225,7 +225,7 @@ class AgmAdminMaps {
 	 */
 	public function create_admin_menu_entry() {
 		// Show branding for singular installs.
-		$title = is_multisite() ? __( 'PS-Maps', AGM_LANG ) : 'PS-Maps';
+		$title = is_multisite() ? __( 'PS-Maps', 'psmaps' ) : 'PS-Maps';
 
 		// Register our google maps options page.
 		$hook = add_options_page(
@@ -325,30 +325,30 @@ class AgmAdminMaps {
 		lib3()->ui->data(
 			'l10nEditor',
 			array(
-				'loading' => __( 'Karten laden ... bitte warten', AGM_LANG ),
-				'use_this_map' => __( 'Füge diese Karte ein', AGM_LANG ),
-				'preview_or_edit' => __( 'Vorschau/Bearbeiten', AGM_LANG ),
-				'delete_map' => __( 'Löschen', AGM_LANG ),
-				'add_map' => __( 'Karte hinzufügen', AGM_LANG ),
-				'google_maps' => __( 'PS-Maps', AGM_LANG ),
-				'load_next_maps' => __( 'Weiter &raquo;', AGM_LANG ),
-				'load_prev_maps' => __( '&laquo; Zurück', AGM_LANG ),
-				'existing_map' => __( 'Bestehende Karten', AGM_LANG ),
-				'edit_map' => __( 'Vorschau und Bearbeitung der Karte', AGM_LANG ),
-				'no_existing_maps' => __( 'Keine vorhandenen Karten', AGM_LANG ),
-				'new_map' => __( 'Neue Karte', AGM_LANG ),
-				'advanced' => __( 'Erweiterter Modus', AGM_LANG ),
-				'advanced_mode_activate_help' => __( 'Erweiterter Modus: Führe mehrere Karten zu einer neuen Karte zusammen oder lösche mehrere Karten', AGM_LANG ),
-				'advanced_mode_help' => __( 'Erstellt eine neue Karte mit allen Markierungen der ausgewählten Karten', AGM_LANG ),
-				'advanced_off' => __( 'Beende den erweiterten Modus', AGM_LANG ),
-				'merge_locations' => __( 'Verschmelzen', AGM_LANG ),
-				'batch_delete' => __( 'Löschen', AGM_LANG ),
-				'new_map_intro' => __( 'Erstelle eine neue Karte, die in diesen Beitrag oder diese Seite eingefügt werden kann', AGM_LANG ),
-				'no_maps' => __( 'Du hast noch keine Karten erstellt.', AGM_LANG ),
-				'delete_confirmation' => __( 'Möchtest Du diese Karte dauerhaft löschen?', AGM_LANG ),
-				'batch_delete_confirmation' => __( 'Möchtest Du alle ausgewählten Karten dauerhaft löschen?', AGM_LANG ),
-				'confirm_delete' => __( 'Löschen', AGM_LANG ),
-				'confirm_cancel' => __( 'Abbrechen', AGM_LANG ),
+				'loading' => __( 'Karten laden ... bitte warten', 'psmaps' ),
+				'use_this_map' => __( 'Füge diese Karte ein', 'psmaps' ),
+				'preview_or_edit' => __( 'Vorschau/Bearbeiten', 'psmaps' ),
+				'delete_map' => __( 'Löschen', 'psmaps' ),
+				'add_map' => __( 'Karte hinzufügen', 'psmaps' ),
+				'google_maps' => __( 'PS-Maps', 'psmaps' ),
+				'load_next_maps' => __( 'Weiter &raquo;', 'psmaps' ),
+				'load_prev_maps' => __( '&laquo; Zurück', 'psmaps' ),
+				'existing_map' => __( 'Bestehende Karten', 'psmaps' ),
+				'edit_map' => __( 'Vorschau und Bearbeitung der Karte', 'psmaps' ),
+				'no_existing_maps' => __( 'Keine vorhandenen Karten', 'psmaps' ),
+				'new_map' => __( 'Neue Karte', 'psmaps' ),
+				'advanced' => __( 'Erweiterter Modus', 'psmaps' ),
+				'advanced_mode_activate_help' => __( 'Erweiterter Modus: Führe mehrere Karten zu einer neuen Karte zusammen oder lösche mehrere Karten', 'psmaps' ),
+				'advanced_mode_help' => __( 'Erstellt eine neue Karte mit allen Markierungen der ausgewählten Karten', 'psmaps' ),
+				'advanced_off' => __( 'Beende den erweiterten Modus', 'psmaps' ),
+				'merge_locations' => __( 'Verschmelzen', 'psmaps' ),
+				'batch_delete' => __( 'Löschen', 'psmaps' ),
+				'new_map_intro' => __( 'Erstelle eine neue Karte, die in diesen Beitrag oder diese Seite eingefügt werden kann', 'psmaps' ),
+				'no_maps' => __( 'Du hast noch keine Karten erstellt.', 'psmaps' ),
+				'delete_confirmation' => __( 'Möchtest Du diese Karte dauerhaft löschen?', 'psmaps' ),
+				'batch_delete_confirmation' => __( 'Möchtest Du alle ausgewählten Karten dauerhaft löschen?', 'psmaps' ),
+				'confirm_delete' => __( 'Löschen', 'psmaps' ),
+				'confirm_cancel' => __( 'Abbrechen', 'psmaps' ),
 			)
 		);
 
@@ -367,8 +367,8 @@ class AgmAdminMaps {
 		lib3()->ui->data(
 			'l10nEditor',
 			array(
-				'add_map' => __( 'Karte hinzufügen', AGM_LANG ),
-				'new_map' => __( 'Neue Karte erstellen', AGM_LANG ),
+				'add_map' => __( 'Karte hinzufügen', 'psmaps' ),
+				'new_map' => __( 'Neue Karte erstellen', 'psmaps' ),
 			)
 		);
 
@@ -383,48 +383,48 @@ class AgmAdminMaps {
 		lib3()->ui->data(
 			'l10nStrings',
 			array(
-				'geocoding_error' => __( 'Beim Geokodieren Deines Standorts ist ein Fehler aufgetreten. Überprüfe die Adresse und versuche es erneut', AGM_LANG ),
-				'type_in_location' => __( 'Bitte gib den Ort ein', AGM_LANG ),
-				'add' => __( 'Marker hinzufügen', AGM_LANG ),
-				'title' => __( 'Titel', AGM_LANG ),
-				'body' => __( 'Inhalt', AGM_LANG ),
-				'delete_item' => __( 'Löschen', AGM_LANG ),
-				'save' => __( 'Änderungen speichern', AGM_LANG ),
-				'saved' => __( 'Alle Änderungen gespeichert!', AGM_LANG ),
-				'saving' => __( 'Daten senden...', AGM_LANG ),
-				'insert' => __( 'Füge diese Karte ein', AGM_LANG ),
-				'map_not_saved' => __( 'Karte nicht gespeichert', AGM_LANG ),
-				'map_name_missing' => __( 'Bitte gib dieser Karte einen Namen', AGM_LANG ),
-				'please_save_map' => __( 'Bitte speichere zuerst die Karte', AGM_LANG ),
-				'go_back' => __( 'Zurück', AGM_LANG ),
-				'map_title' => __( 'Gib hier den Kartentitel ein', AGM_LANG ),
-				'options' => __( 'Kartenoptionen', AGM_LANG ),
-				'options_help' => __( 'Verwende die Kartenoptionen, um Kartengröße, Erscheinungsbild, Ausrichtung und Bildstreifen zu ändern', AGM_LANG ),
-				'drop_marker' => __( 'Setze Marker', AGM_LANG ),
-				'zoom_in_help' => __( 'Tipp: Für beste Kartenqualität <strong>zoome</strong>, um Deine Markierungen vor dem Speichern zu platzieren', AGM_LANG ),
-				'map_associate' => __( 'Verknüpfe diese Karte mit diesem Inhalt', AGM_LANG ),
-				'already_associated_width' => __( 'Diese Karte ist diesen bereits zugeordnet', AGM_LANG ),
-				'association_help' => __( 'Durch das Verknüpfen einer Karte mit einem Beitrag kannst Du diese Karte auf erweiterte Weise verwenden, um sie dynamisch im Seitenleisten-Widget oder in einem erweiterten Mashup anzuzeigen', AGM_LANG ),
-				'map_size' => __( 'Kartengröße', AGM_LANG ),
-				'use_default_size' => __( 'Standardgröße verwenden', AGM_LANG ),
-				'map_appearance' => __( 'Kartenaussehen', AGM_LANG ),
-				'map_alignment' => __( 'Kartenausrichtung', AGM_LANG ),
-				'map_alignment_left' => __( 'Links', AGM_LANG ),
-				'map_alignment_center' => __( 'Zentriert', AGM_LANG ),
-				'map_alignment_right' => __( 'Rechts', AGM_LANG ),
-				'show_map' => __( 'Karte anzeigen', AGM_LANG ),
-				'show_posts' => __( 'Beiträge anzeigen', AGM_LANG ),
-				'show_markers' => __( 'Markierungsliste anzeigen', AGM_LANG ),
-				'images_strip' => __( 'Einstellungen für Bildstreifen', AGM_LANG ),
-				'show_images' => __( 'Bildstreifen anzeigen', AGM_LANG ),
-				'image_size' => __( 'Verwende die Bildgröße', AGM_LANG ),
-				//'panoramio_overlay' => __( 'Panoramio overlay', AGM_LANG ),
-				//'show_panoramio_overlay' => __( 'Show Panoramio overlay', AGM_LANG ),
-				//'panoramio_overlay_tag' => __( 'Restrict Panoramio overlay photos to this tag', AGM_LANG ),
-				//'panoramio_overlay_tag_help' => __( 'Leave this field empty for no tag restrictions', AGM_LANG ),
-				'image_limit' => __( 'Zeige so viele Bilder', AGM_LANG ),
-				'add_location' => __( 'Ort hinzufügen:', AGM_LANG ),
-				'apply_settings' => __( 'Anwenden', AGM_LANG ),
+				'geocoding_error' => __( 'Beim Geokodieren Deines Standorts ist ein Fehler aufgetreten. Überprüfe die Adresse und versuche es erneut', 'psmaps' ),
+				'type_in_location' => __( 'Bitte gib den Ort ein', 'psmaps' ),
+				'add' => __( 'Marker hinzufügen', 'psmaps' ),
+				'title' => __( 'Titel', 'psmaps' ),
+				'body' => __( 'Inhalt', 'psmaps' ),
+				'delete_item' => __( 'Löschen', 'psmaps' ),
+				'save' => __( 'Änderungen speichern', 'psmaps' ),
+				'saved' => __( 'Alle Änderungen gespeichert!', 'psmaps' ),
+				'saving' => __( 'Daten senden...', 'psmaps' ),
+				'insert' => __( 'Füge diese Karte ein', 'psmaps' ),
+				'map_not_saved' => __( 'Karte nicht gespeichert', 'psmaps' ),
+				'map_name_missing' => __( 'Bitte gib dieser Karte einen Namen', 'psmaps' ),
+				'please_save_map' => __( 'Bitte speichere zuerst die Karte', 'psmaps' ),
+				'go_back' => __( 'Zurück', 'psmaps' ),
+				'map_title' => __( 'Gib hier den Kartentitel ein', 'psmaps' ),
+				'options' => __( 'Kartenoptionen', 'psmaps' ),
+				'options_help' => __( 'Verwende die Kartenoptionen, um Kartengröße, Erscheinungsbild, Ausrichtung und Bildstreifen zu ändern', 'psmaps' ),
+				'drop_marker' => __( 'Setze Marker', 'psmaps' ),
+				'zoom_in_help' => __( 'Tipp: Für beste Kartenqualität <strong>zoome</strong>, um Deine Markierungen vor dem Speichern zu platzieren', 'psmaps' ),
+				'map_associate' => __( 'Verknüpfe diese Karte mit diesem Inhalt', 'psmaps' ),
+				'already_associated_width' => __( 'Diese Karte ist diesen bereits zugeordnet', 'psmaps' ),
+				'association_help' => __( 'Durch das Verknüpfen einer Karte mit einem Beitrag kannst Du diese Karte auf erweiterte Weise verwenden, um sie dynamisch im Seitenleisten-Widget oder in einem erweiterten Mashup anzuzeigen', 'psmaps' ),
+				'map_size' => __( 'Kartengröße', 'psmaps' ),
+				'use_default_size' => __( 'Standardgröße verwenden', 'psmaps' ),
+				'map_appearance' => __( 'Kartenaussehen', 'psmaps' ),
+				'map_alignment' => __( 'Kartenausrichtung', 'psmaps' ),
+				'map_alignment_left' => __( 'Links', 'psmaps' ),
+				'map_alignment_center' => __( 'Zentriert', 'psmaps' ),
+				'map_alignment_right' => __( 'Rechts', 'psmaps' ),
+				'show_map' => __( 'Karte anzeigen', 'psmaps' ),
+				'show_posts' => __( 'Beiträge anzeigen', 'psmaps' ),
+				'show_markers' => __( 'Markierungsliste anzeigen', 'psmaps' ),
+				'images_strip' => __( 'Einstellungen für Bildstreifen', 'psmaps' ),
+				'show_images' => __( 'Bildstreifen anzeigen', 'psmaps' ),
+				'image_size' => __( 'Verwende die Bildgröße', 'psmaps' ),
+				//'panoramio_overlay' => __( 'Panoramio overlay', 'psmaps' ),
+				//'show_panoramio_overlay' => __( 'Show Panoramio overlay', 'psmaps' ),
+				//'panoramio_overlay_tag' => __( 'Restrict Panoramio overlay photos to this tag', 'psmaps' ),
+				//'panoramio_overlay_tag_help' => __( 'Leave this field empty for no tag restrictions', 'psmaps' ),
+				'image_limit' => __( 'Zeige so viele Bilder', 'psmaps' ),
+				'add_location' => __( 'Ort hinzufügen:', 'psmaps' ),
+				'apply_settings' => __( 'Anwenden', 'psmaps' ),
 			)
 		);
 

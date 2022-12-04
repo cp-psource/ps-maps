@@ -1,0 +1,2326 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PS Google Maps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-04 17:24+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.3; wp-6.1.1\n"
+"X-Domain: psmaps"
+
+#: inc/class-agm-admin-help.php:41
+msgid " benutzerdefinierten Standortfelder ausgelöst wird."
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:335
+msgid "&laquo; Zurück"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:85
+#, php-format
+msgid ""
+"(Du kannst auch auf den <a href=\"%s\" target=\"_blank\">offiziellen Google-"
+"Dokumentationsseiten</a> etwas mehr recherchieren)"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:417
+msgid ""
+"(Eine neue Karte wird automatisch mit den oben angegebenen "
+"Standardeinstellungen erstellt )"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:309
+msgid "(erfordert die Erweiterung BuddyPress Profilkarten)"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:300
+msgid "(Standard)"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:143
+#, php-format
+msgid "<br /><img src=\"%s\" width=\"590\" />"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:252
+msgid "<code>.agm_mh_marker_item_content</code></p>"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1402
+msgid ""
+"<code>automatic=\"true\"</code>: Versuche den Benutzerstandort beim Laden "
+"der Seite zu erfassen (wie bei <code>[agm_add_checkin]</code>."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1399
+msgid ""
+"<code>group=\"group1,group2\"</code>: (Filter, BuddyPress) Zeigt die "
+"Standorte der Benutzer in diesen Gruppen an."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1400
+msgid ""
+"<code>guest=\"true\"</code>: (Filter) True zeigt zusätzlich die Standorte "
+"der Gäste an. False zeigt nur Standorte registrierter Benutzer an."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1401
+msgid ""
+"<code>last_hour=\"24\"</code>: (Filter, Zeit) Zeigt Orte an, die in den "
+"letzten X Stunden hinzugefügt oder aktualisiert wurden."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1398
+msgid ""
+"<code>role=\"admin,editor\"</code>: (Filter) Zeigt die Standorte der "
+"Benutzer in diesen Rollen an."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1403
+msgid ""
+"<code>show_button=\"true\"</code>: Füge unter der Karte eine Schaltfläche "
+"hinzu, mit der der Benutzer seinen Standort manuell übermitteln kann."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1397
+msgid ""
+"<code>user=\"1,2\"</code>: (Filter) Zeigt die Standorte dieser Benutzer nach "
+"Benutzer-ID an."
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:136
+msgid "<div>Bitte gib den numerischen Zoomwert ein.</div>"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:183
+msgid ""
+"<div>Diese Einheiten werden verwendet, um Entfernungen für Richtungen "
+"auszudrücken</div>"
+msgstr ""
+
+#: inc/addons/kml-uploader.php:96
+msgid "<em>Keine KML-Dateien.</em>"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:351 inc/addons/user-checkin.php:1122
+#: inc/addons/user-checkin.php:1821
+msgid "Abbrechen"
+msgstr ""
+
+#: inc/addons/places.php:63
+msgid "Accounting"
+msgstr ""
+
+#: inc/addons/geotag-bp.php:98
+msgid "Addresse"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:403
+msgid "Adressfeldname(n):"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:127
+msgid "Adressprofilfeld"
+msgstr ""
+
+#: inc/addons/places.php:64
+msgid "Airport"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:498
+msgid "Aktive"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1516
+msgid "Aktiviere das Geotagging von Kommentaren"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:569
+msgid "Aktivieren"
+msgstr ""
+
+#: views/widget_settings.php:18
+msgid "Aktuelle Beiträge"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:493 views/widget_settings.php:26
+#: inc/addons/bp-group-maps.php:275
+msgid "Alle"
+msgstr ""
+
+#: views/widget_settings.php:22
+msgid "Alle Beiträge"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:23
+msgid "Alle einzelnen Kartenoptionen bleiben erhalten."
+msgstr ""
+
+#: inc/addons/loading-message.php:164
+msgid "Alle Karten Ladenachricht"
+msgstr ""
+
+#: inc/addons/responsive-maps.php:151
+msgid ""
+"Alle meine Karten <small>(mit Ausnahme derjenigen, die ich manuell mit <code>"
+"is_responsive=\"no\"</code> Shortcode-Attribut ausschließe)</small>"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:64
+msgid "Alle zeigen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:393
+msgid "Alle Änderungen gespeichert!"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:121
+msgid "Alles erledigt!"
+msgstr ""
+
+#: views/widget_settings.php:60
+msgid "Als eine Karte anzeigen"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:411
+msgid ""
+"Alte Karte verwerfen, wenn sich der Wert meiner benutzerdefinierten Felder "
+"ändert"
+msgstr ""
+
+#: inc/addons/places.php:65
+msgid "Amusement park"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1079 inc/addons/user-checkin.php:1814
+msgid "Angemeldete Benutzer"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1485
+msgid ""
+"Angemeldete Benutzer können optional einen Titel und eine Beschreibung für "
+"ihre Check-Ins eingeben und die Standortdetails später bearbeiten."
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:467
+msgid "Anweisungen zur Installation und Verwendung von PS-Maps</a>."
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:427
+msgid "Anwenden"
+msgstr ""
+
+#: inc/addons/places.php:66
+msgid "Aquarium"
+msgstr ""
+
+#: inc/addons/localize-maps.php:79
+msgid "Arabic"
+msgstr ""
+
+#: inc/addons/places.php:67
+msgid "Art gallery"
+msgstr ""
+
+#: inc/addons/places.php:68
+msgid "ATM"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1439
+msgid "Auf jeder Seite"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:76
+#, php-format
+msgid ""
+"Aufgrund der Ablehnung der erforderlichen Funktionen und Berechtigungen in "
+"der Facebook-API funktioniert die Erweiterung %s nicht für neu erstellte "
+"Anwendungen."
+msgstr ""
+
+#: inc/addons/where-am-i.php:43
+msgid "Aussehen"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:126
+msgid "Automatisch erstellte Karten"
+msgstr ""
+
+#: inc/addons/responsive-maps.php:135
+msgid "Automatisch generierte Karten"
+msgstr ""
+
+#: inc/addons/places.php:69
+msgid "Bakery"
+msgstr ""
+
+#: inc/addons/places.php:70
+msgid "Bank"
+msgstr ""
+
+#: inc/addons/places.php:71
+msgid "Bar"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:135
+msgid "Basismodus"
+msgstr ""
+
+#: inc/addons/localize-maps.php:80 inc/addons/localize-maps.php:92
+msgid "Basque"
+msgstr ""
+
+#: inc/addons/responsive-maps.php:159
+msgid "Beachte das Shortcode-Breitenattribut, falls festgelegt"
+msgstr ""
+
+#: inc/addons/user-checkin.php:885 inc/addons/user-checkin.php:1084
+msgid "Bearbeiten"
+msgstr ""
+
+#: inc/addons/places.php:72
+msgid "Beauty salon"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:343
+msgid "Beende den erweiterten Modus"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:132
+msgid "Befolge diese Schritte, um das Feld <em>App ID</em> einzurichten"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1518
+msgid ""
+"Bei Aktivierung wird ein neues Kontrollkästchen angezeigt, mit dem Du diesen "
+"Kommentar <code>im Kommentarformular</code> mit einem Geotag versehen kannst."
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:386 inc/class-agm-dependencies.php:60
+msgid ""
+"Beim Geokodieren Deines Standorts ist ein Fehler aufgetreten. Überprüfe die "
+"Adresse und versuche es erneut"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:587
+msgid "Beispiel:"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:63
+msgid "Beiträge"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:416
+msgid "Beiträge anzeigen"
+msgstr ""
+
+#: views/widget_settings.php:77
+msgid "Beiträge in Markern anzeigen"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:249
+msgid "Benenne den Karten-Shortcode um"
+msgstr ""
+
+#: inc/addons/localize-maps.php:82
+msgid "Bengali"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1483
+msgid ""
+"Benutzer können Standorte bearbeiten und zusätzliche Informationen hinzufügen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1318
+msgid "Benutzer-Check-ins"
+msgstr ""
+
+#: views/widget_settings.php:46
+msgid "Benutzerdefinierte Abfrage"
+msgstr ""
+
+#: inc/class-agm-admin-help.php:39 inc/class-agm-admin-maps.php:153
+msgid "Benutzerdefinierte Felder"
+msgstr ""
+
+#: inc/addons/custom-icons.php:55 inc/addons/custom-icons.php:70
+msgid "Benutzerdefinierte Symbole"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:575
+msgid "Benötigt "
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:242
+msgid "Bereinige Tabellen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1106 inc/addons/user-checkin.php:1805
+msgid "Beschreibung"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:336
+msgid "Bestehende Karten"
+msgstr ""
+
+#: inc/addons/where-am-i.php:88
+msgid "Besuchermarkierungsetikett"
+msgstr ""
+
+#: inc/addons/where-am-i.php:94
+msgid "Besuchermarkierungssymbol"
+msgstr ""
+
+#: inc/addons/places.php:73
+msgid "Bicycle store"
+msgstr ""
+
+#: views/widget_settings.php:74
+msgid "Bilderstreifen anzeigen"
+msgstr ""
+
+#: inc/addons/disable-scroll.php:42
+msgid "Bildlauf deaktivieren"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:419
+msgid "Bildstreifen anzeigen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:387
+msgid "Bitte gib den Ort ein"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:397
+msgid "Bitte gib dieser Karte einen Namen"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:61
+msgid "Bitte gib Werte für Punkt A und Punkt B ein"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:398
+msgid "Bitte speichere zuerst die Karte"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:16 inc/addons/fix-and-repair.php:53
+#: inc/addons/fix-and-repair.php:85 inc/addons/fix-and-repair.php:161
+msgid "Bitte warte einen Moment..."
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:119
+msgid "Bitte warte während die alten Standortpuffer gelöscht werden"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:225
+msgid "Bitte wähle ein Feld aus"
+msgstr ""
+
+#: inc/addons/places.php:74
+msgid "Book store"
+msgstr ""
+
+#: inc/addons/places.php:75
+msgid "Bowling alley"
+msgstr ""
+
+#: inc/addons/custom-icons.php:92
+msgid "Breite x Höhe"
+msgstr ""
+
+#: inc/addons/user-checkin.php:157
+msgid "Breitengrad"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:396
+msgid "Breitengrad Feldname:"
+msgstr ""
+
+#: inc/addons/localize-maps.php:49
+msgid "Browsererkennung (Standard)"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:113
+msgid "BuddyPress Profil"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:391
+msgid "BuddyPress XProfile nicht aktiviert"
+msgstr ""
+
+#: inc/addons/loading-message.php:159 inc/addons/responsive-maps.php:143
+msgid "BuddyPress-Mitgliederverzeichniszuordnung"
+msgstr ""
+
+#: inc/addons/localize-maps.php:81
+msgid "Bulgarian"
+msgstr ""
+
+#: inc/addons/places.php:76
+msgid "Bus station"
+msgstr ""
+
+#: inc/addons/places.php:77
+msgid "Cafe"
+msgstr ""
+
+#: inc/addons/places.php:78
+msgid "Campground"
+msgstr ""
+
+#: inc/addons/places.php:79
+msgid "Car dealer"
+msgstr ""
+
+#: inc/addons/places.php:80
+msgid "Car rental"
+msgstr ""
+
+#: inc/addons/places.php:81
+msgid "Car repair"
+msgstr ""
+
+#: inc/addons/places.php:82
+msgid "Car wash"
+msgstr ""
+
+#: inc/addons/places.php:83
+msgid "Casino"
+msgstr ""
+
+#: inc/addons/localize-maps.php:83
+msgid "Catalan"
+msgstr ""
+
+#: inc/addons/places.php:84
+msgid "Cemetery"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1341
+msgid "Check-in Details"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1359
+msgid "Check-in Limit"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:285
+msgid "Check-ins"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1333
+msgid "Check-ins zulassen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1002
+msgid "Checke meinen Standort ein"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1507
+msgid "Checkins sind mit dem aktuellen Beitrag/der aktuellen Seite verknüpft"
+msgstr ""
+
+#: inc/addons/localize-maps.php:131
+msgid "Chinese (simplified)"
+msgstr ""
+
+#: inc/addons/localize-maps.php:132
+msgid "Chinese (traditional)"
+msgstr ""
+
+#: inc/addons/places.php:85
+msgid "Church"
+msgstr ""
+
+#: inc/addons/places.php:86
+msgid "City hall"
+msgstr ""
+
+#: inc/addons/places.php:87
+msgid "Clothing store"
+msgstr ""
+
+#: inc/addons/places.php:88
+msgid "Convenience store"
+msgstr ""
+
+#: inc/addons/places.php:89
+msgid "Courthouse"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1114
+msgid "created on"
+msgstr ""
+
+#: inc/addons/localize-maps.php:100
+msgid "Croatian"
+msgstr ""
+
+#: inc/addons/localize-maps.php:84
+msgid "Czech"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:84
+msgid ""
+"Dadurch werden ALLE Karten in diesem Blog gelöscht. Bist Du sicher, dass Du "
+"dies tun möchtest?"
+msgstr ""
+
+#: inc/addons/localize-maps.php:85
+msgid "Danish"
+msgstr ""
+
+#: inc/addons/where-am-i.php:87 inc/addons/where-am-i.php:182
+msgid "Das bist du"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:394
+msgid "Daten senden..."
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:561
+msgid "Deaktivieren"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1013
+msgid "Default privacy setting"
+msgstr ""
+
+#: inc/addons/loading-message.php:142
+msgid "Deine anderen Karten festlegen."
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:20
+msgid "Deine Seite wird in 3 Sekunden automatisch neu geladen"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:313
+msgid "den alternativen Shortcode <code>[agm_map]</code> zu verwenden."
+msgstr ""
+
+#: inc/addons/places.php:90
+msgid "Dentist"
+msgstr ""
+
+#: inc/addons/places.php:91
+msgid "Department store"
+msgstr ""
+
+#: inc/addons/where-am-i.php:58
+msgid "Der Standort des Besuchers wird automatisch allen Karten hinzugefügt"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:97 inc/class-agm-maps-widget.php:61
+msgid "Details"
+msgstr ""
+
+#: inc/addons/localize-maps.php:86
+msgid "Deutsch"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1997
+msgid ""
+"Die Webseite möchte wissen, wo Du Dich befindest. Sende Deinen Standort?"
+msgstr ""
+
+#: views/widget_settings.php:50
+msgid ""
+"Dies ist eine Netzwerkabfrage <small>(Benötigt <a href=\"https://n3rds."
+"work/piestingtal-source-project/ps-multisite-index/\">PS-Multisite "
+"Beitragsindex</a> plugin) - nur \"tag = ...\" wird unterstützt</small>"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:267
+msgid "Diese Gruppe hat einen physischen Standort:"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:406
+msgid "Diese Karte ist diesen bereits zugeordnet"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:290
+msgid ""
+"Diese Seite erstellt möglicherweise automatisch Karten anhand der "
+"bereitgestellten Standortdaten und/oder verknüpft sie mit den von Dir "
+"erstellten Inhalten, z.B. Beiträge und BuddyPress-Aktivitätsaktualisierungen."
+" Dieser Inhalt kann exportiert und entfernt werden."
+msgstr ""
+
+#: inc/class-agm-gdpr.php:284
+msgid ""
+"Diese Webseite enthält auch Ressourcen von Drittanbietern aus der Google "
+"Maps-API, die möglicherweise selbst Cookies setzen."
+msgstr ""
+
+#: inc/class-agm-gdpr.php:283
+msgid ""
+"Diese Webseite verfolgt Deine (anonymen) Standortdaten mithilfe Deiner "
+"Browser-API und gibt sie an den Google Maps-API-Dienst weiter."
+msgstr ""
+
+#: inc/class-agm-gdpr.php:286
+msgid ""
+"Diese Webseite verfolgt möglicherweise Deinen Standort (mit Deiner "
+"Zustimmung) in Form eines anonymen oder benutzerbezogenen Check-ins. Diese "
+"Informationen können exportiert und entfernt werden."
+msgstr ""
+
+#: inc/class-agm-gdpr.php:288
+msgid ""
+"Diese Webseite verwendet möglicherweise Deine angegebenen "
+"Adressinformationen (falls vorhanden), um sie auf einer Karte anzuzeigen und "
+"sie somit für die Google Maps-API freizugeben. Diese Informationen können "
+"entfernt werden."
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:222
+msgid "Dieses Profilfeld enthält die Adresse meiner Benutzer:"
+msgstr ""
+
+#: inc/addons/places.php:92
+msgid "Doctor"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:282
+msgid "Dritte"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:347
+msgid "Du hast noch keine Karten erstellt."
+msgstr ""
+
+#: inc/addons/responsive-maps.php:123
+msgid ""
+"Du kannst das Responsive-Flag in Deinen Shortcodes mit dem Shortcode-"
+"Attribut <code>is_responsive=\"yes|no\"</code>  umschalten. Du kannst auch "
+"angeben, welche Deiner Karten immer reagieren sollen."
+msgstr ""
+
+#: inc/addons/where-am-i.php:63
+msgid ""
+"Du kannst den Besucherstandort auf Deinen Karten anzeigen, indem Du Deinen "
+"Shortcodes <code>visitor_location=&quot;yes&quot;</code> hinzufügst"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:407
+msgid ""
+"Durch das Verknüpfen einer Karte mit einem Beitrag kannst Du diese Karte auf "
+"erweiterte Weise verwenden, um sie dynamisch im Seitenleisten-Widget oder in "
+"einem erweiterten Mashup anzuzeigen"
+msgstr ""
+
+#: inc/addons/localize-maps.php:112
+msgid "Dutch"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1438
+msgid "Ein Check-in pro Benutzer"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Einfaches Einbetten, Anpassen und Verwenden von Google Maps auf Deiner "
+"WordPress-Seite - in Posts, Seiten oder als benutzerfreundliches Widget "
+"kannst Du lokale Bilder anzeigen und Deinen Seiten-Besuchern in "
+"Sekundenschnelle eine Interaktive Googlemap mit einer Unzahl an Optionen und "
+"Möglichkeiten geben."
+msgstr ""
+
+#: inc/class-agm-admin-help.php:125
+msgid "Einstellungen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:418
+msgid "Einstellungen für Bildstreifen"
+msgstr ""
+
+#: inc/addons/places.php:93
+msgid "Electrician"
+msgstr ""
+
+#: inc/addons/places.php:94
+msgid "Electronics store"
+msgstr ""
+
+#: inc/addons/places.php:95
+msgid "Embassy"
+msgstr ""
+
+#: inc/addons/localize-maps.php:88
+msgid "English"
+msgstr ""
+
+#: inc/addons/localize-maps.php:89
+msgid "English (Australian)"
+msgstr ""
+
+#: inc/addons/localize-maps.php:90
+msgid "English (Great Britain)"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:92 inc/class-agm-maps-widget.php:56
+msgid "Erde"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:18 inc/addons/fix-and-repair.php:55
+#: inc/addons/fix-and-repair.php:87 inc/addons/fix-and-repair.php:163
+msgid "Erfolg"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:118
+msgid ""
+"Erstelle alle Profilzuordnungen neu <em>(<b>Warnung:</b> dies dauert eine "
+"Weile)</em>"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:258
+msgid "Erstelle BuddyPress-Profilkarten neu"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:136
+msgid "Erstelle eine neue Facebook-App</a>"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:346
+msgid ""
+"Erstelle eine neue Karte, die in diesen Beitrag oder diese Seite eingefügt "
+"werden kann"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:342
+msgid "Erstellt eine neue Karte mit allen Markierungen der ausgewählten Karten"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:118
+msgid "Erweitert"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:340
+msgid "Erweiterter Modus"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:341
+msgid ""
+"Erweiterter Modus: Führe mehrere Karten zu einer neuen Karte zusammen oder "
+"lösche mehrere Karten"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:516
+msgid "Erweiterung Beschreibung"
+msgstr ""
+
+#: inc/class-agm-admin-help.php:49 inc/class-agm-admin-maps.php:187
+msgid "Erweiterungen"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:515
+msgid "Erweiterungsname"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:173
+msgid "Es muss nichts repariert werden"
+msgstr ""
+
+#: inc/addons/places.php:96
+msgid "Establishment"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:45 inc/addons/fb-nearby-friends.php:90
+msgid "Facebook App ID"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:39
+msgid "Facebook Freunde in der Nähe"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1559
+msgid "Fange doppelte Check-Ins ab, die näher als sind"
+msgstr ""
+
+#: inc/addons/localize-maps.php:93
+msgid "Farsi"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:235
+msgid "Fehlende Tabelle reparieren"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:19 inc/addons/fix-and-repair.php:56
+#: inc/addons/fix-and-repair.php:88 inc/addons/fix-and-repair.php:164
+msgid "Fehler"
+msgstr ""
+
+#: inc/addons/localize-maps.php:95
+msgid "Filipino"
+msgstr ""
+
+#: inc/addons/places.php:97
+msgid "Finance"
+msgstr ""
+
+#: inc/addons/localize-maps.php:94
+msgid "Finnish"
+msgstr ""
+
+#: inc/addons/places.php:98
+msgid "Fire station"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:222
+msgid "Fixes and Reparieren"
+msgstr ""
+
+#: inc/addons/places.php:99
+msgid "Florist"
+msgstr ""
+
+#: inc/addons/places.php:100
+msgid "Food"
+msgstr ""
+
+#: inc/addons/user-checkin.php:2000
+msgid "Frag mich nicht noch einmal."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1007
+msgid "Frage mich immer, bevor Du meinen Standort angibst"
+msgstr ""
+
+#: inc/addons/localize-maps.php:96
+msgid "French"
+msgstr ""
+
+#: inc/addons/places.php:101
+msgid "Funeral home"
+msgstr ""
+
+#: inc/addons/places.php:102
+msgid "Furniture store"
+msgstr ""
+
+#: inc/addons/where-am-i.php:80
+msgid ""
+"Füge der Markierungsliste für meine Karte automatisch den Besucherort hinzu"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:329 inc/class-agm-admin-maps.php:395
+msgid "Füge diese Karte ein"
+msgstr ""
+
+#: inc/addons/loading-message.php:133
+msgid "Füge diesen Karten eine Lademeldung hinzu"
+msgstr ""
+
+#: inc/addons/custom-icons.php:118
+msgid "Füge dieses Symbol hinzu"
+msgstr ""
+
+#: inc/addons/custom-icons.php:62
+msgid "Füge neue Symbole hinzu"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:405
+msgid "Für diese Adresse wurde keine Karte gefunden"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:289
+msgid "Für Inhaltsersteller"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:287
+msgid "Für Seiten-Mitglieder"
+msgstr ""
+
+#: inc/addons/localize-maps.php:97
+msgid "Galician"
+msgstr ""
+
+#: inc/addons/places.php:103
+msgid "Gas station"
+msgstr ""
+
+#: inc/addons/places.php:104
+msgid "General contractor"
+msgstr ""
+
+#: inc/addons/geotag-wp.php:89
+msgid "Geotag meine Beiträge"
+msgstr ""
+
+#: inc/addons/geotag-wp.php:96
+msgid "Geotagging-Metabox"
+msgstr ""
+
+#: inc/addons/geotag-wp.php:107
+msgid "Geotagging-Metabox anzeigen für"
+msgstr ""
+
+#: inc/addons/custom-icons.php:119
+msgid "Gib eine gültige Bild-URL ein"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:400
+msgid "Gib hier den Kartentitel ein"
+msgstr ""
+
+#: inc/addons/user-checkin.php:154
+msgid "Google Map Check-ins"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:55
+msgid "Google Maps API-Schlüssel"
+msgstr ""
+
+#: views/plugin_settings.php:2
+msgid "Google Maps Plugin Optionen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:997
+msgid "Google Maps: Checkins"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:173 inc/addons/bp-group-maps.php:263
+msgid "Googlekarte"
+msgstr ""
+
+#: inc/addons/localize-maps.php:87
+msgid "Greek"
+msgstr ""
+
+#: inc/addons/places.php:105
+msgid "Grocery or supermarket"
+msgstr ""
+
+#: inc/addons/user-checkin.php:860
+msgid "Guest"
+msgstr ""
+
+#: inc/addons/localize-maps.php:98
+msgid "Gujarati"
+msgstr ""
+
+#: inc/addons/places.php:106
+msgid "Gym"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1456
+msgid "Gäste können ihren Standort einchecken"
+msgstr ""
+
+#: inc/addons/places.php:107
+msgid "Hair care"
+msgstr ""
+
+#: inc/addons/places.php:108
+msgid "Hardware store"
+msgstr ""
+
+#: inc/addons/places.php:109
+msgid "Health"
+msgstr ""
+
+#: inc/addons/localize-maps.php:104
+msgid "Hebrew"
+msgstr ""
+
+#: inc/addons/additional-behaviors.php:64
+msgid "Hier kannst Du zusätzliche globale Einstellungen für Karten definieren."
+msgstr ""
+
+#: inc/addons/localize-maps.php:99
+msgid "Hindi"
+msgstr ""
+
+#: inc/addons/places.php:110
+msgid "Hindu temple"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:74
+msgid "Hinweis:"
+msgstr ""
+
+#: inc/addons/custom-icons.php:129
+msgid ""
+"Hinweis: Alle Symbole werden auf der Karte in voller Größe angezeigt. Im "
+"Editor und in dieser Liste wird die Symbolvorschau mit 32 x 32 Pixel "
+"angezeigt."
+msgstr ""
+
+#: inc/addons/kml-uploader.php:117
+msgid "Hochladen"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:80
+#, php-format
+msgid "Hole Dir Deinen API-Schlüssel <a href=\"%s\" target=\"_blank\">hier</a>"
+msgstr ""
+
+#: inc/addons/places.php:111
+msgid "Home goods store"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:66
+msgid "Hoppla, wir konnten die Richtungen nicht berechnen"
+msgstr ""
+
+#: inc/addons/places.php:112
+msgid "Hospital"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://n3rds.work"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://n3rds.work/piestingtal_source/ps-google-maps-plugin/"
+msgstr ""
+
+#: inc/addons/localize-maps.php:101
+msgid "Hungarian"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:60
+msgid "HYBRID"
+msgstr ""
+
+#: inc/addons/where-am-i.php:57
+msgid ""
+"Ich möchte Besucherstandorte automatisch auf allen meinen Karten anzeigen"
+msgstr ""
+
+#: inc/addons/where-am-i.php:62
+msgid ""
+"Ich möchte mithilfe eines Shortcode-Attributs angeben, auf welchen Karten "
+"der Besucherstandort angezeigt wird"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:175
+msgid "Imperial"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:174
+#, php-format
+msgid ""
+"In diesem Blog gibt es keinen Beitrag oder keine Seite, die den alten Karten-"
+"Shortcode <code>[%s]</code> verwendet"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:503
+msgid "Inaktiv"
+msgstr ""
+
+#: inc/addons/localize-maps.php:102
+msgid "Indonesian"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:390
+msgid "Inhalt"
+msgstr ""
+
+#: inc/class-agm-admin-help.php:71
+msgid "Installations- und Anleitungswiki"
+msgstr ""
+
+#: inc/addons/places.php:113
+msgid "Insurance agency"
+msgstr ""
+
+#: inc/addons/localize-maps.php:103
+msgid "Italian"
+msgstr ""
+
+#: inc/addons/user-checkin.php:867
+msgid "j F, Y (G:i)"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:28
+#: inc/class-agm-admin-form-renderer.php:273
+#: inc/class-agm-admin-form-renderer.php:350
+#: inc/class-agm-admin-form-renderer.php:375 inc/addons/bp-profile-maps.php:290
+#: inc/addons/user-checkin.php:1998
+msgid "Ja"
+msgstr ""
+
+#: inc/addons/localize-maps.php:105
+msgid "Japanese"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1080 inc/addons/user-checkin.php:1815
+msgid "Jeder"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1018
+msgid "Jeder kann meinen Standort sehen"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:119
+msgid "jedoch im Allgemeinen zur Beschreibung passen.</div>"
+msgstr ""
+
+#: inc/addons/places.php:114
+msgid "Jewelry store"
+msgstr ""
+
+#: inc/addons/localize-maps.php:106
+msgid "Kannada"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:415 views/widget_settings.php:68
+msgid "Karte anzeigen"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:299
+msgid "Karte auf Mitgliederlistenseite anzeigen"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:420
+msgid "Karte automatisch anzeigen:"
+msgstr ""
+
+#: inc/addons/where-am-i.php:72
+msgid "Karte automatisch auf Besucherort zentrieren"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:332 inc/class-agm-admin-maps.php:370
+msgid "Karte hinzufügen"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:134
+msgid "Karte im Benutzerprofil anzeigen"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:141
+msgid "Karte in Mitgliederliste anzeigen"
+msgstr ""
+
+#: inc/addons/location-shortcode.php:92 inc/addons/location-shortcode.php:123
+msgid "Karte konnte nicht aus Shortcode erstellt werden"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:268
+msgid "Karte nach Mitgliederliste anzeigen"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:245
+msgid "Karte nach Profilfeldern anzeigen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:396
+msgid "Karte nicht gespeichert"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:267
+msgid "Karte vor Mitgliederliste anzeigen"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:244
+msgid "Karte vor Profilfeldern anzeigen"
+msgstr ""
+
+#: inc/addons/loading-message.php:176
+msgid "Karte wird geladen, bitte warten"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:455
+msgid "Karten hinzufügen kannst (siehe Darstellungs-Widgets)."
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:328
+msgid "Karten laden ... bitte warten"
+msgstr ""
+
+#: inc/addons/loading-message.php:127
+msgid "Karten Ladenachricht"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1582
+msgid "Karten ohne Markierungen anzeigen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:411
+msgid "Kartenausrichtung"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:410
+msgid "Kartenaussehen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:408
+msgid "Kartengröße"
+msgstr ""
+
+#: views/widget_settings.php:7
+msgid "Kartengröße:"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:401
+msgid "Kartenoptionen"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:399
+msgid "Keine Adresse definiert"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:338
+msgid "Keine vorhandenen Karten"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:189
+msgid "Klein"
+msgstr ""
+
+#: inc/addons/additional-behaviors.php:83
+msgid ""
+"Klicke auf das Element in der Markierungsliste, um das Detail-Popup zu öffnen"
+msgstr ""
+
+#: inc/addons/additional-behaviors.php:97
+msgid ""
+"Klicke auf den Wegbeschreibungslink, um zum Wegbeschreibungsformular zu "
+"gelangen"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:86
+msgid "Klicke hier, um ALLE Karten in diesem Blog zu löschen"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:17
+msgid ""
+"Klicke hier, um alle Optionen auf die Standardeinstellungen in diesem Blog "
+"zurückzusetzen"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:117
+msgid ""
+"Klicke hier, um Deine BuddyPress-Mitgliederprofilkarten neu zu erstellen"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:162
+msgid "Klicke hier, um den Karten-Shortcode in diesem Blog zu aktualisieren"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:54
+msgid "Klicke hier, um fehlende Tabellen in diesem Blog zu beheben"
+msgstr ""
+
+#: inc/addons/kml-uploader.php:73
+msgid "KML-Dateien"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:93 inc/class-agm-maps-widget.php:57
+msgid "Kontinent"
+msgstr ""
+
+#: inc/addons/localize-maps.php:107
+msgid "Korean"
+msgstr ""
+
+#: inc/addons/kml-uploader.php:86
+msgid "Lade eine KML-Datei hoch"
+msgstr ""
+
+#: inc/addons/where-am-i.php:97
+msgid "Lasse das Feld leer, um das Standardsymbol zu verwenden"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1094
+msgid "Lat"
+msgstr ""
+
+#: inc/addons/localize-maps.php:109
+msgid "Latvian"
+msgstr ""
+
+#: inc/addons/places.php:115
+msgid "Laundry"
+msgstr ""
+
+#: inc/addons/places.php:116
+msgid "Lawyer"
+msgstr ""
+
+#: inc/addons/places.php:117
+msgid "Library"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:214 inc/class-agm-admin-maps.php:412
+msgid "Links"
+msgstr ""
+
+#: inc/addons/places.php:118
+msgid "Liquor store"
+msgstr ""
+
+#: inc/addons/localize-maps.php:108
+msgid "Lithuanian"
+msgstr ""
+
+#: inc/addons/places.php:119
+msgid "Local government office"
+msgstr ""
+
+#: inc/addons/places.php:120
+msgid "Locksmith"
+msgstr ""
+
+#: inc/addons/places.php:121
+msgid "Lodging"
+msgstr ""
+
+#: inc/addons/localize-maps.php:29
+msgid "Lokalisierung"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1098
+msgid "Long"
+msgstr ""
+
+#: inc/addons/user-checkin.php:161
+msgid "Längengrad"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:399
+msgid "Längengrad Feldname:"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:331 inc/class-agm-admin-maps.php:345
+#: inc/class-agm-admin-maps.php:350 inc/class-agm-admin-maps.php:391
+#: inc/addons/user-checkin.php:1086 inc/addons/user-checkin.php:1820
+msgid "Löschen"
+msgstr ""
+
+#: inc/addons/responsive-maps.php:114
+msgid "Mache diese Karten responsive"
+msgstr ""
+
+#: inc/addons/localize-maps.php:110
+msgid "Malayalam"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1440
+msgid "Manuell via Shortcode [agm_add_checkin]"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:170
+msgid "Map"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1367
+msgid "Map-Standardeinstellungen"
+msgstr ""
+
+#: inc/class-agm-admin-help.php:51
+msgid "Maps. Aktiviere oder deaktiviere sie nach Bedarf."
+msgstr ""
+
+#: inc/addons/localize-maps.php:111
+msgid "Marathi"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:388
+msgid "Marker hinzufügen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:417 views/widget_settings.php:71
+msgid "Markierungsliste anzeigen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1548
+msgid "Max anonyme Gäste Check-ins behalten"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1537
+msgid "Maximale Anzahl von Eincheckvorgängen für einen einzelnen Benutzer"
+msgstr ""
+
+#: inc/addons/places.php:122
+msgid "Meal delivery"
+msgstr ""
+
+#: inc/addons/places.php:123
+msgid "Meal takeaway"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:395
+msgid "Meine Beiträge haben Breiten-/Längengrade"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:402
+msgid "Meine Beiträge haben ein Adressfeld"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:111
+msgid "Metern"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:174
+msgid "Metrisch"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:193
+msgid "Mini Quadrat"
+msgstr ""
+
+#: inc/addons/geotag-wp.php:56
+msgid "Mit PS-Maps Geotags versehene Beiträge"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:52 inc/class-agm-gdpr.php:71
+msgid "Mit PS-Maps verknüpfte Karten"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:279
+msgid "Mitglieder"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:190
+msgid "Mittel"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:283
+msgid "Moderatoren"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:125
+msgid "Monaten"
+msgstr ""
+
+#: inc/addons/places.php:124
+msgid "Mosque"
+msgstr ""
+
+#: inc/addons/places.php:125
+msgid "Movie rental"
+msgstr ""
+
+#: inc/addons/places.php:126
+msgid "Movie theater"
+msgstr ""
+
+#: inc/addons/places.php:127
+msgid "Moving company"
+msgstr ""
+
+#: inc/addons/places.php:128
+msgid "Museum"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1023
+msgid "My locations"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:349
+msgid "Möchtest Du alle ausgewählten Karten dauerhaft löschen?"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:348
+msgid "Möchtest Du diese Karte dauerhaft löschen?"
+msgstr ""
+
+#: inc/addons/loading-message.php:154
+msgid "Nachricht für automatisch generierte Karten"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:95 inc/class-agm-maps-widget.php:59
+msgid "Nahe Städte"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:32
+#: inc/class-agm-admin-form-renderer.php:282
+#: inc/class-agm-admin-form-renderer.php:359
+#: inc/class-agm-admin-form-renderer.php:384 inc/addons/bp-profile-maps.php:289
+#: inc/addons/user-checkin.php:1999
+msgid "Nein"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:339
+msgid "Neue Karte"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:371
+msgid "Neue Karte erstellen"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:318
+msgid "neuen Shortcode zu verwenden."
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:243
+msgid "Nicht im Profil anzeigen"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:266
+msgid "Nicht in der Mitgliederliste anzeigen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1087
+msgid "Nicht löschen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1437
+msgid "Niemals (diese Funktion deaktivieren)"
+msgstr ""
+
+#: inc/addons/places.php:129
+msgid "Night club"
+msgstr ""
+
+#: inc/addons/localize-maps.php:113
+msgid "Norwegian"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1449
+msgid "Nur angemeldete Benutzer können ihren Standort einchecken"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1017
+msgid "Nur angemeldete Benutzer können meinen Standort sehen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1078 inc/addons/user-checkin.php:1813
+msgid "Nur ich"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1016
+msgid "Nur ich kann meinen Standort sehen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1121
+msgid "OK"
+msgstr ""
+
+#: inc/addons/kml-uploader.php:116
+msgid "Only files with .kml and .kmz extension are allowed."
+msgstr ""
+
+#: inc/class-agm-admin-help.php:30 inc/class-agm-admin-maps.php:48
+msgid "Optionen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:166
+msgid "Ordne benutzerdefinierte Felder zu"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:418
+msgid "Ordne die neue Karte dem Beitrag zu:"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:426
+msgid "Ort hinzufügen:"
+msgstr ""
+
+#: inc/addons/places.php:130
+msgid "Painter"
+msgstr ""
+
+#: inc/addons/places.php:131
+msgid "Park"
+msgstr ""
+
+#: inc/addons/places.php:132
+msgid "Parking"
+msgstr ""
+
+#: inc/addons/places.php:133
+msgid "Pet store"
+msgstr ""
+
+#: inc/addons/places.php:134
+msgid "Pharmacy"
+msgstr ""
+
+#: inc/addons/places.php:135
+msgid "Physiotherapist"
+msgstr ""
+
+#: inc/addons/places.php:136
+msgid "Place of worship"
+msgstr ""
+
+#: inc/addons/places.php:137
+msgid "Plumber"
+msgstr ""
+
+#: inc/addons/places.php:138
+msgid "Police"
+msgstr ""
+
+#: inc/addons/localize-maps.php:114
+msgid "Polish"
+msgstr ""
+
+#: inc/addons/localize-maps.php:115
+msgid "Portuguese"
+msgstr ""
+
+#: inc/addons/localize-maps.php:116
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+#: inc/addons/localize-maps.php:117
+msgid "Portuguese (Portugal)"
+msgstr ""
+
+#: inc/addons/places.php:139
+msgid "Post office"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:120
+msgid "Profile bearbeiten ... "
+msgstr ""
+
+#: inc/class-agm-admin-help.php:66
+msgid "Projektseite"
+msgstr ""
+
+#. Name of the plugin
+msgid "PS Google Maps"
+msgstr ""
+
+#: inc/class-agm-admin-help.php:62 inc/class-agm-admin-maps.php:228
+#: inc/class-agm-admin-maps.php:333 inc/class-agm-gdpr.php:34
+msgid "PS-Maps"
+msgstr ""
+
+#: inc/addons/geotag-bp.php:259
+msgid "PS-Maps Aktivitäts-Geotags"
+msgstr ""
+
+#: inc/addons/user-checkin.php:111 inc/addons/user-checkin.php:126
+msgid "PS-Maps Check-ins"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:164
+msgid "PS-Maps Profilkarten"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:192
+msgid "Quadrat"
+msgstr ""
+
+#: inc/addons/places.php:140
+msgid "Real estate agency"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:234 inc/class-agm-admin-maps.php:414
+msgid "Rechts"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:94 inc/class-agm-maps-widget.php:58
+msgid "Region"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:52
+msgid "Reichweite"
+msgstr ""
+
+#: inc/addons/responsive-maps.php:108
+msgid "Responsive Karten"
+msgstr ""
+
+#: inc/addons/places.php:141
+msgid "Restaurant"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:59
+msgid "Richte die App ein"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:130
+msgid "Richtungen Snapping"
+msgstr ""
+
+#: inc/addons/localize-maps.php:118
+msgid "Romanian"
+msgstr ""
+
+#: inc/addons/places.php:142
+msgid "Roofing contractor"
+msgstr ""
+
+#: inc/addons/localize-maps.php:119
+msgid "Russian"
+msgstr ""
+
+#: inc/addons/places.php:143
+msgid "RV park"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1434
+msgid "Sammel Standortdaten im Hintergrund"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:59
+msgid "SATELLIT"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:58
+msgid "Schließen"
+msgstr ""
+
+#: inc/addons/places.php:144
+msgid "School"
+msgstr ""
+
+#: inc/addons/user-checkin.php:2001
+msgid "Sende Deinen Standort..."
+msgstr ""
+
+#: inc/addons/user-checkin.php:2003
+msgid "Sende meinen aktuellen Standort"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1008
+msgid "Sende meinen Standort und frage mich nicht"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1006
+msgid "Sende niemals meinen Standort"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:291
+msgid "Separate Registerkarte Googlekarte anzeigen"
+msgstr ""
+
+#: inc/addons/localize-maps.php:122
+msgid "Serbian"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:228
+msgid "Setze alle Optionen auf die Standardeinstellungen zurück"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:403
+msgid "Setze Marker"
+msgstr ""
+
+#: inc/addons/places.php:145
+msgid "Shoe store"
+msgstr ""
+
+#: inc/addons/places.php:146
+msgid "Shopping mall"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1383 inc/addons/user-checkin.php:1387
+msgid "Shortcode"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:144
+msgid "Shortcode ändern"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1811
+msgid "Sichtbar für"
+msgstr ""
+
+#: inc/addons/localize-maps.php:120
+msgid "Slovak"
+msgstr ""
+
+#: inc/addons/localize-maps.php:121
+msgid "Slovenian"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:123
+msgid "Snapping"
+msgstr ""
+
+#: inc/addons/places.php:147
+msgid "Spa"
+msgstr ""
+
+#: inc/addons/localize-maps.php:91
+msgid "Spanish"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1476
+msgid "Speichere nur den Ort"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1822
+msgid "Speichern"
+msgstr ""
+
+#: inc/addons/localize-maps.php:35
+msgid "Sprachen"
+msgstr ""
+
+#: inc/addons/places.php:148
+msgid "Stadium"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:96 inc/class-agm-maps-widget.php:60
+msgid "Stadtplan"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:85
+msgid "Standard-Kartenzoom"
+msgstr ""
+
+#: inc/class-agm-admin-help.php:32
+msgid "Standardeinstellungen."
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:409
+msgid "Standardgröße verwenden"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:116
+msgid "Standardkartenausrichtung"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:70
+msgid "Standardkartenbreite"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:93
+msgid "Standardkarteneinheiten"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:63
+msgid "Standardkartenhöhe"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:77
+msgid "Standardkartentyp"
+msgstr ""
+
+#: inc/addons/where-am-i.php:81
+msgid ""
+"Standardmäßig wird nur der Besucherstandort zur Karte hinzugefügt. Aktiviere "
+"diese Option, wenn Du sie auch in die Markierungsliste aufnehmen möchtest."
+msgstr ""
+
+#: inc/addons/geotag-wp.php:127
+msgid "Standort"
+msgstr ""
+
+#: inc/addons/user-checkin.php:2002
+msgid "Standort gespeichert!"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1996
+msgid "Standort senden?"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1442
+msgid ""
+"Standortdaten werden nur mit Zustimmung des Nutzers erhoben.<br />Die Gäste "
+"werden gebeten, den Ort bei jedem Besuch anzugeben. Angemeldete Benutzer "
+"können zusätzlich wählen, ob sie ihren Standort immer oder nie angeben "
+"möchten."
+msgstr ""
+
+#: inc/addons/places.php:149
+msgid "Storage"
+msgstr ""
+
+#: inc/addons/places.php:150
+msgid "Store"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:58
+msgid "STRAßENKARTE"
+msgstr ""
+
+#: inc/addons/places.php:151
+msgid "Subway station"
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:116
+msgid "Suche nach Freunden in Updates und Fotos für Freunde in den letzten "
+msgstr ""
+
+#: inc/addons/fb-nearby-friends.php:102
+msgid "Suche nach Freunden innerhalb "
+msgstr ""
+
+#: inc/class-agm-admin-help.php:76
+msgid "Support Forum"
+msgstr ""
+
+#: inc/addons/localize-maps.php:123
+msgid "Swedish"
+msgstr ""
+
+#: inc/addons/custom-icons.php:90
+msgid "Symbol"
+msgstr ""
+
+#: inc/addons/custom-icons.php:125
+msgid "Symbol aus Medienbibliothek hinzufügen"
+msgstr ""
+
+#: inc/addons/custom-icons.php:112
+msgid "Symbol URL"
+msgstr ""
+
+#: inc/addons/places.php:152
+msgid "Synagogue"
+msgstr ""
+
+#: inc/addons/localize-maps.php:124
+msgid "Tagalog"
+msgstr ""
+
+#: inc/addons/localize-maps.php:125
+msgid "Tamil"
+msgstr ""
+
+#: inc/addons/places.php:153
+msgid "Taxi stand"
+msgstr ""
+
+#: inc/addons/localize-maps.php:126
+msgid "Telugu"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:61
+msgid "TERRAIN"
+msgstr ""
+
+#: inc/addons/localize-maps.php:127
+msgid "Thai"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:191
+msgid "Thumbnail"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:404
+msgid ""
+"Tipp: Für beste Kartenqualität <strong>zoome</strong>, um Deine Markierungen "
+"vor dem Speichern zu platzieren"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:389 inc/addons/user-checkin.php:1102
+#: inc/addons/user-checkin.php:1801
+msgid "Titel"
+msgstr ""
+
+#: views/widget_settings.php:2
+msgid "Titel:"
+msgstr ""
+
+#: inc/addons/places.php:154
+msgid "Train station"
+msgstr ""
+
+#: inc/addons/places.php:155
+msgid "Travel agency"
+msgstr ""
+
+#: inc/addons/localize-maps.php:128
+msgid "Turkish"
+msgstr ""
+
+#: inc/addons/localize-maps.php:129
+msgid "Ukrainian"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:248
+msgid ""
+"um das Erscheinungsbild der Karten besser mit Deinem Theme zu kombinieren."
+"</p>"
+msgstr ""
+
+#: inc/addons/places.php:156
+msgid "University"
+msgstr ""
+
+#: inc/addons/custom-icons.php:91
+msgid "URL"
+msgstr ""
+
+#: views/widget_settings.php:34
+msgid "Use this map:"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:65
+msgid "Verbergen"
+msgstr ""
+
+#: inc/addons/additional-behaviors.php:53 inc/addons/where-am-i.php:36
+msgid "Verhalten"
+msgstr ""
+
+#: inc/addons/traffic-overlay.php:58
+msgid "Verkehr anzeigen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:405
+msgid "Verknüpfe diese Karte mit diesem Inhalt"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:344
+msgid "Verschmelzen"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1384
+msgid ""
+"Versuche den Benutzerstandort auf der Seite zu erfassen, ohne eine Karte "
+"anzuzeigen. Keine Optionen verfügbar."
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:148
+msgid "Verwende Avatare als Kartenmarkierungen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:420
+msgid "Verwende die Bildgröße"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:402
+msgid ""
+"Verwende die Kartenoptionen, um Kartengröße, Erscheinungsbild, Ausrichtung "
+"und Bildstreifen zu ändern"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:12
+msgid ""
+"Verwende die Optionen in diesem Abschnitt, um Deine PS-Maps-Installation zu "
+"reparieren. <em>Möglicherweise möchtest Du zuerst Deine WordPress-Datenbank "
+"sichern.</em>"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:159
+msgid "Verwende die Unterstützung für benutzerdefinierte Post-Meta-Felder"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:180
+#, php-format
+msgid ""
+"Verwende diese Option, nachdem Du den Karten-Shortcode auf der Registerkarte "
+"\"Optionen\" oben geändert hast. Dadurch werden alle <code>[%s]</code> "
+"Shortcodes in <code>[%s]</code> in <strong>%d</strong> Seiten/Beiträge "
+"(einschließlich Revisionen und unveröffentlichten Posts) geändert."
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:91
+msgid ""
+"Verwende diese Option, um ALLE Tabellen aus diesem Blog zu entfernen. <em>"
+"(<b>Warnung:</b> Diese Option ist irreversibel.)</em>"
+msgstr ""
+
+#: inc/addons/fix-and-repair.php:59
+msgid ""
+"Verwende diese Option, wenn Du den Verdacht hast, dass Deine "
+"Datenbanktabelle fehlt"
+msgstr ""
+
+#: views/widget_settings.php:14
+msgid "Verwende Karten von:"
+msgstr ""
+
+#: inc/addons/loading-message.php:171
+msgid "Verwende Zwischenspeichern von Kartenkacheln"
+msgstr ""
+
+#: inc/addons/places.php:157
+msgid "Veterinary care"
+msgstr ""
+
+#: inc/addons/localize-maps.php:130
+msgid "Vietnamese"
+msgstr ""
+
+#: inc/addons/user-checkin.php:865
+#, php-format
+msgid "Von %1$s, am %2$s"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:48 inc/class-agm-gdpr.php:67
+msgid "Von PS-Maps automatisch erstellte Karten"
+msgstr ""
+
+#: inc/addons/kml-uploader.php:79
+msgid "Vorhandene KML-Dateien"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:337
+msgid "Vorschau und Bearbeitung der Karte"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:330
+msgid "Vorschau/Bearbeiten"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:59
+msgid "Wegbeschreibung erhalten"
+msgstr ""
+
+#: inc/class-agm-dependencies.php:62
+msgid "Wegbeschreibungen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:334
+msgid "Weiter &raquo;"
+msgstr ""
+
+#: views/widget_settings.php:53
+msgid "Weitere Informationen zu benutzerdefinierten Abfragen"
+msgstr ""
+
+#: inc/addons/geotag-wp.php:288
+msgid "Weiterlesen"
+msgstr ""
+
+#: inc/addons/bp-profile-maps.php:155
+msgid "Weltkarte mit allen Mitgliedern"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:434
+#, php-format
+msgid ""
+"Wenn die vorherige Option auf \"Ja\" gesetzt ist, wird die neue Karte %s im "
+"Beitrags-Inhalt angezeigt"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:173
+msgid "Wenn diese Felder gefunden werden, möchte ich"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1509
+msgid ""
+"Wenn diese Option aktiviert ist, sind alle Checkins mit dem aktuellen "
+"Beitrag oder der aktuellen Seite verknüpft.<br />Funktioniert nur auf "
+"einzelnen Seiten, nicht auf speziellen Seiten wie Suchergebnissen, Archiv "
+"oder Startseite."
+msgstr ""
+
+#: inc/addons/responsive-maps.php:160
+msgid ""
+"Wenn diese Option aktiviert ist, werden Karten mit dem Attribut \"width "
+"shortcode\" relativ zu ihrer ursprünglichen Größe skaliert, anstatt die "
+"volle Breite des übergeordneten Elements zu erweitern."
+msgstr ""
+
+#: inc/addons/user-checkin.php:1564
+msgid ""
+"Wenn ein Benutzer einen neuen Ort eincheckt, speichert das Plugin den Ort "
+"nicht, wenn er näher als diese Entfernung zu einem bereits eingecheckten Ort "
+"liegt.<br />Es werden nur die Standorte des aktuellen Benutzers überprüft. "
+"Wert zwischen 1-100"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1553
+msgid ""
+"Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird der "
+"älteste Standort aus der Gästesammlung entfernt.<br />Ein hoher Wert kann zu "
+"einer längeren Ladezeit von Karten führen. Wert zwischen 1-1000"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1542
+msgid ""
+"Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird ein "
+"älterer Standort aus der Benutzersammlung entfernt.<br />Ein hoher Wert kann "
+"zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-100"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1405
+msgid ""
+"Wenn kein Filter definiert ist, werden alle Standorte auf der Karte "
+"angezeigt."
+msgstr ""
+
+#. Author of the plugin
+msgid "WMS N@W"
+msgstr ""
+
+#: inc/addons/where-am-i.php:30
+msgid "Wo bin ich?"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1584
+msgid ""
+"Wähle aus, ob eine Karte ohne Standortmarkierungen angezeigt werden soll "
+"oder nicht.<br />Wenn eine leere Karte angezeigt wird, ist das Kartenzentrum "
+"standardmäßig nicht definiert. Gib daher eine Standardposition an (z. B. "
+"über \"<code>Wo bin ich?</code>\" oder \"<code>Karte zentrieren vor "
+"Ort</code>\" Erweiterung)."
+msgstr ""
+
+#: inc/addons/localize-maps.php:46
+msgid "Wähle deine Sprache"
+msgstr ""
+
+#: views/widget_settings.php:36
+msgid "Wähle ein"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:308
+msgid "Zeige auch die Standorte der Mitglieder an"
+msgstr ""
+
+#: inc/addons/bp-group-maps.php:272
+msgid "Zeige die GruppenMap für:"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:425
+msgid "Zeige so viele Bilder"
+msgstr ""
+
+#: views/widget_settings.php:57
+msgid "Zeige:"
+msgstr ""
+
+#: inc/addons/user-checkin.php:165
+msgid "Zeit"
+msgstr ""
+
+#: inc/class-agm-admin-form-renderer.php:224 inc/class-agm-admin-maps.php:413
+msgid "Zentriert"
+msgstr ""
+
+#: inc/addons/places.php:158
+msgid "Zoo"
+msgstr ""
+
+#: views/widget_settings.php:30
+msgid "Zufällige Karte"
+msgstr ""
+
+#: inc/class-agm-gdpr.php:92
+msgid "Zugehörige Karten"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1110
+msgid "Zuletzt geändert"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:399
+msgid "Zurück"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1389
+msgid "Zusätzlich stehen folgende Optionen zur Verfügung:"
+msgstr ""
+
+#: inc/addons/additional-behaviors.php:47
+msgid "Zusätzliche Verhaltensweisen"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:137
+msgid "Zusätzliches CSS"
+msgstr ""
+
+#: inc/addons/user-checkin.php:1069 inc/addons/user-checkin.php:1116
+msgid "Zähler"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:392 views/plugin_settings.php:11
+msgid "Änderungen speichern"
+msgstr ""
+
+#: inc/class-agm-admin-maps.php:33 inc/addons/user-checkin.php:1325
+msgid "Übersicht"
+msgstr ""

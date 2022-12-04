@@ -9,18 +9,18 @@ Author:      DerN3rd (WMS N@W)
 
 class Agm_Far_FormRenderer {
 	public function create_fixes_section() {
-		_e( 'Verwende die Optionen in diesem Abschnitt, um Deine PS-Maps-Installation zu reparieren. <em>Möglicherweise möchtest Du zuerst Deine WordPress-Datenbank sichern.</em>', AGM_LANG );
+		_e( 'Verwende die Optionen in diesem Abschnitt, um Deine PS-Maps-Installation zu reparieren. <em>Möglicherweise möchtest Du zuerst Deine WordPress-Datenbank sichern.</em>', 'psmaps' );
 	}
 
 	public function create_reset_options_box() {
-		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', AGM_LANG ) );
-		$click_here = esc_attr( __( 'Klicke hier, um alle Optionen auf die Standardeinstellungen in diesem Blog zurückzusetzen', AGM_LANG ) );
-		$success = esc_attr( __( 'Erfolg', AGM_LANG ) );
-		$failure = esc_attr( __( 'Fehler', AGM_LANG ) );
-		$stand_by = esc_attr( __( 'Deine Seite wird in 3 Sekunden automatisch neu geladen', AGM_LANG ) );
+		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', 'psmaps' ) );
+		$click_here = esc_attr( __( 'Klicke hier, um alle Optionen auf die Standardeinstellungen in diesem Blog zurückzusetzen', 'psmaps' ) );
+		$success = esc_attr( __( 'Erfolg', 'psmaps' ) );
+		$failure = esc_attr( __( 'Fehler', 'psmaps' ) );
+		$stand_by = esc_attr( __( 'Deine Seite wird in 3 Sekunden automatisch neu geladen', 'psmaps' ) );
 		echo '<a href="#fix_reset_options" id="agm-reset_options">' . $click_here . '</a>';
 		echo '&nbsp;<span id="agm-reset_options-result"></span>';
-		echo '<div><small>' . __( 'Alle einzelnen Kartenoptionen bleiben erhalten.', AGM_LANG ) . '</small></div>';
+		echo '<div><small>' . __( 'Alle einzelnen Kartenoptionen bleiben erhalten.', 'psmaps' ) . '</small></div>';
 		?>
 		<script type="text/javascript">
 		jQuery(function () {
@@ -50,13 +50,13 @@ class Agm_Far_FormRenderer {
 	}
 
 	public function create_missing_tables_box() {
-		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', AGM_LANG ) );
-		$click_here = esc_attr( __( 'Klicke hier, um fehlende Tabellen in diesem Blog zu beheben', AGM_LANG ) );
-		$success = esc_attr( __( 'Erfolg', AGM_LANG ) );
-		$failure = esc_attr( __( 'Fehler', AGM_LANG ) );
+		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', 'psmaps' ) );
+		$click_here = esc_attr( __( 'Klicke hier, um fehlende Tabellen in diesem Blog zu beheben', 'psmaps' ) );
+		$success = esc_attr( __( 'Erfolg', 'psmaps' ) );
+		$failure = esc_attr( __( 'Fehler', 'psmaps' ) );
 		echo '<a href="#fix_missing_table" id="agm-fix_missing_table">' . $click_here . '</a>';
 		echo '&nbsp;<span id="agm-fix_missing_table-result"></span>';
-		echo '<div><small>' . __( 'Verwende diese Option, wenn Du den Verdacht hast, dass Deine Datenbanktabelle fehlt', AGM_LANG ) . '</small></div>';
+		echo '<div><small>' . __( 'Verwende diese Option, wenn Du den Verdacht hast, dass Deine Datenbanktabelle fehlt', 'psmaps' ) . '</small></div>';
 		?>
 		<script type="text/javascript">
 		jQuery(function () {
@@ -81,14 +81,14 @@ class Agm_Far_FormRenderer {
 	}
 
 	public function create_empty_tables_box() {
-		$are_you_sure = esc_attr( __( 'Dadurch werden ALLE Karten in diesem Blog gelöscht. Bist Du sicher, dass Du dies tun möchtest?', AGM_LANG ) );
-		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', AGM_LANG ) );
-		$click_here = esc_attr( __( 'Klicke hier, um ALLE Karten in diesem Blog zu löschen', AGM_LANG ) );
-		$success = esc_attr( __( 'Erfolg', AGM_LANG ) );
-		$failure = esc_attr( __( 'Fehler', AGM_LANG ) );
+		$are_you_sure = esc_attr( __( 'Dadurch werden ALLE Karten in diesem Blog gelöscht. Bist Du sicher, dass Du dies tun möchtest?', 'psmaps' ) );
+		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', 'psmaps' ) );
+		$click_here = esc_attr( __( 'Klicke hier, um ALLE Karten in diesem Blog zu löschen', 'psmaps' ) );
+		$success = esc_attr( __( 'Erfolg', 'psmaps' ) );
+		$failure = esc_attr( __( 'Fehler', 'psmaps' ) );
 		echo '<a href="#clear_table" id="agm-clear_table">' . $click_here . '</a>';
 		echo '&nbsp;<span id="agm-clear_table-result"></span>';
-		echo '<div><small>' . __( 'Verwende diese Option, um ALLE Tabellen aus diesem Blog zu entfernen. <em>(<b>Warnung:</b> Diese Option ist irreversibel.)</em>', AGM_LANG ) . '</small></div>';
+		echo '<div><small>' . __( 'Verwende diese Option, um ALLE Tabellen aus diesem Blog zu entfernen. <em>(<b>Warnung:</b> Diese Option ist irreversibel.)</em>', 'psmaps' ) . '</small></div>';
 		?>
 		<script type="text/javascript">
 		jQuery(function () {
@@ -114,11 +114,11 @@ class Agm_Far_FormRenderer {
 	}
 
 	public function create_rebuild_maps_box() {
-		$click_here = esc_attr( __( 'Klicke hier, um Deine BuddyPress-Mitgliederprofilkarten neu zu erstellen', AGM_LANG ) );
-		$description = __( 'Erstelle alle Profilzuordnungen neu <em>(<b>Warnung:</b> dies dauert eine Weile)</em>', AGM_LANG );
-		$drop_buffer = esc_attr( __( 'Bitte warte während die alten Standortpuffer gelöscht werden', AGM_LANG ) );
-		$processing_profiles = esc_attr( __( 'Profile bearbeiten ... ', AGM_LANG ) );
-		$all_done = esc_attr( __( 'Alles erledigt!', AGM_LANG ) );
+		$click_here = esc_attr( __( 'Klicke hier, um Deine BuddyPress-Mitgliederprofilkarten neu zu erstellen', 'psmaps' ) );
+		$description = __( 'Erstelle alle Profilzuordnungen neu <em>(<b>Warnung:</b> dies dauert eine Weile)</em>', 'psmaps' );
+		$drop_buffer = esc_attr( __( 'Bitte warte während die alten Standortpuffer gelöscht werden', 'psmaps' ) );
+		$processing_profiles = esc_attr( __( 'Profile bearbeiten ... ', 'psmaps' ) );
+		$all_done = esc_attr( __( 'Alles erledigt!', 'psmaps' ) );
 		?>
 		<a href="#rebuild_maps" id="agm-bp-rebuild_maps"><?php echo esc_js( $click_here ); ?></a>&nbsp;<span id="agm-bp-rebuild_maps-result"></span>
 		<div><small><?php echo esc_js( $description ); ?></small></div>
@@ -158,10 +158,10 @@ class Agm_Far_FormRenderer {
 	}
 
 	public function create_rename_shortcode_box() {
-		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', AGM_LANG ) );
-		$click_here = esc_attr( __( 'Klicke hier, um den Karten-Shortcode in diesem Blog zu aktualisieren', AGM_LANG ) );
-		$success = esc_attr( __( 'Erfolg', AGM_LANG ) );
-		$failure = esc_attr( __( 'Fehler', AGM_LANG ) );
+		$please_wait = esc_attr( __( 'Bitte warte einen Moment...', 'psmaps' ) );
+		$click_here = esc_attr( __( 'Klicke hier, um den Karten-Shortcode in diesem Blog zu aktualisieren', 'psmaps' ) );
+		$success = esc_attr( __( 'Erfolg', 'psmaps' ) );
+		$failure = esc_attr( __( 'Fehler', 'psmaps' ) );
 		$old_tag = 'agm_map' == AgmMapModel::get_config( 'shortcode_map' ) ? 'map' : 'agm_map';
 		$new_tag = 'agm_map' == $old_tag ? 'map' : 'agm_map';
 
@@ -170,14 +170,14 @@ class Agm_Far_FormRenderer {
 		$total = (int) $wpdb->get_var( "SELECT COUNT(1) FROM {$wpdb->posts} WHERE post_content LIKE '%[{$old_tag} %';" );
 
 		if ( 0 == $total ) {
-			_e( 'Es muss nichts repariert werden', AGM_LANG );
-			echo '<div><small>' . sprintf( __( 'In diesem Blog gibt es keinen Beitrag oder keine Seite, die den alten Karten-Shortcode <code>[%s]</code> verwendet', AGM_LANG ), $old_tag ) . '</small></div>';
+			_e( 'Es muss nichts repariert werden', 'psmaps' );
+			echo '<div><small>' . sprintf( __( 'In diesem Blog gibt es keinen Beitrag oder keine Seite, die den alten Karten-Shortcode <code>[%s]</code> verwendet', 'psmaps' ), $old_tag ) . '</small></div>';
 			return false;
 		}
 
 		echo '<a href="#rename_shortcode" id="agm-rename_shortcode">' . $click_here . '</a>';
 		echo '&nbsp;<span id="agm-rename_shortcode-result"></span>';
-		echo '<div><small>' . sprintf( __( 'Verwende diese Option, nachdem Du den Karten-Shortcode auf der Registerkarte "Optionen" oben geändert hast. Dadurch werden alle <code>[%s]</code> Shortcodes in <code>[%s]</code> in <strong>%d</strong> Seiten/Beiträge (einschließlich Revisionen und unveröffentlichten Posts) geändert.', AGM_LANG ), $old_tag, $new_tag, $total ) . '</small></div>';
+		echo '<div><small>' . sprintf( __( 'Verwende diese Option, nachdem Du den Karten-Shortcode auf der Registerkarte "Optionen" oben geändert hast. Dadurch werden alle <code>[%s]</code> Shortcodes in <code>[%s]</code> in <strong>%d</strong> Seiten/Beiträge (einschließlich Revisionen und unveröffentlichten Posts) geändert.', 'psmaps' ), $old_tag, $new_tag, $total ) . '</small></div>';
 		?>
 		<script type="text/javascript">
 		jQuery(function () {
@@ -219,34 +219,34 @@ class Agm_FixAndRepair {
 
 		add_settings_section(
 			'agm_google_maps_repairs',
-			__( 'Fixes and Reparieren', AGM_LANG ),
+			__( 'Fixes and Reparieren', 'psmaps' ),
 			array( $form, 'create_fixes_section' ),
 			'agm_google_maps_options_page'
 		);
 		add_settings_field(
 			'agm_google_maps_reset_options',
-			__( 'Setze alle Optionen auf die Standardeinstellungen zurück', AGM_LANG ),
+			__( 'Setze alle Optionen auf die Standardeinstellungen zurück', 'psmaps' ),
 			array( $form, 'create_reset_options_box' ),
 			'agm_google_maps_options_page', '
 			agm_google_maps_repairs'
 		);
 		add_settings_field(
 			'agm_google_maps_create_table',
-			__( 'Fehlende Tabelle reparieren', AGM_LANG ),
+			__( 'Fehlende Tabelle reparieren', 'psmaps' ),
 			array( $form, 'create_missing_tables_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_repairs'
 		);
 		add_settings_field(
 			'agm_google_maps_empty_table',
-			__( 'Bereinige Tabellen', AGM_LANG ),
+			__( 'Bereinige Tabellen', 'psmaps' ),
 			array( $form, 'create_empty_tables_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_repairs'
 		);
 		add_settings_field(
 			'agm_google_maps_rename_shortcode',
-			__( 'Benenne den Karten-Shortcode um', AGM_LANG ),
+			__( 'Benenne den Karten-Shortcode um', 'psmaps' ),
 			array( $form, 'create_rename_shortcode_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_repairs'
@@ -255,7 +255,7 @@ class Agm_FixAndRepair {
 		if ( class_exists( 'Agm_Bp_Pm_UserPages' ) ) {
 			add_settings_field(
 				'agm_google_maps-bp-rebuild_maps',
-				__( 'Erstelle BuddyPress-Profilkarten neu', AGM_LANG ),
+				__( 'Erstelle BuddyPress-Profilkarten neu', 'psmaps' ),
 				array( $form, 'create_rebuild_maps_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_maps_repairs'

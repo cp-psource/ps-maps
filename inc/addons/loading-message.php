@@ -124,13 +124,13 @@ class Agm_Mlm_Pages {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_mlm',
-			__( 'Karten Ladenachricht', AGM_LANG ),
+			__( 'Karten Ladenachricht', 'psmaps' ),
 			array( $this, 'create_section_notice' ),
 			'agm_google_maps_options_page'
 		);
 		add_settings_field(
 			'agm_google_maps_mlm_auto_assign',
-			__( 'Füge diesen Karten eine Lademeldung hinzu', AGM_LANG ),
+			__( 'Füge diesen Karten eine Lademeldung hinzu', 'psmaps' ),
 			array( $this, 'create_auto_assign_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_mlm'
@@ -143,7 +143,7 @@ class Agm_Mlm_Pages {
 				'Du fügst die Lademeldung in Deinem Shortcodes mit dem ' .
 				'Shortcode-Attribut <code>loading_message="Meine Nachricht"</code> ' .
 				'hinzu. Hier kannst Du auch das Laden von Nachrichten für ' .
-				'Deine anderen Karten festlegen.', AGM_LANG
+				'Deine anderen Karten festlegen.', 'psmaps'
 			); ?>
 		</em>
 		<?php
@@ -151,29 +151,29 @@ class Agm_Mlm_Pages {
 
 	public function create_auto_assign_box() {
 		echo '' .
-			'<label for="agm-mlm-autogen">' . __( 'Nachricht für automatisch generierte Karten', AGM_LANG ) . '</label>' .
+			'<label for="agm-mlm-autogen">' . __( 'Nachricht für automatisch generierte Karten', 'psmaps' ) . '</label>' .
 			'<input type="text" class="widefat" id="agm-mlm-autogen" name="agm_google_maps[mlm][autogen]" value="' . esc_attr( $this->_data['autogen'] ) . '" />' .
 		'<br />';
 		if ( class_exists( 'Agm_Bp_Pm_AdminPages' ) && defined( 'BP_VERSION' ) ) {
 			echo '' .
-				'<label for="agm-mlm-bp_profile">' . __( 'BuddyPress-Mitgliederverzeichniszuordnung', AGM_LANG ) . '</label>' .
+				'<label for="agm-mlm-bp_profile">' . __( 'BuddyPress-Mitgliederverzeichniszuordnung', 'psmaps' ) . '</label>' .
 				'<input type="text" class="widefat" id="agm-mlm-bp_profile" name="agm_google_maps[mlm][bp_profile]" value="' . esc_attr( $this->_data['bp_profile'] ) . '" />' .
 			'<br />';
 		}
 		echo '' .
-			'<label for="agm-mlm-all">' . __( 'Alle Karten Ladenachricht', AGM_LANG ) . '</label>' .
+			'<label for="agm-mlm-all">' . __( 'Alle Karten Ladenachricht', 'psmaps' ) . '</label>' .
 			'<input type="text" class="widefat" id="agm-mlm-all" name="agm_google_maps[mlm][all]" value="' . esc_attr( $this->_data['all'] ) . '" />' .
 		'<br />';
 		echo '' .
 			'<input type="hidden" name="agm_google_maps[mlm][cached_map]" value="" />' .
 			'<input type="checkbox" id="agm-mlm-cached_map" name="agm_google_maps[mlm][cached_map]" value="1" ' . checked( $this->_data['cached_map'], 1, false ) . '" />' .
 			'&nbsp;' .
-			'<label for="agm-mlm-cached_map">' . __( 'Verwende Zwischenspeichern von Kartenkacheln', AGM_LANG ) . '</label>' .
+			'<label for="agm-mlm-cached_map">' . __( 'Verwende Zwischenspeichern von Kartenkacheln', 'psmaps' ) . '</label>' .
 		'<br />';
 	}
 
 	private function _get_options() {
-		$default_msg = __( 'Karte wird geladen, bitte warten', AGM_LANG );
+		$default_msg = __( 'Karte wird geladen, bitte warten', 'psmaps' );
 		$opts = apply_filters( 'agm_google_maps-options-mlm', get_option( 'agm_google_maps' ) );
 		$opts = isset( $opts['mlm'] ) && $opts['mlm'] ? $opts['mlm'] : array();
 		return wp_parse_args(

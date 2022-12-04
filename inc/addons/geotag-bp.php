@@ -95,7 +95,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			?>
 			<div id="agm-gwp-location_root">
 				<label for="agm-address" id="">
-					<?php _e( 'Addresse', AGM_LANG ); ?>:
+					<?php _e( 'Addresse', 'psmaps' ); ?>:
 					<input type="text" class="widefat" name="agm-address" id="agm-address" value="" />
 					<input type="hidden" autocomplete="off" name="agm-latitude" id="agm-latitude" value="" />
 					<input type="hidden" autocomplete="off" name="agm-longitude" id="agm-longitude" value="" />
@@ -256,7 +256,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 	function _agm_gwa_register_data_eraser( $erasers ) {
 		$data = new Agm_GwaModel();
 		$erasers['agm_google_maps-geotag_bp'] = array(
-			'eraser_friendly_name' => __( 'PS-Maps Aktivitäts-Geotags', AGM_LANG ),
+			'eraser_friendly_name' => __( 'PS-Maps Aktivitäts-Geotags', 'psmaps' ),
 			'callback' => array( $data, 'gdpr_erase_user_activity_meta' ),
 		);
 		return $erasers;

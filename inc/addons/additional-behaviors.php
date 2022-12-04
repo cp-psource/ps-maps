@@ -44,13 +44,13 @@ class Agm_Mab_AdditionalBehaviors {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_mab',
-			__( 'Zusätzliche Verhaltensweisen', AGM_LANG ),
+			__( 'Zusätzliche Verhaltensweisen', 'psmaps' ),
 			array( $this, 'create_section' ),
 			'agm_google_maps_options_page'
 		);
 		add_settings_field(
 			'agm_google_maps_list_kmls',
-			__( 'Verhalten', AGM_LANG ),
+			__( 'Verhalten', 'psmaps' ),
 			array( $this, 'create_behaviors_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_mab'
@@ -61,7 +61,7 @@ class Agm_Mab_AdditionalBehaviors {
 		?>
 		<p>
 			<em>
-			<?php _e( 'Hier kannst Du zusätzliche globale Einstellungen für Karten definieren.', AGM_LANG ); ?>
+			<?php _e( 'Hier kannst Du zusätzliche globale Einstellungen für Karten definieren.', 'psmaps' ); ?>
 			</em>
 		</p>
 		<?php
@@ -80,7 +80,7 @@ class Agm_Mab_AdditionalBehaviors {
 				name="agm_google_maps[mab][marker_click_popup]"
 				<?php checked( $opts['marker_click_popup'], true ); ?> />
 			&nbsp
-			<?php _e( 'Klicke auf das Element in der Markierungsliste, um das Detail-Popup zu öffnen', AGM_LANG ); ?>
+			<?php _e( 'Klicke auf das Element in der Markierungsliste, um das Detail-Popup zu öffnen', 'psmaps' ); ?>
 		</label>
 		<br />
 
@@ -94,7 +94,7 @@ class Agm_Mab_AdditionalBehaviors {
 				name="agm_google_maps[mab][directions_click_scroll]"
 				<?php checked( $opts['directions_click_scroll'], true ); ?> />
 			&nbsp
-			<?php _e( 'Klicke auf den Wegbeschreibungslink, um zum Wegbeschreibungsformular zu gelangen', AGM_LANG ); ?>
+			<?php _e( 'Klicke auf den Wegbeschreibungslink, um zum Wegbeschreibungsformular zu gelangen', 'psmaps' ); ?>
 		</label>
 		<br />
 		<?php
