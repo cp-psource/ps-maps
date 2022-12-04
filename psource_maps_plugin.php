@@ -45,7 +45,7 @@ define( 'AGM_ADDON_DIR', AGM_BASE_DIR . 'inc/addons/' );
 define( 'AGM_VIEWS_DIR', AGM_BASE_DIR . 'views/' );
 define( 'AGM_IMG_DIR', AGM_BASE_DIR . 'img/' );
 define( 'AGM_PLUGIN_URL', trailingslashit( plugins_url( '', AGM_PLUGIN ) ) );
-define( 'AGM_LANG', 'agm_google_maps' );
+define( 'AGM_LANG', 'psmaps' );
 
 if ( is_multisite() ) {
 	load_muplugin_textdomain( AGM_LANG, false, AGM_PLUGIN_DIRNAME . '/languages/' );

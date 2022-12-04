@@ -198,7 +198,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 					<?php _e(
 						'Für dieses Add-On ist das BuddyPress-Plugin mit der aktiven ' .
 						'Komponente <strong>Erweiterte Profile</strong> erforderlich.',
-						AGM_LANG
+						'psmaps'
 					); ?>
 				</p>
 				<?php
@@ -312,7 +312,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				'<p><code>[agm_members_map]</code></p>' .
 				'<p><code>[agm_all_profiles_map]</code> (<em>identisch mit ' .
 				'agm_members_map für Abwärtskompatibilität</em>)</p>',
-				AGM_LANG
+				'psmaps'
 			);
 		}
 

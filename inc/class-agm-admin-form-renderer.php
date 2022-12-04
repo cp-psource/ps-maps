@@ -446,7 +446,7 @@ class Agm_AdminFormRenderer {
 					'zu Deinem visuellen Editor hinzu. Sobald Du Deine neue ' .
 					'Karte erstellt hast, wird sie als Shortcode in den Bereich "Beitrag/Seite schreiben" ' .
 					'eingefügt. In etwa so: <code>[%s id="1"]</code>.',
-					AGM_LANG
+					'psmaps'
 				),
 				$shortcode_tag
 			); ?>
