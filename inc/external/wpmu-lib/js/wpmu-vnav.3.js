@@ -1,4 +1,4 @@
-/*! WPMU Dev code library - v2.0.3
+/*! WMS N@W code library - v2.0.3
  * https://n3rds.work/
  * Copyright (c) 2016; * Licensed GPLv2+ */
 /*!
@@ -140,8 +140,8 @@ jQuery(function() {
         context.on('click', 'h2,h3', toggle_sections);
 
         // Hide the section list on window resize (mobile screens only).
-        wnd.resize(resize_content);
-        wnd.resize(close_sections);
+        wnd.on('resize', resize_content);
+        wnd.on('resize', close_sections);
 
         // Timeout of 50ms: Screen needs to refresh once before this works.
         window.setTimeout(function() {

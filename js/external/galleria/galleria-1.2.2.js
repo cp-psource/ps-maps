@@ -1048,7 +1048,7 @@
                 });
 
                 // bind the scaling to the resize event
-                $(window).resize(function() {
+                $(window).on('resize', function() {
                     fullscreen.scale();
                 });
             },
@@ -1441,7 +1441,7 @@
 
                     lightbox.elems.title.innerHTML = data.title;
                     lightbox.elems.counter.innerHTML = (index + 1) + ' / ' + total;
-                    $(window).resize(lightbox.rescale);
+                    $(window).on('resize', lightbox.rescale);
                     lightbox.rescale();
                 });
 

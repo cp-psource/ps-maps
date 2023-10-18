@@ -28,7 +28,7 @@ window.setTimeout(function init_icon_admin() {
     var initialze_table = function initialze_table() {
         var ind, raw = data.val();
 
-        try { the_list = jQuery.parseJSON(raw); } catch (ignore) {}
+        try { the_list = JSON.parse(raw); } catch (ignore) {}
 
         if (null === the_list || typeof the_list !== 'object') {
             the_list = [];
@@ -121,7 +121,7 @@ window.setTimeout(function init_icon_admin() {
             dummy_img.remove();
         };
 
-        dummy_img.load(preview_loaded).attr('src', url).appendTo(jQuery('body'));
+        dummy_img.on('load', preview_loaded).attr('src', url).appendTo(jQuery('body'));
         jQuery('img', td_img).attr('src', url);
 
         alternate_rows();
@@ -180,11 +180,11 @@ window.setTimeout(function init_icon_admin() {
     };
 
     table.on('click', '.remove', remove_icon);
-    btn_add.on("click", add_icon);
-    btn_media.on("click", media_library);
-    txt_url.keyup(show_preview);
-    txt_url.change(show_preview);
-    img_preview.load(check_preview);
+    btn_add.on('click', add_icon);
+    btn_media.on('click', media_library);
+    txt_url.on('keyup', show_preview);
+    txt_url.on('change', show_preview);
+    img_preview.on('load', check_preview);
     initialze_table();
     disable_save();
 

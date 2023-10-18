@@ -5,6 +5,8 @@
  */
 class AgmAdminMaps {
 
+	public $model;
+
 	/**
 	 * Entry method.
 	 *

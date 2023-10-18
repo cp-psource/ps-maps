@@ -286,7 +286,7 @@ jQuery(function init_agm_user_check_in() {
         show_checkin_status();
 
         try {
-            resp = jQuery.parseJSON(response);
+            resp = JSON.parse(response);
         } catch (ignore) {}
 
         if ('OK' === resp.status) {
@@ -361,7 +361,7 @@ jQuery(function init_agm_user_check_in() {
             var resp = {},
                 marker, identifier;
             try {
-                resp = jQuery.parseJSON(response);
+                resp = JSON.parse(response);
             } catch (ignore) {}
 
             switch (resp.status) {

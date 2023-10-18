@@ -4,6 +4,8 @@
  * Handles plugin installation.
  */
 class AgmPluginInstaller {
+
+	public $model;
 	/**
 	 * Default settings of the plugin.
 	 * @var array

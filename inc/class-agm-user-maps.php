@@ -5,6 +5,8 @@
  */
 class AgmUserMaps {
 
+	public $model;
+
 	/**
 	 * Entry method.
 	 *

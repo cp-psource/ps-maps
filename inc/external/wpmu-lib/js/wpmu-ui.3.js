@@ -3171,7 +3171,7 @@
                     response = resp;
                     if ('json' === type) {
                         try {
-                            response = jQuery.parseJSON(resp);
+                            response = JSON.parse(resp);
                         } catch (ignore) {
                             response = { 'status': 'ERR', 'data': resp };
                         }

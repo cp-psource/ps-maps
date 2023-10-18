@@ -19,7 +19,7 @@ jQuery(document).on("agm_google_maps-user-map_initialized", function (e, map, da
 		map_width = el.width()
 	;
 
-	jQuery(window).resize(function () {
+	jQuery(window).on('resize', function () {
 		var width = parent.width();
 
 		if ( data.responsive_respect_width ) {
