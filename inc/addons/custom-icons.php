@@ -184,8 +184,10 @@ class Agm_Icons_Shared {
 			$iconlist = @$options['custom_icons'];
 			$Icons = json_decode( $iconlist );
 
-			if ( ! is_array( $Icons ) ) {
-				$Icons = array();
+			if ($iconlist !== null) {
+				$Icons = json_decode($iconlist);
+			} else {
+				$Icons = array(); // Oder eine andere geeignete Standardwert-Zuweisung
 			}
 		}
 
