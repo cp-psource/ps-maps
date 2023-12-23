@@ -772,7 +772,7 @@ jQuery(function() {
         var show_map_popup = function show_map_popup(event) {
             event.preventDefault();
             event.stopPropagation();
-
+    
             var margin_left, margin_top, map,
                 id = jQuery(this).attr('id') + '-container',
                 body = jQuery('body'),
@@ -783,22 +783,22 @@ jQuery(function() {
                 html_overflow = html.css('overflow'),
                 width = map_box.data('width'),
                 height = map_box.data('height'),
-                map_el = map_box.find('.agm_google_maps'),
+                map_el = jQuery(this),
                 agm_selector = '#' + map_el.attr('id');
-
+    
             for (var ind = _agmMaps.length - 1; ind >= 0; ind--) {
                 if (_agmMaps[ind].selector === agm_selector) {
                     map = _agmMaps[ind];
                     break;
                 }
             }
-
+    
             map_box.show();
             map_modal.show();
-
+    
             if (!width.toString().length || isNaN(width)) { width = map.data.defaults.width; }
             if (!height.toString().length || isNaN(height)) { height = map.data.defaults.height; }
-
+    
             if (width.toString().length && !isNaN(width)) {
                 margin_left = (width / 2) * -1;
                 map_box.css({ 'width': width, 'margin-left': margin_left });
@@ -808,7 +808,7 @@ jQuery(function() {
                 if (parseInt(map.data.show_markers)) {
                     var marker_box = jQuery('#agm_mh_footer', map_box),
                         marker_count = 2;
-
+    
                     if (map.data.markers.length > 2) {
                         if (map.data.markers.length < 5) {
                             marker_count = map.data.markers.length;
@@ -816,7 +816,7 @@ jQuery(function() {
                             marker_count = 5;
                         }
                     }
-
+    
                     // Position the marker-list right below the map
                     marker_box.css({ 'top': height, 'bottom': 0 });
                     // Increase the popup height to show the marker list
@@ -825,26 +825,26 @@ jQuery(function() {
                 margin_top = (height / 2) * -1;
                 map_box.css({ 'height': height, 'margin-top': margin_top });
             }
-
+    
             body.css('overflow', 'hidden');
             html.css('overflow', 'hidden');
-
+    
             // one: this event can be fired only once.
             map_box.one('agm:close', function() {
                 body.css('overflow', body_overflow);
                 html.css('overflow', html_overflow);
-
+    
                 map_box.hide();
                 map_modal.remove();
             });
-
+    
             map_modal.on("click", function hide_map() {
                 map_box.trigger('agm:close');
             });
-
+    
             return false;
         };
-
+    
         jQuery('body').on('click', '.agm-map-popup', show_map_popup);
     };
 

@@ -1,6 +1,6 @@
-/*! WPMU Dev code library - v2.0.3
+/*! PSOURCE Dev code library - v2.0.3
  * https://n3rds.work/
- * Copyright (c) 2016-2022; * Licensed GPLv2+ */
+ * Copyright (c) 2016-2024; * Licensed GPLv2+ */
 /*!
  * https://github.com/select2/select2/blob/master/dist/js/select2.full.js
  *
@@ -344,7 +344,7 @@
                                         hasProp(defining, depName)) {
                                         args[i] = callDep(depName);
                                     } else if (map.p) {
-                                        map.p.load(map.n, makeRequire(relName, true), makeLoad(depName), {});
+                                        map.p.on( "load", map.n, makeRequire(relName, true), makeLoad(depName), {});
                                         args[i] = defined[depName];
                                     } else {
                                         throw new Error(name + ' missing ' + depName);
@@ -3392,7 +3392,7 @@
 
                     if (this._request != null) {
                         // JSONP requests cannot always be aborted
-                        if ($.isFunction(this._request.abort)) {
+                        if (typeof this._request.abort === 'function') {
                             this._request.abort();
                         }
 
@@ -3417,7 +3417,7 @@
 
                             if (self.options.get('debug') && window.console && console.error) {
                                 // Check to make sure that the response included a `results` key.
-                                if (!results || !results.results || !$.isArray(results.results)) {
+                                if (!results || !results.results || !Array.isArray(results.results)) {
                                     console.error(
                                         'Select2: The AJAX results did not return an array in the ' +
                                         '`results` key of the response.'
@@ -3461,7 +3461,7 @@
 
                     decorated.call(this, $element, options);
 
-                    if ($.isArray(tags)) {
+                    if (Array.isArray(tags)) {
                         for (var t = 0; t < tags.length; t++) {
                             var tag = tags[t];
                             var item = this._normalizeItem(tag);
@@ -3534,12 +3534,12 @@
                 };
 
                 Tags.prototype.createTag = function(decorated, params) {
-                    var term = $.trim(params.term);
-
+                    var term = (params.term || '').trim();
+                
                     if (term === '') {
                         return null;
                     }
-
+                
                     return {
                         id: term,
                         text: term
@@ -4624,7 +4624,7 @@
                         }
                     }
 
-                    if ($.isArray(options.language)) {
+                    if (Array.isArray(options.language)) {
                         var languages = new Translation();
                         options.language.push('en');
 
@@ -4687,7 +4687,7 @@
 
                     function matcher(params, data) {
                         // Always return the object if there is nothing to compare
-                        if ($.trim(params.term) === '') {
+                        if ((params.term || '').trim() === '') {
                             return data;
                         }
 
@@ -5374,7 +5374,7 @@
 
                     var newVal = args[0];
 
-                    if ($.isArray(newVal)) {
+                    if (Array.isArray(newVal)) {
                         newVal = $.map(newVal, function(obj) {
                             return obj.toString();
                         });
@@ -5447,7 +5447,7 @@
                     var classes, replacements = [],
                         adapted;
 
-                    classes = $.trim($dest.attr('class'));
+                        classes = ($dest.attr('class') || '').trim();
 
                     if (classes) {
                         classes = '' + classes; // for IE which returns object
@@ -5460,7 +5460,7 @@
                         });
                     }
 
-                    classes = $.trim($src.attr('class'));
+                    classes = ($src.attr('class') || '').trim();
 
                     if (classes) {
                         classes = '' + classes; // for IE which returns object
@@ -5501,7 +5501,7 @@
 
                     var containerCssClass = this.options.get('containerCssClass') || '';
 
-                    if ($.isFunction(containerCssClass)) {
+                    if (typeof containerCssClass === 'function') {
                         containerCssClass = containerCssClass(this.$element);
                     }
 
@@ -5527,7 +5527,7 @@
 
                     var containerCss = this.options.get('containerCss') || {};
 
-                    if ($.isFunction(containerCss)) {
+                    if (typeof containerCss === 'function') {
                         containerCss = containerCss(this.$element);
                     }
 
@@ -5558,7 +5558,7 @@
 
                     var dropdownCssClass = this.options.get('dropdownCssClass') || '';
 
-                    if ($.isFunction(dropdownCssClass)) {
+                    if (typeof dropdownCssClass === 'function') {
                         dropdownCssClass = dropdownCssClass(this.$element);
                     }
 
@@ -5584,7 +5584,7 @@
 
                     var dropdownCss = this.options.get('dropdownCss') || {};
 
-                    if ($.isFunction(dropdownCss)) {
+                    if (typeof dropdownCss === 'function') {
                         dropdownCss = dropdownCss(this.$element);
                     }
 
@@ -5631,7 +5631,7 @@
                     this.initSelection.call(null, this.$element, function(data) {
                         self._isInitialized = true;
 
-                        if (!$.isArray(data)) {
+                        if (!Array.isArray(data)) {
                             data = [data];
                         }
 
@@ -5777,7 +5777,7 @@
                     function wrappedMatcher(params, data) {
                         var match = $.extend(true, {}, data);
 
-                        if (params.term == null || $.trim(params.term) === '') {
+                        if (params.term == null || (params.term || '').trim() === '') {
                             return match;
                         }
 

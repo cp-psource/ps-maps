@@ -22,8 +22,8 @@ jQuery(function () {
 		;
 		if (!$target.length) { return false; }
 		$me.on("click", function () {
-			jQuery("#contextual-help-link").click();
-			$target.find("a").click();
+			jQuery("#contextual-help-link").trigger( "click" );
+			$target.find("a").trigger( "click" );
 			jQuery(window).scrollTop(0);
 			return false;
 		});

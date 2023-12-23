@@ -56,17 +56,16 @@ Galleria.addTheme({
         
         // bind some stuff
         this.on('thumbnail', function(e) {
-            
-            if (! touch ) {
+            if (!touch) {
                 // fade thumbnails
-                $(e.thumbTarget).css('opacity', 0.6).parent().hover(function() {
+                $(e.thumbTarget).css('opacity', 0.6).parent().on('mouseenter', function() {
                     $(this).not('.active').children().stop().fadeTo(100, 1);
-                }, function() {
+                }).on('mouseleave', function() {
                     $(this).not('.active').children().stop().fadeTo(400, 0.6);
                 });
-                
-                if ( e.index === options.show ) {
-                    $(e.thumbTarget).css('opacity',1);
+
+                if (e.index === options.show) {
+                    $(e.thumbTarget).css('opacity', 1);
                 }
             }
         });

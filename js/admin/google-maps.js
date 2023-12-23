@@ -481,7 +481,7 @@ jQuery(function() {
                 .prop('checked', show_panoramio_overlay);
 
             jQuery('#agm_map_panoramio_overlay_tag')
-                .change(changePanoramio)
+                .on( "change", changePanoramio)
                 .val(data.panoramio_overlay_tag);
 
             switch (data.map_alignment) {
@@ -847,14 +847,15 @@ jQuery(function() {
 
         function selectContainer(event) {
             var range, el = jQuery(this)[0];
-
+        
             if (document.selection) {
                 range = document.body.createTextRange();
                 range.moveToElementText(el);
                 range.select();
             } else if (window.getSelection) {
                 range = document.createRange();
-                range.selectNode(el);
+                range.selectNodeContents(el);
+                window.getSelection().removeAllRanges();
                 window.getSelection().addRange(range);
             }
         }

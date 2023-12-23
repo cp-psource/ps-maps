@@ -38,7 +38,7 @@ window.setTimeout(function init_icon_admin() {
             add_icon_to_table(the_list[ind]);
         }
 
-        win.resize();
+        jQuery(window).trigger('resize');
     };
 
     var serialize_icons = function serialize_icons() {
@@ -93,7 +93,7 @@ window.setTimeout(function init_icon_admin() {
         add_icon_to_table(url);
         the_list.push(url);
         serialize_icons();
-        win.resize();
+        jQuery(window).trigger('resize');
     };
 
     var alternate_rows = function alternate_rows() {
@@ -143,7 +143,7 @@ window.setTimeout(function init_icon_admin() {
         row.remove();
         alternate_rows();
         serialize_icons();
-        win.resize();
+        jQuery(window).trigger('resize');
     };
 
     var disable_save = function disable_save(event) {

@@ -896,33 +896,27 @@
                 }
 
                 var hover = function(elem, value) {
-
                     tooltip.define(elem, value);
-
-                    $(elem).hover(function() {
-
+                
+                    $(elem).on('mouseenter', function() {
                         Utils.clearTimer('switch_tooltip');
                         self.$('container').off('mousemove', tooltip.move).on('mousemove', tooltip.move).trigger('mousemove');
                         tooltip.show(elem);
-
+                
                         Galleria.utils.addTimer('tooltip', function() {
                             self.$('tooltip').stop().show();
                             Utils.show(self.get('tooltip'), 400);
                             tooltip.open = true;
-
                         }, tooltip.open ? 0 : 500);
-
-                    }, function() {
-
+                    }).on('mouseleave', function() {
                         self.$('container').off('mousemove', tooltip.move);
                         Utils.clearTimer('tooltip');
-
+                
                         self.$('tooltip').stop();
-
+                
                         Utils.hide(self.get('tooltip'), 200, function() {
-
                             self.$('tooltip').hide();
-
+                
                             Utils.addTimer('switch_tooltip', function() {
                                 tooltip.open = false;
                             }, 1000);
@@ -1266,10 +1260,11 @@
                         counter: 'float:right;margin-left:8px;'
                     },
                     hover = function(elem) {
-                        return elem.hover(
-                            function() { $(this).css('color', '#bbb'); },
-                            function() { $(this).css('color', '#444'); }
-                        );
+                        return elem.on('mouseenter', function() {
+                            $(this).css('color', '#bbb');
+                        }).on('mouseleave', function() {
+                            $(this).css('color', '#444');
+                        });
                     },
                     appends = {};
 
@@ -1335,9 +1330,9 @@
                         return;
                     }
 
-                    $e.hover(function() {
+                    $e.on('mouseenter', function() {
                         $d.show();
-                    }, function(e) {
+                    }).on('mouseleave', function() {
                         $d.stop().fadeOut(200);
                     });
 
@@ -1426,7 +1421,7 @@
 
                 Utils.hide(lightbox.elems.info);
 
-                lightbox.image.load(data.image, function(image) {
+                lightbox.image.on( "load", data.image, function(image) {
 
                     lightbox.width = image.original.width;
                     lightbox.height = image.original.height;
@@ -1727,7 +1722,7 @@
                     if (Galleria.History) {
 
                         // bind the show method
-                        Galleria.History.change(function(e) {
+                        Galleria.History.on( "change", function(e) {
 
                             // grab history ID
                             var val = parseInt(e.value.replace(/\//, ''), 10);
@@ -1844,7 +1839,7 @@
             });
 
             // load up target content
-            this.load();
+            this.trigger("load");
 
             // now it's usually safe to remove the content
             // IE will never stop loading if we remove it, so let's keep it hidden for IE (it's usually fast enough anyway)
@@ -2013,7 +2008,7 @@
                     }
 
                     // load the thumbnail
-                    thumb.load(src, onThumbLoad);
+                    thumb.on( "load", src, onThumbLoad);
 
                     // preload all images here
                     if (o.preload === 'all') {
@@ -3031,7 +3026,7 @@ this.prependChild( 'info', 'myElement' );
                 thumbTarget: thumb.image
             });
             // begin loading the next image
-            next.load(src, function(next) {
+            next.on( "load", src, function(next) {
                 self._scaleImage(next, {
 
                     complete: function(next) {
@@ -3443,7 +3438,7 @@ this.prependChild( 'info', 'myElement' );
                 ret = [];
 
             $.each(str.split(','), function(i, elemId) {
-                elemId = $.trim(elemId);
+                elemId = (elemId || '').trim();
 
                 if (self.get(elemId)) {
                     ret.push(elemId);
@@ -3798,7 +3793,7 @@ this.prependChild( 'info', 'myElement' );
                     // set a limit just in case
                     if ((!this.width || !this.height) && i < 1000) {
                         i++;
-                        $(image).load(onload).attr('src', src + '?' + new Date().getTime());
+                        $(image).on( "load", onload).attr('src', src + '?' + new Date().getTime());
                     }
 
                     self.original = {
@@ -3821,7 +3816,7 @@ this.prependChild( 'info', 'myElement' );
             }
 
             // begin preload and insert in cache when done
-            $(image).load(onload).attr('src', src);
+            $(image).on( "load", onload).attr('src', src);
 
             return image;
 

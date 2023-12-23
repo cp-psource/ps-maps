@@ -72,7 +72,7 @@ jQuery(function() {
                 });
 
                 parent.find('.map_id_switch').attr('checked', true);
-                parent.find('.map_id_switch').click();
+                parent.find('.map_id_switch').trigger( "click" );
                 parent.find('.map_id_target').html(opts);
             }
         );

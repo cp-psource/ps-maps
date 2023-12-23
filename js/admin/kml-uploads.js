@@ -37,7 +37,7 @@ jQuery(document).on(
 				}
 
 				jQuery( '#agm-kml_uploader' ).html( html );
-				jQuery( '#agm-kml_uploaded_file' ).change(function () {
+				jQuery( '#agm-kml_uploaded_file' ).on( "change", function () {
 					jQuery( '#agm-kml_url' ).val( jQuery(this).val() );
 				});
 			}
