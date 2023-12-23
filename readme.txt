@@ -4,7 +4,7 @@ Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free
 Tags: multisite, abstimmung, voting, post,
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 3.0.8
+Stable tag: 3.0.9
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,10 +43,10 @@ Dieses Mapping-Plugin ist vollständig interaktiv!
 Zeige mit unseren erweiterten Steuerelementen, einschließlich Shorcodes mit IDs, ganz einfach mehrere Karten in einem einzigen Beitrag oder einer einzelnen Seite an und steuere die Breite und Höhe! 
 Füge jeder Karte mehrere Markierungen hinzu!
 
-[POWERED BY PSOURCE](https://n3rds.work/psource_kategorien/psource-plugins/)
-
 [Projektseite](https://n3rds.work/piestingtal_source/ps-google-maps-plugin/)
 [GitHub](https://github.com/piestingtal-source/ps-maps)
+
+[POWERED BY PSOURCE](https://n3rds.work/psource_kategorien/psource-plugins/)
 
 == Mehr PSOURCE ==
 

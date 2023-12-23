@@ -1,17 +1,16 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PS Google Maps\n"
-"POT-Creation-Date: 2023-12-23 17:57+0100\n"
-"PO-Revision-Date: 2023-12-23 17:57+0100\n"
+"POT-Creation-Date: 2023-12-23 17:59+0100\n"
+"PO-Revision-Date: 2023-12-23 18:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Poedit 3.4.2\n"
-"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: psource_maps_plugin.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -23,134 +22,169 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: psource/psource-plugin-update/vendor\n"
 
 #: inc/addons/additional-behaviors.php:47
+#, fuzzy
 msgid "Zusätzliche Verhaltensweisen"
-msgstr ""
+msgstr "Comportamenti aggiuntivi"
 
 #: inc/addons/additional-behaviors.php:53 inc/addons/where-am-i.php:36
+#, fuzzy
 msgid "Verhalten"
-msgstr ""
+msgstr "Comportamento"
 
 #: inc/addons/additional-behaviors.php:64
+#, fuzzy
 msgid "Hier kannst Du zusätzliche globale Einstellungen für Karten definieren."
-msgstr ""
+msgstr "Qui è possibile definire ulteriori impostazioni globali per le mappe."
 
 #: inc/addons/additional-behaviors.php:83
+#, fuzzy
 msgid ""
 "Klicke auf das Element in der Markierungsliste, um das Detail-Popup zu öffnen"
 msgstr ""
+"Fare clic sull'elemento nell'elenco di selezione per aprire il pop-up dei "
+"dettagli"
 
 #: inc/addons/additional-behaviors.php:97
+#, fuzzy
 msgid ""
 "Klicke auf den Wegbeschreibungslink, um zum Wegbeschreibungsformular zu "
 "gelangen"
 msgstr ""
+"Cliccare sul link Descrizione del percorso per accedere al modulo di "
+"descrizione del percorso"
 
 #: inc/addons/bp-group-maps.php:173 inc/addons/bp-group-maps.php:263
+#, fuzzy
 msgid "Googlekarte"
-msgstr ""
+msgstr "Mappa di Google"
 
 #: inc/addons/bp-group-maps.php:267
+#, fuzzy
 msgid "Diese Gruppe hat einen physischen Standort:"
-msgstr ""
+msgstr "Questo gruppo ha una sede fisica:"
 
 #: inc/addons/bp-group-maps.php:272
+#, fuzzy
 msgid "Zeige die GruppenMap für:"
-msgstr ""
+msgstr "Mostra la Mappa di gruppo per:"
 
 #: inc/addons/bp-group-maps.php:275 inc/class-agm-admin-form-renderer.php:493
 #: views/widget_settings.php:26
 msgid "Alle"
-msgstr ""
+msgstr "Tutti"
 
 #: inc/addons/bp-group-maps.php:279
 msgid "Mitglieder"
-msgstr ""
+msgstr "Members"
 
 #: inc/addons/bp-group-maps.php:283
+#, fuzzy
 msgid "Moderatoren"
-msgstr ""
+msgstr "Moderatori"
 
 #: inc/addons/bp-group-maps.php:291
+#, fuzzy
 msgid "Separate Registerkarte Googlekarte anzeigen"
-msgstr ""
+msgstr "Mostra la scheda separata della mappa di Google"
 
 #: inc/addons/bp-group-maps.php:299
+#, fuzzy
 msgid "Karte auf Mitgliederlistenseite anzeigen"
-msgstr ""
+msgstr "Mostra la mappa nella pagina dell'elenco dei membri"
 
 #: inc/addons/bp-group-maps.php:308
+#, fuzzy
 msgid "Zeige auch die Standorte der Mitglieder an"
-msgstr ""
+msgstr "Mostrare anche la posizione dei membri"
 
 #: inc/addons/bp-group-maps.php:309
+#, fuzzy
 msgid "(erfordert die Erweiterung BuddyPress Profilkarten)"
-msgstr ""
+msgstr "(richiede l'estensione della scheda profilo di BuddyPress)"
 
 #: inc/addons/bp-profile-maps.php:113
+#, fuzzy
 msgid "BuddyPress Profil"
-msgstr ""
+msgstr "Profilo BuddyPress"
 
 #: inc/addons/bp-profile-maps.php:127
+#, fuzzy
 msgid "Adressprofilfeld"
-msgstr ""
+msgstr "Campo del profilo dell'indirizzo"
 
 #: inc/addons/bp-profile-maps.php:134
+#, fuzzy
 msgid "Karte im Benutzerprofil anzeigen"
-msgstr ""
+msgstr "Mostra la mappa nel profilo utente"
 
 #: inc/addons/bp-profile-maps.php:141
+#, fuzzy
 msgid "Karte in Mitgliederliste anzeigen"
-msgstr ""
+msgstr "Mostra la scheda nell'elenco dei membri"
 
 #: inc/addons/bp-profile-maps.php:148
+#, fuzzy
 msgid "Verwende Avatare als Kartenmarkierungen"
-msgstr ""
+msgstr "Usare gli avatar come indicatori di mappa"
 
 #: inc/addons/bp-profile-maps.php:155
+#, fuzzy
 msgid "Weltkarte mit allen Mitgliedern"
-msgstr ""
+msgstr "Mappa del mondo con tutti i membri"
 
 #: inc/addons/bp-profile-maps.php:164
+#, fuzzy
 msgid "PS-Maps Profilkarten"
-msgstr ""
+msgstr "Mappe di profilo PS-Maps"
 
 #: inc/addons/bp-profile-maps.php:199
+#, fuzzy
 msgid ""
 "Für dieses Add-On ist das BuddyPress-Plugin mit der aktiven Komponente "
 "<strong>Erweiterte Profile</strong> erforderlich."
 msgstr ""
+"Questo componente aggiuntivo richiede il plugin BuddyPress con il componente "
+"<strong>Advanced Profiles</strong> attivo."
 
 #: inc/addons/bp-profile-maps.php:222
+#, fuzzy
 msgid "Dieses Profilfeld enthält die Adresse meiner Benutzer:"
-msgstr ""
+msgstr "Questo campo del profilo contiene l'indirizzo dei miei utenti:"
 
 #: inc/addons/bp-profile-maps.php:225
+#, fuzzy
 msgid "Bitte wähle ein Feld aus"
-msgstr ""
+msgstr "Selezionare un campo"
 
 #: inc/addons/bp-profile-maps.php:243
+#, fuzzy
 msgid "Nicht im Profil anzeigen"
-msgstr ""
+msgstr "Non mostrare nel profilo"
 
 #: inc/addons/bp-profile-maps.php:244
+#, fuzzy
 msgid "Karte vor Profilfeldern anzeigen"
-msgstr ""
+msgstr "Mostra la mappa davanti ai campi del profilo"
 
 #: inc/addons/bp-profile-maps.php:245
+#, fuzzy
 msgid "Karte nach Profilfeldern anzeigen"
-msgstr ""
+msgstr "Mostra la mappa in base ai campi del profilo"
 
 #: inc/addons/bp-profile-maps.php:266
+#, fuzzy
 msgid "Nicht in der Mitgliederliste anzeigen"
-msgstr ""
+msgstr "Non visualizzare nell'elenco dei membri"
 
 #: inc/addons/bp-profile-maps.php:267
+#, fuzzy
 msgid "Karte vor Mitgliederliste anzeigen"
-msgstr ""
+msgstr "Mostra la mappa prima dell'elenco dei membri"
 
 #: inc/addons/bp-profile-maps.php:268
+#, fuzzy
 msgid "Karte nach Mitgliederliste anzeigen"
-msgstr ""
+msgstr "Mostra la mappa in base all'elenco dei membri"
 
 #: inc/addons/bp-profile-maps.php:289 inc/addons/user-checkin.php:1999
 #: inc/class-agm-admin-form-renderer.php:32
@@ -158,7 +192,7 @@ msgstr ""
 #: inc/class-agm-admin-form-renderer.php:359
 #: inc/class-agm-admin-form-renderer.php:384
 msgid "Nein"
-msgstr ""
+msgstr "No"
 
 #: inc/addons/bp-profile-maps.php:290 inc/addons/user-checkin.php:1998
 #: inc/class-agm-admin-form-renderer.php:28
@@ -166,1355 +200,1727 @@ msgstr ""
 #: inc/class-agm-admin-form-renderer.php:350
 #: inc/class-agm-admin-form-renderer.php:375
 msgid "Ja"
-msgstr ""
+msgstr "Sì"
 
 #: inc/addons/bp-profile-maps.php:310
+#, fuzzy
 msgid ""
 "Verwenden Sie diesen Shortcode auf jeder Seite, um eine Karte mit allen "
 "BuddyPress-Mitgliedern anzuzeigen:<p><code>[agm_members_map]</code></"
 "p><p><code>[agm_all_profiles_map]</code> (<em>identisch mit agm_members_map "
 "für Abwärtskompatibilität</em>)</p>"
 msgstr ""
+"Utilizzate questo shortcode in ogni pagina per visualizzare una mappa con "
+"tutti i membri di BuddyPress:<p><code>[agm_members_map]</code></"
+"p><p><code>[agm_all_profiles_map]</code> (<em>identico a agm_members_map per "
+"la retrocompatibilità</em>)</p>"
 
 #: inc/addons/bp-profile-maps.php:391
+#, fuzzy
 msgid "BuddyPress XProfile nicht aktiviert"
-msgstr ""
+msgstr "BuddyPress XProfile non attivato"
 
 #: inc/addons/bp-profile-maps.php:399
+#, fuzzy
 msgid "Keine Adresse definiert"
-msgstr ""
+msgstr "Nessun indirizzo definito"
 
 #: inc/addons/bp-profile-maps.php:405
+#, fuzzy
 msgid "Für diese Adresse wurde keine Karte gefunden"
-msgstr ""
+msgstr "Non è stata trovata alcuna mappa per questo indirizzo"
 
 #: inc/addons/custom-icons.php:55 inc/addons/custom-icons.php:70
+#, fuzzy
 msgid "Benutzerdefinierte Symbole"
-msgstr ""
+msgstr "Simboli definiti dall'utente"
 
 #: inc/addons/custom-icons.php:62
+#, fuzzy
 msgid "Füge neue Symbole hinzu"
-msgstr ""
+msgstr "Aggiungere nuovi simboli"
 
 #: inc/addons/custom-icons.php:90
 msgid "Symbol"
-msgstr ""
+msgstr "Icon"
 
 #: inc/addons/custom-icons.php:91
+#, fuzzy
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: inc/addons/custom-icons.php:92
+#, fuzzy
 msgid "Breite x Höhe"
-msgstr ""
+msgstr "Larghezza x altezza"
 
 #: inc/addons/custom-icons.php:112
+#, fuzzy
 msgid "Symbol URL"
-msgstr ""
+msgstr "Simbolo URL"
 
 #: inc/addons/custom-icons.php:118
+#, fuzzy
 msgid "Füge dieses Symbol hinzu"
-msgstr ""
+msgstr "Aggiungere questo simbolo"
 
 #: inc/addons/custom-icons.php:119
+#, fuzzy
 msgid "Gib eine gültige Bild-URL ein"
-msgstr ""
+msgstr "Inserire un URL immagine valido"
 
 #: inc/addons/custom-icons.php:125
+#, fuzzy
 msgid "Symbol aus Medienbibliothek hinzufügen"
-msgstr ""
+msgstr "Aggiungere un'icona dalla libreria multimediale"
 
 #: inc/addons/custom-icons.php:129
+#, fuzzy
 msgid ""
 "Hinweis: Alle Symbole werden auf der Karte in voller Größe angezeigt. Im "
 "Editor und in dieser Liste wird die Symbolvorschau mit 32 x 32 Pixel "
 "angezeigt."
 msgstr ""
+"Nota: Tutti i simboli sono visualizzati a grandezza naturale sulla mappa. "
+"Nell'editor e in questo elenco, l'anteprima dei simboli è visualizzata con "
+"32 x 32 pixel."
 
 #: inc/addons/disable-scroll.php:42
+#, fuzzy
 msgid "Bildlauf deaktivieren"
-msgstr ""
+msgstr "Disattivare lo scorrimento"
 
 #: inc/addons/fb-nearby-friends.php:39
+#, fuzzy
 msgid "Facebook Freunde in der Nähe"
-msgstr ""
+msgstr "Amici di Facebook nel quartiere"
 
 #: inc/addons/fb-nearby-friends.php:45 inc/addons/fb-nearby-friends.php:90
+#, fuzzy
 msgid "Facebook App ID"
-msgstr ""
+msgstr "ID app di Facebook"
 
 #: inc/addons/fb-nearby-friends.php:52
+#, fuzzy
 msgid "Reichweite"
-msgstr ""
+msgstr "Raggiungere"
 
 #: inc/addons/fb-nearby-friends.php:59
+#, fuzzy
 msgid "Richte die App ein"
-msgstr ""
+msgstr "Configurare l'app"
 
 #: inc/addons/fb-nearby-friends.php:74
 msgid "Hinweis:"
-msgstr ""
+msgstr "Nota:"
 
 #: inc/addons/fb-nearby-friends.php:76
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Aufgrund der Ablehnung der erforderlichen Funktionen und Berechtigungen in "
 "der Facebook-API funktioniert die Erweiterung %s nicht für neu erstellte "
 "Anwendungen."
 msgstr ""
+"A causa del rifiuto delle funzioni e delle autorizzazioni richieste nell'API "
+"di Facebook, l'estensione %s non funziona per le applicazioni appena create."
 
 #: inc/addons/fb-nearby-friends.php:102
+#, fuzzy
 msgid "Suche nach Freunden innerhalb "
-msgstr ""
+msgstr "Ricerca di amici all'interno"
 
 #: inc/addons/fb-nearby-friends.php:111
+#, fuzzy
 msgid "Metern"
-msgstr ""
+msgstr "Metri"
 
 #: inc/addons/fb-nearby-friends.php:116
+#, fuzzy
 msgid "Suche nach Freunden in Updates und Fotos für Freunde in den letzten "
 msgstr ""
+"Cercare gli amici negli aggiornamenti e le foto per gli amici nell'ultimo "
+"periodo"
 
 #: inc/addons/fb-nearby-friends.php:125
+#, fuzzy
 msgid "Monaten"
-msgstr ""
+msgstr "Mesi"
 
 #: inc/addons/fb-nearby-friends.php:132
+#, fuzzy
 msgid "Befolge diese Schritte, um das Feld <em>App ID</em> einzurichten"
-msgstr ""
+msgstr "Per impostare il campo <em>ID app</em>, procedere come segue"
 
 #: inc/addons/fb-nearby-friends.php:137
+#, fuzzy
 msgid ""
 "<a target=\"_blank\" href=\"https://developers.facebook.com/apps\">Erstelle "
 "eine neue Facebook-App</a>"
 msgstr ""
+"<a target=\"_blank\" href=\"https://developers.facebook.com/apps\">Creare "
+"una nuova applicazione Facebook</a>"
 
 #: inc/addons/fb-nearby-friends.php:144
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Deine Facebook-App sollte ähnlich aussehen. Die ID wird oben angezeigt:<br /"
 "><img src=\"%s\" width=\"590\" />"
 msgstr ""
+"L'app di Facebook dovrebbe avere un aspetto simile. L'ID è visualizzato in "
+"alto:<br /><img src=\"%s\" width=\"590\" />"
 
 #: inc/addons/fix-and-repair.php:12
+#, fuzzy
 msgid ""
 "Verwende die Optionen in diesem Abschnitt, um Deine PS-Maps-Installation zu "
 "reparieren. <em>Möglicherweise möchtest Du zuerst Deine WordPress-Datenbank "
 "sichern.</em>"
 msgstr ""
+"Utilizzate le opzioni di questa sezione per riparare l'installazione di PS "
+"Maps. <em>Si consiglia di eseguire prima un backup del database di WordPress."
+"</em>"
 
 #: inc/addons/fix-and-repair.php:16 inc/addons/fix-and-repair.php:53
 #: inc/addons/fix-and-repair.php:85 inc/addons/fix-and-repair.php:161
+#, fuzzy
 msgid "Bitte warte einen Moment..."
-msgstr ""
+msgstr "Attendere un momento..."
 
 #: inc/addons/fix-and-repair.php:17
+#, fuzzy
 msgid ""
 "Klicke hier, um alle Optionen auf die Standardeinstellungen in diesem Blog "
 "zurückzusetzen"
 msgstr ""
+"Fare clic qui per ripristinare tutte le opzioni alle impostazioni "
+"predefinite di questo blog"
 
 #: inc/addons/fix-and-repair.php:18 inc/addons/fix-and-repair.php:55
 #: inc/addons/fix-and-repair.php:87 inc/addons/fix-and-repair.php:163
 msgid "Erfolg"
-msgstr ""
+msgstr "Successo"
 
 #: inc/addons/fix-and-repair.php:19 inc/addons/fix-and-repair.php:56
 #: inc/addons/fix-and-repair.php:88 inc/addons/fix-and-repair.php:164
 msgid "Fehler"
-msgstr ""
+msgstr "Errore"
 
 #: inc/addons/fix-and-repair.php:20
+#, fuzzy
 msgid "Deine Seite wird in 3 Sekunden automatisch neu geladen"
-msgstr ""
+msgstr "La pagina verrà ricaricata automaticamente in 3 secondi"
 
 #: inc/addons/fix-and-repair.php:23
+#, fuzzy
 msgid "Alle einzelnen Kartenoptionen bleiben erhalten."
-msgstr ""
+msgstr "Tutte le opzioni delle singole schede vengono mantenute."
 
 #: inc/addons/fix-and-repair.php:54
+#, fuzzy
 msgid "Klicke hier, um fehlende Tabellen in diesem Blog zu beheben"
-msgstr ""
+msgstr "Fare clic qui per correggere le tabelle mancanti in questo blog"
 
 #: inc/addons/fix-and-repair.php:59
+#, fuzzy
 msgid ""
 "Verwende diese Option, wenn Du den Verdacht hast, dass Deine "
 "Datenbanktabelle fehlt"
 msgstr ""
+"Utilizzare questa opzione se si sospetta che la tabella del database sia "
+"assente"
 
 #: inc/addons/fix-and-repair.php:84
+#, fuzzy
 msgid ""
 "Dadurch werden ALLE Karten in diesem Blog gelöscht. Bist Du sicher, dass Du "
 "dies tun möchtest?"
 msgstr ""
+"In questo modo verranno cancellate tutte le schede di questo blog. Siete "
+"sicuri di volerlo fare?"
 
 #: inc/addons/fix-and-repair.php:86
+#, fuzzy
 msgid "Klicke hier, um ALLE Karten in diesem Blog zu löschen"
-msgstr ""
+msgstr "Fare clic qui per eliminare TUTTE le schede di questo blog"
 
 #: inc/addons/fix-and-repair.php:91
+#, fuzzy
 msgid ""
 "Verwende diese Option, um ALLE Tabellen aus diesem Blog zu entfernen. "
 "<em>(<b>Warnung:</b> Diese Option ist irreversibel.)</em>"
 msgstr ""
+"Utilizzare questa opzione per rimuovere TUTTE le tabelle da questo blog. "
+"<em>(<b>Attenzione:</b> questa opzione è irreversibile)</em>"
 
 #: inc/addons/fix-and-repair.php:117
+#, fuzzy
 msgid ""
 "Klicke hier, um Deine BuddyPress-Mitgliederprofilkarten neu zu erstellen"
-msgstr ""
+msgstr "Fare clic qui per ricreare le schede del profilo dei membri BuddyPress"
 
 #: inc/addons/fix-and-repair.php:118
+#, fuzzy
 msgid ""
 "Erstelle alle Profilzuordnungen neu <em>(<b>Warnung:</b> dies dauert eine "
 "Weile)</em>"
 msgstr ""
+"Ricreare tutte le assegnazioni del profilo <em>(<b>attenzione:</b></em> ci "
+"<em> vuole un po' di tempo)</em>"
 
 #: inc/addons/fix-and-repair.php:119
+#, fuzzy
 msgid "Bitte warte während die alten Standortpuffer gelöscht werden"
-msgstr ""
+msgstr "Attendere mentre i vecchi buffer di posizione vengono cancellati"
 
 #: inc/addons/fix-and-repair.php:120
+#, fuzzy
 msgid "Profile bearbeiten ... "
-msgstr ""
+msgstr "Modifica dei profili ..."
 
 #: inc/addons/fix-and-repair.php:121
+#, fuzzy
 msgid "Alles erledigt!"
-msgstr ""
+msgstr "Tutto fatto!"
 
 #: inc/addons/fix-and-repair.php:162
+#, fuzzy
 msgid "Klicke hier, um den Karten-Shortcode in diesem Blog zu aktualisieren"
-msgstr ""
+msgstr "Fare clic qui per aggiornare lo shortcode della scheda in questo blog"
 
 #: inc/addons/fix-and-repair.php:173
+#, fuzzy
 msgid "Es muss nichts repariert werden"
-msgstr ""
+msgstr "Non è necessario riparare nulla"
 
 #: inc/addons/fix-and-repair.php:174
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "In diesem Blog gibt es keinen Beitrag oder keine Seite, die den alten Karten-"
 "Shortcode <code>[%s]</code> verwendet"
 msgstr ""
+"Non c'è nessun post o pagina in questo blog che utilizzi il vecchio "
+"shortcode della scheda <code>[%s</code> ]"
 
 #: inc/addons/fix-and-repair.php:180
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Verwende diese Option, nachdem Du den Karten-Shortcode auf der Registerkarte "
 "\"Optionen\" oben geändert hast. Dadurch werden alle <code>[%s]</code> "
 "Shortcodes in <code>[%s]</code> in <strong>%d</strong> Seiten/Beiträge "
 "(einschließlich Revisionen und unveröffentlichten Posts) geändert."
 msgstr ""
+"Utilizzare questa opzione dopo aver modificato lo shortcode della mappa "
+"nella scheda \"Opzioni\" di cui sopra. Questo cambierà tutti i codici brevi "
+"<code>[%s</code> ] in <code>[%s</code> ] in <strong>%d</strong> Pages/posts "
+"(comprese le revisioni e i post non pubblicati)."
 
 #: inc/addons/fix-and-repair.php:222
+#, fuzzy
 msgid "Fixes and Reparieren"
-msgstr ""
+msgstr "Riparazioni"
 
 #: inc/addons/fix-and-repair.php:228
+#, fuzzy
 msgid "Setze alle Optionen auf die Standardeinstellungen zurück"
-msgstr ""
+msgstr "Ripristinare tutte le opzioni alle impostazioni predefinite"
 
 #: inc/addons/fix-and-repair.php:235
+#, fuzzy
 msgid "Fehlende Tabelle reparieren"
-msgstr ""
+msgstr "Riparazione del tavolo mancante"
 
 #: inc/addons/fix-and-repair.php:242
+#, fuzzy
 msgid "Bereinige Tabellen"
-msgstr ""
+msgstr "Tavoli puliti"
 
 #: inc/addons/fix-and-repair.php:249
+#, fuzzy
 msgid "Benenne den Karten-Shortcode um"
-msgstr ""
+msgstr "Rinominare lo shortcode della scheda"
 
 #: inc/addons/fix-and-repair.php:258
+#, fuzzy
 msgid "Erstelle BuddyPress-Profilkarten neu"
-msgstr ""
+msgstr "Creare nuove schede profilo BuddyPress"
 
 #: inc/addons/geotag-bp.php:98
+#, fuzzy
 msgid "Addresse"
-msgstr ""
+msgstr "Indirizzo"
 
 #: inc/addons/geotag-bp.php:259
+#, fuzzy
 msgid "PS-Maps Aktivitäts-Geotags"
-msgstr ""
+msgstr "Geotag delle attività di PS-Maps"
 
 #: inc/addons/geotag-wp.php:56
+#, fuzzy
 msgid "Mit PS-Maps Geotags versehene Beiträge"
-msgstr ""
+msgstr "Messaggi etichettati con i geotag di PS-Maps"
 
 #: inc/addons/geotag-wp.php:89
+#, fuzzy
 msgid "Geotag meine Beiträge"
-msgstr ""
+msgstr "Geotag dei miei post"
 
 #: inc/addons/geotag-wp.php:96
+#, fuzzy
 msgid "Geotagging-Metabox"
-msgstr ""
+msgstr "Metabox per il geotagging"
 
 #: inc/addons/geotag-wp.php:107
+#, fuzzy
 msgid "Geotagging-Metabox anzeigen für"
-msgstr ""
+msgstr "Mostra il metabox dei geotagging per"
 
 #: inc/addons/geotag-wp.php:127
 msgid "Standort"
-msgstr ""
+msgstr "Ubicazione"
 
 #: inc/addons/geotag-wp.php:288
 msgid "Weiterlesen"
-msgstr ""
+msgstr "Più"
 
 #: inc/addons/kml-uploader.php:73
+#, fuzzy
 msgid "KML-Dateien"
-msgstr ""
+msgstr "File KML"
 
 #: inc/addons/kml-uploader.php:79
+#, fuzzy
 msgid "Vorhandene KML-Dateien"
-msgstr ""
+msgstr "File KML esistenti"
 
 #: inc/addons/kml-uploader.php:86
+#, fuzzy
 msgid "Lade eine KML-Datei hoch"
-msgstr ""
+msgstr "Caricare un file KML"
 
 #: inc/addons/kml-uploader.php:96
+#, fuzzy
 msgid "<em>Keine KML-Dateien.</em>"
-msgstr ""
+msgstr "<em>Nessun file KML.</em>"
 
 #: inc/addons/kml-uploader.php:116
+#, fuzzy
 msgid "Only files with .kml and .kmz extension are allowed."
-msgstr ""
+msgstr "Sono ammessi solo i file con estensione .kml e .kmz."
 
 #: inc/addons/kml-uploader.php:117
 msgid "Hochladen"
-msgstr ""
+msgstr "Carica"
 
 #: inc/addons/loading-message.php:127
+#, fuzzy
 msgid "Karten Ladenachricht"
-msgstr ""
+msgstr "Messaggio del negozio di biglietti"
 
 #: inc/addons/loading-message.php:133
+#, fuzzy
 msgid "Füge diesen Karten eine Lademeldung hinzu"
-msgstr ""
+msgstr "Aggiungete un messaggio di caricamento a questi biglietti"
 
 #: inc/addons/loading-message.php:143
+#, fuzzy
 msgid ""
 "Du fügst die Lademeldung in Deinem Shortcodes mit dem Shortcode-Attribut "
 "<code>loading_message=\"Meine Nachricht\"</code> hinzu. Hier kannst Du auch "
 "das Laden von Nachrichten für Deine anderen Karten festlegen."
 msgstr ""
+"Si aggiunge il messaggio di caricamento nel proprio shortcode con "
+"l'attributo <code>loading_message=\"Il mio messaggio\"</code>. Qui si può "
+"anche definire il caricamento dei messaggi per le altre schede."
 
 #: inc/addons/loading-message.php:154
+#, fuzzy
 msgid "Nachricht für automatisch generierte Karten"
-msgstr ""
+msgstr "Messaggio per le schede generate automaticamente"
 
 #: inc/addons/loading-message.php:159 inc/addons/responsive-maps.php:143
+#, fuzzy
 msgid "BuddyPress-Mitgliederverzeichniszuordnung"
-msgstr ""
+msgstr "Mappatura della directory dei membri di BuddyPress"
 
 #: inc/addons/loading-message.php:164
+#, fuzzy
 msgid "Alle Karten Ladenachricht"
-msgstr ""
+msgstr "Tutti i biglietti Messaggio del negozio"
 
 #: inc/addons/loading-message.php:171
+#, fuzzy
 msgid "Verwende Zwischenspeichern von Kartenkacheln"
-msgstr ""
+msgstr "Utilizzare la cache delle tessere della mappa"
 
 #: inc/addons/loading-message.php:176
+#, fuzzy
 msgid "Karte wird geladen, bitte warten"
-msgstr ""
+msgstr "La scheda è in fase di caricamento, attendere"
 
 #: inc/addons/localize-maps.php:29
+#, fuzzy
 msgid "Lokalisierung"
-msgstr ""
+msgstr "Localizzazione"
 
 #: inc/addons/localize-maps.php:35
+#, fuzzy
 msgid "Sprachen"
-msgstr ""
+msgstr "Le lingue"
 
 #: inc/addons/localize-maps.php:46
+#, fuzzy
 msgid "Wähle deine Sprache"
-msgstr ""
+msgstr "Scegliete la vostra lingua"
 
 #: inc/addons/localize-maps.php:49
+#, fuzzy
 msgid "Browsererkennung (Standard)"
-msgstr ""
+msgstr "Riconoscimento del browser (standard)"
 
 #: inc/addons/localize-maps.php:79
 msgid "Arabic"
-msgstr ""
+msgstr "Arabo"
 
 #: inc/addons/localize-maps.php:80 inc/addons/localize-maps.php:92
+#, fuzzy
 msgid "Basque"
-msgstr ""
+msgstr "Basco"
 
 #: inc/addons/localize-maps.php:81
+#, fuzzy
 msgid "Bulgarian"
-msgstr ""
+msgstr "Bulgaro"
 
 #: inc/addons/localize-maps.php:82
 msgid "Bengali"
-msgstr ""
+msgstr "Bengalese"
 
 #: inc/addons/localize-maps.php:83
+#, fuzzy
 msgid "Catalan"
-msgstr ""
+msgstr "Catalano"
 
 #: inc/addons/localize-maps.php:84
+#, fuzzy
 msgid "Czech"
-msgstr ""
+msgstr "Ceca"
 
 #: inc/addons/localize-maps.php:85
+#, fuzzy
 msgid "Danish"
-msgstr ""
+msgstr "Danese"
 
 #: inc/addons/localize-maps.php:86
 msgid "Deutsch"
-msgstr ""
+msgstr "Tedesco"
 
 #: inc/addons/localize-maps.php:87
 msgid "Greek"
-msgstr ""
+msgstr "Greco"
 
 #: inc/addons/localize-maps.php:88
 msgid "English"
-msgstr ""
+msgstr "Inglese"
 
 #: inc/addons/localize-maps.php:89
+#, fuzzy
 msgid "English (Australian)"
-msgstr ""
+msgstr "Inglese (australiano)"
 
 #: inc/addons/localize-maps.php:90
+#, fuzzy
 msgid "English (Great Britain)"
-msgstr ""
+msgstr "Inglese (Gran Bretagna)"
 
 #: inc/addons/localize-maps.php:91
+#, fuzzy
 msgid "Spanish"
-msgstr ""
+msgstr "Spagnolo"
 
 #: inc/addons/localize-maps.php:93
+#, fuzzy
 msgid "Farsi"
-msgstr ""
+msgstr "Farsi"
 
 #: inc/addons/localize-maps.php:94
+#, fuzzy
 msgid "Finnish"
-msgstr ""
+msgstr "Finlandese"
 
 #: inc/addons/localize-maps.php:95
+#, fuzzy
 msgid "Filipino"
-msgstr ""
+msgstr "Filippino"
 
 #: inc/addons/localize-maps.php:96
+#, fuzzy
 msgid "French"
-msgstr ""
+msgstr "Francese"
 
 #: inc/addons/localize-maps.php:97
+#, fuzzy
 msgid "Galician"
-msgstr ""
+msgstr "Galiziano"
 
 #: inc/addons/localize-maps.php:98
 msgid "Gujarati"
-msgstr ""
+msgstr "Gujarati"
 
 #: inc/addons/localize-maps.php:99
+#, fuzzy
 msgid "Hindi"
-msgstr ""
+msgstr "Hindi"
 
 #: inc/addons/localize-maps.php:100
+#, fuzzy
 msgid "Croatian"
-msgstr ""
+msgstr "Croato"
 
 #: inc/addons/localize-maps.php:101
+#, fuzzy
 msgid "Hungarian"
-msgstr ""
+msgstr "Ungherese"
 
 #: inc/addons/localize-maps.php:102
+#, fuzzy
 msgid "Indonesian"
-msgstr ""
+msgstr "Indonesiano"
 
 #: inc/addons/localize-maps.php:103
+#, fuzzy
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: inc/addons/localize-maps.php:104
 msgid "Hebrew"
-msgstr ""
+msgstr "Ebraico"
 
 #: inc/addons/localize-maps.php:105
+#, fuzzy
 msgid "Japanese"
-msgstr ""
+msgstr "Giapponese"
 
 #: inc/addons/localize-maps.php:106
+#, fuzzy
 msgid "Kannada"
-msgstr ""
+msgstr "Kannada"
 
 #: inc/addons/localize-maps.php:107
+#, fuzzy
 msgid "Korean"
-msgstr ""
+msgstr "Coreano"
 
 #: inc/addons/localize-maps.php:108
+#, fuzzy
 msgid "Lithuanian"
-msgstr ""
+msgstr "Lituano"
 
 #: inc/addons/localize-maps.php:109
+#, fuzzy
 msgid "Latvian"
-msgstr ""
+msgstr "Lettone"
 
 #: inc/addons/localize-maps.php:110
+#, fuzzy
 msgid "Malayalam"
-msgstr ""
+msgstr "Malayalam"
 
 #: inc/addons/localize-maps.php:111
+#, fuzzy
 msgid "Marathi"
-msgstr ""
+msgstr "Marathi"
 
 #: inc/addons/localize-maps.php:112
+#, fuzzy
 msgid "Dutch"
-msgstr ""
+msgstr "Olandese"
 
 #: inc/addons/localize-maps.php:113
+#, fuzzy
 msgid "Norwegian"
-msgstr ""
+msgstr "Norvegese"
 
 #: inc/addons/localize-maps.php:114
+#, fuzzy
 msgid "Polish"
-msgstr ""
+msgstr "Polacco"
 
 #: inc/addons/localize-maps.php:115
+#, fuzzy
 msgid "Portuguese"
-msgstr ""
+msgstr "Portoghese"
 
 #: inc/addons/localize-maps.php:116
+#, fuzzy
 msgid "Portuguese (Brazil)"
-msgstr ""
+msgstr "Portoghese (Brasile)"
 
 #: inc/addons/localize-maps.php:117
+#, fuzzy
 msgid "Portuguese (Portugal)"
-msgstr ""
+msgstr "Portoghese (Portogallo)"
 
 #: inc/addons/localize-maps.php:118
+#, fuzzy
 msgid "Romanian"
-msgstr ""
+msgstr "Rumeno"
 
 #: inc/addons/localize-maps.php:119
+#, fuzzy
 msgid "Russian"
-msgstr ""
+msgstr "Russo"
 
 #: inc/addons/localize-maps.php:120
+#, fuzzy
 msgid "Slovak"
-msgstr ""
+msgstr "Slovacco"
 
 #: inc/addons/localize-maps.php:121
+#, fuzzy
 msgid "Slovenian"
-msgstr ""
+msgstr "Sloveno"
 
 #: inc/addons/localize-maps.php:122
+#, fuzzy
 msgid "Serbian"
-msgstr ""
+msgstr "Serbo"
 
 #: inc/addons/localize-maps.php:123
+#, fuzzy
 msgid "Swedish"
-msgstr ""
+msgstr "Svedese"
 
 #: inc/addons/localize-maps.php:124
+#, fuzzy
 msgid "Tagalog"
-msgstr ""
+msgstr "Tagalog"
 
 #: inc/addons/localize-maps.php:125
 msgid "Tamil"
-msgstr ""
+msgstr "Tamil"
 
 #: inc/addons/localize-maps.php:126
 msgid "Telugu"
-msgstr ""
+msgstr "Telugu"
 
 #: inc/addons/localize-maps.php:127
 msgid "Thai"
-msgstr ""
+msgstr "Thai"
 
 #: inc/addons/localize-maps.php:128
+#, fuzzy
 msgid "Turkish"
-msgstr ""
+msgstr "Turco"
 
 #: inc/addons/localize-maps.php:129
+#, fuzzy
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ucraino"
 
 #: inc/addons/localize-maps.php:130
 msgid "Vietnamese"
-msgstr ""
+msgstr "Vietnamita"
 
 #: inc/addons/localize-maps.php:131
+#, fuzzy
 msgid "Chinese (simplified)"
-msgstr ""
+msgstr "Cinese (semplificato)"
 
 #: inc/addons/localize-maps.php:132
+#, fuzzy
 msgid "Chinese (traditional)"
-msgstr ""
+msgstr "Cinese (tradizionale)"
 
 #: inc/addons/location-shortcode.php:92 inc/addons/location-shortcode.php:123
+#, fuzzy
 msgid "Karte konnte nicht aus Shortcode erstellt werden"
-msgstr ""
+msgstr "Non è stato possibile creare una mappa da uno shortcode"
 
 #: inc/addons/places.php:63
+#, fuzzy
 msgid "Accounting"
-msgstr ""
+msgstr "Contabilità"
 
 #: inc/addons/places.php:64
+#, fuzzy
 msgid "Airport"
-msgstr ""
+msgstr "Aeroporto"
 
 #: inc/addons/places.php:65
+#, fuzzy
 msgid "Amusement park"
-msgstr ""
+msgstr "Parco divertimenti"
 
 #: inc/addons/places.php:66
+#, fuzzy
 msgid "Aquarium"
-msgstr ""
+msgstr "Acquario"
 
 #: inc/addons/places.php:67
+#, fuzzy
 msgid "Art gallery"
-msgstr ""
+msgstr "Galleria d'arte"
 
 #: inc/addons/places.php:68
+#, fuzzy
 msgid "ATM"
-msgstr ""
+msgstr "BANCOMAT"
 
 #: inc/addons/places.php:69
+#, fuzzy
 msgid "Bakery"
-msgstr ""
+msgstr "Panificio"
 
 #: inc/addons/places.php:70
 msgid "Bank"
-msgstr ""
+msgstr "Banca"
 
 #: inc/addons/places.php:71
+#, fuzzy
 msgid "Bar"
-msgstr ""
+msgstr "Bar"
 
 #: inc/addons/places.php:72
+#, fuzzy
 msgid "Beauty salon"
-msgstr ""
+msgstr "Salone di bellezza"
 
 #: inc/addons/places.php:73
+#, fuzzy
 msgid "Bicycle store"
-msgstr ""
+msgstr "Negozio di biciclette"
 
 #: inc/addons/places.php:74
+#, fuzzy
 msgid "Book store"
-msgstr ""
+msgstr "Negozio di libri"
 
 #: inc/addons/places.php:75
+#, fuzzy
 msgid "Bowling alley"
-msgstr ""
+msgstr "Pista da bowling"
 
 #: inc/addons/places.php:76
+#, fuzzy
 msgid "Bus station"
-msgstr ""
+msgstr "Stazione degli autobus"
 
 #: inc/addons/places.php:77
+#, fuzzy
 msgid "Cafe"
-msgstr ""
+msgstr "Caffè"
 
 #: inc/addons/places.php:78
+#, fuzzy
 msgid "Campground"
-msgstr ""
+msgstr "Campeggio"
 
 #: inc/addons/places.php:79
+#, fuzzy
 msgid "Car dealer"
-msgstr ""
+msgstr "Concessionario auto"
 
 #: inc/addons/places.php:80
+#, fuzzy
 msgid "Car rental"
-msgstr ""
+msgstr "Noleggio auto"
 
 #: inc/addons/places.php:81
+#, fuzzy
 msgid "Car repair"
-msgstr ""
+msgstr "Riparazione auto"
 
 #: inc/addons/places.php:82
+#, fuzzy
 msgid "Car wash"
-msgstr ""
+msgstr "Autolavaggio"
 
 #: inc/addons/places.php:83
+#, fuzzy
 msgid "Casino"
-msgstr ""
+msgstr "Casinò"
 
 #: inc/addons/places.php:84
+#, fuzzy
 msgid "Cemetery"
-msgstr ""
+msgstr "Cimitero"
 
 #: inc/addons/places.php:85
+#, fuzzy
 msgid "Church"
-msgstr ""
+msgstr "Chiesa"
 
 #: inc/addons/places.php:86
+#, fuzzy
 msgid "City hall"
-msgstr ""
+msgstr "Municipio"
 
 #: inc/addons/places.php:87
+#, fuzzy
 msgid "Clothing store"
-msgstr ""
+msgstr "Negozio di abbigliamento"
 
 #: inc/addons/places.php:88
+#, fuzzy
 msgid "Convenience store"
-msgstr ""
+msgstr "Negozio di alimentari"
 
 #: inc/addons/places.php:89
+#, fuzzy
 msgid "Courthouse"
-msgstr ""
+msgstr "Palazzo di Giustizia"
 
 #: inc/addons/places.php:90
+#, fuzzy
 msgid "Dentist"
-msgstr ""
+msgstr "Dentista"
 
 #: inc/addons/places.php:91
+#, fuzzy
 msgid "Department store"
-msgstr ""
+msgstr "Grandi magazzini"
 
 #: inc/addons/places.php:92
+#, fuzzy
 msgid "Doctor"
-msgstr ""
+msgstr "Il medico"
 
 #: inc/addons/places.php:93
+#, fuzzy
 msgid "Electrician"
-msgstr ""
+msgstr "Elettricista"
 
 #: inc/addons/places.php:94
+#, fuzzy
 msgid "Electronics store"
-msgstr ""
+msgstr "Negozio di elettronica"
 
 #: inc/addons/places.php:95
+#, fuzzy
 msgid "Embassy"
-msgstr ""
+msgstr "Ambasciata"
 
 #: inc/addons/places.php:96
+#, fuzzy
 msgid "Establishment"
-msgstr ""
+msgstr "Stabilimento"
 
 #: inc/addons/places.php:97
+#, fuzzy
 msgid "Finance"
-msgstr ""
+msgstr "Finanza"
 
 #: inc/addons/places.php:98
+#, fuzzy
 msgid "Fire station"
-msgstr ""
+msgstr "Stazione dei pompieri"
 
 #: inc/addons/places.php:99
+#, fuzzy
 msgid "Florist"
-msgstr ""
+msgstr "Fiorista"
 
 #: inc/addons/places.php:100
+#, fuzzy
 msgid "Food"
-msgstr ""
+msgstr "Cibo"
 
 #: inc/addons/places.php:101
+#, fuzzy
 msgid "Funeral home"
-msgstr ""
+msgstr "Agenzia di pompe funebri"
 
 #: inc/addons/places.php:102
+#, fuzzy
 msgid "Furniture store"
-msgstr ""
+msgstr "Negozio di mobili"
 
 #: inc/addons/places.php:103
+#, fuzzy
 msgid "Gas station"
-msgstr ""
+msgstr "Stazione di servizio"
 
 #: inc/addons/places.php:104
+#, fuzzy
 msgid "General contractor"
-msgstr ""
+msgstr "Appaltatore generale"
 
 #: inc/addons/places.php:105
+#, fuzzy
 msgid "Grocery or supermarket"
-msgstr ""
+msgstr "Drogheria o supermercato"
 
 #: inc/addons/places.php:106
+#, fuzzy
 msgid "Gym"
-msgstr ""
+msgstr "Palestra"
 
 #: inc/addons/places.php:107
+#, fuzzy
 msgid "Hair care"
-msgstr ""
+msgstr "Cura dei capelli"
 
 #: inc/addons/places.php:108
+#, fuzzy
 msgid "Hardware store"
-msgstr ""
+msgstr "Negozio di ferramenta"
 
 #: inc/addons/places.php:109
+#, fuzzy
 msgid "Health"
-msgstr ""
+msgstr "Salute"
 
 #: inc/addons/places.php:110
+#, fuzzy
 msgid "Hindu temple"
-msgstr ""
+msgstr "Tempio indù"
 
 #: inc/addons/places.php:111
+#, fuzzy
 msgid "Home goods store"
-msgstr ""
+msgstr "Negozio di articoli per la casa"
 
 #: inc/addons/places.php:112
+#, fuzzy
 msgid "Hospital"
-msgstr ""
+msgstr "Ospedale"
 
 #: inc/addons/places.php:113
+#, fuzzy
 msgid "Insurance agency"
-msgstr ""
+msgstr "Agenzia di assicurazioni"
 
 #: inc/addons/places.php:114
+#, fuzzy
 msgid "Jewelry store"
-msgstr ""
+msgstr "Gioielleria"
 
 #: inc/addons/places.php:115
+#, fuzzy
 msgid "Laundry"
-msgstr ""
+msgstr "Lavanderia"
 
 #: inc/addons/places.php:116
+#, fuzzy
 msgid "Lawyer"
-msgstr ""
+msgstr "Avvocato"
 
 #: inc/addons/places.php:117
+#, fuzzy
 msgid "Library"
-msgstr ""
+msgstr "Biblioteca"
 
 #: inc/addons/places.php:118
+#, fuzzy
 msgid "Liquor store"
-msgstr ""
+msgstr "Negozio di liquori"
 
 #: inc/addons/places.php:119
+#, fuzzy
 msgid "Local government office"
-msgstr ""
+msgstr "Ufficio del governo locale"
 
 #: inc/addons/places.php:120
+#, fuzzy
 msgid "Locksmith"
-msgstr ""
+msgstr "Fabbro"
 
 #: inc/addons/places.php:121
+#, fuzzy
 msgid "Lodging"
-msgstr ""
+msgstr "Alloggio"
 
 #: inc/addons/places.php:122
+#, fuzzy
 msgid "Meal delivery"
-msgstr ""
+msgstr "Consegna dei pasti"
 
 #: inc/addons/places.php:123
+#, fuzzy
 msgid "Meal takeaway"
-msgstr ""
+msgstr "Pasti da asporto"
 
 #: inc/addons/places.php:124
+#, fuzzy
 msgid "Mosque"
-msgstr ""
+msgstr "Moschea"
 
 #: inc/addons/places.php:125
+#, fuzzy
 msgid "Movie rental"
-msgstr ""
+msgstr "Noleggio film"
 
 #: inc/addons/places.php:126
+#, fuzzy
 msgid "Movie theater"
-msgstr ""
+msgstr "Cinema"
 
 #: inc/addons/places.php:127
+#, fuzzy
 msgid "Moving company"
-msgstr ""
+msgstr "Azienda di traslochi"
 
 #: inc/addons/places.php:128
+#, fuzzy
 msgid "Museum"
-msgstr ""
+msgstr "Museo"
 
 #: inc/addons/places.php:129
+#, fuzzy
 msgid "Night club"
-msgstr ""
+msgstr "Club notturno"
 
 #: inc/addons/places.php:130
+#, fuzzy
 msgid "Painter"
-msgstr ""
+msgstr "Pittore"
 
 #: inc/addons/places.php:131
+#, fuzzy
 msgid "Park"
-msgstr ""
+msgstr "Parco"
 
 #: inc/addons/places.php:132
+#, fuzzy
 msgid "Parking"
-msgstr ""
+msgstr "Parcheggio"
 
 #: inc/addons/places.php:133
+#, fuzzy
 msgid "Pet store"
-msgstr ""
+msgstr "Negozio di animali"
 
 #: inc/addons/places.php:134
+#, fuzzy
 msgid "Pharmacy"
-msgstr ""
+msgstr "Farmacia"
 
 #: inc/addons/places.php:135
+#, fuzzy
 msgid "Physiotherapist"
-msgstr ""
+msgstr "Fisioterapista"
 
 #: inc/addons/places.php:136
+#, fuzzy
 msgid "Place of worship"
-msgstr ""
+msgstr "Luogo di culto"
 
 #: inc/addons/places.php:137
+#, fuzzy
 msgid "Plumber"
-msgstr ""
+msgstr "Idraulico"
 
 #: inc/addons/places.php:138
+#, fuzzy
 msgid "Police"
-msgstr ""
+msgstr "Polizia"
 
 #: inc/addons/places.php:139
+#, fuzzy
 msgid "Post office"
-msgstr ""
+msgstr "Ufficio postale"
 
 #: inc/addons/places.php:140
+#, fuzzy
 msgid "Real estate agency"
-msgstr ""
+msgstr "Agenzia immobiliare"
 
 #: inc/addons/places.php:141
+#, fuzzy
 msgid "Restaurant"
-msgstr ""
+msgstr "Ristorante"
 
 #: inc/addons/places.php:142
+#, fuzzy
 msgid "Roofing contractor"
-msgstr ""
+msgstr "Appaltatore di tetti"
 
 #: inc/addons/places.php:143
+#, fuzzy
 msgid "RV park"
-msgstr ""
+msgstr "Parco camper"
 
 #: inc/addons/places.php:144
+#, fuzzy
 msgid "School"
-msgstr ""
+msgstr "Scuola"
 
 #: inc/addons/places.php:145
+#, fuzzy
 msgid "Shoe store"
-msgstr ""
+msgstr "Negozio di scarpe"
 
 #: inc/addons/places.php:146
+#, fuzzy
 msgid "Shopping mall"
-msgstr ""
+msgstr "Centro commerciale"
 
 #: inc/addons/places.php:147
+#, fuzzy
 msgid "Spa"
-msgstr ""
+msgstr "Spa"
 
 #: inc/addons/places.php:148
+#, fuzzy
 msgid "Stadium"
-msgstr ""
+msgstr "Palcoscenico"
 
 #: inc/addons/places.php:149
+#, fuzzy
 msgid "Storage"
-msgstr ""
+msgstr "Immagazzinamento"
 
 #: inc/addons/places.php:150
+#, fuzzy
 msgid "Store"
-msgstr ""
+msgstr "Negozio"
 
 #: inc/addons/places.php:151
+#, fuzzy
 msgid "Subway station"
-msgstr ""
+msgstr "Stazione della metropolitana"
 
 #: inc/addons/places.php:152
+#, fuzzy
 msgid "Synagogue"
-msgstr ""
+msgstr "Sinagoga"
 
 #: inc/addons/places.php:153
+#, fuzzy
 msgid "Taxi stand"
-msgstr ""
+msgstr "Stazione di taxi"
 
 #: inc/addons/places.php:154
+#, fuzzy
 msgid "Train station"
-msgstr ""
+msgstr "Stazione ferroviaria"
 
 #: inc/addons/places.php:155
+#, fuzzy
 msgid "Travel agency"
-msgstr ""
+msgstr "Agenzia di viaggi"
 
 #: inc/addons/places.php:156
+#, fuzzy
 msgid "University"
-msgstr ""
+msgstr "Università"
 
 #: inc/addons/places.php:157
+#, fuzzy
 msgid "Veterinary care"
-msgstr ""
+msgstr "Assistenza veterinaria"
 
 #: inc/addons/places.php:158
+#, fuzzy
 msgid "Zoo"
-msgstr ""
+msgstr "Lo zoo"
 
 #: inc/addons/responsive-maps.php:108
+#, fuzzy
 msgid "Responsive Karten"
-msgstr ""
+msgstr "Schede sensibili"
 
 #: inc/addons/responsive-maps.php:114
+#, fuzzy
 msgid "Mache diese Karten responsive"
-msgstr ""
+msgstr "Realizzare questi biglietti in modo reattivo"
 
 #: inc/addons/responsive-maps.php:123
+#, fuzzy
 msgid ""
 "Du kannst das Responsive-Flag in Deinen Shortcodes mit dem Shortcode-"
 "Attribut <code>is_responsive=\"yes|no\"</code>  umschalten. Du kannst auch "
 "angeben, welche Deiner Karten immer reagieren sollen."
 msgstr ""
+"È possibile cambiare il flag responsive nei propri shortcode con l'attributo "
+"shortcode <code>is_responsive=\"yes|no\"</code>. È anche possibile "
+"specificare quali schede devono sempre rispondere."
 
 #: inc/addons/responsive-maps.php:135
+#, fuzzy
 msgid "Automatisch generierte Karten"
-msgstr ""
+msgstr "Mappe generate automaticamente"
 
 #: inc/addons/responsive-maps.php:151
+#, fuzzy
 msgid ""
 "Alle meine Karten <small>(mit Ausnahme derjenigen, die ich manuell mit "
 "<code>is_responsive=\"no\"</code> Shortcode-Attribut ausschließe)</small>"
 msgstr ""
+"Tutte le mie schede <small>(ad eccezione di quelle che escludo manualmente "
+"con l'attributo shortcode <code>is_responsive=\"no\"</code> )</small>"
 
 #: inc/addons/responsive-maps.php:159
+#, fuzzy
 msgid "Beachte das Shortcode-Breitenattribut, falls festgelegt"
-msgstr ""
+msgstr "Notare l'attributo width dello shortcode, se impostato"
 
 #: inc/addons/responsive-maps.php:160
+#, fuzzy
 msgid ""
 "Wenn diese Option aktiviert ist, werden Karten mit dem Attribut \"width "
 "shortcode\" relativ zu ihrer ursprünglichen Größe skaliert, anstatt die "
 "volle Breite des übergeordneten Elements zu erweitern."
 msgstr ""
+"Se questa opzione è attivata, le schede con l'attributo \"width shortcode\" "
+"vengono ridimensionate rispetto alle loro dimensioni originali, invece di "
+"espandersi per tutta la larghezza dell'elemento padre."
 
 #: inc/addons/traffic-overlay.php:58
+#, fuzzy
 msgid "Verkehr anzeigen"
-msgstr ""
+msgstr "Mostra il traffico"
 
 #: inc/addons/user-checkin.php:111 inc/addons/user-checkin.php:126
+#, fuzzy
 msgid "PS-Maps Check-ins"
-msgstr ""
+msgstr "Controlli PS-Maps"
 
 #: inc/addons/user-checkin.php:154
+#, fuzzy
 msgid "Google Map Check-ins"
-msgstr ""
+msgstr "Check-in su Google Map"
 
 #: inc/addons/user-checkin.php:157
+#, fuzzy
 msgid "Breitengrad"
-msgstr ""
+msgstr "Latitudine"
 
 #: inc/addons/user-checkin.php:161
+#, fuzzy
 msgid "Längengrad"
-msgstr ""
+msgstr "Longitudine"
 
 #: inc/addons/user-checkin.php:165
 msgid "Zeit"
-msgstr ""
+msgstr "Ora"
 
 #: inc/addons/user-checkin.php:860
+#, fuzzy
 msgid "Guest"
-msgstr ""
+msgstr "Ospite"
 
 #: inc/addons/user-checkin.php:865
-#, php-format
+#, fuzzy, php-format
 msgid "Von %1$s, am %2$s"
-msgstr ""
+msgstr "Da %1$s, su %2$s"
 
 #: inc/addons/user-checkin.php:867
+#, fuzzy
 msgid "j F, Y (G:i)"
-msgstr ""
+msgstr "j F, Y (G:i)"
 
 #: inc/addons/user-checkin.php:885 inc/addons/user-checkin.php:1084
 msgid "Bearbeiten"
-msgstr ""
+msgstr "Modifica"
 
 #: inc/addons/user-checkin.php:997
+#, fuzzy
 msgid "Google Maps: Checkins"
-msgstr ""
+msgstr "Google Maps: Check-in"
 
 #: inc/addons/user-checkin.php:1002
+#, fuzzy
 msgid "Checke meinen Standort ein"
-msgstr ""
+msgstr "Controlla la mia posizione"
 
 #: inc/addons/user-checkin.php:1006
+#, fuzzy
 msgid "Sende niemals meinen Standort"
-msgstr ""
+msgstr "Non inviare mai la mia posizione"
 
 #: inc/addons/user-checkin.php:1007
+#, fuzzy
 msgid "Frage mich immer, bevor Du meinen Standort angibst"
-msgstr ""
+msgstr "Chiedetemi sempre prima di dare la mia posizione"
 
 #: inc/addons/user-checkin.php:1008
+#, fuzzy
 msgid "Sende meinen Standort und frage mich nicht"
-msgstr ""
+msgstr "Invia la mia posizione e non chiedermi"
 
 #: inc/addons/user-checkin.php:1013
+#, fuzzy
 msgid "Default privacy setting"
-msgstr ""
+msgstr "Impostazione predefinita della privacy"
 
 #: inc/addons/user-checkin.php:1016
+#, fuzzy
 msgid "Nur ich kann meinen Standort sehen"
-msgstr ""
+msgstr "Solo io posso vedere la mia posizione"
 
 #: inc/addons/user-checkin.php:1017
+#, fuzzy
 msgid "Nur angemeldete Benutzer können meinen Standort sehen"
-msgstr ""
+msgstr "Solo gli utenti connessi possono vedere la mia posizione"
 
 #: inc/addons/user-checkin.php:1018
+#, fuzzy
 msgid "Jeder kann meinen Standort sehen"
-msgstr ""
+msgstr "Chiunque può vedere la mia posizione"
 
 #: inc/addons/user-checkin.php:1023
+#, fuzzy
 msgid "My locations"
-msgstr ""
+msgstr "I miei luoghi"
 
 #: inc/addons/user-checkin.php:1069 inc/addons/user-checkin.php:1116
+#, fuzzy
 msgid "Zähler"
-msgstr ""
+msgstr "Contatore"
 
 #: inc/addons/user-checkin.php:1078 inc/addons/user-checkin.php:1813
+#, fuzzy
 msgid "Nur ich"
-msgstr ""
+msgstr "Solo io"
 
 #: inc/addons/user-checkin.php:1079 inc/addons/user-checkin.php:1814
+#, fuzzy
 msgid "Angemeldete Benutzer"
-msgstr ""
+msgstr "Utenti registrati"
 
 #: inc/addons/user-checkin.php:1080 inc/addons/user-checkin.php:1815
+#, fuzzy
 msgid "Jeder"
-msgstr ""
+msgstr "Tutti"
 
 #: inc/addons/user-checkin.php:1086 inc/addons/user-checkin.php:1820
 #: inc/class-agm-admin-maps.php:333 inc/class-agm-admin-maps.php:347
 #: inc/class-agm-admin-maps.php:352 inc/class-agm-admin-maps.php:393
 msgid "Löschen"
-msgstr ""
+msgstr "Cancellare"
 
 #: inc/addons/user-checkin.php:1087
+#, fuzzy
 msgid "Nicht löschen"
-msgstr ""
+msgstr "Non eliminare"
 
 #: inc/addons/user-checkin.php:1094
+#, fuzzy
 msgid "Lat"
-msgstr ""
+msgstr "Lat"
 
 #: inc/addons/user-checkin.php:1098
+#, fuzzy
 msgid "Long"
-msgstr ""
+msgstr "Lungo"
 
 #: inc/addons/user-checkin.php:1102 inc/addons/user-checkin.php:1801
 #: inc/class-agm-admin-maps.php:391
 msgid "Titel"
-msgstr ""
+msgstr "Titolo"
 
 #: inc/addons/user-checkin.php:1106 inc/addons/user-checkin.php:1805
 msgid "Beschreibung"
-msgstr ""
+msgstr "Descrizione"
 
 #: inc/addons/user-checkin.php:1110
 msgid "Zuletzt geändert"
-msgstr ""
+msgstr "Ultima modifica"
 
 #: inc/addons/user-checkin.php:1114
+#, fuzzy
 msgid "created on"
-msgstr ""
+msgstr "creato su"
 
 #: inc/addons/user-checkin.php:1121
 msgid "OK"
-msgstr ""
+msgstr "Salvare"
 
 #: inc/addons/user-checkin.php:1122 inc/addons/user-checkin.php:1821
 #: inc/class-agm-admin-maps.php:353
 msgid "Abbrechen"
-msgstr ""
+msgstr "Cancella"
 
 #: inc/addons/user-checkin.php:1318
+#, fuzzy
 msgid "Benutzer-Check-ins"
-msgstr ""
+msgstr "Check-in degli utenti"
 
 #: inc/addons/user-checkin.php:1325 inc/class-agm-admin-maps.php:35
 msgid "Übersicht"
-msgstr ""
+msgstr "Sondaggio"
 
 #: inc/addons/user-checkin.php:1333
+#, fuzzy
 msgid "Check-ins zulassen"
-msgstr ""
+msgstr "Consentire i check-in"
 
 #: inc/addons/user-checkin.php:1341
+#, fuzzy
 msgid "Check-in Details"
-msgstr ""
+msgstr "Dettagli del check-in"
 
 #: inc/addons/user-checkin.php:1359
+#, fuzzy
 msgid "Check-in Limit"
-msgstr ""
+msgstr "Limite di check-in"
 
 #: inc/addons/user-checkin.php:1367
+#, fuzzy
 msgid "Map-Standardeinstellungen"
-msgstr ""
+msgstr "Impostazioni predefinite della mappa"
 
 #: inc/addons/user-checkin.php:1383 inc/addons/user-checkin.php:1387
 msgid "Shortcode"
-msgstr ""
+msgstr "Codice breve"
 
 #: inc/addons/user-checkin.php:1384
+#, fuzzy
 msgid ""
 "Versuche den Benutzerstandort auf der Seite zu erfassen, ohne eine Karte "
 "anzuzeigen. Keine Optionen verfügbar."
 msgstr ""
+"Si cerca di catturare la posizione dell'utente sulla pagina senza "
+"visualizzare una mappa. Nessuna opzione disponibile."
 
 #: inc/addons/user-checkin.php:1390
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Zeige eine Google-Karte mit den angegebenen Standorten an. Der Shortcode "
 "unterstützt alle Optionen des Shortcodes <code>[%s]</code>. Zusätzlich "
 "stehen folgende Optionen zur Verfügung:"
 msgstr ""
+"Visualizza una mappa di Google con le località specificate. Il codice breve "
+"supporta tutte le opzioni del codice breve <code>[%s</code>]. Sono inoltre "
+"disponibili le seguenti opzioni:"
 
 #: inc/addons/user-checkin.php:1397
+#, fuzzy
 msgid ""
 "<code>user=\"1,2\"</code>: (Filter) Zeigt die Standorte dieser Benutzer nach "
 "Benutzer-ID an."
 msgstr ""
+"<code>user=\"1,2\"</code>: (filtro) Visualizza le posizioni di questi utenti "
+"per ID utente."
 
 #: inc/addons/user-checkin.php:1398
+#, fuzzy
 msgid ""
 "<code>role=\"admin,editor\"</code>: (Filter) Zeigt die Standorte der "
 "Benutzer in diesen Rollen an."
 msgstr ""
+"<code>role=\"admin,editor\"</code>: (filtro) Visualizza le posizioni degli "
+"utenti con questi ruoli."
 
 #: inc/addons/user-checkin.php:1399
+#, fuzzy
 msgid ""
 "<code>group=\"group1,group2\"</code>: (Filter, BuddyPress) Zeigt die "
 "Standorte der Benutzer in diesen Gruppen an."
 msgstr ""
+"<code>group=\"group1,group2\"</code>: (Filtro, BuddyPress) Visualizza le "
+"posizioni degli utenti in questi gruppi."
 
 #: inc/addons/user-checkin.php:1400
+#, fuzzy
 msgid ""
 "<code>guest=\"true\"</code>: (Filter) True zeigt zusätzlich die Standorte "
 "der Gäste an. False zeigt nur Standorte registrierter Benutzer an."
 msgstr ""
+"<code>guest=\"true\"</code>: (filtro) True mostra anche le posizioni degli "
+"ospiti. Falso mostra solo le posizioni degli utenti registrati."
 
 #: inc/addons/user-checkin.php:1401
+#, fuzzy
 msgid ""
 "<code>last_hour=\"24\"</code>: (Filter, Zeit) Zeigt Orte an, die in den "
 "letzten X Stunden hinzugefügt oder aktualisiert wurden."
 msgstr ""
+"<code>last_hour=\"24\"</code>: (filtro, tempo) Visualizza le località che "
+"sono state aggiunte o aggiornate nelle ultime X ore."
 
 #: inc/addons/user-checkin.php:1402
+#, fuzzy
 msgid ""
 "<code>automatic=\"true\"</code>: Versuche den Benutzerstandort beim Laden "
 "der Seite zu erfassen (wie bei <code>[agm_add_checkin]</code>."
 msgstr ""
+"<code>automatic=\"true\"</code>: Tenta di catturare la posizione dell'utente "
+"al momento del caricamento della pagina (come con <code>[agm_add_checkin]</"
+"code>."
 
 #: inc/addons/user-checkin.php:1403
+#, fuzzy
 msgid ""
 "<code>show_button=\"true\"</code>: Füge unter der Karte eine Schaltfläche "
 "hinzu, mit der der Benutzer seinen Standort manuell übermitteln kann."
 msgstr ""
+"<code>show_button=\"true\"</code>: Aggiunge un pulsante sotto la mappa che "
+"consente all'utente di inviare manualmente la propria posizione."
 
 #: inc/addons/user-checkin.php:1405
+#, fuzzy
 msgid ""
 "Wenn kein Filter definiert ist, werden alle Standorte auf der Karte "
 "angezeigt."
 msgstr ""
+"Se non viene definito alcun filtro, sulla mappa vengono visualizzate tutte "
+"le località."
 
 #: inc/addons/user-checkin.php:1434
+#, fuzzy
 msgid "Sammel Standortdaten im Hintergrund"
-msgstr ""
+msgstr "Raccogliere i dati sulla posizione in background"
 
 #: inc/addons/user-checkin.php:1437
+#, fuzzy
 msgid "Niemals (diese Funktion deaktivieren)"
-msgstr ""
+msgstr "Mai (disattiva questa funzione)"
 
 #: inc/addons/user-checkin.php:1438
+#, fuzzy
 msgid "Ein Check-in pro Benutzer"
-msgstr ""
+msgstr "Un check-in per utente"
 
 #: inc/addons/user-checkin.php:1439
+#, fuzzy
 msgid "Auf jeder Seite"
-msgstr ""
+msgstr "Su ogni lato"
 
 #: inc/addons/user-checkin.php:1440
+#, fuzzy
 msgid "Manuell via Shortcode [agm_add_checkin]"
-msgstr ""
+msgstr "Manualmente tramite shortcode [agm_add_checkin]"
 
 #: inc/addons/user-checkin.php:1442
+#, fuzzy
 msgid ""
 "Standortdaten werden nur mit Zustimmung des Nutzers erhoben.<br />Die Gäste "
 "werden gebeten, den Ort bei jedem Besuch anzugeben. Angemeldete Benutzer "
 "können zusätzlich wählen, ob sie ihren Standort immer oder nie angeben "
 "möchten."
 msgstr ""
+"I dati sulla posizione vengono raccolti solo con il consenso dell'utente."
+"<br />Agli ospiti viene chiesto di inserire la propria posizione a ogni "
+"visita. Gli utenti registrati possono anche scegliere se inserire sempre o "
+"mai la propria posizione."
 
 #: inc/addons/user-checkin.php:1449
+#, fuzzy
 msgid "Nur angemeldete Benutzer können ihren Standort einchecken"
 msgstr ""
+"Solo gli utenti che hanno effettuato il login possono controllare la loro "
+"posizione"
 
 #: inc/addons/user-checkin.php:1456
+#, fuzzy
 msgid "Gäste können ihren Standort einchecken"
-msgstr ""
+msgstr "Gli ospiti possono verificare la loro posizione"
 
 #: inc/addons/user-checkin.php:1476
+#, fuzzy
 msgid "Speichere nur den Ort"
-msgstr ""
+msgstr "Salvare solo la posizione"
 
 #: inc/addons/user-checkin.php:1483
+#, fuzzy
 msgid ""
 "Benutzer können Standorte bearbeiten und zusätzliche Informationen hinzufügen"
 msgstr ""
+"Gli utenti possono modificare le località e aggiungere ulteriori informazioni"
 
 #: inc/addons/user-checkin.php:1485
+#, fuzzy
 msgid ""
 "Angemeldete Benutzer können optional einen Titel und eine Beschreibung für "
 "ihre Check-Ins eingeben und die Standortdetails später bearbeiten."
 msgstr ""
+"Gli utenti registrati possono inserire facoltativamente un titolo e una "
+"descrizione per i loro check-in e modificare i dettagli della posizione in "
+"un secondo momento."
 
 #: inc/addons/user-checkin.php:1507
+#, fuzzy
 msgid "Checkins sind mit dem aktuellen Beitrag/der aktuellen Seite verknüpft"
-msgstr ""
+msgstr "I check-in sono collegati al post/pagina corrente"
 
 #: inc/addons/user-checkin.php:1509
+#, fuzzy
 msgid ""
 "Wenn diese Option aktiviert ist, sind alle Checkins mit dem aktuellen "
 "Beitrag oder der aktuellen Seite verknüpft.<br />Funktioniert nur auf "
 "einzelnen Seiten, nicht auf speziellen Seiten wie Suchergebnissen, Archiv "
 "oder Startseite."
 msgstr ""
+"Se questa opzione è attivata, tutti i check-in sono collegati al post o alla "
+"pagina corrente.<br />Funziona solo su singole pagine, non su pagine "
+"speciali come i risultati della ricerca, l'archivio o la pagina iniziale."
 
 #: inc/addons/user-checkin.php:1516
+#, fuzzy
 msgid "Aktiviere das Geotagging von Kommentaren"
-msgstr ""
+msgstr "Attivare il geotagging dei commenti"
 
 #: inc/addons/user-checkin.php:1518
+#, fuzzy
 msgid ""
 "Bei Aktivierung wird ein neues Kontrollkästchen angezeigt, mit dem Du diesen "
 "Kommentar <code>im Kommentarformular</code> mit einem Geotag versehen kannst."
 msgstr ""
+"Se attivata, viene visualizzata una nuova casella di controllo con la quale "
+"è possibile aggiungere un geotag al commento <code>nel modulo dei commenti</"
+"code>."
 
 #: inc/addons/user-checkin.php:1537
+#, fuzzy
 msgid "Maximale Anzahl von Eincheckvorgängen für einen einzelnen Benutzer"
-msgstr ""
+msgstr "Numero massimo di check-in per un singolo utente"
 
 #: inc/addons/user-checkin.php:1542
+#, fuzzy
 msgid ""
 "Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird ein "
 "älterer Standort aus der Benutzersammlung entfernt.<br />Ein hoher Wert kann "
 "zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-100"
 msgstr ""
+"Quando si registra una nuova posizione e si raggiunge il limite, una "
+"posizione più vecchia viene rimossa dalla raccolta degli utenti.<br />Un "
+"valore elevato può comportare un tempo di caricamento più lungo per le "
+"mappe. Valore compreso tra 1 e 100"
 
 #: inc/addons/user-checkin.php:1548
+#, fuzzy
 msgid "Max anonyme Gäste Check-ins behalten"
-msgstr ""
+msgstr "Mantenere al massimo i check-in anonimi degli ospiti"
 
 #: inc/addons/user-checkin.php:1553
+#, fuzzy
 msgid ""
 "Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird der "
 "älteste Standort aus der Gästesammlung entfernt.<br />Ein hoher Wert kann zu "
 "einer längeren Ladezeit von Karten führen. Wert zwischen 1-1000"
 msgstr ""
+"Quando viene registrato un nuovo luogo e il limite viene raggiunto, il luogo "
+"più vecchio viene rimosso dalla collezione degli ospiti.<br />Un valore "
+"elevato può comportare un tempo di caricamento più lungo per le carte. "
+"Valore compreso tra 1-1000"
 
 #: inc/addons/user-checkin.php:1559
+#, fuzzy
 msgid "Fange doppelte Check-Ins ab, die näher als sind"
-msgstr ""
+msgstr "Intercettare i check-in duplicati che sono più vicini di"
 
 #: inc/addons/user-checkin.php:1564
+#, fuzzy
 msgid ""
 "Wenn ein Benutzer einen neuen Ort eincheckt, speichert das Plugin den Ort "
 "nicht, wenn er näher als diese Entfernung zu einem bereits eingecheckten Ort "
 "liegt.<br />Es werden nur die Standorte des aktuellen Benutzers überprüft. "
 "Wert zwischen 1-100"
 msgstr ""
+"Quando un utente effettua il check-in di una nuova posizione, il plugin non "
+"salva la posizione se è più vicina di questa distanza a una posizione già "
+"registrata.<br />Vengono controllate solo le posizioni dell'utente corrente. "
+"Valore compreso tra 1 e 100"
 
 #: inc/addons/user-checkin.php:1582
+#, fuzzy
 msgid "Karten ohne Markierungen anzeigen"
-msgstr ""
+msgstr "Mostra le mappe senza marcatori"
 
 #: inc/addons/user-checkin.php:1584
+#, fuzzy
 msgid ""
 "Wähle aus, ob eine Karte ohne Standortmarkierungen angezeigt werden soll "
 "oder nicht.<br />Wenn eine leere Karte angezeigt wird, ist das Kartenzentrum "
@@ -1522,223 +1928,290 @@ msgid ""
 "über \"<code>Wo bin ich?</code>\" oder \"<code>Karte zentrieren vor Ort</"
 "code>\" Erweiterung)."
 msgstr ""
+"Selezionare se la mappa deve essere visualizzata senza indicatori di "
+"posizione o meno.<br />Se viene visualizzata una mappa vuota, il centro "
+"della mappa non è definito di default. Pertanto, specificare una posizione "
+"predefinita (ad esempio tramite l'estensione<code>\"Dove mi trovo?</code>\" "
+"o<code>\"Centra la mappa sulla posizione</code>\")."
 
 #: inc/addons/user-checkin.php:1811
+#, fuzzy
 msgid "Sichtbar für"
-msgstr ""
+msgstr "Visibile per"
 
 #: inc/addons/user-checkin.php:1822
 msgid "Speichern"
-msgstr ""
+msgstr "Salvare"
 
 #: inc/addons/user-checkin.php:1996
+#, fuzzy
 msgid "Standort senden?"
-msgstr ""
+msgstr "Inviare la posizione?"
 
 #: inc/addons/user-checkin.php:1997
+#, fuzzy
 msgid ""
 "Die Webseite möchte wissen, wo Du Dich befindest. Sende Deinen Standort?"
 msgstr ""
+"Il sito web vuole sapere dove vi trovate. Inviare la propria posizione?"
 
 #: inc/addons/user-checkin.php:2000
+#, fuzzy
 msgid "Frag mich nicht noch einmal."
-msgstr ""
+msgstr "Non chiedermelo più."
 
 #: inc/addons/user-checkin.php:2001
+#, fuzzy
 msgid "Sende Deinen Standort..."
-msgstr ""
+msgstr "Invia la tua posizione..."
 
 #: inc/addons/user-checkin.php:2002
+#, fuzzy
 msgid "Standort gespeichert!"
-msgstr ""
+msgstr "Posizione salvata!"
 
 #: inc/addons/user-checkin.php:2003
+#, fuzzy
 msgid "Sende meinen aktuellen Standort"
-msgstr ""
+msgstr "Invia la mia posizione attuale"
 
 #: inc/addons/where-am-i.php:30
+#, fuzzy
 msgid "Wo bin ich?"
-msgstr ""
+msgstr "Dove mi trovo?"
 
 #: inc/addons/where-am-i.php:43
+#, fuzzy
 msgid "Aussehen"
-msgstr ""
+msgstr "Aspetto"
 
 #: inc/addons/where-am-i.php:57
+#, fuzzy
 msgid ""
 "Ich möchte Besucherstandorte automatisch auf allen meinen Karten anzeigen"
 msgstr ""
+"Vorrei visualizzare automaticamente la posizione dei visitatori su tutte le "
+"mie mappe"
 
 #: inc/addons/where-am-i.php:58
+#, fuzzy
 msgid "Der Standort des Besuchers wird automatisch allen Karten hinzugefügt"
 msgstr ""
+"La posizione del visitatore viene aggiunta automaticamente a tutte le mappe"
 
 #: inc/addons/where-am-i.php:62
+#, fuzzy
 msgid ""
 "Ich möchte mithilfe eines Shortcode-Attributs angeben, auf welchen Karten "
 "der Besucherstandort angezeigt wird"
 msgstr ""
+"Vorrei utilizzare un attributo shortcode per specificare su quali mappe "
+"viene visualizzata la posizione del visitatore"
 
 #: inc/addons/where-am-i.php:63
+#, fuzzy
 msgid ""
 "Du kannst den Besucherstandort auf Deinen Karten anzeigen, indem Du Deinen "
 "Shortcodes <code>visitor_location=&quot;yes&quot;</code> hinzufügst"
 msgstr ""
+"È possibile visualizzare la posizione del visitatore sulle mappe aggiungendo "
+"<code>visitor_location=&quot;yes&quot;</code> ai propri shortcode"
 
 #: inc/addons/where-am-i.php:72
+#, fuzzy
 msgid "Karte automatisch auf Besucherort zentrieren"
-msgstr ""
+msgstr "Centra automaticamente la mappa sulla posizione del visitatore"
 
 #: inc/addons/where-am-i.php:80
+#, fuzzy
 msgid ""
 "Füge der Markierungsliste für meine Karte automatisch den Besucherort hinzu"
 msgstr ""
+"Aggiungere automaticamente la posizione del visitatore all'elenco dei "
+"marcatori per la mia mappa"
 
 #: inc/addons/where-am-i.php:81
+#, fuzzy
 msgid ""
 "Standardmäßig wird nur der Besucherstandort zur Karte hinzugefügt. Aktiviere "
 "diese Option, wenn Du sie auch in die Markierungsliste aufnehmen möchtest."
 msgstr ""
+"Per impostazione predefinita, solo la posizione del visitatore viene "
+"aggiunta alla mappa. Attivare questa opzione se si desidera includerla anche "
+"nell'elenco dei marcatori."
 
 #: inc/addons/where-am-i.php:87 inc/addons/where-am-i.php:182
+#, fuzzy
 msgid "Das bist du"
-msgstr ""
+msgstr "Questo sei tu"
 
 #: inc/addons/where-am-i.php:88
+#, fuzzy
 msgid "Besuchermarkierungsetikett"
-msgstr ""
+msgstr "Etichetta di marcatura del visitatore"
 
 #: inc/addons/where-am-i.php:94
+#, fuzzy
 msgid "Besuchermarkierungssymbol"
-msgstr ""
+msgstr "Simbolo di marcatura del visitatore"
 
 #: inc/addons/where-am-i.php:97
+#, fuzzy
 msgid "Lasse das Feld leer, um das Standardsymbol zu verwenden"
-msgstr ""
+msgstr "Lasciare il campo vuoto per utilizzare il simbolo standard"
 
 #: inc/class-agm-admin-form-renderer.php:58
+#, fuzzy
 msgid "STRAßENKARTE"
-msgstr ""
+msgstr "MAPPA STRADALE"
 
 #: inc/class-agm-admin-form-renderer.php:59
+#, fuzzy
 msgid "SATELLIT"
-msgstr ""
+msgstr "SATELLITE"
 
 #: inc/class-agm-admin-form-renderer.php:60
+#, fuzzy
 msgid "HYBRID"
-msgstr ""
+msgstr "IBRIDO"
 
 #: inc/class-agm-admin-form-renderer.php:61
+#, fuzzy
 msgid "TERRAIN"
-msgstr ""
+msgstr "TERRENO"
 
 #: inc/class-agm-admin-form-renderer.php:80
-#, php-format
+#, fuzzy, php-format
 msgid "Hole Dir Deinen API-Schlüssel <a href=\"%s\" target=\"_blank\">hier</a>"
-msgstr ""
+msgstr "Ottenete la vostra chiave API <a href=\"%s\" target=\"_blank\">qui</a>"
 
 #: inc/class-agm-admin-form-renderer.php:85
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "(Du kannst auch auf den <a href=\"%s\" target=\"_blank\">offiziellen Google-"
 "Dokumentationsseiten</a> etwas mehr recherchieren)"
 msgstr ""
+"(È anche possibile effettuare ulteriori ricerche sulle <a href=\"%s\" target="
+"\"_blank\">pagine della documentazione ufficiale di Google</a> )"
 
 #: inc/class-agm-admin-form-renderer.php:92 inc/class-agm-maps-widget.php:56
+#, fuzzy
 msgid "Erde"
-msgstr ""
+msgstr "Terra"
 
 #: inc/class-agm-admin-form-renderer.php:93 inc/class-agm-maps-widget.php:57
+#, fuzzy
 msgid "Kontinent"
-msgstr ""
+msgstr "Continente"
 
 #: inc/class-agm-admin-form-renderer.php:94 inc/class-agm-maps-widget.php:58
 msgid "Region"
-msgstr ""
+msgstr "Regione"
 
 #: inc/class-agm-admin-form-renderer.php:95 inc/class-agm-maps-widget.php:59
+#, fuzzy
 msgid "Nahe Städte"
-msgstr ""
+msgstr "Città vicine"
 
 #: inc/class-agm-admin-form-renderer.php:96 inc/class-agm-maps-widget.php:60
+#, fuzzy
 msgid "Stadtplan"
-msgstr ""
+msgstr "Mappa della città"
 
 #: inc/class-agm-admin-form-renderer.php:97 inc/class-agm-maps-widget.php:61
 msgid "Details"
-msgstr ""
+msgstr "Dettagli"
 
 #: inc/class-agm-admin-form-renderer.php:118
+#, fuzzy
 msgid "Erweitert"
-msgstr ""
+msgstr "Esteso"
 
 #: inc/class-agm-admin-form-renderer.php:120
+#, fuzzy
 msgid ""
 "<div>Bitte beachte, dass diese Titel nur Näherungswerte sind, jedoch im "
 "Allgemeinen zur Beschreibung passen.</div>"
 msgstr ""
+"<div>Si prega di notare che questi titoli sono solo approssimativi, ma in "
+"genere corrispondono alla descrizione.</div>"
 
 #: inc/class-agm-admin-form-renderer.php:135
+#, fuzzy
 msgid "Basismodus"
-msgstr ""
+msgstr "Modalità di base"
 
 #: inc/class-agm-admin-form-renderer.php:136
+#, fuzzy
 msgid "<div>Bitte gib den numerischen Zoomwert ein.</div>"
-msgstr ""
+msgstr "<div>Inserire il valore numerico dello zoom.</div>"
 
 #: inc/class-agm-admin-form-renderer.php:174
+#, fuzzy
 msgid "Metrisch"
-msgstr ""
+msgstr "Metrico"
 
 #: inc/class-agm-admin-form-renderer.php:175
+#, fuzzy
 msgid "Imperial"
-msgstr ""
+msgstr "Imperiale"
 
 #: inc/class-agm-admin-form-renderer.php:183
+#, fuzzy
 msgid ""
 "<div>Diese Einheiten werden verwendet, um Entfernungen für Richtungen "
 "auszudrücken</div>"
 msgstr ""
+"<div>Queste unità di misura sono utilizzate per esprimere le distanze per le "
+"direzioni</div>"
 
 #: inc/class-agm-admin-form-renderer.php:189
 msgid "Klein"
-msgstr ""
+msgstr "Piccolo"
 
 #: inc/class-agm-admin-form-renderer.php:190
+#, fuzzy
 msgid "Mittel"
-msgstr ""
+msgstr "Medio"
 
 #: inc/class-agm-admin-form-renderer.php:191
 msgid "Thumbnail"
-msgstr ""
+msgstr "Miniatura"
 
 #: inc/class-agm-admin-form-renderer.php:192
+#, fuzzy
 msgid "Quadrat"
-msgstr ""
+msgstr "Quadrato"
 
 #: inc/class-agm-admin-form-renderer.php:193
+#, fuzzy
 msgid "Mini Quadrat"
-msgstr ""
+msgstr "Mini quadrato"
 
 #: inc/class-agm-admin-form-renderer.php:214 inc/class-agm-admin-maps.php:414
 msgid "Links"
-msgstr ""
+msgstr "Link"
 
 #: inc/class-agm-admin-form-renderer.php:224 inc/class-agm-admin-maps.php:415
+#, fuzzy
 msgid "Zentriert"
-msgstr ""
+msgstr "Centrato"
 
 #: inc/class-agm-admin-form-renderer.php:234 inc/class-agm-admin-maps.php:416
 msgid "Rechts"
-msgstr ""
+msgstr "A destra"
 
 #: inc/class-agm-admin-form-renderer.php:249
+#, fuzzy
 msgid ""
 "<p>In diesem Feld kannst Du einige schnelle Stiländerungen hinzufügen,  um "
 "das Erscheinungsbild der Karten besser mit Deinem Theme zu kombinieren.</p>"
 msgstr ""
+"<p>In questo campo è possibile aggiungere alcune rapide modifiche allo stile "
+"per combinare meglio l'aspetto delle carte con il tema.</p>"
 
 #: inc/class-agm-admin-form-renderer.php:253
+#, fuzzy
 msgid ""
 "<p>Möglicherweise möchtest Du Stile für einige dieser Selektoren festlegen: "
 "<code>.agm_mh_info_title</code>, <code>.agm_mh_info_body</code>, <code>a."
@@ -1746,549 +2219,707 @@ msgid ""
 "<code>.agm_mh_marker_item</code>, <code>.agm_mh_marker_item_content</code></"
 "p>"
 msgstr ""
+"<p>Si potrebbero impostare stili per alcuni di questi selettori: <code>."
+"agm_mh_info_title</code>, <code>.agm_mh_info_body</code>, <code>a."
+"agm_mh_marker_item_directions</code>, <code>.agm_mh_marker_list</code>, "
+"<code>.agm_mh_marker_item</code>, <code>.agm_mh_marker_item_content</code></"
+"p>"
 
 #: inc/class-agm-admin-form-renderer.php:300
+#, fuzzy
 msgid "(Standard)"
-msgstr ""
+msgstr "(Standard)"
 
 #: inc/class-agm-admin-form-renderer.php:314
+#, fuzzy
 msgid ""
 "Wenn die Karte nicht auf Deiner Seite angezeigt wird, versuche den "
 "alternativen Shortcode <code>[agm_map]</code> zu verwenden."
 msgstr ""
+"Se la mappa non viene visualizzata sulla pagina, provare a utilizzare lo "
+"shortcode alternativo <code>[agm_map]</code>."
 
 #: inc/class-agm-admin-form-renderer.php:319
+#, fuzzy
 msgid ""
 "<strong>Tipp:</strong> Verwende nach dem Ändern des Shortcodes die "
 "Erweiterung \"Fixes und Reparaturen\" und überprüfe den Status von \"Map "
 "Shortcode umbenennen\". Bei Bedarf aktualisiert dieses Tool automatisch alle "
 "Ihre Seiten und Beiträge, um den neuen Shortcode zu verwenden."
 msgstr ""
+"<strong>Suggerimento:</strong> dopo aver modificato lo shortcode, utilizzare "
+"l'estensione \"Correzioni e riparazioni\" e controllare lo stato di "
+"\"Rinomina shortcode mappa\". Se necessario, questo strumento aggiornerà "
+"automaticamente tutte le pagine e i post per utilizzare il nuovo shortcode."
 
 #: inc/class-agm-admin-form-renderer.php:395
+#, fuzzy
 msgid "Meine Beiträge haben Breiten-/Längengrade"
-msgstr ""
+msgstr "I miei contributi hanno gradi di larghezza/lunghezza"
 
 #: inc/class-agm-admin-form-renderer.php:396
+#, fuzzy
 msgid "Breitengrad Feldname:"
-msgstr ""
+msgstr "Latitudine Nome del campo:"
 
 #: inc/class-agm-admin-form-renderer.php:399
+#, fuzzy
 msgid "Längengrad Feldname:"
-msgstr ""
+msgstr "Longitudine Nome del campo:"
 
 #: inc/class-agm-admin-form-renderer.php:402
+#, fuzzy
 msgid "Meine Beiträge haben ein Adressfeld"
-msgstr ""
+msgstr "I miei messaggi hanno un campo indirizzo"
 
 #: inc/class-agm-admin-form-renderer.php:403
+#, fuzzy
 msgid "Adressfeldname(n):"
-msgstr ""
+msgstr "Nome del campo indirizzo:"
 
 #: inc/class-agm-admin-form-renderer.php:411
+#, fuzzy
 msgid ""
 "Alte Karte verwerfen, wenn sich der Wert meiner benutzerdefinierten Felder "
 "ändert"
 msgstr ""
+"Scartare la vecchia scheda se il valore dei campi personalizzati cambia"
 
 #: inc/class-agm-admin-form-renderer.php:417
+#, fuzzy
 msgid ""
 "(Eine neue Karte wird automatisch mit den oben angegebenen "
 "Standardeinstellungen erstellt )"
 msgstr ""
+"(Viene creata automaticamente una nuova scheda con le impostazioni "
+"predefinite specificate sopra)"
 
 #: inc/class-agm-admin-form-renderer.php:418
+#, fuzzy
 msgid "Ordne die neue Karte dem Beitrag zu:"
-msgstr ""
+msgstr "Assegnare la nuova scheda al contributo:"
 
 #: inc/class-agm-admin-form-renderer.php:420
+#, fuzzy
 msgid "Karte automatisch anzeigen:"
-msgstr ""
+msgstr "Mostra automaticamente la mappa:"
 
 #: inc/class-agm-admin-form-renderer.php:434
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Wenn die vorherige Option auf \"Ja\" gesetzt ist, wird die neue Karte %s im "
 "Beitrags-Inhalt angezeigt"
 msgstr ""
+"Se l'opzione precedente è impostata su \"Sì\", la nuova scheda %s viene "
+"visualizzata nel contenuto del messaggio"
 
 #: inc/class-agm-admin-form-renderer.php:445
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Das Google Maps Plugin fügt ein &quot;Karte hinzufügen&quot; Symbol zu "
 "Deinem visuellen Editor hinzu. Sobald Du Deine neue Karte erstellt hast, "
 "wird sie als Shortcode in den Bereich \"Beitrag/Seite schreiben\" eingefügt. "
 "In etwa so: <code>[%s id=\"1\"]</code>."
 msgstr ""
+"Il plugin Google Maps aggiunge un'icona &quot;Aggiungi mappa&quot; "
+"all'editor visuale. Una volta creata la nuova mappa, questa verrà inserita "
+"come shortcode nell'area \"Scrivi post/pagina\". Qualcosa del genere: "
+"<code>[%s id=\"1\"]</code>."
 
 #: inc/class-agm-admin-form-renderer.php:456
+#, fuzzy
 msgid ""
 "Außerdem wird ein Widget hinzugefügt, mit dem Du Deiner Seitenleiste Karten "
 "hinzufügen kannst (siehe Darstellungs-Widgets)."
 msgstr ""
+"Inoltre, è stato aggiunto un widget con il quale è possibile aggiungere "
+"mappe alla barra laterale (vedere Widget di visualizzazione)."
 
 #: inc/class-agm-admin-form-renderer.php:468
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Ausführlichere Anweisungen zur Verwendung findest Du unter <a target=\"_blank"
 "\" href=\"%s\">Anweisungen zur Installation und Verwendung von PS-Maps</a>."
 msgstr ""
+"Per istruzioni più dettagliate sull'uso, consultare la sezione <a target="
+"\"_blank\" href=\"%s\">Istruzioni per l'installazione e l'uso di PS-Maps</a>."
 
 #: inc/class-agm-admin-form-renderer.php:498
+#, fuzzy
 msgid "Aktive"
-msgstr ""
+msgstr "Attivo"
 
 #: inc/class-agm-admin-form-renderer.php:503
 msgid "Inaktiv"
-msgstr ""
+msgstr "Inattivo"
 
 #: inc/class-agm-admin-form-renderer.php:515
+#, fuzzy
 msgid "Erweiterungsname"
-msgstr ""
+msgstr "Nome dell'estensione"
 
 #: inc/class-agm-admin-form-renderer.php:516
+#, fuzzy
 msgid "Erweiterung Beschreibung"
-msgstr ""
+msgstr "Descrizione dell'estensione"
 
 #: inc/class-agm-admin-form-renderer.php:561
 msgid "Deaktivieren"
-msgstr ""
+msgstr "Disattivare"
 
 #: inc/class-agm-admin-form-renderer.php:569
 msgid "Aktivieren"
-msgstr ""
+msgstr "Attivare"
 
 #: inc/class-agm-admin-form-renderer.php:575
+#, fuzzy
 msgid "Benötigt "
-msgstr ""
+msgstr "Richiesto"
 
 #: inc/class-agm-admin-form-renderer.php:587
+#, fuzzy
 msgid "Beispiel:"
-msgstr ""
+msgstr "Esempio:"
 
 #: inc/class-agm-admin-help.php:30 inc/class-agm-admin-maps.php:50
+#, fuzzy
 msgid "Optionen"
-msgstr ""
+msgstr "Opzioni"
 
 #: inc/class-agm-admin-help.php:33
+#, fuzzy
 msgid "Hier kannst Du PS-Maps einrichten Standardeinstellungen."
-msgstr ""
+msgstr "Qui è possibile impostare le impostazioni predefinite di PS-Maps."
 
 #: inc/class-agm-admin-help.php:39 inc/class-agm-admin-maps.php:155
+#, fuzzy
 msgid "Benutzerdefinierte Felder"
-msgstr ""
+msgstr "Campi definiti dall'utente"
 
 #: inc/class-agm-admin-help.php:42
+#, fuzzy
 msgid ""
 "Hier kannst Du die automatische Erstellung von neuen Google Maps  "
 "einrichten, die durch Deine vorhandenen  benutzerdefinierten Standortfelder "
 "ausgelöst wird."
 msgstr ""
+"Qui è possibile impostare la creazione automatica di nuove mappe di Google, "
+"che viene attivata dai campi di localizzazione personalizzati esistenti."
 
 #: inc/class-agm-admin-help.php:49 inc/class-agm-admin-maps.php:189
+#, fuzzy
 msgid "Erweiterungen"
-msgstr ""
+msgstr "Estensioni"
 
 #: inc/class-agm-admin-help.php:52
+#, fuzzy
 msgid ""
 "Dies sind die optionalen Ergänzungen für Google Maps.Maps. Aktiviere oder "
 "deaktiviere sie nach Bedarf."
 msgstr ""
+"Queste sono le aggiunte opzionali per Google Maps.Maps. Attivarle o "
+"disattivarle a seconda delle necessità."
 
 #: inc/class-agm-admin-help.php:62 inc/class-agm-admin-maps.php:230
 #: inc/class-agm-admin-maps.php:335 inc/class-agm-gdpr.php:34
+#, fuzzy
 msgid "PS-Maps"
-msgstr ""
+msgstr "PS-Mappe"
 
 #: inc/class-agm-admin-help.php:66
+#, fuzzy
 msgid "Projektseite"
-msgstr ""
+msgstr "Pagina del progetto"
 
 #: inc/class-agm-admin-help.php:71
+#, fuzzy
 msgid "Installations- und Anleitungswiki"
-msgstr ""
+msgstr "Wiki di installazione e istruzioni"
 
 #: inc/class-agm-admin-help.php:76
+#, fuzzy
 msgid "Support Forum"
-msgstr ""
+msgstr "Forum di supporto"
 
 #: inc/class-agm-admin-help.php:125
 msgid "Einstellungen"
-msgstr ""
+msgstr "Impostazioni"
 
 #: inc/class-agm-admin-maps.php:57
+#, fuzzy
 msgid "Google Maps API-Schlüssel"
-msgstr ""
+msgstr "Chiave API di Google Maps"
 
 #: inc/class-agm-admin-maps.php:65
+#, fuzzy
 msgid "Standardkartenhöhe"
-msgstr ""
+msgstr "Altezza standard della scheda"
 
 #: inc/class-agm-admin-maps.php:72
+#, fuzzy
 msgid "Standardkartenbreite"
-msgstr ""
+msgstr "Larghezza standard della carta"
 
 #: inc/class-agm-admin-maps.php:79
+#, fuzzy
 msgid "Standardkartentyp"
-msgstr ""
+msgstr "Tipo di scheda standard"
 
 #: inc/class-agm-admin-maps.php:87
+#, fuzzy
 msgid "Standard-Kartenzoom"
-msgstr ""
+msgstr "Zoom standard della mappa"
 
 #: inc/class-agm-admin-maps.php:95
+#, fuzzy
 msgid "Standardkarteneinheiten"
-msgstr ""
+msgstr "Unità scheda standard"
 
 #: inc/class-agm-admin-maps.php:118
+#, fuzzy
 msgid "Standardkartenausrichtung"
-msgstr ""
+msgstr "Orientamento standard della scheda"
 
 #: inc/class-agm-admin-maps.php:125
+#, fuzzy
 msgid "Snapping"
-msgstr ""
+msgstr "Scattante"
 
 #: inc/class-agm-admin-maps.php:132
+#, fuzzy
 msgid "Richtungen Snapping"
-msgstr ""
+msgstr "Direzioni di scatto"
 
 #: inc/class-agm-admin-maps.php:139
+#, fuzzy
 msgid "Zusätzliches CSS"
-msgstr ""
+msgstr "CSS aggiuntivo"
 
 #: inc/class-agm-admin-maps.php:146
+#, fuzzy
 msgid "Shortcode ändern"
-msgstr ""
+msgstr "Modifica del codice breve"
 
 #: inc/class-agm-admin-maps.php:161
+#, fuzzy
 msgid "Verwende die Unterstützung für benutzerdefinierte Post-Meta-Felder"
-msgstr ""
+msgstr "Utilizzare il supporto per i meta-campi dei post personalizzati"
 
 #: inc/class-agm-admin-maps.php:168
+#, fuzzy
 msgid "Ordne benutzerdefinierte Felder zu"
-msgstr ""
+msgstr "Assegnare campi definiti dall'utente"
 
 #: inc/class-agm-admin-maps.php:175
+#, fuzzy
 msgid "Wenn diese Felder gefunden werden, möchte ich"
-msgstr ""
+msgstr "Se questi campi vengono trovati, vorrei"
 
 #: inc/class-agm-admin-maps.php:330
+#, fuzzy
 msgid "Karten laden ... bitte warten"
-msgstr ""
+msgstr "Caricare le mappe ... attendere prego"
 
 #: inc/class-agm-admin-maps.php:331 inc/class-agm-admin-maps.php:397
+#, fuzzy
 msgid "Füge diese Karte ein"
-msgstr ""
+msgstr "Inserire questa scheda"
 
 #: inc/class-agm-admin-maps.php:332
+#, fuzzy
 msgid "Vorschau/Bearbeiten"
-msgstr ""
+msgstr "Anteprima/Modifica"
 
 #: inc/class-agm-admin-maps.php:334 inc/class-agm-admin-maps.php:372
+#, fuzzy
 msgid "Karte hinzufügen"
-msgstr ""
+msgstr "Aggiungi mappa"
 
 #: inc/class-agm-admin-maps.php:336
 msgid "Weiter &raquo;"
-msgstr ""
+msgstr "Successivo &raquo;"
 
 #: inc/class-agm-admin-maps.php:337
 msgid "&laquo; Zurück"
-msgstr ""
+msgstr "&laquo; Precedente"
 
 #: inc/class-agm-admin-maps.php:338
+#, fuzzy
 msgid "Bestehende Karten"
-msgstr ""
+msgstr "Carte esistenti"
 
 #: inc/class-agm-admin-maps.php:339
+#, fuzzy
 msgid "Vorschau und Bearbeitung der Karte"
-msgstr ""
+msgstr "Anteprima e modifica della mappa"
 
 #: inc/class-agm-admin-maps.php:340
+#, fuzzy
 msgid "Keine vorhandenen Karten"
-msgstr ""
+msgstr "Nessuna carta esistente"
 
 #: inc/class-agm-admin-maps.php:341
+#, fuzzy
 msgid "Neue Karte"
-msgstr ""
+msgstr "Nuova mappa"
 
 #: inc/class-agm-admin-maps.php:342
+#, fuzzy
 msgid "Erweiterter Modus"
-msgstr ""
+msgstr "Modalità avanzata"
 
 #: inc/class-agm-admin-maps.php:343
+#, fuzzy
 msgid ""
 "Erweiterter Modus: Führe mehrere Karten zu einer neuen Karte zusammen oder "
 "lösche mehrere Karten"
 msgstr ""
+"Modalità avanzata: unire più schede in una nuova scheda o eliminare più "
+"schede"
 
 #: inc/class-agm-admin-maps.php:344
+#, fuzzy
 msgid "Erstellt eine neue Karte mit allen Markierungen der ausgewählten Karten"
-msgstr ""
+msgstr "Crea una nuova mappa con tutti i marcatori delle mappe selezionate"
 
 #: inc/class-agm-admin-maps.php:345
+#, fuzzy
 msgid "Beende den erweiterten Modus"
-msgstr ""
+msgstr "Uscire dalla modalità avanzata"
 
 #: inc/class-agm-admin-maps.php:346
+#, fuzzy
 msgid "Verschmelzen"
-msgstr ""
+msgstr "Fusione"
 
 #: inc/class-agm-admin-maps.php:348
+#, fuzzy
 msgid ""
 "Erstelle eine neue Karte, die in diesen Beitrag oder diese Seite eingefügt "
 "werden kann"
-msgstr ""
+msgstr "Creare una nuova mappa che può essere inserita in questo post o pagina"
 
 #: inc/class-agm-admin-maps.php:349
+#, fuzzy
 msgid "Du hast noch keine Karten erstellt."
-msgstr ""
+msgstr "Non hai ancora creato nessuna mappa."
 
 #: inc/class-agm-admin-maps.php:350
+#, fuzzy
 msgid "Möchtest Du diese Karte dauerhaft löschen?"
-msgstr ""
+msgstr "Desidera cancellare definitivamente questa scheda?"
 
 #: inc/class-agm-admin-maps.php:351
+#, fuzzy
 msgid "Möchtest Du alle ausgewählten Karten dauerhaft löschen?"
-msgstr ""
+msgstr "Desiderate eliminare definitivamente tutte le schede selezionate?"
 
 #: inc/class-agm-admin-maps.php:373 views/widget_settings.php:42
+#, fuzzy
 msgid "Neue Karte erstellen"
-msgstr ""
+msgstr "Creare una nuova mappa"
 
 #: inc/class-agm-admin-maps.php:388 inc/class-agm-dependencies.php:60
+#, fuzzy
 msgid ""
 "Beim Geokodieren Deines Standorts ist ein Fehler aufgetreten. Überprüfe die "
 "Adresse und versuche es erneut"
 msgstr ""
+"Si è verificato un errore durante la geocodifica della posizione. "
+"Controllare l'indirizzo e riprovare"
 
 #: inc/class-agm-admin-maps.php:389
+#, fuzzy
 msgid "Bitte gib den Ort ein"
-msgstr ""
+msgstr "Inserire la località"
 
 #: inc/class-agm-admin-maps.php:390
+#, fuzzy
 msgid "Marker hinzufügen"
-msgstr ""
+msgstr "Aggiungi marcatore"
 
 #: inc/class-agm-admin-maps.php:392
 msgid "Inhalt"
-msgstr ""
+msgstr "contento"
 
 #: inc/class-agm-admin-maps.php:394 views/plugin_settings.php:11
 msgid "Änderungen speichern"
-msgstr ""
+msgstr "Save changes"
 
 #: inc/class-agm-admin-maps.php:395
+#, fuzzy
 msgid "Alle Änderungen gespeichert!"
-msgstr ""
+msgstr "Tutte le modifiche sono state salvate!"
 
 #: inc/class-agm-admin-maps.php:396
+#, fuzzy
 msgid "Daten senden..."
-msgstr ""
+msgstr "Inviare i dati..."
 
 #: inc/class-agm-admin-maps.php:398
+#, fuzzy
 msgid "Karte nicht gespeichert"
-msgstr ""
+msgstr "Scheda non salvata"
 
 #: inc/class-agm-admin-maps.php:399
+#, fuzzy
 msgid "Bitte gib dieser Karte einen Namen"
-msgstr ""
+msgstr "Si prega di dare un nome a questa scheda"
 
 #: inc/class-agm-admin-maps.php:400
+#, fuzzy
 msgid "Bitte speichere zuerst die Karte"
-msgstr ""
+msgstr "Salvare prima la mappa"
 
 #: inc/class-agm-admin-maps.php:401
 msgid "Zurück"
-msgstr ""
+msgstr "Indietro"
 
 #: inc/class-agm-admin-maps.php:402
+#, fuzzy
 msgid "Gib hier den Kartentitel ein"
-msgstr ""
+msgstr "Inserite qui il titolo della mappa"
 
 #: inc/class-agm-admin-maps.php:403
+#, fuzzy
 msgid "Kartenoptionen"
-msgstr ""
+msgstr "Opzioni della carta"
 
 #: inc/class-agm-admin-maps.php:404
+#, fuzzy
 msgid ""
 "Verwende die Kartenoptionen, um Kartengröße, Erscheinungsbild, Ausrichtung "
 "und Bildstreifen zu ändern"
 msgstr ""
+"Utilizzare le opzioni della mappa per modificarne le dimensioni, l'aspetto, "
+"l'orientamento e le strisce di immagine"
 
 #: inc/class-agm-admin-maps.php:405
+#, fuzzy
 msgid "Setze Marker"
-msgstr ""
+msgstr "Impostare i marcatori"
 
 #: inc/class-agm-admin-maps.php:406
+#, fuzzy
 msgid ""
 "Tipp: Für beste Kartenqualität <strong>zoome</strong>, um Deine Markierungen "
 "vor dem Speichern zu platzieren"
 msgstr ""
+"Suggerimento: per una migliore qualità della mappa, <strong>ingrandire</"
+"strong> i marcatori prima di salvarli"
 
 #: inc/class-agm-admin-maps.php:407
+#, fuzzy
 msgid "Verknüpfe diese Karte mit diesem Inhalt"
-msgstr ""
+msgstr "Collega questa scheda a questo contenuto"
 
 #: inc/class-agm-admin-maps.php:408
+#, fuzzy
 msgid "Diese Karte ist diesen bereits zugeordnet"
-msgstr ""
+msgstr "Questa scheda è già assegnata a questi"
 
 #: inc/class-agm-admin-maps.php:409
+#, fuzzy
 msgid ""
 "Durch das Verknüpfen einer Karte mit einem Beitrag kannst Du diese Karte auf "
 "erweiterte Weise verwenden, um sie dynamisch im Seitenleisten-Widget oder in "
 "einem erweiterten Mashup anzuzeigen"
 msgstr ""
+"Collegando una mappa a un post, è possibile utilizzare la mappa in modo "
+"avanzato per visualizzarla dinamicamente nel widget della barra laterale o "
+"in un mashup avanzato"
 
 #: inc/class-agm-admin-maps.php:410
+#, fuzzy
 msgid "Kartengröße"
-msgstr ""
+msgstr "Dimensione della carta"
 
 #: inc/class-agm-admin-maps.php:411
+#, fuzzy
 msgid "Standardgröße verwenden"
-msgstr ""
+msgstr "Utilizzare dimensioni standard"
 
 #: inc/class-agm-admin-maps.php:412
+#, fuzzy
 msgid "Kartenaussehen"
-msgstr ""
+msgstr "Aspetto della carta"
 
 #: inc/class-agm-admin-maps.php:413
+#, fuzzy
 msgid "Kartenausrichtung"
-msgstr ""
+msgstr "Orientamento della scheda"
 
 #: inc/class-agm-admin-maps.php:417 views/widget_settings.php:68
+#, fuzzy
 msgid "Karte anzeigen"
-msgstr ""
+msgstr "Mostra la mappa"
 
 #: inc/class-agm-admin-maps.php:418
+#, fuzzy
 msgid "Beiträge anzeigen"
-msgstr ""
+msgstr "Mostra i messaggi"
 
 #: inc/class-agm-admin-maps.php:419 views/widget_settings.php:71
+#, fuzzy
 msgid "Markierungsliste anzeigen"
-msgstr ""
+msgstr "Mostra l'elenco delle marcature"
 
 #: inc/class-agm-admin-maps.php:420
+#, fuzzy
 msgid "Einstellungen für Bildstreifen"
-msgstr ""
+msgstr "Impostazioni per le strisce di immagini"
 
 #: inc/class-agm-admin-maps.php:421
+#, fuzzy
 msgid "Bildstreifen anzeigen"
-msgstr ""
+msgstr "Mostra le strisce di immagini"
 
 #: inc/class-agm-admin-maps.php:422
+#, fuzzy
 msgid "Verwende die Bildgröße"
-msgstr ""
+msgstr "Utilizzare le dimensioni dell'immagine"
 
 #: inc/class-agm-admin-maps.php:427
+#, fuzzy
 msgid "Zeige so viele Bilder"
-msgstr ""
+msgstr "Mostrare tante immagini"
 
 #: inc/class-agm-admin-maps.php:428
+#, fuzzy
 msgid "Ort hinzufügen:"
-msgstr ""
+msgstr "Aggiungere la posizione:"
 
 #: inc/class-agm-admin-maps.php:429
+#, fuzzy
 msgid "Anwenden"
-msgstr ""
+msgstr "Applicare"
 
 #: inc/class-agm-dependencies.php:58
 msgid "Schließen"
-msgstr ""
+msgstr "Chiudere"
 
 #: inc/class-agm-dependencies.php:59
+#, fuzzy
 msgid "Wegbeschreibung erhalten"
-msgstr ""
+msgstr "Ottieni indicazioni"
 
 #: inc/class-agm-dependencies.php:61
+#, fuzzy
 msgid "Bitte gib Werte für Punkt A und Punkt B ein"
-msgstr ""
+msgstr "Inserire i valori per il punto A e il punto B"
 
 #: inc/class-agm-dependencies.php:62
+#, fuzzy
 msgid "Wegbeschreibungen"
-msgstr ""
+msgstr "Indicazioni stradali"
 
 #: inc/class-agm-dependencies.php:63
+#, fuzzy
 msgid "Beiträge"
-msgstr ""
+msgstr "Contributi"
 
 #: inc/class-agm-dependencies.php:64
 msgid "Alle zeigen"
-msgstr ""
+msgstr "Mostra tutto"
 
 #: inc/class-agm-dependencies.php:65
+#, fuzzy
 msgid "Verbergen"
-msgstr ""
+msgstr "Nascondere"
 
 #: inc/class-agm-dependencies.php:66
+#, fuzzy
 msgid "Hoppla, wir konnten die Richtungen nicht berechnen"
-msgstr ""
+msgstr "Ops, non siamo riusciti a calcolare le indicazioni stradali"
 
 #: inc/class-agm-gdpr.php:48 inc/class-agm-gdpr.php:67
+#, fuzzy
 msgid "Von PS-Maps automatisch erstellte Karten"
-msgstr ""
+msgstr "Mappe create automaticamente da PS-Maps"
 
 #: inc/class-agm-gdpr.php:52 inc/class-agm-gdpr.php:71
+#, fuzzy
 msgid "Mit PS-Maps verknüpfte Karten"
-msgstr ""
+msgstr "Mappe collegate con PS-Maps"
 
 #: inc/class-agm-gdpr.php:92
+#, fuzzy
 msgid "Zugehörige Karten"
-msgstr ""
+msgstr "Carte associate"
 
 #: inc/class-agm-gdpr.php:126
+#, fuzzy
 msgid "Automatisch erstellte Karten"
-msgstr ""
+msgstr "Mappe create automaticamente"
 
 #: inc/class-agm-gdpr.php:170
+#, fuzzy
 msgid "Map"
-msgstr ""
+msgstr "Mappa"
 
 #: inc/class-agm-gdpr.php:282
+#, fuzzy
 msgid "Dritte"
-msgstr ""
+msgstr "Terza parte"
 
 #: inc/class-agm-gdpr.php:283
+#, fuzzy
 msgid ""
 "Diese Webseite verfolgt Deine (anonymen) Standortdaten mithilfe Deiner "
 "Browser-API und gibt sie an den Google Maps-API-Dienst weiter."
 msgstr ""
+"Questo sito web rileva i dati di localizzazione (anonimi) dell'utente "
+"tramite l'API del browser e li trasmette al servizio API di Google Maps."
 
 #: inc/class-agm-gdpr.php:284
+#, fuzzy
 msgid ""
 "Diese Webseite enthält auch Ressourcen von Drittanbietern aus der Google "
 "Maps-API, die möglicherweise selbst Cookies setzen."
 msgstr ""
+"Questo sito web contiene anche risorse di terze parti dell'API di Google "
+"Maps, che possono a loro volta impostare dei cookie."
 
 #: inc/class-agm-gdpr.php:285
+#, fuzzy
 msgid "Check-ins"
-msgstr ""
+msgstr "Check-in"
 
 #: inc/class-agm-gdpr.php:286
+#, fuzzy
 msgid ""
 "Diese Webseite verfolgt möglicherweise Deinen Standort (mit Deiner "
 "Zustimmung) in Form eines anonymen oder benutzerbezogenen Check-ins. Diese "
 "Informationen können exportiert und entfernt werden."
 msgstr ""
+"Questo sito web può tracciare la posizione dell'utente (con il suo consenso) "
+"sotto forma di check-in anonimo o legato all'utente. Queste informazioni "
+"possono essere esportate e rimosse."
 
 #: inc/class-agm-gdpr.php:287
+#, fuzzy
 msgid "Für Seiten-Mitglieder"
-msgstr ""
+msgstr "Per i membri del sito"
 
 #: inc/class-agm-gdpr.php:288
+#, fuzzy
 msgid ""
 "Diese Webseite verwendet möglicherweise Deine angegebenen "
 "Adressinformationen (falls vorhanden), um sie auf einer Karte anzuzeigen und "
 "sie somit für die Google Maps-API freizugeben. Diese Informationen können "
 "entfernt werden."
 msgstr ""
+"Questo sito web può utilizzare le informazioni sull'indirizzo specificato "
+"(se disponibile) per visualizzarlo su una mappa e quindi condividerlo con "
+"l'API di Google Maps. Queste informazioni possono essere rimosse."
 
 #: inc/class-agm-gdpr.php:289
+#, fuzzy
 msgid "Für Inhaltsersteller"
-msgstr ""
+msgstr "Per i creatori di contenuti"
 
 #: inc/class-agm-gdpr.php:290
+#, fuzzy
 msgid ""
 "Diese Seite erstellt möglicherweise automatisch Karten anhand der "
 "bereitgestellten Standortdaten und/oder verknüpft sie mit den von Dir "
@@ -2296,129 +2927,160 @@ msgid ""
 "Aktivitätsaktualisierungen. Dieser Inhalt kann exportiert und entfernt "
 "werden."
 msgstr ""
+"Questa pagina può creare automaticamente mappe basate sui dati di "
+"localizzazione forniti e/o collegarle ai contenuti creati dall'utente, come "
+"i post e gli aggiornamenti delle attività di BuddyPress. Questi contenuti "
+"possono essere esportati e rimossi."
 
 #: inc/external/wpmu-lib/inc/class-thelib-ui.php:517
+#, fuzzy
 msgid "Dismiss this notice."
-msgstr ""
+msgstr "Respingere il presente avviso."
 
 #: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:56
+#, fuzzy
 msgid "View details"
-msgstr ""
+msgstr "Visualizza i dettagli"
 
 #: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:79
-#, php-format
+#, fuzzy, php-format
 msgid "Weitere Informationen zu %s"
-msgstr ""
+msgstr "Ulteriori informazioni su %s"
 
 #: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:130
+#, fuzzy
 msgid "Auf neuere Version prüfen"
-msgstr ""
+msgstr "Verificare la presenza di una versione più recente"
 
 #: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:217
-#, php-format
+#, fuzzy, php-format
 msgctxt "the plugin title"
 msgid "Keine neuere Version von %s im PSOURCE REPO gefunden."
-msgstr ""
+msgstr "Non è stata trovata una versione più recente di %s in PSOURCE REPO."
 
 #: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:219
-#, php-format
+#, fuzzy, php-format
 msgctxt "the plugin title"
 msgid "Im PSOURCE REPO ist eine <b>neuere Version von %s</b> verfügbar!."
-msgstr ""
+msgstr "Una <b>versione più recente di %s</b> è disponibile nel PSOURCE REPO!"
 
 #: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:221
-#, php-format
+#, fuzzy, php-format
 msgctxt "the plugin title"
 msgid ""
 "Entschuldige, es konnte nicht festgestellt werden, ob Updates für %s "
 "verfügbar sind."
 msgstr ""
+"Spiacente, non è stato possibile determinare se sono disponibili "
+"aggiornamenti per %s."
 
 #: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:227
-#, php-format
+#, fuzzy, php-format
 msgid "Unbekannter PSOURCE-UPDATTER-Status \"%s\""
-msgstr ""
+msgstr "Stato PSOURCE-UPDATTER sconosciuto \"%s\""
 
 #: psource/psource-plugin-update/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
+#, fuzzy
 msgid "There is no changelog available."
-msgstr ""
+msgstr "Non è disponibile un changelog."
 
 #: views/plugin_settings.php:2
+#, fuzzy
 msgid "Google Maps Plugin Optionen"
-msgstr ""
+msgstr "Opzioni del plugin Google Maps"
 
 #: views/widget_settings.php:2
 msgid "Titel:"
-msgstr ""
+msgstr "Titolo:"
 
 #: views/widget_settings.php:7
+#, fuzzy
 msgid "Kartengröße:"
-msgstr ""
+msgstr "Dimensioni della carta:"
 
 #: views/widget_settings.php:14
+#, fuzzy
 msgid "Verwende Karten von:"
-msgstr ""
+msgstr "Utilizzare le carte di:"
 
 #: views/widget_settings.php:18
+#, fuzzy
 msgid "Aktuelle Beiträge"
-msgstr ""
+msgstr "Contributi attuali"
 
 #: views/widget_settings.php:22
+#, fuzzy
 msgid "Alle Beiträge"
-msgstr ""
+msgstr "Tutti i contributi"
 
 #: views/widget_settings.php:30
+#, fuzzy
 msgid "Zufällige Karte"
-msgstr ""
+msgstr "Mappa casuale"
 
 #: views/widget_settings.php:34
+#, fuzzy
 msgid "Use this map:"
-msgstr ""
+msgstr "Utilizzate questa mappa:"
 
 #: views/widget_settings.php:36
+#, fuzzy
 msgid "Wähle ein"
-msgstr ""
+msgstr "Scegliere un"
 
 #: views/widget_settings.php:46
+#, fuzzy
 msgid "Benutzerdefinierte Abfrage"
-msgstr ""
+msgstr "Query definita dall'utente"
 
 #: views/widget_settings.php:50
+#, fuzzy
 msgid ""
 "Dies ist eine Netzwerkabfrage <small>(Benötigt <a href=\"https://n3rds.work/"
 "piestingtal-source-project/ps-multisite-index/\">PS-Multisite Beitragsindex</"
 "a> plugin) - nur \"tag = ...\" wird unterstützt</small>"
 msgstr ""
+"Si tratta di una query di rete <small>(richiede il plugin <a href=\"https://"
+"n3rds.work/piestingtal-source-project/ps-multisite-index/\">PS-Multisite "
+"contribution index</a> ) - è supportato solo \"tag = ...\"</small>"
 
 #: views/widget_settings.php:53
+#, fuzzy
 msgid "Weitere Informationen zu benutzerdefinierten Abfragen"
-msgstr ""
+msgstr "Ulteriori informazioni sulle query personalizzate"
 
 #: views/widget_settings.php:57
+#, fuzzy
 msgid "Zeige:"
-msgstr ""
+msgstr "Mostra:"
 
 #: views/widget_settings.php:60
+#, fuzzy
 msgid "Als eine Karte anzeigen"
-msgstr ""
+msgstr "Mostra come mappa"
 
 #: views/widget_settings.php:74
+#, fuzzy
 msgid "Bilderstreifen anzeigen"
-msgstr ""
+msgstr "Mostra strisce di immagini"
 
 #: views/widget_settings.php:77
+#, fuzzy
 msgid "Beiträge in Markern anzeigen"
-msgstr ""
+msgstr "Mostra i messaggi in marcatori"
 
 #. Plugin Name of the plugin/theme
+#, fuzzy
 msgid "PS Google Maps"
-msgstr ""
+msgstr "PS Google Maps"
 
 #. Plugin URI of the plugin/theme
+#, fuzzy
 msgid "https://n3rds.work/piestingtal_source/ps-google-maps-plugin/"
-msgstr ""
+msgstr "https://n3rds.work/piestingtal_source/ps-google-maps-plugin/"
 
 #. Description of the plugin/theme
+#, fuzzy
 msgid ""
 "Einfaches Einbetten, Anpassen und Verwenden von Google Maps auf Deiner "
 "WordPress-Seite - in Posts, Seiten oder als benutzerfreundliches Widget "
@@ -2426,11 +3088,18 @@ msgid ""
 "Sekundenschnelle eine Interaktive Googlemap mit einer Unzahl an Optionen und "
 "Möglichkeiten geben."
 msgstr ""
+"Incorporate, personalizzate e utilizzate facilmente Google Maps sul vostro "
+"sito WordPress: nei post, nelle pagine o come widget di facile utilizzo, "
+"potete visualizzare immagini locali e offrire ai visitatori del vostro sito "
+"una mappa interattiva di Google con una miriade di opzioni e possibilità in "
+"pochi secondi."
 
 #. Author of the plugin/theme
+#, fuzzy
 msgid "WMS N@W"
-msgstr ""
+msgstr "WMS N@W"
 
 #. Author URI of the plugin/theme
+#, fuzzy
 msgid "https://n3rds.work"
-msgstr ""
+msgstr "https://n3rds.work"
