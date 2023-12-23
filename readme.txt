@@ -75,6 +75,10 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
+= 3.0.9 =
+
+* Deprecated jQuery Fixes
+
 = 3.0.8 =
 
 * PHP8 Fixes
