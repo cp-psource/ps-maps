@@ -75,6 +75,10 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
+= 3.1.0 =
+
+* Fix: PHP Fatal error: Uncaught TypeError: array_merge()
+
 = 3.0.9 =
 
 * Deprecated jQuery Fixes

@@ -168,6 +168,9 @@ class Agm_Icons_Shared {
 	 */
 	public function load_icons( $icons ) {
 		$custom = $this->_get_custom_icons();
+		if (!is_array($custom)) {
+			$custom = array(); // or handle this case as appropriate
+		}
 		return array_merge( $icons, $custom );
 	}
 
