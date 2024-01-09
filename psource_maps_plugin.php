@@ -9,12 +9,11 @@
  * Author:      WMS N@W
  * Author URI:  https://n3rds.work
  * 
- *
  * @package  AgmMaps
  */
 
 /*
-Copyright 2020-2021 WMS N@W (https://n3rds.work)
+Copyright 2020-2024 WMS N@W (https://n3rds.work)
 Author - DerN3rd
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by

@@ -145,7 +145,7 @@ jQuery(function() {
                     l10nEditor.delete_map +
                     '</a>' +
                     '</div>' +
-                    '</li>');
+                '</li>');
             }
         } else {
             html = jQuery('<div class="tc"></div>');
@@ -162,36 +162,36 @@ jQuery(function() {
                 load_prev = jQuery('<a href="#" class="agm-load_prev_maps">' + l10nEditor.load_prev_maps + '</a>');
 
                 load_prev
-                    .appendTo(paging)
-                    .on('click', function prev_click() {
-                        paging.attr('data-increment', prev_increment);
-                        jQuery.post(
-                            window.ajaxurl, {
-                                'action': 'agm_list_maps',
-                                'increment': prev_increment
-                            },
-                            loadMaps
-                        );
-                        return false;
-                    });
+                .appendTo(paging)
+                .on('click', function prev_click() {
+                    paging.attr('data-increment', prev_increment);
+                    jQuery.post(
+                        window.ajaxurl, {
+                            'action': 'agm_list_maps',
+                            'increment': prev_increment
+                        },
+                        loadMaps
+                    );
+                    return false;
+                });
             }
 
             if (current) {
                 load_next = jQuery('<a href="#" class="agm-load_next_maps">' + l10nEditor.load_next_maps + '</a>');
 
                 load_next
-                    .appendTo(paging)
-                    .on('click', function next_click() {
-                        paging.attr('data-increment', next_increment);
-                        jQuery.post(
-                            window.ajaxurl, {
-                                "action": 'agm_list_maps',
-                                "increment": next_increment
-                            },
-                            loadMaps
-                        );
-                        return false;
-                    });
+                .appendTo(paging)
+                .on('click', function next_click() {
+                    paging.attr('data-increment', next_increment);
+                    jQuery.post(
+                        window.ajaxurl, {
+                            "action": 'agm_list_maps',
+                            "increment": next_increment
+                        },
+                        loadMaps
+                    );
+                    return false;
+                });
             }
         }
 
@@ -667,7 +667,7 @@ jQuery(function() {
             '' :
             '<p class="agm_less_important">' +
             'FAusführlichere Anweisungen zur Verwendung findest Du unter ' +
-            '<a target="_blank" href="https://n3rds.work/wiki/piestingtal-source-wiki/ps-google-maps/">' +
+            '<a target="_blank" href="https://n3rds.work/piestingtal_source/ps-google-maps-plugin/">' +
             'PSOURCE Maps Installations- und Gebrauchsanweisung</a>.' +
             '</p>'
         ) +

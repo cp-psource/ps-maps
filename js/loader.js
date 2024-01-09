@@ -1,9 +1,9 @@
 /*! PS-Maps - v2.9.5
  * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+ * Copyright (c) 2018-2024; * Licensed GPLv2+ */
 /*! Google Maps - v2.9.07
  * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2015; * Licensed GPLv2+ */
+ * Copyright (c) 2015-2024; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */

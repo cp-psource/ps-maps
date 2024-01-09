@@ -40,7 +40,7 @@ Zeige lokale Bilder an und lasse Deine Webseiten-Besucher in Sekundenschnelle ei
 Erhalte Wegbeschreibungen mit dem Auto, zu Fuß oder mit öffentlichen Verkehrsmitteln. 
 Dieses Mapping-Plugin ist vollständig interaktiv!
 
-Zeige mit unseren erweiterten Steuerelementen, einschließlich Shorcodes mit IDs, ganz einfach mehrere Karten in einem einzigen Beitrag oder einer einzelnen Seite an und steuere die Breite und Höhe! 
+Zeige mit unseren erweiterten Steuerelementen, einschließlich Shortcodes mit IDs, ganz einfach mehrere Karten in einem einzigen Beitrag oder einer einzelnen Seite an und steuere die Breite und Höhe! 
 Füge jeder Karte mehrere Markierungen hinzu!
 
 [Projektseite](https://n3rds.work/piestingtal_source/ps-google-maps-plugin/)
