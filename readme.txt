@@ -1,10 +1,9 @@
 === PS Google Maps ===
 Contributors: DerN3rd (PSOURCE)
-Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
 Tags: multisite, abstimmung, voting, post,
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 3.1.0
+Stable tag: 3.1.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,37 +42,18 @@ Dieses Mapping-Plugin ist vollständig interaktiv!
 Zeige mit unseren erweiterten Steuerelementen, einschließlich Shortcodes mit IDs, ganz einfach mehrere Karten in einem einzigen Beitrag oder einer einzelnen Seite an und steuere die Breite und Höhe! 
 Füge jeder Karte mehrere Markierungen hinzu!
 
-[Projektseite](https://n3rds.work/piestingtal_source/ps-google-maps-plugin/)
+[Projektseite](https://cp-psource.github.io/ps-maps/)
 [GitHub](https://github.com/piestingtal-source/ps-maps)
 
-[POWERED BY PSOURCE](https://n3rds.work/psource_kategorien/psource-plugins/)
-
-== Mehr PSOURCE ==
-
-= PS Events =
-
-[PS Events](https://n3rds.work/piestingtal_source/ps-events-eventmanagement-fuer-wordpress/) erweitert seine Möglichkeiten mit PS Maps und lotst so Deine Veranstaltungsteilnehmer zielsicher zu Deinem Event.
-
-= Finde mehr Piestingtal.Source =
-
-Wirf einen Blick in unser [PSOURCE Sortiment](https://n3rds.work/psource_kategorien/psource-plugins/) und hole noch mehr aus Deinem WordPress/ClassicPress!
-
-Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswork-digalize-das-piestingtal/newsletter-management/) über unsere Piestingtal.Source informiert!
-
-== Hilf uns ==
-
-Viele, viele Kaffees konsumieren wir während wir an unseren Plugins und Themes arbeiten.
-Wie wärs? Möchtest Du uns mit einer Kaffee-Spende bei der Arbeit an unseren Plugins unterstützen?
-
-= Unterstütze uns =
-
-Mach eine [Spende per Überweisung oder PayPal](https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/) wir Danken Dir!
-
-Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswork-digalize-das-piestingtal/newsletter-management/) über unsere Piestingtal.Source informiert!
-
+[POWERED BY PSOURCE](https://github.com/cp-psource)
 
 
 == ChangeLog ==
+
+= 3.1.1 =
+
+* Links aktualisiert
+* Updater 1.3
 
 = 3.1.0 =
 
