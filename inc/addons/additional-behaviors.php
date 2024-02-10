@@ -4,7 +4,7 @@ Plugin Name: Zusätzliche Verhaltensweisen
 Description: Zeigt zusätzliches Standardverhalten der Karte als globale Kartenoptionen an:<br>- Klicke auf das Element in der Markierungsliste, um das Detail-Popup zu öffnen<br>- Klicke auf den Wegbeschreibungslink, um zum Wegbeschreibungsformular zu gelangen
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Mab_AdditionalBehaviors {

@@ -4,7 +4,7 @@ Plugin Name: Wo bin ich?
 Description: Fügt der Karte in unterstützenden Browsern automatisch oder über das Shortcode-Attribut die Standortmarkierung des Besuchers hinzu.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.1
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Wmi_AdminPages {

@@ -1,5 +1,5 @@
 === PS Google Maps ===
-Contributors: DerN3rd (WMS N@W)
+Contributors: DerN3rd (PSOURCE)
 Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
 Tags: multisite, abstimmung, voting, post,
 Requires at least: 4.9

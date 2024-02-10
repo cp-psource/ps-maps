@@ -5,7 +5,7 @@ Description: Fügt ein Shortcode-Attribut hinzu, das Deine Overlay-Karte dazu zw
 Example:     [map query="post_type=posts" overlay="yes" featured_image="yes"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Fimm_UserPages {

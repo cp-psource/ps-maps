@@ -6,15 +6,15 @@
  * Version:     3.1.0
  * Requires at least: 4.6
  * Text Domain: psmaps
- * Author:      WMS N@W
- * Author URI:  https://n3rds.work
+ * Author:      PSOURCE
+ * Author URI:  https://github.com/cp-psource
  * 
  * @package  AgmMaps
  */
 
 /*
-Copyright 2020-2024 WMS N@W (https://n3rds.work)
-Author - DerN3rd
+Copyright 2020-2024 PSOURCE (https://github.com/cp-psource)
+Author - DerN3rd (PSOURCE)
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
 the Free Software Foundation.
@@ -29,17 +29,22 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 // Check that the file is not accessed directly.
+
+require 'psource/psource-plugin-update/plugin-update-checker.php';
+ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+ 
+ $myUpdateChecker = PucFactory::buildUpdateChecker(
+	 'https://github.com/cp-psource/ps-maps',
+	 __FILE__,
+	 'ps-maps'
+ );
+ 
+ //Set the branch that contains the stable release.
+ $myUpdateChecker->setBranch('master');
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Es tut uns leid, aber Du kannst nicht direkt auf diese Datei zugreifen.' );
 }
-
-require 'psource/psource-plugin-update/psource-plugin-updater.php';
-use Psource\PluginUpdateChecker\v5\PucFactory;
-$MyUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=ps-maps', 
-	__FILE__, 
-	'ps-maps' 
-);
 
 // Define plugin constants.
 define( 'AGM_PLUGIN', basename( dirname( __FILE__ ) ) . '/' . basename( __FILE__ ) );

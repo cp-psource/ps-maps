@@ -8,7 +8,7 @@
 
 /**
  * Plugin Name: Center Map
- * Author:      DerN3rd (WMS N@W)
+ * Author:      DerN3rd (PSOURCE)
  *
  * Javascript component for ADMIN page of the center-map addon.
  */

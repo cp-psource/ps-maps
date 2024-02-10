@@ -4,7 +4,7 @@ Plugin Name: Verkehrsüberlagerung
 Description: Bietet die Möglichkeit, die Verkehrsüberlagerung auf Deiner Karte anzuzeigen. Du kannst es entweder per "Kartenoptionen" oder mit dem Shortcode-Attribut wie folgt aktivieren: <code>show_traffic="true"</code>.<br />z.B. <code>[map id="1" show_traffic="true"]</code>
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Traffic_AdminPages {

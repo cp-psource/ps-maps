@@ -4,7 +4,7 @@ Plugin Name: Facebook Freunde in der Nähe
 Description: Zeigt eine Liste der Facebook-Freunde in der Nähe an.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Fbnf_AdminPages {

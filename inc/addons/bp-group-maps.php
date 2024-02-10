@@ -6,7 +6,7 @@ Example:     [agm_group_map group_id="1"], [agm_groups_map]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0.2
 Requires:    BuddyPress
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 if ( defined( 'BP_PLUGIN_DIR' ) ) :

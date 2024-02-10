@@ -4,7 +4,7 @@ Plugin Name: Fixes and Reparieren
 Description: Tools zum Reparieren Deiner PS-Maps-Installation.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Far_FormRenderer {

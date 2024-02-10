@@ -5,7 +5,7 @@ Description: Erstelle eine Inline-Karte in Deinen Beiträgen über einen einfach
 Example:     [location address="202 / 120 Bay Street,Port Melbourne"], [location coordinates="-37.84119,144.94071"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Map_LocationShortcode extends AgmAddonBase {

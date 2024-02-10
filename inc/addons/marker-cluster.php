@@ -4,7 +4,7 @@ Plugin Name: Marker-Cluster
 Description: Bereinigt Karten, indem Markierungen in der Nähe in Clustern gruppiert werden. Dies wirkt sich bei Aktivierung automatisch auf alle Karten aus.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Mc_UserPages {

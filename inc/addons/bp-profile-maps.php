@@ -5,7 +5,7 @@ Description: Erstellt automatisch eine Karte für BuddyPress-Profile aus einem P
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0.1
 Requires:    BuddyPress
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 

@@ -5,7 +5,7 @@ Description: Ermöglicht es Deinen Karten, die volle Breite zu haben und sich mi
 Example:     [map id="1" is_responsive="true"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Rmaps_Pages {

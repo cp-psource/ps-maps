@@ -5,7 +5,7 @@ Description: Ermöglicht das Deaktivieren des Bildlaufs auf einer Karte.<br/>Du 
 Example:     [map id="1" disable_scroll="true"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0.1
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_DZ_AdminPages {

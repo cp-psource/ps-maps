@@ -5,7 +5,7 @@ Description: Gibt Karten eine anpassbare Lademeldung über das Shortcode-Attribu
 Example:     [map id="1" loading_message="Bitte warte während die Karte geladen wird"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Mlm_Pages {

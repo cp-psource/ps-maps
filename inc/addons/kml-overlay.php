@@ -5,7 +5,7 @@ Description: Ermöglicht das Überlagern einer KML-URL mit Deiner Karte (z.B. vo
 Example:     [map id="1" kml_url="http://api.flickr.com/services/feeds/geo/Australia"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Kml_AdminPages {

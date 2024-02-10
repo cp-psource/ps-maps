@@ -6,7 +6,7 @@ Example:     [map id="1" nearby_activities="true" activities_within="1000"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0.1
 Requires:    BuddyPress
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 if ( defined( 'BP_PLUGIN_DIR' ) ) :

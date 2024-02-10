@@ -4,7 +4,7 @@ Plugin Name: Erzwungene Lokalisierung von Karten
 Description: Standardmäßig werden Karten entsprechend dem bevorzugten Browser-Gebietsschema für Deine Besucher angezeigt. Wenn Du diese Erweiterung aktivierst, werden Karten in der Sprache angezeigt, die Du in den Plugin-Einstellungen ausgewählt hast.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Locale_AdminPages {

@@ -3100,8 +3100,8 @@ msgstr ""
 "possibilités."
 
 #. Author of the plugin/theme
-msgid "WMS N@W"
-msgstr "WMS N@W"
+msgid "PSOURCE"
+msgstr "PSOURCE"
 
 #. Author URI of the plugin/theme
 msgid "https://n3rds.work"

@@ -5,7 +5,7 @@ Description: Fügt dem Karteneditor eine Schaltfläche "Zentrieren" hinzu, um di
 Example:     [map id="12" center="45.359,20.412"]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.1
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 

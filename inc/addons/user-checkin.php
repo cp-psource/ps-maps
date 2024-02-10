@@ -5,7 +5,7 @@
  * Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
  * Example:     [agm_add_checkin], [agm_show_checkins id="1" last_hour="48"]
  * Version:     1.0.2
- * Author:      DerN3rd (WMS N@W)
+ * Author:      DerN3rd (PSOURCE)
  */
 
 

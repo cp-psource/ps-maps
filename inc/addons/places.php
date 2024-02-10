@@ -4,7 +4,7 @@ Plugin Name: Google Places Support
 Description: Ermöglicht das Anzeigen von Orten in der Nähe. Im Dialogfeld "Kartenoptionen" stehen neue Optionen zur Verfügung.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_PlacesAdminPages {

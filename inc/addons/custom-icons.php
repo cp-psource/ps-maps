@@ -4,7 +4,7 @@ Plugin Name: Benutzerdefinierte Symbole
 Description: Aktiviere dieses Add-On, um Deine eigenen Kartenmarkierungssymbole hinzuzufügen! Die benutzerdefinierten Symbole können ausgewählt werden, wenn Du eine Markierung im Karteneditor bearbeitest.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Icons_AdminPages {

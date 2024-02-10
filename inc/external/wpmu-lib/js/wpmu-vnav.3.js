@@ -1,4 +1,4 @@
-/*! WMS N@W code library - v2.0.3
+/*! PSOURCE code library - v2.0.3
  * https://n3rds.work/
  * Copyright (c) 2016; * Licensed GPLv2+ */
 /*!

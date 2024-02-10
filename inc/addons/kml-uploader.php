@@ -5,7 +5,7 @@ Description: Ermöglicht das Hochladen eigener KML-Dateien.
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0.1
 Requires:    KML Overlay
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_Kml_UploaderAdminPages {

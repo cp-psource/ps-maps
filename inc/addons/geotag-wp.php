@@ -5,7 +5,7 @@ Description: Ermöglicht das Hinzufügen eines Standortkontexts zu Beiträgen, S
 Example:     [agm_gwp_geocoded_posts]
 Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
 Version:     1.0
-Author:      DerN3rd (WMS N@W)
+Author:      DerN3rd (PSOURCE)
 */
 
 class Agm_GwpAdminPages {
