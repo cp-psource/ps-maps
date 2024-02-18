@@ -5081,7 +5081,7 @@
                         });
                     });
 
-                    this._sync = Utils.on(this._syncAttributes, this);
+                    this._sync = Utils.bind(this._syncAttributes, this);
 
                     if (this.$element[0].attachEvent) {
                         this.$element[0].attachEvent('onpropertychange', this._sync);
