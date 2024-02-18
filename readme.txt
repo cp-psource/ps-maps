@@ -50,6 +50,10 @@ Füge jeder Karte mehrere Markierungen hinzu!
 
 == ChangeLog ==
 
+= 3.1.2 =
+
+Fix: jQuery
+
 = 3.1.1 =
 
 * Links aktualisiert
