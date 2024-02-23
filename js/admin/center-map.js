@@ -57,7 +57,7 @@ jQuery(function() {
             _center.setMap(null);
         }
 
-        _center = new window.google.maps.Marker({
+        _center = new window.google.maps.marker.AdvancedMarkerElement({
             title: 'Center',
             map: _map,
             icon: _icon,

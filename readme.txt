@@ -53,6 +53,7 @@ Füge jeder Karte mehrere Markierungen hinzu!
 = 3.1.2 =
 
 Fix: jQuery
+Fix: Deprecated google.maps.Marker
 
 = 3.1.1 =
 

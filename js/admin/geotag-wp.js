@@ -27,7 +27,7 @@ jQuery(function () {
 			}
 		);
 
-		var marker = new window.google.maps.Marker({
+		var marker = new window.google.maps.marker.AdvancedMarkerElement({
 			title: 'Me',
 			map: map,
 			icon: _agm.root_url + '/img/system/marker.png',

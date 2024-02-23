@@ -52,11 +52,11 @@ jQuery(function () {
 
 		jQuery.each(places, function () {
 			var place = this,
-				place_icon = new window.google.maps.MarkerImage(
+				place_icon = new window.google.maps.marker.AdvancedMarkerElementImage(
 					place.icon.toString(),
 					null, null, null, new window.google.maps.Size( 32, 32 )
 				),
-				place_marker = new window.google.maps.Marker({
+				place_marker = new window.google.maps.marker.AdvancedMarkerElement({
 					"title": place.name,
 					"map": map,
 					"icon": place_icon,

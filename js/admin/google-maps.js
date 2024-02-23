@@ -656,7 +656,7 @@ jQuery(function() {
             var markerPosition = _markers.length;
 
             map.setCenter(pos);
-            var marker = new window.google.maps.Marker({
+            var marker = new window.google.maps.marker.AdvancedMarkerElement({
                 title: title,
                 map: map,
                 icon: icon,
@@ -801,7 +801,7 @@ jQuery(function() {
                         var src = jQuery(this).find('img').attr('src');
                         parent.html(oldContent);
                         parent.find('a.agm_mh_info_icon_switch img').attr('src', src).addClass('marker-icon-32');
-                        //var iconImg = new window.google.maps.MarkerImage(src, new window.google.maps.Size(32, 32), null, null, new window.google.maps.Size(32, 32));
+                        //var iconImg = new window.google.maps.marker.AdvancedMarkerElementImage(src, new window.google.maps.Size(32, 32), null, null, new window.google.maps.Size(32, 32));
                         var marker = _markers[markerId];
                         marker.setIcon(src);
                         updateMarkersListDisplay();

@@ -216,7 +216,7 @@ jQuery(function() {
             idx = (undefined === idx || isNaN(idx) ? _markers.length : idx);
             icon = (icon.match(/^https?:\/\//) ? icon : _agm.root_url + '/img/' + icon);
 
-            //var iconImg = new window.google.maps.MarkerImage(icon, new window.google.maps.Size(32, 32), null, null, new window.google.maps.Size(32, 32));
+            //var iconImg = new window.google.maps.marker.AdvancedMarkerElementImage(icon, new window.google.maps.Size(32, 32), null, null, new window.google.maps.Size(32, 32));
 
             var identifier = '';
             if (undefined !== original && undefined !== original.identifier) {
@@ -225,7 +225,7 @@ jQuery(function() {
 
             map.setCenter(pos);
 
-            var marker = new window.google.maps.Marker({
+            var marker = new window.google.maps.marker.AdvancedMarkerElement({
                 title: title,
                 map: map,
                 icon: icon,

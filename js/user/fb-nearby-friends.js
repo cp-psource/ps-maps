@@ -72,7 +72,7 @@ jQuery(function () {
 
 					if ( user ) {
 						_added.push(user.id);
-						var friend = new window.google.maps.Marker({
+						var friend = new window.google.maps.marker.AdvancedMarkerElement({
 							title: user.name,
 							map: map,
 							icon: user.pic_square,

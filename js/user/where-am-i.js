@@ -68,7 +68,7 @@ if ( _agmWmi.add_marker ) {
 						icon = _agm.root_url + '/img/system/marker.png';
 					}
 
-					var marker = new window.google.maps.Marker({
+					var marker = new window.google.maps.marker.AdvancedMarkerElement({
 						"title": _agmWmi.marker_label,
 						"map": map,
 						"icon": icon,
