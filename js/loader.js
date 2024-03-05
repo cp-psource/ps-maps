@@ -10,22 +10,20 @@
 /*global jQuery:false */
 
 /**
- * Asynchrounously load Google Maps API.
+ * Asynchronously load Google Maps API.
  */
-
 
 /**
  * Global API loaded flag.
  */
 window._agmMapIsLoaded = false;
 
-
 /**
  * Callback - triggers loaded flag setting.
  */
 function agmInitialize() {
     window._agmMapIsLoaded = true;
-    if (undefined !== window.google.maps.Map._agm_get_markers) {
+    if (undefined !== window.google.maps.Map.prototype._agm_get_markers) {
         return true;
     }
 
@@ -40,9 +38,7 @@ function agmInitialize() {
  * Handles the actual loading of Google Maps API.
  */
 function loadGoogleMaps() {
-    if (typeof window.google === 'object' &&
-        typeof window.google.maps === 'object'
-    ) {
+    if (typeof window.google === 'object' && typeof window.google.maps === 'object') {
         // We're loaded and ready - albeit from a different source.
         return agmInitialize();
     }
@@ -52,34 +48,27 @@ function loadGoogleMaps() {
         src = '',
         script = document.createElement("script"),
         libs = _agm.libraries.join(","),
-        api_key = ((window || {})._agm || {}).maps_api_key || false;
+        api_key = ((_agm || {}).maps_api_key) || false;
 
     try { protocol = document.location.protocol; } catch (ex) { protocol = 'http:'; }
 
     if (window._agmLanguage !== undefined) {
-        try { language = '&language=' + window._agmLanguage; } catch (ex) { language = ''; }
+        language = '&language=' + window._agmLanguage;
     }
-    script.type = "text/javascript";
 
     if (api_key) {
         api_key = "&key=" + api_key;
     }
 
-    src = "//maps.google.com/maps/api/js?v=3" + api_key + "&libraries=";
-    /* sensor entfernt
-    	script.src = protocol +  src +
-    		libs +
-    		"&sensor=false" +
-    		language +
-    		"&callback=agmInitialize";
-    	document.body.appendChild(script);
-    */
+    src = "//maps.google.com/maps/api/js?v=3" + api_key + "&libraries=" + libs +
+        "&sensor=false" + language + "&callback=agmInitialize";
 
-    script.src = protocol + src +
-        libs +
-        language +
-        "&callback=agmInitialize";
+    script.type = "text/javascript";
+    script.src = protocol + src;
+
     document.body.appendChild(script);
 }
 
-jQuery(window).on('load', loadGoogleMaps);
+jQuery(document).ready(function($) {
+    $(window).on('load', loadGoogleMaps);
+});

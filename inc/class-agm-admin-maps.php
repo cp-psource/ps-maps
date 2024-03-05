@@ -314,8 +314,8 @@ class AgmAdminMaps {
 
 		lib3()->ui->js( 'wpdialogs' );
 		lib3()->ui->js( 'jquery-ui-dialog' );
-		lib3()->ui->add( AGM_PLUGIN_URL . 'js/loader.min.js' );
-		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/google-maps.min.js' );
+		lib3()->ui->add( AGM_PLUGIN_URL . 'js/loader.js' );
+		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/google-maps.js' );
 	}
 
 	/**
@@ -362,7 +362,7 @@ class AgmAdminMaps {
 		);
 
 		$this->shared_scripts();
-		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/editor.min.js' );
+		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/editor.js' );
 	}
 
 	public function js_widget_editor() {
@@ -375,7 +375,7 @@ class AgmAdminMaps {
 		);
 
 		$this->shared_scripts();
-		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/widget-editor.min.js' );
+		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/widget-editor.js' );
 	}
 
 	/**
@@ -704,9 +704,9 @@ class AgmAdminMaps {
 		add_action( 'admin_print_styles-widgets.php', array( $this, 'css_load_styles' ) );
 
 		// Register post saving handlers
-		$opts = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
-		if ( @$opts['use_custom_fields'] ) {
-			add_action( 'post_updated', array( $this, 'process_post_meta' ), 1 ); // Note the order
+		$opts = apply_filters('agm_google_maps-options', get_option('agm_google_maps', array()));
+		if (isset($opts['use_custom_fields']) && $opts['use_custom_fields']) {
+			add_action('post_updated', array($this, 'process_post_meta'), 1); // Note the order
 		}
 
 		// Step1b: Add Google Maps dependencies

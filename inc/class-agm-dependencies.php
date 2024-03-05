@@ -68,8 +68,8 @@ if ( ! is_admin() ) { // Doesn't work on admin
 				'front'
 			);
 
-			lib3()->ui->add( AGM_PLUGIN_URL . 'js/loader.min.js', 'all' );
-			lib3()->ui->add( AGM_PLUGIN_URL . 'js/user/google-maps.min.js', 'all' );
+			lib3()->ui->add( AGM_PLUGIN_URL . 'js/loader.js', 'all' );
+			lib3()->ui->add( AGM_PLUGIN_URL . 'js/user/google-maps.js', 'all' );
 
 			do_action( 'agm-user-scripts' );
 		}

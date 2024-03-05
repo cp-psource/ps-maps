@@ -31,7 +31,7 @@
 	<br />
 
 	<input class="map_id_switch" id="<?php echo $this->get_field_id( 'query_id' ); ?>" name="<?php echo $this->get_field_name( 'query' ); ?>" type="radio" <?php echo (( 'id' == $query) ? 'checked="checked"' : '' ); ?> value="id" />
-		<label for="<?php echo $this->get_field_id( 'query_id' ); ?>"><?php _e( 'Use this map:', 'psmaps' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'query_id' ); ?>"><?php _e( 'Benutze diese Karte:', 'psmaps' ); ?></label>
 	<select class="map_id_target" id="<?php echo $this->get_field_id( 'map_id' ); ?>" name="<?php echo $this->get_field_name( 'map_id' ); ?>">
 		<option value=""><?php _e( 'Wähle ein', 'psmaps' ); ?></option>
 	<?php foreach ($maps as $map) { ?>
@@ -47,10 +47,10 @@
 	<input class="widefat custom_target" id="<?php echo $this->get_field_id( 'query_custom' ); ?>" name="<?php echo $this->get_field_name( 'query_custom' ); ?>" type="text" value="<?php echo $query_custom; ?>" />
 	<?php if (AGM_USE_POST_INDEXER) { // Integrate post indexer ?>
 		<input class="post_indexer_target" type="checkbox" id="<?php echo $this->get_field_id( 'network' ); ?>" name="<?php echo $this->get_field_name( 'network' ); ?>" <?php echo (( 'network' == $network) ? 'checked="checked"' : '' ); ?> value="network" />
-			<label for="<?php echo $this->get_field_id( 'network' ); ?>"><?php _e( 'Dies ist eine Netzwerkabfrage <small>(Benötigt <a href="https://n3rds.work/piestingtal-source-project/ps-multisite-index/">PS-Multisite Beitragsindex</a> plugin) - nur "tag = ..." wird unterstützt</small>', 'psmaps' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'network' ); ?>"><?php _e( 'Dies ist eine Netzwerkabfrage <small>(Benötigt <a href="https://cp-psource.github.io/ps-postindexer/">PS-Multisite Beitragsindex</a> plugin) - nur "tag = ..." wird unterstützt</small>', 'psmaps' ); ?></label>
 			<br />
 	<?php } ?>
-	<small><em><a target="_blank" href="https://n3rds.work/piestingtal-source-project/ps-gmaps/"><?php _e( 'Weitere Informationen zu benutzerdefinierten Abfragen', 'psmaps' ); ?></a></em></small>
+	<small><em><a target="_blank" href="https://cp-psource.github.io/ps-maps/"><?php _e( 'Weitere Informationen zu benutzerdefinierten Abfragen', 'psmaps' ); ?></a></em></small>
 </p>
 
 <p>

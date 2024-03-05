@@ -523,7 +523,14 @@ class AgmMapModel {
 				get_option( 'agm_google_maps', array() )
 			);
 		}
-		return @self::$_options[ $key ];
+
+		// Überprüfen, ob der Schlüssel im Array vorhanden ist
+		if (isset(self::$_options[$key])) {
+			return self::$_options[$key];
+		} else {
+			// Schlüssel nicht gefunden, gibt standardmäßigen Wert zurück oder false
+			return false; // oder einen Standardwert, je nach Bedarf
+		}
 	}
 
 	/**
