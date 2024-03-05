@@ -3,11 +3,13 @@
  * Plugin Name: PS Google Maps
  * Plugin URI:  https://cp-psource.github.io/ps-maps/
  * Description: Einfaches Einbetten, Anpassen und Verwenden von Google Maps auf Deiner WordPress-Seite - in Posts, Seiten oder als benutzerfreundliches Widget kannst Du lokale Bilder anzeigen und Deinen Seiten-Besuchern in Sekundenschnelle eine Interaktive Googlemap mit einer Unzahl an Optionen und Möglichkeiten geben.
- * Version:     3.1.1
+ * Author: PSOURCE
+ * Author URI: https://github.com/cp-psource
+ * Version: 3.1.2
  * Requires at least: 4.6
  * Text Domain: psmaps
- * Author:      PSOURCE
- * Author URI:  https://github.com/cp-psource
+ * Domain Path: /languages
+ * License: GNU General Public License (Version 2 - GPLv2)
  * 
  * @package  AgmMaps
  */
@@ -28,7 +30,9 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-// Check that the file is not accessed directly.
+/**
+ * @@@@@@@@@@@@@@@@@ PS UPDATER 1.3 @@@@@@@@@@@
+ **/
 
 require 'psource/psource-plugin-update/plugin-update-checker.php';
  use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
@@ -41,6 +45,10 @@ require 'psource/psource-plugin-update/plugin-update-checker.php';
  
  //Set the branch that contains the stable release.
  $myUpdateChecker->setBranch('master');
+
+/**
+ * @@@@@@@@@@@@@@@@@ ENDE PS UPDATER 1.3 @@@@@@@@@@@
+ **/
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Es tut uns leid, aber Du kannst nicht direkt auf diese Datei zugreifen.' );

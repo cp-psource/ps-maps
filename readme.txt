@@ -1,9 +1,9 @@
 === PS Google Maps ===
 Contributors: DerN3rd (PSOURCE)
-Tags: multisite, abstimmung, voting, post,
+Tags: maps, classicpress,
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -52,8 +52,9 @@ Füge jeder Karte mehrere Markierungen hinzu!
 
 = 3.1.2 =
 
-Fix: jQuery
-Fix: Deprecated google.maps.Marker
+* Fix: jQuery
+* Fix: Deprecated google.maps.Marker
+* PhP8 Modernisierungen
 
 = 3.1.1 =
 
