@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -8,7 +8,7 @@
 /*global navigator:false */
 
 // Add options
-jQuery(document).on(
+jQuery(document).bind(
 	'agm_google_maps-admin-options_initialized',
 	function( ev, options, data ) {
 		var has_scroll = false;
@@ -30,7 +30,7 @@ jQuery(document).on(
 );
 
 // Save
-jQuery(document).on(
+jQuery(document).bind(
 	'agm_google_maps-admin-save_request',
 	function( ev, request ) {
 		request.disable_scroll = jQuery('#agm-disable_scroll').is(':checked');

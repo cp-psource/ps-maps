@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Karte auf Standort zentrieren
-Description: Fügt dem Karteneditor eine Schaltfläche "Zentrieren" hinzu, um die Mittelposition manuell festzulegen.<br />Optional kann das Kartenzentrum mit einem Shortcode-Attribut definiert werden, das ein durch Kommas getrenntes Längen-/Breitengradpaar verwendet.
+Plugin Name: Center map on location
+Description: Adds a "Center" button to the Map Editor to manually set the center position.<br />Optionally the map center can be defined with a shortcode attribute that takes a comma-separated latitude/longitude pair.
 Example:     [map id="12" center="45.359,20.412"]
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.1
 Author:      DerN3rd (PSOURCE)
 */

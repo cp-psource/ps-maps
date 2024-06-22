@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -27,7 +27,7 @@ jQuery(function () {
 			}
 		);
 
-		var marker = new window.google.maps.marker.AdvancedMarkerElement({
+		var marker = new window.google.maps.Marker({
 			title: 'Me',
 			map: map,
 			icon: _agm.root_url + '/img/system/marker.png',

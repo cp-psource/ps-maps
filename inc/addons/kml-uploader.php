@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: KML Uploader
-Description: Ermöglicht das Hochladen eigener KML-Dateien.
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Description: Allows you to upload your own KML files.
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0.1
 Requires:    KML Overlay
-Author:      DerN3rd (PSOURCE)
+Author:      DerN3rd (PSOURCE )
 */
 
 class Agm_Kml_UploaderAdminPages {
@@ -70,20 +70,20 @@ class Agm_Kml_UploaderAdminPages {
 
 		add_settings_section(
 			'agm_google_maps_kml',
-			__( 'KML-Dateien', 'psmaps' ),
+			__( 'KML files', AGM_LANG ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 		add_settings_field(
 			'agm_google_maps_list_kmls',
-			__( 'Vorhandene KML-Dateien', 'psmaps' ),
+			__( 'Existing KML files', AGM_LANG ),
 			array( $this, 'create_kml_list_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_kml'
 		);
 		add_settings_field(
 			'agm_google_maps_upload_kml',
-			__( 'Lade eine KML-Datei hoch', 'psmaps' ),
+			__( 'Upload a KML file', AGM_LANG ),
 			array( $this, 'create_kml_uploads_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_kml'
@@ -93,7 +93,7 @@ class Agm_Kml_UploaderAdminPages {
 	public function create_kml_list_box() {
 		$files = $this->_list_kml_files();
 		if ( ! $files ) {
-			_e( '<em>Keine KML-Dateien.</em>', 'psmaps' );
+			_e( '<em>No KML files.</em>', AGM_LANG );
 			return false;
 		}
 		echo '<ul>';
@@ -113,8 +113,8 @@ class Agm_Kml_UploaderAdminPages {
 
 	public function create_kml_uploads_box() {
 		echo '<input type="file" name="kml" />';
-		echo '<div><small>' . __( 'Only files with .kml and .kmz extension are allowed.', 'psmaps' ) . '</small></div>';
-		echo '<p><input type="submit" value="' . __( 'Hochladen', 'psmaps' ) . '" /></p>';
+		echo '<div><small>' . __( 'Only files with .kml and .kmz extension are allowed.', AGM_LANG ) . '</small></div>';
+		echo '<p><input type="submit" value="' . __( 'Upload', AGM_LANG ) . '" /></p>';
 	}
 
 	private function _list_kml_files() {

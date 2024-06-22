@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Benutzer-Check-ins
- * Description: Ermöglicht Deinen Benutzern das Einchecken ihres aktuellen Standorts. Die Standorte der Benutzer können mithilfe eines Karten-Shortcodes auf einer Karte angezeigt werden.
- * Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+ * Plugin Name: User check-ins
+ * Description: Allows your users to check-in their current location. Locations of the users can be displayed on a map using a map-shortcode.
+ * Plugin URI:  https://cp-psource.github.io/ps-maps/
  * Example:     [agm_add_checkin], [agm_show_checkins id="1" last_hour="48"]
  * Version:     1.0.2
  * Author:      DerN3rd (PSOURCE)
@@ -13,9 +13,13 @@
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
-// SHARED FUNCTIONS
+//                               SHARED FUNCTIONS
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
+
+
+
+
 /**
  * This class contains functions that are used on Admin and on Frontpage.
  */
@@ -88,99 +92,13 @@ class Agm_UCI_Shared {
 			'agm_google_maps_checkins-limit-checkin-count',
 			array( $this, 'limit_checkin_count' ), 10, 3
 		);
-
-		add_filter(
-			'wp_privacy_personal_data_exporters',
-			array( $this, 'register_data_exporter' )
-		);
-		add_filter(
-			'wp_privacy_personal_data_erasers',
-			array( $this, 'register_data_eraser' )
-		);
-	}
-
-	/**
-	 * Registers data exporters for maps
-	 *
-	 * @param array $exporters Exporters this far.
-	 *
-	 * @return array
-	 */
-	public function register_data_exporter( $exporters ) {
-		$exporters['agm_google_maps-checkins'] = array(
-			'exporter_friendly_name' => __( 'PS-Maps Check-ins', 'psmaps' ),
-			'callback' => array( $this, 'gdpr_export_data' ),
-		);
-		return $exporters;
-	}
-
-	/**
-	 * Registers data erasers for maps
-	 *
-	 * @param array $erasers erasers this far.
-	 *
-	 * @return array
-	 */
-	public function register_data_eraser( $erasers ) {
-		$erasers['agm_google_maps-checkins'] = array(
-			'eraser_friendly_name' => __( 'PS-Maps Check-ins', 'psmaps' ),
-			'callback' => array( $this, 'gdpr_erase_data' ),
-		);
-		return $erasers;
-	}
-
-	public function gdpr_erase_data( $email, $page = 1 ) {
-		$user = get_user_by( 'email', $email );
-		delete_user_meta( $user->ID, 'agm_google_maps_checkins' );
-		return array(
-			'items_removed' => true,
-			'items_retained' => false,
-			'messages' => array(),
-			'done' => true,
-		);
-	}
-
-	public function gdpr_export_data( $email, $page = 1 ) {
-		$user = get_user_by( 'email', $email );
-		$data = (array) $this->_get_checkin_data( $user->ID );
-
-		$exports = array();
-		if ( ! empty( $data['checkins'] ) ) {
-			foreach ( $data['checkins'] as $chk ) {
-				$chk = (array) $chk;
-				$exports[] = array(
-					'item_id' => 'checkin-' . md5( serialize( $chk ) ),
-					'group_id' => 'agm-checkins',
-					'group_label' => __( 'Google Map Check-ins', 'psmaps' ),
-					'data' => array(
-						array(
-							'name' => __( 'Breitengrad', 'psmaps' ),
-							'value' => $chk['lat'],
-						),
-						array(
-							'name' => __( 'Längengrad', 'psmaps' ),
-							'value' => $chk['lon'],
-						),
-						array(
-							'name' => __( 'Zeit', 'psmaps' ),
-							'value' => date_i18n( 'r', $chk['created'] ),
-						),
-					),
-				);
-			}
-		}
-
-		return array(
-			'data' => $exports,
-			'done' => true,
-		);
 	}
 
 	/**
 	 * Appends a single location to the user metadata.
 	 *
 	 * @since  1.0.0
-	 * @param  int    $user_id Can be 0 for guest checkins.
+	 * @param  int $user_id Can be 0 for guest checkins.
 	 * @param  object $location Location details.
 	 * @return int|false On success the new/updated checkin-ID is returned.
 	 */
@@ -269,8 +187,8 @@ class Agm_UCI_Shared {
 	 * Main difference to _add_checkin: Locations are not merged or appended.
 	 *
 	 * @since  1.0.0
-	 * @param  int   $user_id Can be 0 for guest checkins.
-	 * @param  int   $cid The checkin-id
+	 * @param  int $user_id Can be 0 for guest checkins.
+	 * @param  int $cid The checkin-id
 	 * @param  array $edit_data An array with location details.
 	 *                Only fields that are specified in the array are updated.
 	 * @return bool
@@ -388,7 +306,7 @@ class Agm_UCI_Shared {
 	 * lowest level SETTER function.
 	 *
 	 * @since  1.0.0
-	 * @param  int   $user_id Can be 0 for guests.
+	 * @param  int $user_id Can be 0 for guests.
 	 * @param  array $data List of checkins.
 	 * @return bool
 	 */
@@ -423,8 +341,8 @@ class Agm_UCI_Shared {
 	 * user-checkin.
 	 *
 	 * @since  1.0.0
-	 * @param  array  $data Data collection containing the Location details.
-	 * @param  int    $user_id Creator of the checkin.
+	 * @param  array $data Data collection containing the Location details.
+	 * @param  int $user_id Creator of the checkin.
 	 * @param  string $mode Either 'add' or 'update'. When adding an item then
 	 *                lat/lng are mandatory, otherwise they are optional.
 	 * @return array|false An array describing the check-in as detailled as possible.
@@ -492,9 +410,9 @@ class Agm_UCI_Shared {
 	 *
 	 * @since  1.0.0
 	 * @param  array $data Checkin list (not the checkin-collection object!)
-	 * @param  int   $max_checkins Max number of checkins.
-	 * @param  int   $current_id If an item was added this will be the new checkin-ID.
-	 *                  We always should not dump this checkin item...
+	 * @param  int $max_checkins Max number of checkins.
+	 * @param  int $current_id If an item was added this will be the new checkin-ID.
+	 *                We always should not dump this checkin item...
 	 * @return array The cleaned checkin list.
 	 */
 	public function limit_checkin_count( $data, $max_checkins, $current_id ) {
@@ -561,7 +479,7 @@ class Agm_UCI_Shared {
 	 *
 	 * @since  1.0.0
 	 * @param  array $checkin The checkin-object to validate.
-	 * @param  int   $user_id Owner of the checkin.
+	 * @param  int $user_id Owner of the checkin.
 	 * @param  array $defaults Optional. A checkin-array that contains default
 	 *                values. This is used to update a checkin.
 	 * @return array Validated checkin-object.
@@ -711,7 +629,7 @@ class Agm_UCI_Shared {
 	 * Returns the value of a user-specific setting
 	 *
 	 * @since  1.0.0
-	 * @param  int    $user_id
+	 * @param  int $user_id
 	 * @param  string $key
 	 * @return mixed Setting value.
 	 */
@@ -730,9 +648,9 @@ class Agm_UCI_Shared {
 	 * Sets the value of a user-specific setting
 	 *
 	 * @since  1.0.0
-	 * @param  int    $user_id
+	 * @param  int $user_id
 	 * @param  string $key
-	 * @param  any    $value
+	 * @param  any $value
 	 * @return mixed Setting value.
 	 */
 	protected function _set_user_option( $user_id, $key, $value ) {
@@ -857,14 +775,14 @@ class Agm_UCI_Shared {
 			if ( $user ) {
 				$Usernames[ $user_id ] = $user->display_name;
 			} else {
-				$Usernames[ $user_id ] = __( 'Guest', 'psmaps' );
+				$Usernames[ $user_id ] = __( 'Guest', AGM_LANG );
 			}
 		}
 
 		// Build the meta string.
-		$meta = __( 'Von %1$s, am %2$s', 'psmaps' );
+		$meta = __( 'By %1$s, on %2$s', AGM_LANG );
 		$name = $Usernames[ $user_id ];
-		$time = date( __( 'j F, Y (G:i)', 'psmaps' ), $timestamp );
+		$time = date( __( 'j F, Y (G:i)', AGM_LANG ), $timestamp );
 		$meta = sprintf( $meta, $name, $time );
 
 		return $meta;
@@ -882,7 +800,7 @@ class Agm_UCI_Shared {
 		if ( is_user_logged_in() ) {
 			if ( get_current_user_id() == $checkin['user_id'] ) {
 				$checkin['marker']['body'] .= ' <a href="#" class="edit-marker" data-id="' . $checkin['id'] . '" data-identifier="' . $checkin['marker']['identifier'] . '">' .
-					__( 'Bearbeiten', 'psmaps' ) .
+					__( 'Edit', AGM_LANG ) .
 					'</a>';
 			}
 		}
@@ -900,7 +818,7 @@ class Agm_UCI_Shared {
 		$icon = @$checkin['marker']['icon'];
 		if ( empty( $icon ) ) {
 			$icon = AGM_PLUGIN_URL . 'img/system/marker.png';
-		} elseif ( strpos( $icon, '<img' ) !== false ) {
+		} else if ( strpos( $icon, '<img' ) !== false ) {
 			$array = array();
 			preg_match( '/src=\'([^\']*)/i', $icon, $array );
 			if ( empty( $array ) ) {
@@ -920,9 +838,13 @@ class Agm_UCI_Shared {
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
-// USER PROFILE (ADMIN)
+//                             USER PROFILE (ADMIN)
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
+
+
+
+
 /**
  * This class provides functions that any logged-in user can use to customize
  * his checkin-experience:
@@ -994,33 +916,33 @@ class Agm_UCI_UserProfile extends Agm_UCI_Shared {
 
 		$alternate = '';
 		?>
-		<h3><?php _e( 'Google Maps: Checkins', 'psmaps' ); ?></h3>
+		<h3><?php _e( 'Google Maps: Checkins', AGM_LANG ); ?></h3>
 
 		<table class="form-table">
 			<tr>
 				<th><label for="">
-					<?php _e( 'Checke meinen Standort ein', 'psmaps' ); ?>
+					<?php _e( 'Check in my location', AGM_LANG ); ?>
 				</label></th>
 				<td>
 					<select name="agm_google_maps[checkin]">
-						<option value="off" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Sende niemals meinen Standort', 'psmaps' ); ?></option>
-						<option value="ask" <?php echo esc_html( $sel_ask ); ?>><?php _e( 'Frage mich immer, bevor Du meinen Standort angibst', 'psmaps' ); ?></option>
-						<option value="on" <?php echo esc_html( $sel_always ); ?>><?php _e( 'Sende meinen Standort und frage mich nicht', 'psmaps' ); ?></option>
+						<option value="off" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Never submit my location', AGM_LANG ); ?></option>
+						<option value="ask" <?php echo esc_html( $sel_ask ); ?>><?php _e( 'Always ask me before submitting my location', AGM_LANG ); ?></option>
+						<option value="on" <?php echo esc_html( $sel_always ); ?>><?php _e( 'Submit my location and don´t ask me', AGM_LANG ); ?></option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<th><?php _e( 'Default privacy setting', 'psmaps' ); ?></th>
+				<th><?php _e( 'Default privacy setting', AGM_LANG ); ?></th>
 				<td>
 					<select name="agm_google_maps[share]">
-						<option value="priv" <?php echo esc_html( $sel_priv ); ?>><?php _e( 'Nur ich kann meinen Standort sehen', 'psmaps' ); ?></option>
-						<option value="member" <?php echo esc_html( $sel_member ); ?>><?php _e( 'Nur angemeldete Benutzer können meinen Standort sehen', 'psmaps' ); ?></option>
-						<option value="pub" <?php echo esc_html( $sel_pub ); ?>><?php _e( 'Jeder kann meinen Standort sehen', 'psmaps' ); ?></option>
+						<option value="priv" <?php echo esc_html( $sel_priv ); ?>><?php _e( 'Only I can see my location', AGM_LANG ); ?></option>
+						<option value="member" <?php echo esc_html( $sel_member ); ?>><?php _e( 'Only logged in users can see my location', AGM_LANG ); ?></option>
+						<option value="pub" <?php echo esc_html( $sel_pub ); ?>><?php _e( 'Everybody can see my location', AGM_LANG ); ?></option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-				<th><?php _e( 'My locations', 'psmaps' ); ?></th>
+				<th><?php _e( 'My locations', AGM_LANG ); ?></th>
 				<td>
 		<?php if ( count( $checkins->checkins ) ) : ?>
 			<ul class="lst-checkins">
@@ -1066,7 +988,7 @@ class Agm_UCI_UserProfile extends Agm_UCI_Shared {
 							<i class="dashicons dashicons-location"></i>
 							<span class="lat"><?php echo esc_attr( $checkin['lat'] ); ?></span> / <span class="lng"><?php echo esc_attr( $checkin['lng'] ); ?></span>
 							<?php if ( $checkin['count'] > 1 ) : ?>
-								(<?php _e( 'Zähler', 'psmaps' ); ?>:
+								(<?php _e( 'Count', AGM_LANG ); ?>:
 								<?php echo esc_html( $checkin['count'] ); ?>)
 							<?php endif; ?>
 							<?php if ( $edit_details ) : ?>
@@ -1075,51 +997,51 @@ class Agm_UCI_UserProfile extends Agm_UCI_Shared {
 						</div>
 						<span class="item-actions">
 							<select class="share" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][share]">
-								<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Nur ich', 'psmaps' ); ?></option>
-								<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Angemeldete Benutzer', 'psmaps' ); ?></option>
-								<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Jeder', 'psmaps' ); ?></option>
+								<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Only me', AGM_LANG ); ?></option>
+								<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Logged in users', AGM_LANG ); ?></option>
+								<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Everybody', AGM_LANG ); ?></option>
 							</select>
 							<input type="hidden" class="trash-flag" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][trash]" value="0" />
 							<?php if ( $edit_details ) : ?>
-								<a class="edit button button-small" href="#"><?php _e( 'Bearbeiten', 'psmaps' ); ?></a>
+								<a class="edit button button-small" href="#"><?php _e( 'Edit', AGM_LANG ); ?></a>
 							<?php endif; ?>
-							<a class="small trash" href="#"><?php _e( 'Löschen', 'psmaps' ); ?></a>
-							<a class="small restore" href="#" style="display:none"><?php _e( 'Nicht löschen', 'psmaps' ); ?></a>
+							<a class="small trash" href="#"><?php _e( 'Delete', AGM_LANG ); ?></a>
+							<a class="small restore" href="#" style="display:none"><?php _e( 'Don´t delete', AGM_LANG ); ?></a>
 						</span>
 					</div>
 					<?php if ( $edit_details ) : ?>
 						<div class="form" style="display:none">
 							<span class="the-preview the-preview-l"></span>
 							<div class="row">
-								<label for="lat-<?php echo esc_attr( $id ); ?>"><?php _e( 'Lat', 'psmaps' ); ?>:</label>
+								<label for="lat-<?php echo esc_attr( $id ); ?>"><?php _e( 'Lat', AGM_LANG ); ?>:</label>
 								<span class="lat"><?php echo esc_attr( $checkin['lat'] ); ?></span>
 							</div>
 							<div class="row">
-								<label for="lng-<?php echo esc_attr( $id ); ?>"><?php _e( 'Long', 'psmaps' ); ?>:</label>
+								<label for="lng-<?php echo esc_attr( $id ); ?>"><?php _e( 'Long', AGM_LANG ); ?>:</label>
 								<span class="lng"><?php echo esc_attr( $checkin['lng'] ); ?></span>
 							</div>
 							<div class="row">
-								<label for="title-<?php echo esc_attr( $id ); ?>"><?php _e( 'Titel', 'psmaps' ); ?>:</label>
+								<label for="title-<?php echo esc_attr( $id ); ?>"><?php _e( 'Title', AGM_LANG ); ?>:</label>
 								<input type="text" id="title-<?php echo esc_attr( $id ); ?>" data-readonly=".title" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][title]" value="<?php echo esc_attr( $checkin['title'] ); ?>" />
 							</div>
 							<div class="row">
-								<label for="desc-<?php echo esc_attr( $id ); ?>"><?php _e( 'Beschreibung', 'psmaps' ); ?>:</label>
+								<label for="desc-<?php echo esc_attr( $id ); ?>"><?php _e( 'Description', AGM_LANG ); ?>:</label>
 								<input type="text" id="desc-<?php echo esc_attr( $id ); ?>" name="agm_google_maps[checkins][<?php echo esc_attr( $id ); ?>][description]" value="<?php echo esc_attr( $checkin['description'] ); ?>" />
 							</div>
 							<div class="row">
-								<label><?php _e( 'Zuletzt geändert', 'psmaps' ); ?>:</label>
+								<label><?php _e( 'Last modified', AGM_LANG ); ?>:</label>
 								<span>
 									<?php echo esc_attr( $modified ); ?> -
 									<?php if ( $is_modified ) : ?>
-										<?php _e( 'created on', 'psmaps' ); ?> <?php echo esc_attr( $created ); ?> -
+										<?php _e( 'created on', AGM_LANG ); ?> <?php echo esc_attr( $created ); ?> -
 									<?php endif; ?>
-									<?php _e( 'Zähler', 'psmaps' ); ?> <?php echo esc_html( $checkin['count'] ); ?>
+									<?php _e( 'Count', AGM_LANG ); ?> <?php echo esc_html( $checkin['count'] ); ?>
 								</span>
 							</div>
 
 							<div class="form-actions">
-								<a class="save button button-small" href="#"><?php _e( 'OK', 'psmaps' ); ?></a>
-								<a class="small cancel" href="#"><?php _e( 'Abbrechen', 'psmaps' ); ?></a>
+								<a class="save button button-small" href="#"><?php _e( 'OK', AGM_LANG ); ?></a>
+								<a class="small cancel" href="#"><?php _e( 'Cancel', AGM_LANG ); ?></a>
 							</div>
 						</div>
 					<?php endif; ?>
@@ -1219,9 +1141,13 @@ class Agm_UCI_UserProfile extends Agm_UCI_Shared {
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
-// PLUGIN OPTIONS (ADMIN)
+//                            PLUGIN OPTIONS (ADMIN)
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
+
+
+
+
 /**
  * The Admin class for the check-ins plugin.
  * Handles the option screen.
@@ -1265,6 +1191,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		);
 
 		// -- Ajax handlers
+
 		// Collect checkin data from user and store it.
 		add_action(
 			'wp_ajax_agm_uci_checkin',
@@ -1315,14 +1242,14 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_uci',
-			__( 'Benutzer-Check-ins', 'psmaps' ),
-			'__return_false',
+			__( 'User check-ins', AGM_LANG ),
+			function() { /* Leerer Callback für die Beschreibung */ },
 			'agm_google_maps_options_page'
 		);
 
 		add_settings_field(
 			'agm_google_maps_uci_usage',
-			__( 'Übersicht', 'psmaps' ),
+			__( 'Overview', AGM_LANG ),
 			array( $this, 'render_settings_box_usage' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1330,7 +1257,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_allowed_checkin',
-			__( 'Check-ins zulassen', 'psmaps' ),
+			__( 'Allow check-ins', AGM_LANG ),
 			array( $this, 'render_settings_box_allowed_data' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1338,7 +1265,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_edit_details',
-			__( 'Check-in Details', 'psmaps' ),
+			__( 'Checkin details', AGM_LANG ),
 			array( $this, 'render_settings_box_details' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1347,7 +1274,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		/*
 		add_settings_field(
 			'agm_google_maps_uci_linking',
-			__( 'Connect checkins to content', 'psmaps' ),
+			__( 'Connect checkins to content', AGM_LANG ),
 			array( $this, 'render_settings_box_linking' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1356,7 +1283,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_limits',
-			__( 'Check-in Limit', 'psmaps' ),
+			__( 'Checkin limits', AGM_LANG ),
 			array( $this, 'render_settings_box_limits' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1364,7 +1291,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 		add_settings_field(
 			'agm_google_maps_uci_map',
-			__( 'Map-Standardeinstellungen', 'psmaps' ),
+			__( 'Map defaults', AGM_LANG ),
 			array( $this, 'render_settings_box_map' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_uci'
@@ -1380,29 +1307,29 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		$shortcode_tag = 'agm_map' == AgmMapModel::get_config( 'shortcode_map' ) ? 'agm_map' : 'map';
 		?>
 		<p>
-			<?php _e( 'Shortcode', 'psmaps' ); ?> <code>[agm_add_checkin]</code><br />
-			<?php _e( 'Versuche den Benutzerstandort auf der Seite zu erfassen, ohne eine Karte anzuzeigen. Keine Optionen verfügbar.', 'psmaps' ); ?>
+			<?php _e( 'Shortcode', AGM_LANG ); ?> <code>[agm_add_checkin]</code><br />
+			<?php _e( 'Try to collect the user location on the page without displaying a map. No options available.', AGM_LANG ); ?>
 		<p>
 		</p>
-			<?php _e( 'Shortcode', 'psmaps' ); ?> <code>[agm_show_checkins]</code><br />
+			<?php _e( 'Shortcode', AGM_LANG ); ?> <code>[agm_show_checkins]</code><br />
 			<?php printf(
 				__(
-					'Zeige eine Google-Karte mit den angegebenen Standorten an. ' .
-					'Der Shortcode unterstützt alle Optionen des Shortcodes <code>[%s]</code>. ' .
-					'Zusätzlich stehen folgende Optionen zur Verfügung:', 'psmaps'
+					'Display a google map with the specified locations. ' .
+					'The shortcode supports all options of the <code>[%s]</code> ' .
+					'shortcode. Additionally these options are available:', AGM_LANG
 				),
 				$shortcode_tag
 			); ?>
 			<ul style="padding-left: 20px; margin-top: 5px; list-style: disc">
-			<li><?php _e( '<code>user="1,2"</code>: (Filter) Zeigt die Standorte dieser Benutzer nach Benutzer-ID an.', 'psmaps' ); ?><br />
-			<li><?php _e( '<code>role="admin,editor"</code>: (Filter) Zeigt die Standorte der Benutzer in diesen Rollen an.', 'psmaps' ); ?></li>
-			<li><?php _e( '<code>group="group1,group2"</code>: (Filter, BuddyPress) Zeigt die Standorte der Benutzer in diesen Gruppen an.', 'psmaps' ); ?></li>
-			<li><?php _e( '<code>guest="true"</code>: (Filter) True zeigt zusätzlich die Standorte der Gäste an. False zeigt nur Standorte registrierter Benutzer an.', 'psmaps' ); ?></li>
-			<li><?php _e( '<code>last_hour="24"</code>: (Filter, Zeit) Zeigt Orte an, die in den letzten X Stunden hinzugefügt oder aktualisiert wurden.', 'psmaps' ); ?></li>
-			<li><?php _e( '<code>automatic="true"</code>: Versuche den Benutzerstandort beim Laden der Seite zu erfassen (wie bei <code>[agm_add_checkin]</code>.', 'psmaps' ); ?></li>
-			<li><?php _e( '<code>show_button="true"</code>: Füge unter der Karte eine Schaltfläche hinzu, mit der der Benutzer seinen Standort manuell übermitteln kann.', 'psmaps' ); ?></li>
+			<li><?php _e( '<code>user="1,2"</code>: (Filter) Show locations of these users by user-ID.', AGM_LANG ); ?><br />
+			<li><?php _e( '<code>role="admin,editor"</code>: (Filter) Show locations of users in these roles.', AGM_LANG ); ?></li>
+			<li><?php _e( '<code>group="group1,group2"</code>: (Filter, BuddyPress) Show locations of users in these groups.', AGM_LANG ); ?></li>
+			<li><?php _e( '<code>guest="true"</code>: (Filter) True additionally shows locations of guests. False will only show locations of registred users.', AGM_LANG ); ?></li>
+			<li><?php _e( '<code>last_hour="24"</code>: (Filter, time) Show locations that were added or updated within the last X hours.', AGM_LANG ); ?></li>
+			<li><?php _e( '<code>automatic="true"</code>: Try to collect the user location on page load (same as <code>[agm_add_checkin]</code>.', AGM_LANG ); ?></li>
+			<li><?php _e( '<code>show_button="true"</code>: Add a button below the map that allows the user to manually submit his location.', AGM_LANG ); ?></li>
 			</ul>
-			<?php _e( 'Wenn kein Filter definiert ist, werden alle Standorte auf der Karte angezeigt.', 'psmaps' ); ?>
+			<?php _e( 'If no filter is defined then all locations will be displayed on the map.', AGM_LANG ); ?>
 		</p>
 		<?php
 	}
@@ -1431,29 +1358,29 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		?>
 		<p>
 			<label for="agm-uci-automatic_checkin">
-			<?php _e( 'Sammel Standortdaten im Hintergrund', 'psmaps' ); ?>:
+			<?php _e( 'Collect location data in the background', AGM_LANG ); ?>:
 			</label>
 			<select id="agm-uci-automatic_checkin" name="agm_google_maps[uci-automatic_checkin]">
-				<option value="never" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Niemals (diese Funktion deaktivieren)', 'psmaps' ); ?></option>
-				<option value="once" <?php echo esc_html( $sel_once ); ?>><?php _e( 'Ein Check-in pro Benutzer', 'psmaps' ); ?></option>
-				<option value="always" <?php echo esc_html( $sel_always ); ?>><?php _e( 'Auf jeder Seite', 'psmaps' ); ?></option>
-				<option value="manual" <?php echo esc_html( $sel_manual ); ?>><?php _e( 'Manuell via Shortcode [agm_add_checkin]', 'psmaps' ); ?></option>
+				<option value="never" <?php echo esc_html( $sel_never ); ?>><?php _e( 'Never (disable this feature)', AGM_LANG ); ?></option>
+				<option value="once" <?php echo esc_html( $sel_once ); ?>><?php _e( 'One checkin per user', AGM_LANG ); ?></option>
+				<option value="always" <?php echo esc_html( $sel_always ); ?>><?php _e( 'On every page', AGM_LANG ); ?></option>
+				<option value="manual" <?php echo esc_html( $sel_manual ); ?>><?php _e( 'Manual via shortcode [agm_add_checkin]', AGM_LANG ); ?></option>
 			</select><br /><em>
-			<?php _e( 'Standortdaten werden nur mit Zustimmung des Nutzers erhoben.<br />Die Gäste werden gebeten, den Ort bei jedem Besuch anzugeben. Angemeldete Benutzer können zusätzlich wählen, ob sie ihren Standort immer oder nie angeben möchten.', 'psmaps' ) ?>
+			<?php _e( 'Location data is only collected with user agreement.<br />Guests will be asked to submit the location on each visit. Logged-in users can additionally choose to always or never submit their location.', AGM_LANG ) ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-allow_guest_checkin-off">
 			<input type="radio" id="agm-uci-allow_guest_checkin-off" name="agm_google_maps[uci-allow_guest_checkin]" value="0" <?php echo esc_html( $check_guest_on ); ?> />
-			<?php _e( 'Nur angemeldete Benutzer können ihren Standort einchecken', 'psmaps' ); ?>
+			<?php _e( 'Only logged in users can check-in their location', AGM_LANG ); ?>
 			</label>
 		</p>
 
 		<p>
 			<label for="agm-uci-allow_guest_checkin-on">
 			<input type="radio" id="agm-uci-allow_guest_checkin-on" name="agm_google_maps[uci-allow_guest_checkin]" value="1" <?php echo esc_html( $check_guest_off ); ?> />
-			<?php _e( 'Gäste können ihren Standort einchecken', 'psmaps' ); ?>
+			<?php _e( 'Guests can check-in their location', AGM_LANG ); ?>
 			</label>
 		</p>
 		<?php
@@ -1473,16 +1400,16 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		<p>
 			<label for="agm-uci-edit_details-off">
 			<input type="radio" id="agm-uci-edit_details-off" name="agm_google_maps[uci-edit_details]" value="0"  <?php echo esc_html( $check_edit_off ); ?> />
-			<?php _e( 'Speichere nur den Ort', 'psmaps' ); ?>
+			<?php _e( 'Only save the location', AGM_LANG ); ?>
 			</label>
 		</p>
 
 		<p>
 			<label for="agm-uci-edit_details-on">
 			<input type="radio" id="agm-uci-edit_details-on" name="agm_google_maps[uci-edit_details]" value="1" <?php echo esc_html( $check_edit_on ); ?> />
-			<?php _e( 'Benutzer können Standorte bearbeiten und zusätzliche Informationen hinzufügen', 'psmaps' ); ?>
+			<?php _e( 'Users can edit locations and add additional information', AGM_LANG ); ?>
 			</label><br /><em>
-			<?php _e( 'Angemeldete Benutzer können optional einen Titel und eine Beschreibung für ihre Check-Ins eingeben und die Standortdetails später bearbeiten.', 'psmaps' ); ?>
+			<?php _e( 'Logged in users can optionaly enter a title and description for their check-ins and edit the location details later.', AGM_LANG ); ?>
 			</em>
 		</p>
 		<?php
@@ -1504,18 +1431,18 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		<p>
 			<label for="agm-uci-link_pages">
 			<input type="checkbox" id="agm-uci-link_pages" name="agm_google_maps[uci-link_pages]" value="1" <?php echo esc_html( $check_link_pages ); ?> />
-			<?php _e( 'Checkins sind mit dem aktuellen Beitrag/der aktuellen Seite verknüpft', 'psmaps' ); ?>
+			<?php _e( 'Checkins are linked to the current post/page', AGM_LANG ); ?>
 			</label><br /><em>
-			<?php _e( 'Wenn diese Option aktiviert ist, sind alle Checkins mit dem aktuellen Beitrag oder der aktuellen Seite verknüpft.<br />Funktioniert nur auf einzelnen Seiten, nicht auf speziellen Seiten wie Suchergebnissen, Archiv oder Startseite.', 'psmaps' ); ?>
+			<?php _e( 'When activated all checkins are linked to the current post or page.<br />Only works on single pages, not on special pages like search results, archive or front page.', AGM_LANG ); ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-link_comments">
 			<input type="checkbox" id="agm-uci-link_comments" name="agm_google_maps[uci-link_comments]" value="1" <?php echo esc_html( $check_link_comments ); ?> />
-			<?php _e( 'Aktiviere das Geotagging von Kommentaren', 'psmaps' ); ?>
+			<?php _e( 'Enable geotaging of comments', AGM_LANG ); ?>
 			</label><br /><em>
-			<?php _e( 'Bei Aktivierung wird ein neues Kontrollkästchen angezeigt, mit dem Du diesen Kommentar <code>im Kommentarformular</code> mit einem Geotag versehen kannst.', 'psmaps' ); ?>
+			<?php _e( 'When activated there will be a new checkbox to <code>Geotag this comment</code> in the comment form.', AGM_LANG ); ?>
 			</em>
 		</p>
 		<?php
@@ -1534,34 +1461,34 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		?>
 		<p>
 			<label for="agm-uci-max_checkins">
-				<?php _e( 'Maximale Anzahl von Eincheckvorgängen für einen einzelnen Benutzer', 'psmaps' ); ?>
+				<?php _e( 'Max number of checkins to keep for a single user', AGM_LANG ); ?>
 			</label>
 			<input type="number" min="1" max="100" maxlength="3" id="agm-uci-max_checkins" name="agm_google_maps[uci-max_checkins]" value="<?php echo esc_attr( $max_checkins ); ?>" />
 			<br />
 			<em>
-			<?php _e( 'Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird ein älterer Standort aus der Benutzersammlung entfernt.<br />Ein hoher Wert kann zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-100', 'psmaps' ); ?>
+			<?php _e( 'When a new location is checked-in and the limit is reached an older location will be removed from the users collection.<br />A high value can result in a longer loading time of maps. Value between 1-100', AGM_LANG ); ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-max_guest_checkins">
-				<?php _e( 'Max anonyme Gäste Check-ins behalten', 'psmaps' ); ?>
+				<?php _e( 'Max anonyoumous guest checkins to keep', AGM_LANG ); ?>
 			</label>
 			<input type="number" min="1" max="1000" maxlength="4" id="agm-uci-max_guest_checkins" name="agm_google_maps[uci-max_guest_checkins]" value="<?php echo esc_attr( $max_guest_checkins ); ?>" />
 			<br />
 			<em>
-			<?php _e( 'Wenn ein neuer Standort eingecheckt und das Limit erreicht ist, wird der älteste Standort aus der Gästesammlung entfernt.<br />Ein hoher Wert kann zu einer längeren Ladezeit von Karten führen. Wert zwischen 1-1000', 'psmaps' ); ?>
+			<?php _e( 'When a new location is checked-in and the limit is reached the oldest location will be removed from the guest collection.<br />A high value can result in a longer loading time of maps. Value between 1-1000', AGM_LANG ); ?>
 			</em>
 		</p>
 
 		<p>
 			<label for="agm-uci-merge_distance">
-				<?php _e( 'Fange doppelte Check-Ins ab, die näher als sind', 'psmaps' ); ?>
+				<?php _e( 'Catch double check-ins that are closer than', AGM_LANG ); ?>
 			</label>
-			<input type="number" min="0" max="100" maxlength="3" id="agm-uci-merge_distance" name="agm_google_maps[uci-merge_distance]" value="<?php echo esc_attr( $merge_distance ); ?>" /> Meter
+			<input type="number" min="0" max="100" maxlength="3" id="agm-uci-merge_distance" name="agm_google_maps[uci-merge_distance]" value="<?php echo esc_attr( $merge_distance ); ?>" /> meters
 			<br />
 			<em>
-			<?php _e( 'Wenn ein Benutzer einen neuen Ort eincheckt, speichert das Plugin den Ort nicht, wenn er näher als diese Entfernung zu einem bereits eingecheckten Ort liegt.<br />Es werden nur die Standorte des aktuellen Benutzers überprüft. Wert zwischen 1-100', 'psmaps' ); ?>
+			<?php _e( 'When a user checks-in a new location, the plugin will not save the location when it is closer than this distance to an already checked-in location.<br />Only the locations of the current user are checked. Value between 1-100', AGM_LANG ); ?>
 			</em>
 		</p>
 		<?php
@@ -1579,9 +1506,9 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 		<p>
 			<label for="agm-uci-show_empty_map">
 			<input type="checkbox" id="agm-uci-show_empty_map" name="agm_google_maps[uci-show_empty_map]" value="1" <?php echo esc_html( $check_show_empty_map ); ?> />
-			<?php _e( 'Karten ohne Markierungen anzeigen', 'psmaps' ); ?>
+			<?php _e( 'Show maps without markers', AGM_LANG ); ?>
 			</label><br /><em>
-			<?php _e( 'Wähle aus, ob eine Karte ohne Standortmarkierungen angezeigt werden soll oder nicht.<br />Wenn eine leere Karte angezeigt wird, ist das Kartenzentrum standardmäßig nicht definiert. Gib daher eine Standardposition an (z. B. über "<code>Wo bin ich?</code>" oder "<code>Karte zentrieren vor Ort</code>" Erweiterung).', 'psmaps' ); ?>
+			<?php _e( 'Choose if a map that contains no location markers should be displayed or not.<br />If an empty map is displayed the map center is undefined by default, so you should provide a default position (e.g. via the "<code>Where am I?</code>" or "<code>Center map on location</code>" AddOn).', AGM_LANG ); ?>
 			</em>
 		</p>
 		<?php
@@ -1664,6 +1591,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 			$checkin = $this->_get_checkin_by_id( $user_id, $cid );
 
 			// Important: Multiple occurances of this code, search for #ReturnCheckin!
+
 			// These fields are not saved in DB:
 			$checkin['user_id'] = $user_id;
 			$checkin['id'] = $cid;
@@ -1700,6 +1628,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 			);
 
 			// Important: Multiple occurances of this code, search for #ReturnCheckin!
+
 			// These fields are not saved in DB:
 			$checkin['user_id'] = -1;
 			$checkin['id'] = -1;
@@ -1736,7 +1665,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 	 * Helper for ajax handlers ajax_checkin() and ajax_guest_checkin()
 	 *
 	 * @since  1.0.0
-	 * @param  int   $user_id Can be 0 for guests.
+	 * @param  int $user_id Can be 0 for guests.
 	 * @param  array $data Data collection containing the location details (e.g. $_POST).
 	 */
 	protected function _ajax_handle_checkin( $user_id, $data ) {
@@ -1760,6 +1689,7 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 			if ( ! empty( $checkin ) ) {
 				// Important: Multiple occurances of this code, search for #ReturnCheckin!
+
 				// These fields are not saved in DB:
 				$checkin['user_id'] = $user_id;
 				$checkin['id'] = $cid;
@@ -1780,10 +1710,10 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 	 * Builds the HTML form to edit the specified checkin item.
 	 *
 	 * @since  1.0.0
-	 * @param  int   $user_id Owner of the checkin.
-	 * @param  int   $cid Checkin ID.
+	 * @param  int $user_id Owner of the checkin.
+	 * @param  int $cid Checkin ID.
 	 * @param  array $checkin Check details.
-	 * @param  bool  $edit_details False: Only sharing can be changed.
+	 * @param  bool $edit_details False: Only sharing can be changed.
 	 */
 	protected function _checkin_editor( $user_id, $cid, $checkin, $edit_details ) {
 		$sel_check_priv = ($checkin['share'] == 'priv' ? 'selected="selected"' : '');
@@ -1798,28 +1728,28 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 			<?php if ( $edit_details ) : ?>
 				<div class="row">
-					<label for="title-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Titel', 'psmaps' ); ?>:</label>
+					<label for="title-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Title', AGM_LANG ); ?>:</label>
 					<input type="text" id="title-<?php echo esc_attr( $cid ); ?>" class="title" value="<?php echo esc_attr( $checkin['title'] ); ?>" />
 				</div>
 				<div class="row">
-					<label for="desc-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Beschreibung', 'psmaps' ); ?>:</label>
+					<label for="desc-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Description', AGM_LANG ); ?>:</label>
 					<input type="text" id="desc-<?php echo esc_attr( $cid ); ?>" class="desc" value="<?php echo esc_attr( $checkin['description'] ); ?>" />
 				</div>
 			<?php endif; ?>
 
 			<div class="row">
-				<label for="share-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Sichtbar für', 'psmaps' ); ?>:</label>
+				<label for="share-<?php echo esc_attr( $cid ); ?>"><?php _e( 'Visible for', AGM_LANG ); ?>:</label>
 				<select class="share" id="share-<?php echo esc_attr( $cid ); ?>">
-					<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Nur ich', 'psmaps' ); ?></option>
-					<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Angemeldete Benutzer', 'psmaps' ); ?></option>
-					<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Jeder', 'psmaps' ); ?></option>
+					<option value="priv" <?php echo esc_html( $sel_check_priv ); ?>><?php _e( 'Only me', AGM_LANG ); ?></option>
+					<option value="member" <?php echo esc_html( $sel_check_member ); ?>><?php _e( 'Logged in users', AGM_LANG ); ?></option>
+					<option value="pub" <?php echo esc_html( $sel_check_pub ); ?>><?php _e( 'Everybody', AGM_LANG ); ?></option>
 				</select>
 			</div>
 
 			<div class="agm-form-buttons">
-				<button type="button" class="agm-form-delete pull-left"><?php _e( 'Löschen', 'psmaps' ); ?></button>
-				<button type="button" class="agm-form-cancel"><?php _e( 'Abbrechen', 'psmaps' ); ?></button>
-				<button type="button" class="agm-form-save"><?php _e( 'Speichern', 'psmaps' ); ?></button>
+				<button type="button" class="agm-form-delete pull-left"><?php _e( 'Delete', AGM_LANG ); ?></button>
+				<button type="button" class="agm-form-cancel"><?php _e( 'Cancel', AGM_LANG ); ?></button>
+				<button type="button" class="agm-form-save"><?php _e( 'Save', AGM_LANG ); ?></button>
 			</div>
 		</div>
 		<?php
@@ -1831,9 +1761,13 @@ class Agm_UCI_AdminPages extends Agm_UCI_Shared {
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
-// FRONTEND
+//                                   FRONTEND
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
+
+
+
+
 /**
  * User-side implementation will do two things:
  *  - Collect the check-in data.
@@ -1852,7 +1786,6 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 	/**
 	 * Flag that is calculated once on each request to decide if the addon
 	 * should try to collect the checkin location in background.
-	 *
 	 * @see init_userside() [= the wp_init hook]
 	 *
 	 * @since  1.0.0
@@ -1993,14 +1926,14 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 
 				// Add translations that are used in javascript.
 				$lang = array(
-					'title' => __( 'Standort senden?', 'psmaps' ),
-					'ask_checkin' => __( 'Die Webseite möchte wissen, wo Du Dich befindest. Sende Deinen Standort?', 'psmaps' ),
-					'yes' => __( 'Ja', 'psmaps' ),
-					'no' => __( 'Nein', 'psmaps' ),
-					'remember' => __( 'Frag mich nicht noch einmal.', 'psmaps' ),
-					'status_sending' => __( 'Sende Deinen Standort...', 'psmaps' ),
-					'status_saved' => __( 'Standort gespeichert!', 'psmaps' ),
-					'status_submit' => __( 'Sende meinen aktuellen Standort', 'psmaps' ),
+					'title' => __( 'Submit location?', AGM_LANG ),
+					'ask_checkin' => __( 'The webpage wants to know where you are. Send your location?', AGM_LANG ),
+					'yes' => __( 'Yes', AGM_LANG ),
+					'no' => __( 'No', AGM_LANG ),
+					'remember' => __( 'Don´t ask me again.', AGM_LANG ),
+					'status_sending' => __( 'Sending your location...', AGM_LANG ),
+					'status_saved' => __( 'Location saved!', AGM_LANG ),
+					'status_submit' => __( 'Submit my current location', AGM_LANG ),
 				);
 
 				/*
@@ -2043,15 +1976,15 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 	 * Creates a map from a list of markers.
 	 *
 	 * @since  1.0.0
-	 * @param  array     $markers Map markers to display.
+	 * @param  array $markers Map markers to display.
 	 * @param  int|false $id ID-Attribute of the map.
-	 * @param  array     $overrides Display options (i.e. shortcode attributes)
+	 * @param  array $overrides Display options (i.e. shortcode attributes)
 	 * @return string HTML Code to display the map.
 	 */
 	private function _create_map( $markers, $id = false, $overrides = array() ) {
 		AgmDependencies::ensure_presence();
 
-		if ( empty( $markers ) && ! $this->_get_option( 'show_empty_map' ) ) {
+		if ( empty ( $markers ) && ! $this->_get_option( 'show_empty_map' ) ) {
 			return false;
 		}
 		$id = $id ? $id : md5( time() . rand() );
@@ -2121,11 +2054,11 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 			// Limit checkins by time (past X hours)
 			'last_hours' => 0,
 			// Limit checkins by page-link
-			// 'page' => '',
-			// 'pages' => null,
+			# 'page' => '',
+			# 'pages' => null,
 			// Limit checkins by comment-link
-			// 'comment' => '',
-			// 'comments' => null,
+			# 'comment' => '',
+			# 'comments' => null,
 			// Show or hide anonymous checkins
 			'guest' => true,
 			'guests' => null,
@@ -2205,8 +2138,8 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 		if ( null !== $users ) { $user = $users; }
 		if ( null !== $roles ) { $role = $roles; }
 		if ( null !== $groups ) { $group = $groups; }
-		// if ( null !== $pages ) { $page = $pages; }
-		// if ( null !== $comments ) { $comment = $comments; }
+		# if ( null !== $pages ) { $page = $pages; }
+		# if ( null !== $comments ) { $comment = $comments; }
 		if ( null !== $guests ) { $guest = $guests; }
 
 		// Get a list of all user-IDs.
@@ -2234,7 +2167,7 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 	 * @param  string $user A single user-ID or a comma separated list.
 	 * @param  string $role A single role name or a comma separated list.
 	 * @param  string $group A single Buddypress group-slug or comma separated list.
-	 * @param  bool   $include_guest
+	 * @param  bool $include_guest
 	 * @return array List of all user-IDs.
 	 */
 	protected function _get_user_ids( $user, $role, $group, $include_guest ) {
@@ -2269,9 +2202,9 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 			}
 
 			// Append all users based on BuddyPress group.
-			// TODO: This function is untested.
+			//TODO: This function is untested.
 			if ( defined( 'BP_VERSION' ) && class_exists( 'BP_Groups_Member' ) ) {
-				if ( ! empty( $group ) ) {
+				if ( ! empty ( $group ) ) {
 					$groups = explode( ',', $group );
 					foreach ( $groups as $group_slug ) {
 						// Get the user_ids of the group.
@@ -2302,8 +2235,8 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 	 *
 	 * @since  1.0.0
 	 * @param  array $users List of user-IDs.
-	 * @param  int   $last_hours Only checkins that were created/updated within
-	 *                  that amount of time are included (1 = past 1 hour).
+	 * @param  int $last_hours Only checkins that were created/updated within
+	 *                that amount of time are included (1 = past 1 hour).
 	 * @return array List of checkin objects.
 	 */
 	protected function _get_checkins_by_user( $users, $last_hours ) {
@@ -2334,6 +2267,7 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 				}
 
 				// Important: Multiple occurances of this code, search for #ReturnCheckin!
+
 				// These fields are not saved in DB:
 				$checkin['user_id'] = $user_id;
 				$checkin['id'] = $cid;
@@ -2352,9 +2286,13 @@ class Agm_UCI_UserPages extends Agm_UCI_Shared {
 
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
-// GLOBAL / INIT
+//                                 GLOBAL / INIT
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
+
+
+
+
 if ( is_admin() ) {
 	// Hint: All ajax handlers are stored in the AdminPages instance.
 	Agm_UCI_AdminPages::serve();

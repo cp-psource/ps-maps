@@ -226,7 +226,7 @@ class TheLib_Updates extends TheLib  {
 
 		// Create the Snapshot sub-folder.
 		if ( empty( $this->plugin ) ) {
-			$this->plugin( 'psource-plugin' );
+			$this->plugin( 'wpmudev-plugin' );
 		}
 		$target = trailingslashit( $upload['basedir'] ) . $this->plugin . '/';
 
@@ -291,7 +291,7 @@ class TheLib_Updates extends TheLib  {
 
 		// Build the full file name.
 		if ( empty( $this->plugin ) ) {
-			$this->plugin( 'psource-plugin' );
+			$this->plugin( 'wpmudev-plugin' );
 		}
 		$target = trailingslashit( $upload['basedir'] ) . $this->plugin . '/';
 
@@ -332,7 +332,7 @@ class TheLib_Updates extends TheLib  {
 
 		// Build the full file name.
 		if ( empty( $this->plugin ) ) {
-			$this->plugin( 'psource-plugin' );
+			$this->plugin( 'wpmudev-plugin' );
 		}
 		$target = trailingslashit( $upload['basedir'] ) . $this->plugin . '/';
 
@@ -430,7 +430,7 @@ class TheLib_Updates extends TheLib  {
 		if ( $silent_fail ) { return false; }
 
 		if ( empty( $this->plugin ) ) {
-			$this->plugin( 'psource-plugin' );
+			$this->plugin( 'wpmudev-plugin' );
 		}
 
 		$msg = sprintf(

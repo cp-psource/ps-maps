@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: PSOURCE code library
- * Plugin URI:  https://n3rds.work/
+ * Plugin Name: WPMU Dev code library
+ * Plugin URI:  https://github.com/cp-psource/
  * Description: Framework to support creating WordPress plugins and themes.
  * Version:     3.0.0
  * Author:      PSOURCE
- * Author URI:  https://n3rds.work/
+ * Author URI:  https://github.com/cp-psource/
  * Textdomain:  wpmu-lib
  *
  * ============================================================================
@@ -30,7 +30,7 @@
  *     define( 'WDEV_SEND_P3P', 'CP="CAO OUR"' ) // Overwrite default P3P header
  */
 
-$version = '3.0.6';
+$version = '3.0.0';
 
 if ( ! function_exists( 'lib3' ) ) {
 	/**

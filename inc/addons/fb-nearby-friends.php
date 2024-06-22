@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Facebook Freunde in der Nähe 
-Description: Zeigt eine Liste der Facebook-Freunde in der Nähe an.
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin Name: Nearby Facebook Friends
+Description: Shows a list of nearby facebook friends.
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0
 Author:      DerN3rd (PSOURCE)
 */
@@ -36,27 +36,27 @@ class Agm_Fbnf_AdminPages {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_facebook',
-			__( 'Facebook Freunde in der Nähe', 'psmaps' ),
+			__( 'Nearby Facebook Friends', AGM_LANG ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 		add_settings_field(
 			'agm_google_maps_fbnf_fb',
-			__( 'Facebook App ID', 'psmaps' ),
+			__( 'Facebook App ID', AGM_LANG ),
 			array( $this, 'create_fb_app_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_facebook'
 		);
 		add_settings_field(
 			'agm_google_maps_fbnf_scope',
-			__( 'Reichweite', 'psmaps' ),
+			__( 'Scope', AGM_LANG ),
 			array( $this, 'create_scope_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_facebook'
 		);
 		add_settings_field(
 			'agm_google_maps_fbnf_help',
-			__( 'Richte die App ein', 'psmaps' ),
+			__( 'Set up the App', AGM_LANG ),
 			array( $this, 'create_help_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_facebook'
@@ -71,10 +71,10 @@ class Agm_Fbnf_AdminPages {
 		?>
 		<div class="notice notice-warning">
 			<p><?php
-				echo '<b>' . esc_html(__('Hinweis:', 'psmaps')) . '</b> ';
+				echo '<b>' . esc_html(__('Note:', AGM_LANG)) . '</b> ';
 				echo sprintf(esc_html(
-					__('Aufgrund der Ablehnung der erforderlichen Funktionen und Berechtigungen in der Facebook-API funktioniert die Erweiterung %s nicht für neu erstellte Anwendungen.', 'psmaps')),
-					'&quot;Facebook Freunde in der Nähe&quot;'
+					__('Due to the deprecation of the needed features and permissions in Facebook API, the %s add-on will not work for newly created applications.', AGM_LANG)),
+					'&quot;Nearby Facebook Friends&quot;'
 				);
 			?></p>
 		</div>
@@ -87,7 +87,7 @@ class Agm_Fbnf_AdminPages {
 		?>
 		<input type="text"
 			name="agm_google_maps[fbnf-fb_app_id]"
-			placeholder="<?php _e( 'Facebook App ID', 'psmaps' ); ?>"
+			placeholder="<?php _e( 'Facebook App ID', AGM_LANG ); ?>"
 			value="<?php echo esc_attr( $fb_app_id ); ?>" />
 		<?php
 	}
@@ -99,7 +99,7 @@ class Agm_Fbnf_AdminPages {
 		$months = (int) $months ? (int) $months : 4;
 		?>
 		<label for="agm-fbnf-radius">
-			<?php _e( 'Suche nach Freunden innerhalb ', 'psmaps' ); ?>
+			<?php _e( 'Check for friends within ', AGM_LANG ); ?>
 		</label>
 		<input type="number"
 			id="agm-fbnf-radius"
@@ -108,12 +108,12 @@ class Agm_Fbnf_AdminPages {
 			max="999999"
 			name="agm_google_maps[fbnf-radius]"
 			value="<?php echo esc_attr( $radius ); ?>" />
-		<?php _e( 'Metern', 'psmaps' ); ?>
+		<?php _e( 'meters', AGM_LANG ); ?>
 
 		<br />
 
 		<label for="agm-fbnf-months">
-			<?php _e( 'Suche nach Freunden in Updates und Fotos für Freunde in den letzten ', 'psmaps' ); ?>
+			<?php _e( 'Search for friends in updates and photos for friends within last ', AGM_LANG ); ?>
 		</label>
 		<input type="text"
 			id="agm-fbnf-months"
@@ -122,27 +122,27 @@ class Agm_Fbnf_AdminPages {
 			max="9999"
 			name="agm_google_maps[fbnf-months]"
 			value="<?php echo esc_attr( $months ); ?>">
-		<?php _e( 'Monaten', 'psmaps' ); ?>
+		<?php _e( 'months', AGM_LANG ); ?>
 		<?php
 	}
 
 	public function create_help_box() {
 		?>
 		<p>
-			<?php _e( 'Befolge diese Schritte, um das Feld <em>App ID</em> einzurichten', 'psmaps' ); ?>
+			<?php _e( 'Follow these steps to set up <em>App ID</em> field', AGM_LANG ); ?>
 		</p>
 		<ol>
 			<li>
 				<?php _e(
 					'<a target="_blank" href="https://developers.facebook.com/apps">' .
-					'Erstelle eine neue Facebook-App</a>', 'psmaps'
+					'Create a new Facebook App</a>', AGM_LANG
 				); ?>
 			</li>
 			<li>
 				<?php printf(
 					__(
-						'Deine Facebook-App sollte ähnlich aussehen. Die ID wird oben angezeigt:' .
-						'<br /><img src="%s" width="590" />', 'psmaps'
+						'Your Facebook App should look similar to this; the ID is displayed in the top:' .
+						'<br /><img src="%s" width="590" />', AGM_LANG
 					),
 					AGM_PLUGIN_URL . 'img/system/fb-setup.png'
 				); ?>

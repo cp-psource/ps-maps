@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Marker-Cluster
-Description: Bereinigt Karten, indem Markierungen in der Nähe in Clustern gruppiert werden. Dies wirkt sich bei Aktivierung automatisch auf alle Karten aus.
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin Name: Marker cluster
+Description: Cleans up your maps by grouping nearby markers into clusters. This will automatically affect all maps when activated.
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0
 Author:      DerN3rd (PSOURCE)
 */

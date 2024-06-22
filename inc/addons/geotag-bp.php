@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Geotag BuddyPress Aktivitäten
-Description: Ermöglicht Benutzern das Hinzufügen eines Standortkontexts zu ihren BuddyPress-Aktivitätsaktualisierungen.<br />Verwende die Kartenattribute "nearby_activities" (true/false) und "activities_within" (Entfernung in Metern), um die BuddyPress-Aktivitäten auf der Karte anzuzeigen.<br /><b>Benötigt BuddyPress.</b>
+Plugin Name: Geotag my activities
+Description: Allows your users to add location context to their BuddyPress activity updates.<br />Use the map attributes "nearby_activities" (true/false) and "activities_within" (distance in meters) to display the BuddyPress activities on the map.<br /><b>Requires BuddyPress.</b>
 Example:     [map id="1" nearby_activities="true" activities_within="1000"]
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0.1
 Requires:    BuddyPress
 Author:      DerN3rd (PSOURCE)
@@ -95,7 +95,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			?>
 			<div id="agm-gwp-location_root">
 				<label for="agm-address" id="">
-					<?php _e( 'Addresse', 'psmaps' ); ?>:
+					<?php _e( 'Address', AGM_LANG ); ?>:
 					<input type="text" class="widefat" name="agm-address" id="agm-address" value="" />
 					<input type="hidden" autocomplete="off" name="agm-latitude" id="agm-latitude" value="" />
 					<input type="hidden" autocomplete="off" name="agm-longitude" id="agm-longitude" value="" />
@@ -221,46 +221,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			bp_activity_update_meta( $activity_id, '_agm_latitude', $lat );
 			bp_activity_update_meta( $activity_id, '_agm_longitude', $lng );
 		}
-
-		public function delete_user_activity_metas( $user_id ) {
-			$activities = BP_Activity_Activity::get(array(
-				'per_page' => 500,
-				'fields' => 'ids',
-				'user_id' => $user_id,
-			));
-			if (!is_array($activities)) return false;
-
-			$activity_ids = array_values($activities['activities']);
-			if (empty($activity_ids)) return false;
-
-			foreach ($activity_ids as $aid) {
-				bp_activity_delete_meta($aid, '_agm_latitude');
-				bp_activity_delete_meta($aid, '_agm_longitude');
-			}
-
-			return true;
-		}
-
-		public function gdpr_erase_user_activity_meta( $email, $page = 1 ) {
-			$user = get_user_by( 'email', $email );
-			$status = $this->delete_user_activity_metas($user->ID);
-			return array(
-				'items_removed' => $status,
-				'items_retained' => false,
-				'messages' => array(),
-				'done' => true,
-			);
-		}
 	};
-
-	function _agm_gwa_register_data_eraser( $erasers ) {
-		$data = new Agm_GwaModel();
-		$erasers['agm_google_maps-geotag_bp'] = array(
-			'eraser_friendly_name' => __( 'PS-Maps Aktivitäts-Geotags', 'psmaps' ),
-			'callback' => array( $data, 'gdpr_erase_user_activity_meta' ),
-		);
-		return $erasers;
-	}
 
 	function _agm_gwa_init() {
 		$data = new Agm_GwaModel();
@@ -273,10 +234,6 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			'bp_groups_posted_update',
 			array( $data, 'process_group_activity_update' ),
 			10, 4
-		);
-		add_filter(
-			'wp_privacy_personal_data_erasers',
-			'_agm_gwa_register_data_eraser'
 		);
 	}
 	add_action( 'bp_init', '_agm_gwa_init' );

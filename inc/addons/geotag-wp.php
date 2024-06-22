@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Geotag meine Beiträge
-Description: Ermöglicht das Hinzufügen eines Standortkontexts zu Beiträgen, Seiten oder benutzerdefinierten Beitragstypen.<br />Aktiviere die Erweiterung und wähle dann die Beitrags-Typen aus, die Du mit einem Geotag versehen möchtest. Danach findest Du im Beitrags-Editor eine neue Metabox, in der Du eine Adresse eingeben kannst.<br>Um eine Karte mit allen mit Geotags versehenen Posts anzuzeigen, verwende den Shortcode <code>[agm_gwp_geocoded_posts]</code>
+Plugin Name: Geotag my posts
+Description: Allows you to add location context to your posts, pages or custom post types.<br />Activate the Add-on and then select which post-types you want to geotag. After this you will find a new metabox in the post editor where you can enter an address. <br>To display a map with all geo-tagged posts use the shortcode <code>[agm_gwp_geocoded_posts]</code>
 Example:     [agm_gwp_geocoded_posts]
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0
 Author:      DerN3rd (PSOURCE)
 */
@@ -38,62 +38,19 @@ class Agm_GwpAdminPages {
 			'save_post',
 			array( $this, 'save_metabox_values' )
 		);
-		add_filter(
-			'wp_privacy_personal_data_erasers',
-			array( $this, 'register_data_eraser' )
-		);
-	}
-
-	/**
-	 * Registers data erasers for maps
-	 *
-	 * @param array $erasers erasers this far.
-	 *
-	 * @return array
-	 */
-	public function register_data_eraser( $erasers ) {
-		$erasers['agm_google_maps-geotag_wp'] = array(
-			'eraser_friendly_name' => __( 'Mit PS-Maps Geotags versehene Beiträge', 'psmaps' ),
-			'callback' => array( $this, 'gdpr_erase_data' ),
-		);
-		return $erasers;
-	}
-
-	public function gdpr_erase_data( $email, $page = 1 ) {
-		$user = get_user_by( 'email', $email );
-		$post_ids = get_posts(array(
-			'post_type' => 'any',
-			'post_status' => 'any',
-			'author' => $user->ID,
-			'meta_key' => '_agm_longitude',
-			'meta_compare' => 'EXISTS',
-			'fields' => 'ids',
-			'limit' => 500,
-		));
-
-		foreach ($post_ids as $pid) {
-			delete_post_meta($pid, '_agm_latitude');
-			delete_post_meta($pid, '_agm_longitude');
-		}
-		return array(
-			'items_removed' => count($post_ids),
-			'items_retained' => false,
-			'messages' => array(),
-			'done' => true,
-		);
 	}
 
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_gwp',
-			__( 'Geotag meine Beiträge', 'psmaps' ),
+			__( 'Geotag my posts', AGM_LANG ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 
 		add_settings_field(
 			'agm_google_maps_fbnf_fb',
-			__( 'Geotagging-Metabox', 'psmaps' ),
+			__( 'Geotagging metabox', AGM_LANG ),
 			array( $this, 'create_post_types_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_gwp'
@@ -104,7 +61,7 @@ class Agm_GwpAdminPages {
 		$selected_types = $this->_data->get_option( 'post_types' );
 		$selected_types = $selected_types ? $selected_types : array();
 		$post_types = get_post_types( array( 'public' => true ), 'objects' );
-		echo '<label for="agm-gwp-post_types">' . __( 'Geotagging-Metabox anzeigen für', 'psmaps' ) . ':</label><br />';
+		echo '<label for="agm-gwp-post_types">' . __( 'Show geotagging metabox for', AGM_LANG ) . ':</label><br />';
 		foreach ( $post_types as $type => $obj ) : ?>
 			<label for="agm-gwp-post_type-<?php echo esc_attr( $type ); ?>">
 				<input type="checkbox"
@@ -124,7 +81,7 @@ class Agm_GwpAdminPages {
 		foreach ( $post_types as $type ) {
 			add_meta_box(
 				'',
-				__( 'Standort', 'psmaps' ),
+				__( 'Location', AGM_LANG ),
 				array( $this, 'render_metabox' ),
 				$type,
 				'side',
@@ -285,7 +242,7 @@ class Agm_GwpModel {
 				$excerpt .
 			'</p>' .
 			'<a href="' . get_permalink( $post->ID ) . '">' .
-				__( 'Weiterlesen', 'psmaps' ) .
+				__( 'Read more', AGM_LANG ) .
 			'</a>';
 
 		return array(

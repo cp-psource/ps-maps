@@ -523,14 +523,7 @@ class AgmMapModel {
 				get_option( 'agm_google_maps', array() )
 			);
 		}
-
-		// Überprüfen, ob der Schlüssel im Array vorhanden ist
-		if (isset(self::$_options[$key])) {
-			return self::$_options[$key];
-		} else {
-			// Schlüssel nicht gefunden, gibt standardmäßigen Wert zurück oder false
-			return false; // oder einen Standardwert, je nach Bedarf
-		}
+		return @self::$_options[ $key ];
 	}
 
 	/**
@@ -747,8 +740,8 @@ class AgmMapModel {
 				'show_images'            => agm_positive_values( @$options['show_images'], 1, 0 ),
 				'image_size'             => @$options['image_size'],
 				'image_limit'            => @$options['image_limit'],
-				//'show_panoramio_overlay' => agm_positive_values( @$options['show_panoramio_overlay'], 1, 0 ),
-				//'panoramio_overlay_tag'  => @$options['panoramio_overlay_tag'],
+				'show_panoramio_overlay' => agm_positive_values( @$options['show_panoramio_overlay'], 1, 0 ),
+				'panoramio_overlay_tag'  => @$options['panoramio_overlay_tag'],
 				'street_view'            => @$options['street_view'],
 				'street_view_pos'        => @$options['street_view_pos'],
 				'street_view_pov'        => @$options['street_view_pov'],
@@ -805,8 +798,6 @@ class AgmMapModel {
 			'street_view_pos'        => @$data['street_view_pos'],
 			'street_view_pov'        => @$data['street_view_pov'],
 		);
-
-		$data['markers'] = ! empty( $data['markers'] ) ? $data['markers'] : array();
 
 		$data['title'] = apply_filters( 'agm-save-title', $data['title'], $data );
 		$data['markers'] = apply_filters( 'agm-save-markers', $data['markers'], $data );
@@ -971,9 +962,7 @@ class AgmMapModel {
 	 * @access private
 	 */
 	public function _position_to_marker( $lat, $lon ) {
-		//sensor entfernt
-		//$url = "http://maps.google.com/maps/api/geocode/json?latlng={$lat},{$lon}&sensor=false";
-		$url = "http://maps.google.com/maps/api/geocode/json?latlng={$lat},{$lon}";
+		$url = "http://maps.google.com/maps/api/geocode/json?latlng={$lat},{$lon}&sensor=false";
 		$result = wp_remote_get( $url );
 		if ( is_wp_error( $result ) ) {
 			return false; // Request fail
@@ -1048,9 +1037,7 @@ class AgmMapModel {
 
 	public function geocode_address( $address ) {
 		$urladd = rawurlencode( $address );
-		// sensor entfernt
-		//$url = "http://maps.google.com/maps/api/geocode/json?address={$urladd}&sensor=false";
-		$url = "http://maps.google.com/maps/api/geocode/json?address={$urladd}";
+		$url = "http://maps.google.com/maps/api/geocode/json?address={$urladd}&sensor=false";
 		$result = wp_remote_get( $url );
 		if ( is_wp_error( $result ) ) {
 			return false; // Request fail

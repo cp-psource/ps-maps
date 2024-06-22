@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Bildlauf deaktivieren
-Description: Ermöglicht das Deaktivieren des Bildlaufs auf einer Karte.<br/>Du kannst entweder den Bildlauf (A) in "Kartenoptionen" oder (B) über ein Shortcode-Attribut deaktivieren: <code>disable_scroll="true"</code>
+Plugin Name: Disable scroll
+Description: Allows you to disable scroll on a map.<br/>You can either disable the scrolling (A) in "Map Options", or (B) via a shortcode attribute: <code>disable_scroll="true"</code>
 Example:     [map id="1" disable_scroll="true"]
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0.1
 Author:      DerN3rd (PSOURCE)
 */
@@ -39,7 +39,7 @@ class Agm_DZ_AdminPages {
 
 		$data = array(
 			'lang' => array(
-				'disable_scroll' => __( 'Bildlauf deaktivieren', 'psmaps' ),
+				'disable_scroll' => __( 'Disable scroll', AGM_LANG ),
 			),
 		);
 

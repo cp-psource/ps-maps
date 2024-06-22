@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -72,7 +72,7 @@ jQuery(function () {
 
 					if ( user ) {
 						_added.push(user.id);
-						var friend = new window.google.maps.marker.AdvancedMarkerElement({
+						var friend = new window.google.maps.Marker({
 							title: user.name,
 							map: map,
 							icon: user.pic_square,
@@ -94,7 +94,7 @@ jQuery(function () {
 		);
 	}
 
-	jQuery(document).on(
+	jQuery(document).bind(
 		"agm_google_maps-user-adding_marker",
 		function (e, marker, idx, map) {
 			var friends = jQuery("<a href='#nearby-friends'>Nearby friends</a>"),

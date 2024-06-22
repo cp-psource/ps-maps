@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -9,7 +9,7 @@
 jQuery(function () {
 
 // Add options
-jQuery(document).on(
+jQuery(document).bind(
 	'agm_google_maps-admin-options_initialized',
 	function( ev, options, data ) {
 
@@ -37,7 +37,7 @@ jQuery(document).on(
 				}
 
 				jQuery( '#agm-kml_uploader' ).html( html );
-				jQuery( '#agm-kml_uploaded_file' ).on( "change", function () {
+				jQuery( '#agm-kml_uploaded_file' ).change(function () {
 					jQuery( '#agm-kml_url' ).val( jQuery(this).val() );
 				});
 			}

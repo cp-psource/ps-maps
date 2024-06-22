@@ -1,12 +1,12 @@
 /*! WPMU Dev code library - v2.0.3
- * https://n3rds.work/
+ * https://github.com/cp-psource/
  * Copyright (c) 2016; * Licensed GPLv2+ */
 /*!
  * WPMU Dev Card List
- * (Philipp Stracker for WPMU Dev)
+ * (DerN3rd for WPMU Dev)
  *
  * @since    1.1.0
- * @author   Philipp Stracker for WPMU Dev
+ * @author   DerN3rd for WPMU Dev
  * @requires jQuery
  */
 /*global jQuery:false */

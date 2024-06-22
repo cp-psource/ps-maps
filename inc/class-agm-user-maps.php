@@ -5,7 +5,7 @@
  */
 class AgmUserMaps {
 
-	public $model;
+	private $model;
 
 	/**
 	 * Entry method.
@@ -41,7 +41,7 @@ class AgmUserMaps {
 		}
 
 		// @since 2.8.6.1
-		$shortcode_tag = 'agm_map' == AgmMapModel::get_config( 'shortcode_map' ) ? 'agm_map' : 'map';	    			  	 		 					
+		$shortcode_tag = 'agm_map' == AgmMapModel::get_config( 'shortcode_map' ) ? 'agm_map' : 'map';
 
 		$fields = AgmMapModel::get_config( 'custom_fields_map' );
 		$options = AgmMapModel::get_config( 'custom_fields_options' );

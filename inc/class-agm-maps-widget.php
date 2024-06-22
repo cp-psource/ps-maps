@@ -4,249 +4,222 @@
  * Sidebar widget for Google Maps Plugin.
  */
 class AgmMapsWidget extends WP_Widget {
-    public function __construct() {
-        parent::__construct( false, 'Google Maps Widget' );
-        $this->model = new AgmMapModel();
-    }
+	public function __construct() {
+		parent::__construct( false, $name = 'Google Maps Widget' );
+		$this->model = new AgmMapModel();
+	}
 
-    public function form( $instance ) {
-        $fields = array(
-            'title',
-            'height',
-            'width',
-            'query',
-            'query_custom',
-            'network',
-            'map_id',
-            'show_as_one',
-            'show_map',
-            'show_markers',
-            'show_images',
-            'show_posts',
-            'zoom',
-        );
-        $instance = array_intersect_key( $instance, array_flip( $fields ) );
-        $instance = wp_parse_args( (array) $instance, array(
-            'height' => 200,
-            'width' => 200,
-            'show_as_one' => 1,
-            'show_map' => 1,
-            'show_markers' => 1,
-            'show_images' => 0,
-            'show_posts' => 1,
-            'zoom' => 7, // Add default value for zoom
-            'query_custom' => '',
-        ) );
+	public function form( $instance ) {
+		$fields = array(
+			'title',
+			'height',
+			'width',
+			'query',
+			'query_custom',
+			'network',
+			'map_id',
+			'show_as_one',
+			'show_map',
+			'show_markers',
+			'show_images',
+			'show_posts',
+			'zoom',
+		);
+		lib3()->array->equip( $instance, $fields );
 
-        $title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-        $height = isset( $instance['height'] ) ? esc_attr( $instance['height'] ) : 200;
-        $width = isset( $instance['width'] ) ? esc_attr( $instance['width'] ) : 200;
-        $query = isset( $instance['query'] ) ? esc_attr( $instance['query'] ) : '';
-        $query_custom = isset( $instance['query_custom'] ) ? esc_attr( $instance['query_custom'] ) : '';
-        $network = isset( $instance['network'] ) ? esc_attr( $instance['network'] ) : '';
-        $map_id = isset( $instance['map_id'] ) ? esc_attr( $instance['map_id'] ) : '';
-        $show_as_one = isset( $instance['show_as_one'] ) ? esc_attr( $instance['show_as_one'] ) : 1;
-        $show_map = isset( $instance['show_map'] ) ? esc_attr( $instance['show_map'] ) : 1;
-        $show_markers = isset( $instance['show_markers'] ) ? esc_attr( $instance['show_markers'] ) : 1;
-        $show_images = isset( $instance['show_images'] ) ? esc_attr( $instance['show_images'] ) : 0;
-        $show_posts = isset( $instance['show_posts'] ) ? esc_attr( $instance['show_posts'] ) : 1;
-        $zoom = isset( $instance['zoom'] ) ? esc_attr( $instance['zoom'] ) : 7;
+		$title = esc_attr( $instance['title'] );
+		$height = esc_attr( $instance['height'] );
+		$width = esc_attr( $instance['width'] );
+		$query = esc_attr( $instance['query'] );
+		$query_custom = esc_attr( $instance['query_custom'] );
+		$network = esc_attr( $instance['network'] );
+		$map_id = esc_attr( $instance['map_id'] );
+		$show_as_one = esc_attr( $instance['show_as_one'] );
+		$show_map = esc_attr( $instance['show_map'] );
+		$show_markers = esc_attr( $instance['show_markers'] );
+		$show_images = esc_attr( $instance['show_images'] );
+		$show_posts = esc_attr( $instance['show_posts'] );
+		$zoom = esc_attr( $instance['zoom'] );
 
-        $zoom_items = array(
-            '1' => __( 'Erde', 'psmaps' ),
-            '3' => __( 'Kontinent', 'psmaps' ),
-            '5' => __( 'Region', 'psmaps' ),
-            '7' => __( 'Nahe Städte', 'psmaps' ),
-            '12' => __( 'Stadtplan', 'psmaps' ),
-            '15' => __( 'Details', 'psmaps' ),
-        );
+		// Set defaults
+		$height = $height ? $height : 200;
+		$width = $width ? $width : 200;
+		$query_custom = ('custom' == $query) ? $query_custom : '';
+		$network = ('custom' == $query) ? $network : '';
+		$show_as_one = ( isset( $instance['show_as_one'] ) ) ? $show_as_one : 1;
+		$show_map = ( isset( $instance['show_map'] ) ) ? $show_map : 1;
+		$show_markers = ( isset( $instance['show_markers'] ) ) ? $show_markers : 1;
+		$show_images = $show_images ? $show_images : 0;
+		$show_posts = $show_posts ? $show_posts : 1;
 
-        $maps = $this->model->get_maps( null, -1 );
+		$zoom_items = array(
+			'1' => __( 'Earth', AGM_LANG ),
+			'3' => __( 'Continent', AGM_LANG ),
+			'5' => __( 'Region', AGM_LANG ),
+			'7' => __( 'Nearby Cities', AGM_LANG ),
+			'12' => __( 'City Plan', AGM_LANG ),
+			'15' => __( 'Details', AGM_LANG ),
+		);
 
-        include AGM_VIEWS_DIR . 'widget_settings.php';
-    }
+		// Load *all* map titles/ids
+		$maps = $this->model->get_maps( null, -1 );
 
-    public function update( $new_instance, $old_instance ) {
-        $fields = array(
-            'title',
-            'height',
-            'width',
-            'query',
-            'query_custom',
-            'network',
-            'map_id',
-            'show_as_one',
-            'show_map',
-            'show_markers',
-            'show_images',
-            'show_posts',
-            'zoom',
-        );
-        $new_instance = array_intersect_key( $new_instance, array_flip( $fields ) );
-        $new_instance = wp_parse_args( (array) $new_instance, array(
-            'height' => 200,
-            'width' => 200,
-            'show_as_one' => 1,
-            'show_map' => 1,
-            'show_markers' => 1,
-            'show_images' => 0,
-            'show_posts' => 1,
-        ) );
-    
-        $instance = $old_instance;
-        $instance['title'] = isset( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : '';
-        $instance['height'] = isset( $new_instance['height'] ) ? strip_tags( $new_instance['height'] ) : '';
-        $instance['width'] = isset( $new_instance['width'] ) ? strip_tags( $new_instance['width'] ) : '';
-        $instance['query'] = isset( $new_instance['query'] ) ? strip_tags( $new_instance['query'] ) : '';
-        $instance['query_custom'] = isset( $new_instance['query_custom'] ) ? strip_tags( $new_instance['query_custom'] ) : '';
-        $instance['network'] = isset( $new_instance['network'] ) ? strip_tags( $new_instance['network'] ) : '';
-        $instance['map_id'] = isset( $new_instance['map_id'] ) ? strip_tags( $new_instance['map_id'] ) : '';
-        $instance['show_as_one'] = isset( $new_instance['show_as_one'] ) ? (int) $new_instance['show_as_one'] : 1;
-        $instance['show_map'] = isset( $new_instance['show_map'] ) ? (int) $new_instance['show_map'] : 1;
-        $instance['show_markers'] = isset( $new_instance['show_markers'] ) ? (int) $new_instance['show_markers'] : 1;
-        $instance['show_images'] = isset( $new_instance['show_images'] ) ? (int) $new_instance['show_images'] : 0;
-        $instance['show_posts'] = isset( $new_instance['show_posts'] ) ? (int) $new_instance['show_posts'] : 1;
-        $instance['zoom'] = isset( $new_instance['zoom'] ) ? (int) $new_instance['zoom'] : 7;
-        return $instance;
-    }
-    
+		include AGM_VIEWS_DIR . 'widget_settings.php';
+	}
 
-    public function widget( $args, $instance ) {
-        $fields = array(
-            'title',
-            'height',
-            'width',
-            'query',
-            'query_custom',
-            'network',
-            'map_id',
-            'show_as_one',
-            'show_map',
-            'show_markers',
-            'show_images',
-            'show_posts',
-            'zoom',
-        );
-        $instance = array_intersect_key( $instance, array_flip( $fields ) );
-        $instance = wp_parse_args( (array) $instance, array(
-            'height' => 200,
-            'width' => 200,
-            'show_as_one' => 1,
-            'show_map' => 1,
-            'show_markers' => 1,
-            'show_images' => 0,
-            'show_posts' => 1,
-            'zoom' => 7, // Standardwert für Zoom
-        ) );
-    
-        extract( $args );
-        $title = apply_filters( 'widget_title', $instance['title'] );
-        $height = (int) $instance['height'];
-        $height = $height ? $height : 200;
-        $width = (int) $instance['width'];
-        $width = $width ? $width : 200;
-        $query = $instance['query'];
-        $query_custom = $instance['query_custom'];
-        $network = $instance['network'];
-        $map_id = $instance['map_id'];
-        $show_as_one = (int) agm_positive_values( $instance['show_as_one'] );
-        $show_map = (int) agm_positive_values( $instance['show_map'] );
-        $show_markers = (int) agm_positive_values( $instance['show_markers'] );
-        $show_images = (int) agm_positive_values( $instance['show_images'] );
-        $show_posts = (int) agm_positive_values( $instance['show_posts'] );
-        $zoom = (int) $instance['zoom'];
-    
-        // Überprüfen, ob 'zoom' im $instance-Array vorhanden ist
-        if (isset($instance['zoom'])) {
-            $zoom = (int) $instance['zoom'];
-        } else {
-            $zoom = 7; // Standardwert für Zoom
-        }
-    
-        $maps = $this->get_maps(
-            $query,
-            $query_custom,
-            $map_id,
-            $show_as_one,
-            $network
-        );
-    
-        echo '' . $before_widget;
-        if ( $title ) {
-            echo '' . $before_title . $title . $after_title;
-        }
-    
-        if ( is_array( $maps ) ) {
-            foreach ( $maps as $map ) {
-                $selector = 'agm_widget_map_' . md5( microtime() . rand() );
-                $map['show_posts'] = (int) $show_posts;
-                $map['height'] = $height;
-                $map['width'] = $width;
-                $map['show_map'] = $show_map;
-                $map['show_markers'] = $show_markers;
-                $map['show_images'] = $show_images;
-    
-                if ( $zoom ) {
-                    $map['zoom'] = $zoom;
-                }
-    
-                AgmDependencies::ensure_presence();
-                ?>
-                <div class="agm-google_map-widget" id="<?php echo esc_attr( $selector ); ?>"></div>
-                <script type="text/javascript">
-                _agmMaps[_agmMaps.length] = {
-                    selector: "#<?php echo esc_attr( $selector ); ?>",
-                    data: <?php echo json_encode( $map ); ?>
-                };
-                </script>
-                <?php
-            }
-        }
-    
-        echo '' . $after_widget;
-    }
+	public function update( $new_instance, $old_instance ) {
+		$fields = array(
+			'title',
+			'height',
+			'width',
+			'query',
+			'query_custom',
+			'network',
+			'map_id',
+			'show_as_one',
+			'show_map',
+			'show_markers',
+			'show_images',
+			'show_posts',
+			'zoom',
+		);
+		lib3()->array->equip( $new_instance, $fields );
 
-    public function get_maps( $query, $custom, $map_id, $show_as_one, $network ) {
-        $ret = false;
-        switch ( $query ) {
-            case 'current':
-                $ret = $this->model->get_current_maps();
-                break;
+		$instance = $old_instance;
+		$instance['title']        = strip_tags( $new_instance['title'] );
+		$instance['height']       = strip_tags( $new_instance['height'] );
+		$instance['width']        = strip_tags( $new_instance['width'] );
+		$instance['query']        = strip_tags( $new_instance['query'] );
+		$instance['query_custom'] = strip_tags( $new_instance['query_custom'] );
+		$instance['network']      = strip_tags( $new_instance['network'] );
+		$instance['map_id']       = strip_tags( $new_instance['map_id'] );
+		$instance['show_as_one']  = (int) $new_instance['show_as_one'];
+		$instance['show_map']     = (int) $new_instance['show_map'];
+		$instance['show_markers'] = (int) $new_instance['show_markers'];
+		$instance['show_images']  = (int) $new_instance['show_images'];
+		$instance['show_posts']   = (int) $new_instance['show_posts'];
+		$instance['zoom']         = (int) $new_instance['zoom'];
+		return $instance;
+	}
 
-            case 'all_posts':
-                $ret = $this->model->get_all_posts_maps();
-                break;
+	public function widget( $args, $instance ) {
+		$fields = array(
+			'title',
+			'height',
+			'width',
+			'query',
+			'query_custom',
+			'network',
+			'map_id',
+			'show_as_one',
+			'show_map',
+			'show_markers',
+			'show_images',
+			'show_posts',
+		);
+		lib3()->array->equip( $instance, $fields );
 
-            case 'all':
-                $ret = $this->model->get_all_maps();
-                break;
+		extract( $args );
+		$title        = apply_filters( 'widget_title', $instance['title'] );
+		$height       = (int) $instance['height'];
+		$height       = $height ? $height : 200; // Apply default
+		$width        = (int) $instance['width'];
+		$width        = $width ? $width : 200; // Apply default
+		$query        = $instance['query'];
+		$query_custom = $instance['query_custom'];
+		$network      = $instance['network'];
+		$map_id       = $instance['map_id'];
+		$show_as_one  = (int) agm_positive_values( $instance['show_as_one'] );
+		$show_map     = (int) agm_positive_values( $instance['show_map'] );
+		$show_markers = (int) agm_positive_values( $instance['show_markers'] );
+		$show_images  = (int) agm_positive_values( $instance['show_images'] );
+		$show_posts   = (int) agm_positive_values( $instance['show_posts'] );
+		$zoom         = (int) $instance['zoom'];
 
-            case 'random':
-                $ret = $this->model->get_random_map();
-                break;
+		$maps = $this->get_maps(
+			$query,
+			$query_custom,
+			$map_id,
+			$show_as_one,
+			$network
+		);
 
-            case 'custom':
-                if ( $network ) {
-                    $ret = $this->model->get_custom_network_maps( $custom );
-                } else {
-                    $ret = $this->model->get_custom_maps( $custom );
-                }
-                break;
+		echo '' . $before_widget;
+		if ( $title ) {
+			echo '' . $before_title . $title . $after_title;
+		}
 
-            case 'id':
-                $ret = array( $this->model->get_map( $map_id ) );
-                break;
+		if ( is_array( $maps ) ) {
+			foreach ( $maps as $map ) {
+				$selector = 'agm_widget_map_' . md5( microtime() . rand() );
+				$map['show_posts'] = (int) $show_posts;
+				$map['height'] = $height;
+				$map['width'] = $width;
+				$map['show_map'] = $show_map;
+				$map['show_markers'] = $show_markers;
+				$map['show_images'] = $show_images;
 
-            default:
-                $ret = false;
-                break;
-        }
+				if ( $zoom ) {
+					$map['zoom'] = $zoom;
+				}
 
-        if ( $ret && $show_as_one ) {
-            return array( $this->model->merge_markers( $ret ) );
-        }
+				AgmDependencies::ensure_presence();
+				?>
+				<div class="agm-google_map-widget" id="<?php echo esc_attr( $selector ); ?>"></div>
+				<script type="text/javascript">
+				_agmMaps[_agmMaps.length] = {
+					selector: "#<?php echo esc_attr( $selector ); ?>",
+					data: <?php echo json_encode( $map ); ?>
+				};
+				</script>
+				<?php
+			}
+		}
 
-        return $ret;
-    }
+		echo '' . $after_widget;
+	}
+
+	public function get_maps( $query, $custom, $map_id, $show_as_one, $network ) {
+		$ret = false;
+		switch ( $query ) {
+			case 'current':
+				$ret = $this->model->get_current_maps();
+				break;
+
+			case 'all_posts':
+				$ret = $this->model->get_all_posts_maps();
+				break;
+
+			case 'all':
+				$ret = $this->model->get_all_maps();
+				break;
+
+			case 'random':
+				$ret = $this->model->get_random_map();
+				break;
+
+			case 'custom':
+				if ( $network ) {
+					$ret = $this->model->get_custom_network_maps( $custom );
+				} else {
+					$ret = $this->model->get_custom_maps( $custom );
+				}
+				break;
+
+			case 'id':
+				$ret = array( $this->model->get_map( $map_id ) );
+				break;
+
+			default:
+				$ret = false;
+				break;
+		}
+
+		if ( $ret && $show_as_one ) {
+			return array( $this->model->merge_markers( $ret ) );
+		}
+
+		return $ret;
+	}
 
 }

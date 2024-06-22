@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Wo bin ich?
-Description: Fügt der Karte in unterstützenden Browsern automatisch oder über das Shortcode-Attribut die Standortmarkierung des Besuchers hinzu.
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
-Version:     1.1
+Plugin Name: Where am I?
+Description: Adds visitor's location marker to the map in supporting browsers, automatically or via shortcode attribute.
+Plugin URI:  https://cp-psource.github.io/ps-maps/
+Version:     1.0
 Author:      DerN3rd (PSOURCE)
 */
 
@@ -27,20 +27,20 @@ class Agm_Wmi_AdminPages {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_wmi_fields',
-			__( 'Wo bin ich?', 'psmaps' ),
+			__( 'Where am I?', AGM_LANG ),
 			'__return_false',
 			'agm_google_maps_options_page'
 		);
 		add_settings_field(
 			'agm_google_maps_wmi_auto',
-			__( 'Verhalten', 'psmaps' ),
+			__( 'Behavior', AGM_LANG ),
 			array( $this, 'create_auto_add_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_wmi_fields'
 		);
 		add_settings_field(
 			'agm_google_maps_wmi_marker',
-			__( 'Aussehen', 'psmaps' ),
+			__( 'Appearance', AGM_LANG ),
 			array( $this, 'create_marker_options_box' ),
 			'agm_google_maps_options_page',
 			'agm_google_wmi_fields'
@@ -54,13 +54,13 @@ class Agm_Wmi_AdminPages {
 
 		echo '<input type="radio" id="agm-wmi-auto-yes" name="agm_google_maps[wmi-shortcode_only]" value="" ' . $yes . ' />' .
 			'&nbsp' .
-			'<label for="agm-wmi-auto-yes">' . __( 'Ich möchte Besucherstandorte automatisch auf allen meinen Karten anzeigen', 'psmaps' ) . '</label>' .
-			'<div><small>' . __( 'Der Standort des Besuchers wird automatisch allen Karten hinzugefügt', 'psmaps' ) . '</small></div>' .
+			'<label for="agm-wmi-auto-yes">' . __( 'I want to automatically show visitor locations on all my maps', AGM_LANG ) . '</label>' .
+			'<div><small>' . __( 'Visitor location will be automatically added to all your maps', AGM_LANG ) . '</small></div>' .
 		'<br />';
 		echo '<input type="radio" id="agm-wmi-auto-no" name="agm_google_maps[wmi-shortcode_only]" value="1" ' . $no . ' />' .
 			'&nbsp' .
-			'<label for="agm-wmi-auto-no">' . __( 'Ich möchte mithilfe eines Shortcode-Attributs angeben, auf welchen Karten der Besucherstandort angezeigt wird', 'psmaps' ) . '</label>' .
-			'<div><small>' . __( 'Du kannst den Besucherstandort auf Deinen Karten anzeigen, indem Du Deinen Shortcodes <code>visitor_location=&quot;yes&quot;</code> hinzufügst', 'psmaps' ) . '</small></div>' .
+			'<label for="agm-wmi-auto-no">' . __( 'I want to specify which maps will show visitor location using a shortcode attribute', AGM_LANG ) . '</label>' .
+			'<div><small>' . __( 'You can display visitor location on your maps by adding <code>visitor_location=&quot;yes&quot;</code> to your shortcodes', AGM_LANG ) . '</small></div>' .
 		'<br />';
 
 		$center = $this->_get_options( 'auto_center' );
@@ -69,7 +69,7 @@ class Agm_Wmi_AdminPages {
 		echo '<input type="hidden" name="agm_google_maps[wmi-auto_center]" value="" />' .
 			'<input type="checkbox" id="agm-wmi-auto_center" name="agm_google_maps[wmi-auto_center]" value="1" ' . $center . ' />' .
 			'&nbsp' .
-			'<label for="agm-wmi-auto_center">' . __( 'Karte automatisch auf Besucherort zentrieren', 'psmaps' ) . '</label>' .
+			'<label for="agm-wmi-auto_center">' . __( 'Automatically center map to visitor location', AGM_LANG ) . '</label>' .
 		'<br />';
 
 		$marker = $this->_get_options( 'marker' );
@@ -77,24 +77,24 @@ class Agm_Wmi_AdminPages {
 		echo '<input type="hidden" name="agm_google_maps[wmi-marker]" value="" />' .
 			'<input type="checkbox" id="agm-wmi-marker" name="agm_google_maps[wmi-marker]" value="1" ' . $marker . ' />' .
 			'&nbsp' .
-			'<label for="agm-wmi-marker">' . __( 'Füge der Markierungsliste für meine Karte automatisch den Besucherort hinzu', 'psmaps' ) . '</label>' .
-			'<div><small>' . __( 'Standardmäßig wird nur der Besucherstandort zur Karte hinzugefügt. Aktiviere diese Option, wenn Du sie auch in die Markierungsliste aufnehmen möchtest.', 'psmaps' ) . '</small></div>' .
+			'<label for="agm-wmi-marker">' . __( 'Automatically add visitor location to the marker list for my map', AGM_LANG ) . '</label>' .
+			'<div><small>' . __( 'Default behavior is to add the visitor location to the map only. Enable this option if you want to include it in the marker list as well.', AGM_LANG ) . '</small></div>' .
 		'<br />';
 	}
 
 	public function create_marker_options_box() {
 		$label = $this->_get_options( 'label' );
-		$label = $label ? $label : __( 'Das bist du', 'psmaps' );
-		echo '<label for="agm-wmi-label">' . __( 'Besuchermarkierungsetikett', 'psmaps' ) . '</label>' .
+		$label = $label ? $label : __( 'This is you', AGM_LANG );
+		echo '<label for="agm-wmi-label">' . __( 'Visitor marker label', AGM_LANG ) . '</label>' .
 			'&nbsp;' .
 			'<input type="text" class="widefat" id="agm-wmi-label" name="agm_google_maps[wmi-label]" value="' . esc_attr( $label ) . '" />' .
 		'<br />';
 
 		$icon = $this->_get_options( 'icon' );
-		echo '<label for="agm-wmi-icon">' . __( 'Besuchermarkierungssymbol', 'psmaps' ) . '</label>' .
+		echo '<label for="agm-wmi-icon">' . __( 'Visitor marker icon', AGM_LANG ) . '</label>' .
 			$this->_create_icons_box() .
 			'<input type="text" class="widefat" id="agm-wmi-icon" name="agm_google_maps[wmi-icon]" value="' . esc_attr( $icon ) . '" />' .
-			'<div><small>' . __( 'Lasse das Feld leer, um das Standardsymbol zu verwenden', 'psmaps' ) . '</small></div>' .
+			'<div><small>' . __( 'Leave empty to use default icon', AGM_LANG ) . '</small></div>' .
 		'<br />';
 	}
 
@@ -109,7 +109,7 @@ class Agm_Wmi_AdminPages {
 		?>
 		<script type="text/javascript">
 		jQuery(function () {
-			jQuery( '#agm_google_maps-wmi-preset_icons a' ).on("click", function () {
+			jQuery( '#agm_google_maps-wmi-preset_icons a' ).on('click', function () {
 				jQuery( '#agm-wmi-icon' ).val( jQuery(this).find('img').attr('src') );
 				return false;
 			});
@@ -179,7 +179,7 @@ class Agm_Wmi_UserPages {
 
 	public function add_wmi_data() {
 		$label = $this->_get_options( 'label' );
-		$label = $label ? $label : __( 'Das bist du', 'psmaps' );
+		$label = $label ? $label : __( 'This is you', AGM_LANG );
 		printf(
 			'<script type="text/javascript">if ( window._agmWmi === undefined) _agmWmi = {
 				"add_marker": %d,

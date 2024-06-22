@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -8,184 +8,205 @@
 
 /**
  * Plugin Name: Custom Icons
- * Author:      Philipp Stracker (Incsub)
+ * Author:      DerN3rd (PSOURCE)
  *
  * Javascript component for ADMIN page of the custom icons addon.
  */
 
 // Need the timeout, because the HTML of the settings section is rebuilt to use the vertical navigation.
-window.setTimeout(function init_icon_admin() {
+window.setTimeout( function init_icon_admin() {
 
-    var win = jQuery(window),
-        table = jQuery('table.icons'),
-        data = jQuery('.custom-icon-list'),
-        btn_add = jQuery('.add-custom-icon'),
-        btn_media = jQuery('.add-media-image'),
-        txt_url = jQuery('.custom-icon-url'),
-        img_preview = jQuery('.custom-icon-preview'),
-        the_list = [];
+	var win = jQuery( window ),
+		table = jQuery( 'table.icons' ),
+		data = jQuery( '.custom-icon-list' ),
+		btn_add = jQuery( '.add-custom-icon' ),
+		btn_media = jQuery( '.add-media-image' ),
+		txt_url = jQuery( '.custom-icon-url' ),
+		img_preview = jQuery( '.custom-icon-preview' ),
+		the_list = [];
 
-    var initialze_table = function initialze_table() {
-        var ind, raw = data.val();
+	var initialze_table = function initialze_table() {
+		var ind, raw = data.val();
 
-        try { the_list = JSON.parse(raw); } catch (ignore) {}
+		try {
+			the_list = JSON.parse(raw);
+		} catch (error) {
+			the_list = [];
+		}
+	
+		if (!Array.isArray(the_list)) {
+			the_list = [];
+		}
+	
+		for (ind = 0; ind < the_list.length; ind++) {
+			add_icon_to_table(the_list[ind]);
+		}
+	
+		// Benutzerdefiniertes Event für das Resize auslösen
+		var resizeEvent = new Event('resize');
+		window.dispatchEvent(resizeEvent);
+	};
 
-        if (null === the_list || typeof the_list !== 'object') {
-            the_list = [];
-        }
+	var serialize_icons = function serialize_icons() {
+		data.val( JSON.stringify( the_list ) );
+	};
 
-        for (ind = 0; ind < the_list.length; ind += 1) {
-            add_icon_to_table(the_list[ind]);
-        }
+	var show_preview = function show_preview( event ) {
+		if ( txt_url.val() !== txt_url.data( 'last' ) ) {
+			disable_save();
+			txt_url.data( 'last', txt_url.val() );
 
-        jQuery(window).trigger('resize');
-    };
+			var url = txt_url.val();
+			img_preview.attr( 'src', url );
+		}
+	};
 
-    var serialize_icons = function serialize_icons() {
-        data.val(JSON.stringify(the_list));
-    };
+	var check_preview = function check_preview( event ) {
+		enable_save();
+	};
 
-    var show_preview = function show_preview(event) {
-        if (txt_url.val() !== txt_url.data('last')) {
-            disable_save();
-            txt_url.data('last', txt_url.val());
+	var add_icon = function add_icon( event ) {
+		var url = txt_url.val(),
+			ind;
 
-            var url = txt_url.val();
-            img_preview.attr('src', url);
-        }
-    };
+		txt_url.val( '' );
+		txt_url.data( 'last', '' );
+		disable_save();
 
-    var check_preview = function check_preview(event) {
-        enable_save();
-    };
+		maybe_add_url( url );
+	};
 
-    var add_icon = function add_icon(event) {
-        var url = txt_url.val(),
-            ind;
+	var maybe_add_url = function maybe_add_url( url ) {
+		var ind;
 
-        txt_url.val('');
-        txt_url.data('last', '');
-        disable_save();
+		// Ignore empty URLs
+		if ( ! (url || '').length ) {
+			return false;
+		}
 
-        maybe_add_url(url);
-    };
+		// Ignore non http/https URLs
+		if ( ! url.match(/^https?:\/\//) ) {
+			return false;
+		}
 
-    var maybe_add_url = function maybe_add_url(url) {
-        var ind;
+		// Ignore duplicate URLs
+		for ( ind = 0; ind < the_list.length; ind += 1 ) {
+			if ( url === the_list[ ind ] ) {
+				return false;
+			}
+		}
 
-        // Ignore empty URLs
-        if (!(url || '').length) {
-            return false;
-        }
+		add_icon_to_table( url );
+		the_list.push( url );
+		serialize_icons();
+		
+		var updateEvent = new Event('contentUpdated');
+		window.dispatchEvent(updateEvent);
+	};
 
-        // Ignore non http/https URLs
-        if (!url.match(/^https?:\/\//)) {
-            return false;
-        }
+	var alternate_rows = function alternate_rows() {
+		jQuery( 'tr.alternate', table ).removeClass( 'alternate' );
+		jQuery( 'tr:nth-child(even)', table ).addClass( 'alternate' );
+	};
 
-        // Ignore duplicate URLs
-        for (ind = 0; ind < the_list.length; ind += 1) {
-            if (url === the_list[ind]) {
-                return false;
-            }
-        }
+	var add_icon_to_table = function add_icon_to_table( url ) {
+		var td_img, td_url, td_size, td_action, dummy_img,
+			row = jQuery( '<tr></tr>' ).appendTo( table );
 
-        add_icon_to_table(url);
-        the_list.push(url);
-        serialize_icons();
-        jQuery(window).trigger('resize');
-    };
+		dummy_img = jQuery( '<img style="position: absolute;left:-9999999px;top:-99999999px" />' );
+		td_img = jQuery( '<td style="text-align:center"><img src="" class="marker-icon-32" /></td>' );
+		td_url = jQuery( '<td class="url">' + url + '</td>' );
+		td_size = jQuery( '<td>...</td>' );
+		td_action = jQuery( '<td><button type="button" class="button remove">Remove</button></td></tr>' );
 
-    var alternate_rows = function alternate_rows() {
-        jQuery('tr.alternate', table).removeClass('alternate');
-        jQuery('tr:nth-child(even)', table).addClass('alternate');
-    };
+		td_img.appendTo( row );
+		td_url.appendTo( row );
+		td_size.appendTo( row );
+		td_action.appendTo( row );
 
-    var add_icon_to_table = function add_icon_to_table(url) {
-        var td_img, td_url, td_size, td_action, dummy_img,
-            row = jQuery('<tr></tr>').appendTo(table);
+		var preview_loaded = function preview_loaded( event ) {
+			td_size.text( dummy_img.width() + ' x ' + dummy_img.height() );
+			dummy_img.remove();
+		};
 
-        dummy_img = jQuery('<img style="position: absolute;left:-9999999px;top:-99999999px" />');
-        td_img = jQuery('<td style="text-align:center"><img src="" class="marker-icon-32" /></td>');
-        td_url = jQuery('<td class="url">' + url + '</td>');
-        td_size = jQuery('<td>...</td>');
-        td_action = jQuery('<td><button type="button" class="button remove">Remove</button></td></tr>');
+		dummy_img.load( preview_loaded ).attr( 'src', url ).appendTo( jQuery( 'body' ) );
+		jQuery( 'img', td_img ).attr( 'src', url );
 
-        td_img.appendTo(row);
-        td_url.appendTo(row);
-        td_size.appendTo(row);
-        td_action.appendTo(row);
+		alternate_rows();
+	};
 
-        var preview_loaded = function preview_loaded(event) {
-            td_size.text(dummy_img.width() + ' x ' + dummy_img.height());
-            dummy_img.remove();
-        };
+	var remove_icon = function remove_icon( event ) {
+		var me = jQuery( this ),
+			row = me.parents( 'tr' ).first(),
+			url = row.find( '.url' ).text(),
+			ind;
 
-        dummy_img.on('load', preview_loaded).attr('src', url).appendTo(jQuery('body'));
-        jQuery('img', td_img).attr('src', url);
+		for ( ind = the_list.length - 1; ind >= 0; ind -= 1 ) {
+			if ( url === the_list[ ind ] ) {
+				the_list.splice( ind, 1 );
+				break;
+			}
+		}
 
-        alternate_rows();
-    };
+		row.remove();
+		alternate_rows();
+		serialize_icons();
+		win.resize();
+	};
 
-    var remove_icon = function remove_icon(event) {
-        var me = jQuery(this),
-            row = me.parents('tr').first(),
-            url = row.find('.url').text(),
-            ind;
+	var disable_save = function disable_save( event ) {
+		img_preview.hide();
+		btn_add.addClass( 'disabled' ).prop( 'disabled', true );
+		btn_add.text( btn_add.data('disabled') );
+	};
 
-        for (ind = the_list.length - 1; ind >= 0; ind -= 1) {
-            if (url === the_list[ind]) {
-                the_list.splice(ind, 1);
-                break;
-            }
-        }
+	var enable_save = function enable_save( event ) {
+		img_preview.show();
+		btn_add.removeClass( 'disabled' ).prop( 'disabled', false );
+		btn_add.text( btn_add.data('enabled') );
+	};
 
-        row.remove();
-        alternate_rows();
-        serialize_icons();
-        jQuery(window).trigger('resize');
-    };
+	var media_library = function media_library( event ) {
+		//Prepare frame
+		var frame = window.wp.media({
+			title : 'Choose an image',
+			multiple : false,
+			library : { type : 'image'},
+			button : { text : 'Use icon' },
+		});
 
-    var disable_save = function disable_save(event) {
-        img_preview.hide();
-        btn_add.addClass('disabled').prop('disabled', true);
-        btn_add.text(btn_add.data('disabled'));
-    };
+		frame.on('close',function() {
+			// get selections and save to hidden input plus other AJAX stuff etc.
+			var $image = frame.state().get('selection').first(),
+				image = ($image || {}).toJSON ? $image.toJSON() : {},
+				img_url = image.url;
 
-    var enable_save = function enable_save(event) {
-        img_preview.show();
-        btn_add.removeClass('disabled').prop('disabled', false);
-        btn_add.text(btn_add.data('enabled'));
-    };
+			maybe_add_url( img_url );
+		});
 
-    var media_library = function media_library(event) {
-        //Prepare frame
-        var frame = window.wp.media({
-            title: 'Wähle ein Bild',
-            multiple: false,
-            library: { type: 'image' },
-            button: { text: 'Symbol verwenden' },
-        });
+		frame.open();
+	};
 
-        frame.on('close', function() {
-            // get selections and save to hidden input plus other AJAX stuff etc.
-            var $image = frame.state().get('selection').first(),
-                image = ($image || {}).toJSON ? $image.toJSON() : {},
-                img_url = image.url;
+	// Ereignisbindung für das Entfernen von Symbolen
+	table.on('click', '.remove', remove_icon);
 
-            maybe_add_url(img_url);
-        });
+	// Ereignisbindung für das Hinzufügen von Symbolen
+	btn_add.on('click', add_icon);
 
-        frame.open();
-    };
+	// Ereignisbindung für die Medienbibliothek
+	btn_media.on('click', media_library);
 
-    table.on('click', '.remove', remove_icon);
-    btn_add.on('click', add_icon);
-    btn_media.on('click', media_library);
-    txt_url.on('keyup', show_preview);
-    txt_url.on('change', show_preview);
-    img_preview.on('load', check_preview);
-    initialze_table();
-    disable_save();
+	// Ereignisbindung für die Vorschau beim Eingeben der URL
+	txt_url.on('keyup', show_preview);
+	txt_url.on('change', show_preview);
+
+	// Ereignisbindung für das Laden des Vorschaubildes
+	img_preview.on('load', check_preview);
+
+	// Initialisierung der Tabelle
+	initialze_table();
+
+	// Deaktivierung der Speicherung
+	disable_save();
 
 }, 50);

@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -13,52 +13,52 @@
  * Javascript component for ADMIN page of the center-map addon.
  */
 
-jQuery(function() {
-    if (undefined === window._agm) { return; }
+jQuery(function () {
+	if ( undefined === window._agm ) { return; }
 
-    var doc = jQuery(document),
-        _map = null,
-        _center = null,
-        _icon = _agm.root_url + '/img/system/map_center.png';
+	var doc = jQuery( document ),
+		_map = null,
+		_center = null,
+		_icon = _agm.root_url + '/img/system/map_center.png';
 
-    var init_map = function init_map(event, map, data) {
-        _map = map;
+	var init_map = function init_map( event, map, data ) {
+		_map = map;
 
-        if (null !== _center) {
-            _center.setMap(null);
-            _center = null;
-        }
+		if ( null !== _center ) {
+			_center.setMap( null );
+			_center = null;
+		}
 
-        if (undefined !== data.map_center) {
-            var pos = new window.google.maps.LatLng(data.map_center[0], data.map_center[1]);
-            map.setCenter(pos);
-            set_center_marker();
-        }
-    };
+		if ( undefined !== data.map_center ) {
+			var pos = new window.google.maps.LatLng( data.map_center[0], data.map_center[1] );
+			map.setCenter( pos );
+			set_center_marker();
+		}
+	};
 
-    var center_button = function center_button(event, details, data) {
-        var marker = jQuery('#agm_map_drop_marker', details),
-            center = jQuery('<button type="button" class="button-secondary"></button>');
+	var center_button = function center_button( event, details, data ) {
+		var marker = jQuery( '#agm_map_drop_marker', details ),
+			center = jQuery( '<button type="button" class="button-secondary"></button>' );
 
-        center.text('Zentriert setzen');
-        center.prepend('<img src="' + _icon + '" style="height:20px;margin:3px;vertical-align:top" />');
-        center.insertAfter(marker);
-        center.on("click", set_center_marker);
-    };
+		center.text( 'Set Center' );
+		center.prepend( '<img src="' + _icon + '" style="height:20px;margin:3px;vertical-align:top" />' );
+		center.insertAfter( marker );
+		center.click( set_center_marker );
+	};
 
-    var set_center_marker = function set_center_marker() {
-        if (null === _map) {
-            return false;
-        }
+	var set_center_marker = function set_center_marker() {
+		if ( null === _map ) {
+			return false;
+		}
 
-        var pos = _map.getCenter();
+		var pos = _map.getCenter();
 
-        if (null !== _center) {
-            _center.setMap(null);
-        }
+		if ( null !== _center ) {
+			_center.setMap( null );
+		}
 
-        _center = new window.google.maps.marker.AdvancedMarkerElement({
-            title: 'Center',
+		_center = new window.google.maps.Marker({
+			title: 'Center',
             map: _map,
             icon: _icon,
             draggable: true,
@@ -66,19 +66,19 @@ jQuery(function() {
             position: pos,
             zIndex: 999
         });
-        _center.setMap(_map);
-    };
+        _center.setMap( _map );
+	};
 
-    var save_map = function save_map(event, request) {
-        if (null !== _center) {
-            request.map_center = [
-                _center.position.lat(),
-                _center.position.lng()
-            ];
-        }
-    };
+	var save_map = function save_map( event, request ) {
+		if ( null !== _center ) {
+			request.map_center = [
+				_center.position.lat(),
+				_center.position.lng()
+			];
+		}
+	};
 
-    doc.on('agm_google_maps-admin-map_initialized', init_map);
-    doc.on('agm_google_maps-admin-markup_created', center_button);
-    doc.on('agm_google_maps-admin-save_request', save_map);
+	doc.bind( 'agm_google_maps-admin-map_initialized', init_map );
+	doc.bind( 'agm_google_maps-admin-markup_created', center_button );
+	doc.bind( 'agm_google_maps-admin-save_request', save_map );
 });

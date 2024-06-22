@@ -17,40 +17,40 @@ class Agm_AdminHelp {
 	}
 
 	private function __construct() {
-		if ( ! class_exists( 'PSOURCE_ContextualHelp' ) ) {
+		if ( ! class_exists( 'WpmuDev_ContextualHelp' ) ) {
 			require_once AGM_INC_DIR . 'external/class_wd_contextual_help.php';
 		}
-		$this->_help = new PSOURCE_ContextualHelp();
+		$this->_help = new WpmuDev_ContextualHelp();
 	}
 
 	private function _get_default_tabs() {
 		return array(
 			array(
 				'id'      => 'agm_google_maps-options',
-				'title'   => __( 'Optionen', 'psmaps' ),
+				'title'   => __( 'Options', AGM_LANG ),
 				'content' => '' .
 					'<p>' . __(
-						'Hier kannst Du PS-Maps einrichten ' .
-						'Standardeinstellungen.', 'psmaps'
+						'This is where you can set up your Google Maps Pro ' .
+						'default settings.', AGM_LANG
 					) . '</p>'
 			),
 			array(
 				'id'      => 'agm_google_maps-custom_fields',
-				'title'   => __( 'Benutzerdefinierte Felder', 'psmaps' ),
+				'title'   => __( 'Custom fields', AGM_LANG ),
 				'content' => '' .
 					'<p>' . __(
-						'Hier kannst Du die automatische Erstellung von neuen Google Maps  ' .
-						'einrichten, die durch Deine vorhandenen ' .
-						' benutzerdefinierten Standortfelder ausgelöst wird.', 'psmaps'
+						'This is where you can set up auto-creation of ' .
+						'new Google Maps, triggered by your existing ' .
+						'location custom fields.', AGM_LANG
 					) . '</p>'
 			),
 			array(
 				'id'      => 'agm_google_maps-addons',
-				'title'   => __( 'Erweiterungen', 'psmaps' ),
+				'title'   => __( 'Add-ons', AGM_LANG ),
 				'content' => '' .
 					'<p>' . __(
-						'Dies sind die optionalen Ergänzungen für Google Maps.' .
-						'Maps. Aktiviere oder deaktiviere sie nach Bedarf.', 'psmaps'
+						'These are the optional additions for your Google' .
+						'Maps. Activate or deactivate them as needed.', AGM_LANG
 					) . '</p>'
 			),
 
@@ -59,21 +59,26 @@ class Agm_AdminHelp {
 
 	private function _get_default_sidebar() {
 		return '' .
-			'<h4>' . __( 'PS-Maps', 'psmaps' ) . '</h4>' .
+			'<h4>' . __( 'Google Maps Pro', AGM_LANG ) . '</h4>' .
 			'<ul>' .
 				'<li>' .
-					'<a href="https://n3rds.work/piestingtal-source-project/ps-gmaps/" target="_blank">' .
-						__( 'Projektseite', 'psmaps' ) .
+					'<a href="https://cp-psource.github.io/ps-maps/" target="_blank">' .
+						__( 'Project page', AGM_LANG ) .
 					'</a>' .
 				'</li>' .
 				'<li>' .
-					'<a href="https://n3rds.work/wiki/piestingtal-source-wiki/ps-google-maps/" target="_blank">' .
-						__( 'Installations- und Anleitungswiki', 'psmaps' ) .
+					'<a href="https://github.com/cp-psource/ps-maps/wiki" target="_blank">' .
+						__( 'Installation and instructions page', AGM_LANG ) .
 					'</a>' .
 				'</li>' .
 				'<li>' .
-					'<a href="https://n3rds.work/forenindex/nw-forum/" target="_blank">' .
-						__( 'Support Forum', 'psmaps' ) .
+					'<a href="https://github.com/cp-psource/ps-maps/discussions" target="_blank">' .
+						__( 'Support forum', AGM_LANG ) .
+					'</a>' .
+				'</li>' .
+				'<li>' .
+					'<a href="https://github.com/cp-psource/ps-maps/issues" target="_blank">' .
+						__( 'Bug Report', AGM_LANG ) .
 					'</a>' .
 				'</li>' .
 			'</ul>' .
@@ -122,7 +127,7 @@ class Agm_AdminHelp {
 	public function add_settings_link( $links ) {
 
 		$plugin_link = array(
-			'<a href="' . admin_url( 'options-general.php?page=agm_google_maps' ) . '">' . __( "Einstellungen", 'psmaps' ) . '</a>',
+			'<a href="' . admin_url( 'options-general.php?page=agm_google_maps' ) . '">' . __( "Settings", AGM_LANG ) . '</a>',
 		);
 
 		return array_merge( $plugin_link, $links );

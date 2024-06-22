@@ -9,7 +9,7 @@
  */
 class AgmMarkerReplacer {
 
-	public $model;
+	private $model;
 
 	/**
 	 * This is used to output map related data in the page footer, after the

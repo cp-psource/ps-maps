@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -13,7 +13,7 @@ jQuery(function () {
 if ( !!! navigator.geolocation ) { return false; }
 
 if ( _agmWmi.add_marker ) {
-	jQuery( document ).on(
+	jQuery( document ).bind(
 		'agm_google_maps-user-map_postprocess_markers',
 		function (e, data, markers, callback) {
 			if ( _agmWmi.shortcode_only && ! data.visitor_location ) {
@@ -43,7 +43,7 @@ if ( _agmWmi.add_marker ) {
 		}
 	);
 } else {
-	jQuery( document ).on(
+	jQuery( document ).bind(
 		'agm_google_maps-user-map_initialized',
 		function (e, map, data) {
 			if ( _agmWmi.shortcode_only && ! data.visitor_location ) {
@@ -68,7 +68,7 @@ if ( _agmWmi.add_marker ) {
 						icon = _agm.root_url + '/img/system/marker.png';
 					}
 
-					var marker = new window.google.maps.marker.AdvancedMarkerElement({
+					var marker = new window.google.maps.Marker({
 						"title": _agmWmi.marker_label,
 						"map": map,
 						"icon": icon,

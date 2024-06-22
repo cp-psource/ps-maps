@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -66,7 +66,7 @@ jQuery(function () {
 	}
 
 
-	doc.on('agm_google_maps-admin-options_initialized', add_markup );
+	doc.bind('agm_google_maps-admin-options_initialized', add_markup );
 	doc.on("agm_google_maps-admin-save_request", save_data );
 	doc.on("agm_google_maps-admin-map_initialized", init_map );
 	doc.on("agm_google_maps-admin-options_dialog-closed", close_dialog );

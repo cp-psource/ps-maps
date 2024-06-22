@@ -5,7 +5,8 @@
  */
 class AgmPluginInstaller {
 
-	public $model;
+	private $model;
+	
 	/**
 	 * Default settings of the plugin.
 	 * @var array

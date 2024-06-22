@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Benutzerdefinierte Symbole
-Description: Aktiviere dieses Add-On, um Deine eigenen Kartenmarkierungssymbole hinzuzufügen! Die benutzerdefinierten Symbole können ausgewählt werden, wenn Du eine Markierung im Karteneditor bearbeitest.
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin Name: Custom Icons
+Description: Enable this add-on to add your own map marker icons! The custom icons can be selected when you edit a marker inside the Map Editor.
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0
 Author:      DerN3rd (PSOURCE)
 */
@@ -32,8 +32,8 @@ class Agm_Icons_AdminPages {
 			'lang' => array(),
 		);
 
-		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/custom-icons.min.js', 'settings_page_agm_google_maps' );
-		lib3()->ui->add( AGM_PLUGIN_URL . 'css/icons-admin.min.css', 'settings_page_agm_google_maps' );
+		lib3()->ui->add( AGM_PLUGIN_URL . 'js/admin/custom-icons.js', 'settings_page_agm_google_maps' );
+		lib3()->ui->add( AGM_PLUGIN_URL . 'css/icons-admin.css', 'settings_page_agm_google_maps' );
 		lib3()->ui->add( 'media', 'settings_page_agm_google_maps' );
 		lib3()->ui->data( '_agmIcons', $data, 'settings_page_agm_google_maps' );
 
@@ -52,14 +52,14 @@ class Agm_Icons_AdminPages {
 	public function register_settings() {
 		add_settings_section(
 			'agm_google_maps_icons',
-			__( 'Benutzerdefinierte Symbole', 'psmaps' ),
-			'__return_false',
+			__( 'Custom icons', AGM_LANG ),
+			function() { /* Leerer Callback für die Beschreibung */ },
 			'agm_google_maps_options_page'
 		);
 
 		add_settings_field(
 			'agm_google_maps_icon_add',
-			__( 'Füge neue Symbole hinzu', 'psmaps' ),
+			__( 'Add new icons', AGM_LANG ),
 			array( $this, 'render_settings_box_add' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_icons'
@@ -67,7 +67,7 @@ class Agm_Icons_AdminPages {
 
 		add_settings_field(
 			'agm_google_maps_icon_list',
-			__( 'Benutzerdefinierte Symbole', 'psmaps' ),
+			__( 'Custom icons', AGM_LANG ),
 			array( $this, 'render_settings_box_icons' ),
 			'agm_google_maps_options_page',
 			'agm_google_maps_icons'
@@ -87,9 +87,9 @@ class Agm_Icons_AdminPages {
 			<?php foreach ( array( 'thead', 'tfoot' ) as $tag ) : ?>
 			<<?php echo esc_attr( $tag ); ?>>
 				<tr>
-					<th style="width:5%"><?php _e( 'Symbol', 'psmaps' ); ?></th>
-					<th style="width:75%"><?php _e( 'URL', 'psmaps' ); ?></th>
-					<th style="width:15%"><?php _e( 'Breite x Höhe', 'psmaps' ); ?></th>
+					<th style="width:5%"><?php _e( 'Icon', AGM_LANG ); ?></th>
+					<th style="width:75%"><?php _e( 'URL', AGM_LANG ); ?></th>
+					<th style="width:15%"><?php _e( 'Width x Height', AGM_LANG ); ?></th>
 					<th style="width:5%">&nbsp;</th>
 				</tr>
 			</<?php echo esc_attr( $tag ); ?>>
@@ -109,24 +109,24 @@ class Agm_Icons_AdminPages {
 	public function render_settings_box_add() {
 		?>
 		<div>
-			<label for="custom-icon"><?php _e( 'Symbol URL', 'psmaps' ); ?>:</label>
-			<input type="url" class="custom-icon-url" id="custom-icon" value="" style="display:block;width:100%" placeholder="https://..." maxlength="1024" />
+			<label for="custom-icon"><?php _e( 'Icon URL', AGM_LANG ); ?>:</label>
+			<input type="url" class="custom-icon-url" id="custom-icon" value="" style="display:block;width:100%" placeholder="http://..." maxlength="1024" />
 		</div>
 		<div>
 			<span style="float: left"><img src="" class="custom-icon-preview marker-icon-32" /></span>
 			<button type="button" class="add-custom-icon button disabled" disabled="disabled"
-				data-enabled="<?php _e( 'Füge dieses Symbol hinzu', 'psmaps' ); ?>"
-				data-disabled="<?php _e( 'Gib eine gültige Bild-URL ein', 'psmaps' ); ?>"
+				data-enabled="<?php _e( 'Add this icon', AGM_LANG ); ?>"
+				data-disabled="<?php _e( 'Enter a valid image URL', AGM_LANG ); ?>"
 				>
 			</button>
 		</div>
 		<br />
 		<div style="clear: both">
-			<button type="button" class="add-media-image button"><?php _e( 'Symbol aus Medienbibliothek hinzufügen', 'psmaps' ); ?></button>
+			<button type="button" class="add-media-image button"><?php _e( 'Add icon from media library', AGM_LANG ); ?></button>
 		</div>
 		<br />
 		<div>
-			<em><?php _e( 'Hinweis: Alle Symbole werden auf der Karte in voller Größe angezeigt. Im Editor und in dieser Liste wird die Symbolvorschau mit 32 x 32 Pixel angezeigt.', 'psmaps' ); ?></em>
+			<em><?php _e( 'Note: All icons will be displayed in full-size on the map. In the editor and this list the icon-preview is displayed with 32 x 32 pixels.', AGM_LANG ); ?></em>
 		</div>
 		<?php
 	}
@@ -168,9 +168,6 @@ class Agm_Icons_Shared {
 	 */
 	public function load_icons( $icons ) {
 		$custom = $this->_get_custom_icons();
-		if (!is_array($custom)) {
-			$custom = array(); // or handle this case as appropriate
-		}
 		return array_merge( $icons, $custom );
 	}
 
@@ -187,10 +184,8 @@ class Agm_Icons_Shared {
 			$iconlist = @$options['custom_icons'];
 			$Icons = json_decode( $iconlist );
 
-			if ($iconlist !== null) {
-				$Icons = json_decode($iconlist);
-			} else {
-				$Icons = array(); // Oder eine andere geeignete Standardwert-Zuweisung
+			if ( ! is_array( $Icons ) ) {
+				$Icons = array();
 			}
 		}
 

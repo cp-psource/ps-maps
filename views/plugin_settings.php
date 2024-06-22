@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h2><?php _e( 'Google Maps Plugin Optionen', 'psmaps' ); ?></h2>
+	<h2><?php _e( 'Google Maps Plugin Options', AGM_LANG ); ?></h2>
 
 	<?php $options = apply_filters( 'agm_google_maps-settings_form_options', '' ); ?>
 	<form action="options.php" <?php echo $options; ?> method="post">
@@ -8,7 +8,7 @@
 		<?php do_settings_sections( 'agm_google_maps_options_page' ); ?>
 		</div>
 		<p class="submit">
-			<button name="Submit" class="button-primary"><?php _e( 'Änderungen speichern', 'psmaps' ); ?></button>
+			<button name="Submit" class="button-primary"><?php _e( 'Save Changes', AGM_LANG ); ?></button>
 		</p>
 	</form>
 </div>
@@ -22,8 +22,8 @@ jQuery(function () {
 		;
 		if (!$target.length) { return false; }
 		$me.on("click", function () {
-			jQuery("#contextual-help-link").trigger( "click" );
-			$target.find("a").trigger( "click" );
+			jQuery("#contextual-help-link").click();
+			$target.find("a").click();
 			jQuery(window).scrollTop(0);
 			return false;
 		});

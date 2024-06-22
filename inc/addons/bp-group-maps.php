@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: BuddyPress-Gruppenkarten
-Description: Ermöglicht BuddyPress-Gruppen das Hinzufügen von Standortkarten.
+Plugin Name: BuddyPress group maps
+Description: Allows your BuddyPress groups to add location maps.
 Example:     [agm_group_map group_id="1"], [agm_groups_map]
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0.2
 Requires:    BuddyPress
 Author:      DerN3rd (PSOURCE)
@@ -170,7 +170,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			if ( $this->_check_user_map_show_privileges( get_current_user_id(), $group->id ) ) {
 				bp_core_new_subnav_item(
 					array(
-						'name' => __( 'Googlekarte', 'psmaps' ),
+						'name' => __( 'Group Map', AGM_LANG ),
 						'slug' => self::SLUG . '-show',
 						'parent_url' => $groups_link,
 						'parent_slug' => $group->slug,
@@ -260,27 +260,27 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			);
 			?>
 			<fieldset id="agm-group_map">
-				<legend style="display:none"><?php _e( 'Googlekarte', 'psmaps' ); ?></legend>
+				<legend style="display:none"><?php _e( 'Group map', AGM_LANG ); ?></legend>
 				<?php
 				// - This group has location: address (please use full address)
 				?>
-				<label for="agm-group_map-address"><?php _e( 'Diese Gruppe hat einen physischen Standort:', 'psmaps' ); ?></label>
+				<label for="agm-group_map-address"><?php _e( 'This group has address:', AGM_LANG ); ?></label>
 				<input type="text" name="agm-group_map[address]" id="agm-group_map-address" value="<?php echo esc_attr( $data['address'] ); ?>" />
 				<?php
 				// - Show group map to: a) all, b) members, c) moderators
 				?>
-				<label><?php _e( 'Zeige die GruppenMap für:', 'psmaps' ); ?></label>
+				<label><?php _e( 'Show group map to:', AGM_LANG ); ?></label>
 				<label for="agm-group_map-show_map-all">
 					<input type="radio" id="agm-group_map-show_map-all" name="agm-group_map[show_map]" value="all" <?php checked( 'all', $data['show_map'] ); ?> />
-					<?php _e( 'Alle', 'psmaps' ); ?>
+					<?php _e( 'All', AGM_LANG ); ?>
 				</label>
 				<label for="agm-group_map-show_map-members">
 					<input type="radio" id="agm-group_map-show_map-members" name="agm-group_map[show_map]" value="members" <?php checked( 'members', $data['show_map'] ); ?> />
-					<?php _e( 'Mitglieder', 'psmaps' ); ?>
+					<?php _e( 'Members', AGM_LANG ); ?>
 				</label>
 				<label for="agm-group_map-show_map-moderators">
 					<input type="radio" id="agm-group_map-show_map-moderators" name="agm-group_map[show_map]" value="moderators" <?php checked( 'moderators', $data['show_map'] ); ?> />
-					<?php _e( 'Moderatoren', 'psmaps' ); ?>
+					<?php _e( 'Moderators', AGM_LANG ); ?>
 				</label>
 				<?php
 				// - Show separate Group Map tab
@@ -288,7 +288,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				<label for="agm-group_map-map_tab">
 					<input type="hidden" name="agm-group_map[map_tab]" value="" />
 					<input type="checkbox" id="agm-group_map-map_tab" name="agm-group_map[map_tab]" value="1" <?php checked( 1, $data['map_tab'] ); ?> />
-					<?php _e( 'Separate Registerkarte Googlekarte anzeigen', 'psmaps' ); ?>
+					<?php _e( 'Show separate Group Map tab', AGM_LANG ); ?>
 				</label>
 				<?php
 				// - Show map on members list page
@@ -296,7 +296,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				<label for="agm-group_map-map_list">
 					<input type="hidden" name="agm-group_map[map_list]" value="" />
 					<input type="checkbox" id="agm-group_map-map_list" name="agm-group_map[map_list]" value="1" <?php checked( 1, $data['map_list'] ); ?> />
-					<?php _e( 'Karte auf Mitgliederlistenseite anzeigen', 'psmaps' ); ?>
+					<?php _e( 'Show map on members list page', AGM_LANG ); ?>
 				</label>
 			<?php
 			// - Also show members locations (requires BuddyPress Profile maps add-on)
@@ -305,8 +305,8 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				<label for="agm-group_map-member_locations">
 					<input type="hidden" name="agm-group_map[member_locations]" value="" />
 					<input type="checkbox" id="agm-group_map-member_locations" name="agm-group_map[member_locations]" value="1" <?php checked( 1, $data['member_locations'] ); ?> />
-					<?php _e( 'Zeige auch die Standorte der Mitglieder an', 'psmaps' ); ?>
-					<em><?php _e( '(erfordert die Erweiterung BuddyPress Profilkarten)', 'psmaps' ); ?></em>
+					<?php _e( 'Also show members locations', AGM_LANG ); ?>
+					<em><?php _e( '(requires BuddyPress Profile maps add-on)', AGM_LANG ); ?></em>
 				</label>
 			<?php
 			endif;

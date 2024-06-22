@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -9,7 +9,7 @@
 
 /**
  * Plugin Name: Traffic-overlay
- * Author:      Philipp Stracker (Incsub)
+ * Author:      DerN3rd (PSOURCE)
  *
  * Javascript component for ADMIN page of the traffic-overlay addon.
  */
@@ -42,8 +42,8 @@ jQuery(function init_addon() {
 	}
 
 	// Add options.
-	doc.on( 'agm_google_maps-admin-options_initialized', init_options );
+	doc.bind( 'agm_google_maps-admin-options_initialized', init_options );
 
 	// Save options.
-	doc.on( 'agm_google_maps-admin-save_request', sanitize_options );
+	doc.bind( 'agm_google_maps-admin-save_request', sanitize_options );
 });

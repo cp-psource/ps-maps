@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: BuddyPress Profilkarten
-Description: Erstellt automatisch eine Karte für BuddyPress-Profile aus einem Profiladressfeld (falls Du noch kein solches Feld hast, musst Du eines erstellen). <br />Es wird ein neuer Shortcode hinzugefügt, um eine Karte mit allen BuddyPress-Mitgliederstandorten anzuzeigen: <code>[agm_members_map]</code>.<br /><b>Erfordert BuddyPress mit aktivierten erweiterten Profilen</b>.
-Plugin URI:  https://n3rds.work/piestingtal-source-project/ps-gmaps/
+Plugin Name: BuddyPress profile maps
+Description: Automatically creates a Map for BuddyPress profiles from a profile address field (if you don't already have such a field, you will have to create one). <br />It also adds a new shortcode to display a map with all BuddyPress members: <code>[agm_members_map]</code><br /><b>Requires BuddyPress with extended profiles enabled</b>.
+Plugin URI:  https://cp-psource.github.io/ps-maps/
 Version:     1.0.1
 Requires:    BuddyPress
 Author:      DerN3rd (PSOURCE)
@@ -12,8 +12,7 @@ Author:      DerN3rd (PSOURCE)
 if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 
-	/*
-	============================*\
+	/*============================*\
 	================================
 	==                            ==
 	==           SHARED           ==
@@ -39,8 +38,8 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				$key
 			);
 
-			if ( isset( $opts[ 'bp_profile_maps-' . $key ] ) ) {
-				return $opts[ 'bp_profile_maps-' . $key ];
+			if ( isset( $opts['bp_profile_maps-' . $key] ) ) {
+				return $opts['bp_profile_maps-' . $key];
 			} else {
 				return '';
 			}
@@ -68,8 +67,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 	}
 
 
-	/*
-	===========================*\
+	/*===========================*\
 	===============================
 	==                           ==
 	==           ADMIN           ==
@@ -99,18 +97,12 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				'agm_google_maps-options-plugins_options',
 				array( $this, 'register_settings' )
 			);
-
-			// GDPR compliance.
-			add_filter(
-				'wp_privacy_personal_data_erasers',
-				array( $this, 'register_data_eraser' )
-			);
 		}
 
 		public function register_settings() {
 			add_settings_section(
 				'agm_google_bp_profile_fields',
-				__( 'BuddyPress Profil', 'psmaps' ),
+				__( 'BuddyPress profile', AGM_LANG ),
 				array( $this, 'create_dependencies_box' ),
 				'agm_google_maps_options_page'
 			);
@@ -124,70 +116,38 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 			add_settings_field(
 				'agm_google_maps_bp_profile_address',
-				__( 'Adressprofilfeld', 'psmaps' ),
+				__( 'Address profile field', AGM_LANG ),
 				array( $this, 'create_address_field_mapping_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_show_in_profile',
-				__( 'Karte im Benutzerprofil anzeigen', 'psmaps' ),
+				__( 'Show map in user profile', AGM_LANG ),
 				array( $this, 'create_show_in_profile_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_show_in_members_list',
-				__( 'Karte in Mitgliederliste anzeigen', 'psmaps' ),
+				__( 'Show map in members list', AGM_LANG ),
 				array( $this, 'create_show_in_members_list_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_avatars_as_markers',
-				__( 'Verwende Avatare als Kartenmarkierungen', 'psmaps' ),
+				__( 'Use avatars as map markers', AGM_LANG ),
 				array( $this, 'create_avatars_as_markers_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
 			);
 			add_settings_field(
 				'agm_google_maps_bp_profile_global_members',
-				__( 'Weltkarte mit allen Mitgliedern', 'psmaps' ),
+				__( 'Global map with all members', AGM_LANG ),
 				array( $this, 'create_global_members_box' ),
 				'agm_google_maps_options_page',
 				'agm_google_bp_profile_fields'
-			);
-		}
-
-		public function register_data_eraser( $erasers ) {
-			$erasers['agm_google_maps-profile_maps'] = array(
-				'eraser_friendly_name' => __( 'PS-Maps Profilkarten', 'psmaps' ),
-				'callback' => array( $this, 'erase_profile_maps_data' ),
-			);
-			return $erasers;
-		}
-
-		public function erase_profile_maps_data( $email, $page = 1 ) {
-			$user = get_user_by( 'email', $email );
-			$status = false;
-
-			$meta = get_user_meta(
-				$user->ID,
-				'agm-bp-profile_maps-location',
-				true
-			);
-			if ( ! empty( $meta ) ) {
-				delete_user_meta(
-					$user->ID,
-					'agm-bp-profile_maps-location'
-				);
-				$status = true;
-			}
-			return array(
-				'items_removed' => $status,
-				'items_retained' => false,
-				'messages' => array(),
-				'done' => true,
 			);
 		}
 
@@ -196,9 +156,9 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				?>
 				<p>
 					<?php _e(
-						'Für dieses Add-On ist das BuddyPress-Plugin mit der aktiven ' .
-						'Komponente <strong>Erweiterte Profile</strong> erforderlich.',
-						'psmaps'
+						'This Add-On required BuddyPress plugin with active '.
+						'<strong>Extended Profiles</strong> compoennt to work.',
+						AGM_LANG
 					); ?>
 				</p>
 				<?php
@@ -219,10 +179,10 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 			?>
 			<label for="agm-bp_profile_maps-address_field">
-				<?php _e( 'Dieses Profilfeld enthält die Adresse meiner Benutzer:', 'psmaps' ); ?>
+				<?php _e( 'This profile field holds the address of my users:', AGM_LANG ); ?>
 			</label>
 			<select name="agm_google_maps[bp_profile_maps-address_field]" id="agm-bp_profile_maps-address_field">
-				<option value=""><?php _e( 'Bitte wähle ein Feld aus', 'psmaps' ); ?></option>
+				<option value=""><?php _e( 'Please, select a field', AGM_LANG ); ?></option>
 				<?php foreach ( $xfields as $group => $fields ) : ?>
 				<optgroup label="<?php echo esc_attr( $group ); ?>">
 					<?php foreach ( $fields as $field ) : ?>
@@ -240,9 +200,9 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		public function create_show_in_profile_box() {
 			$show_in_profile = $this->_get_options( 'show_in_profile' );
 			$values = array(
-				''       => __( 'Nicht im Profil anzeigen', 'psmaps' ),
-				'before' => __( 'Karte vor Profilfeldern anzeigen', 'psmaps' ),
-				'after'  => __( 'Karte nach Profilfeldern anzeigen', 'psmaps' ),
+				''       => __( 'Do not show in profile', AGM_LANG ),
+				'before' => __( 'Show map before profile fields', AGM_LANG ),
+				'after'  => __( 'Show map after profile fields', AGM_LANG ),
 			);
 
 			foreach ( $values as $key => $val ) {
@@ -263,9 +223,9 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		public function create_show_in_members_list_box() {
 			$show_in_members_list = $this->_get_options( 'show_in_members_list' );
 			$values = array(
-				''       => __( 'Nicht in der Mitgliederliste anzeigen', 'psmaps' ),
-				'before' => __( 'Karte vor Mitgliederliste anzeigen', 'psmaps' ),
-				'after'  => __( 'Karte nach Mitgliederliste anzeigen', 'psmaps' ),
+				''       => __( 'Do not show in members list', AGM_LANG ),
+				'before' => __( 'Show map before members list', AGM_LANG ),
+				'after'  => __( 'Show map after members list', AGM_LANG ),
 			);
 
 			foreach ( $values as $key => $val ) {
@@ -286,8 +246,8 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		public function create_avatars_as_markers_box() {
 			$avatars_as_markers = $this->_get_options( 'avatars_as_markers' );
 			$values = array(
-				''  => __( 'Nein', 'psmaps' ),
-				'1' => __( 'Ja', 'psmaps' ),
+				''  => __( 'No', AGM_LANG ),
+				'1' => __( 'Yes', AGM_LANG ),
 			);
 
 			foreach ( $values as $key => $val ) {
@@ -307,20 +267,19 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 
 		public function create_global_members_box() {
 			_e(
-				'Verwenden Sie diesen Shortcode auf jeder Seite, um eine Karte mit allen ' .
-				'BuddyPress-Mitgliedern anzuzeigen:' .
+				'Use this shortcode on any page to display a map with all ' .
+				'BuddyPress members:' .
 				'<p><code>[agm_members_map]</code></p>' .
-				'<p><code>[agm_all_profiles_map]</code> (<em>identisch mit ' .
-				'agm_members_map für Abwärtskompatibilität</em>)</p>',
-				'psmaps'
+				'<p><code>[agm_all_profiles_map]</code> (<em>identical to ' .
+				'agm_members_map for backwards compatibility</em>)</p>',
+				AGM_LANG
 			);
 		}
 
 	}
 
 
-	/*
-	===============================*\
+	/*===============================*\
 	===================================
 	==                               ==
 	==           FRONT END           ==
@@ -388,7 +347,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			global $bp;
 
 			if ( ! function_exists( 'xprofile_get_field_id_from_name' ) ) {
-				$this->admin_note( __( 'BuddyPress XProfile nicht aktiviert', 'psmaps' ) );
+				$this->admin_note( __( 'BuddyPress XProfile not activated', AGM_LANG ) );
 				return false;
 			}
 
@@ -396,13 +355,13 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			$address = $this->_get_user_address( $user_id );
 
 			if ( ! $address ) {
-				$this->admin_note( __( 'Keine Adresse definiert', 'psmaps' ) );
+				$this->admin_note( __( 'No address defined', AGM_LANG ) );
 				return false;
 			}
 
 			$location = $this->_address_to_location( $user_id, $address );
 			if ( ! $location ) {
-				$this->admin_note( __( 'Für diese Adresse wurde keine Karte gefunden', 'psmaps' ) );
+				$this->admin_note( __( 'No map found for this address', AGM_LANG ) );
 				return false;
 			}
 
@@ -430,7 +389,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 					$member_ids[] = bp_get_member_user_id();
 				}
 			}
-			if ( function_exists( 'bp_rewind_members' ) ) { bp_rewind_members(); }
+			if (function_exists('bp_rewind_members')) bp_rewind_members();
 
 			echo '' . $this->show_users_on_map( $member_ids, $overrides );
 		}
@@ -482,8 +441,8 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 		 *
 		 * @return array Folded markers
 		 */
-		private function _fold_markers( $markers ) {
-			if ( empty( $markers ) || ! is_array( $markers ) ) { return $markers; }
+		private function _fold_markers ($markers ) {
+			if (empty($markers) || !is_array($markers)) return $markers;
 			$folded = array();
 			$known = array();
 
@@ -496,40 +455,40 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 				'marker.png'
 			);
 
-			foreach ( $markers as $marker ) {
-				$fold_key = ! empty( $marker[ $fold_by_key ] )
-					? $marker[ $fold_by_key ]
+			foreach ($markers as $marker) {
+				$fold_key = !empty($marker[$fold_by_key])
+					? $marker[$fold_by_key]
 					: false
 				;
 				// Deal with non-scalar fold keys by
 				// converting them to string first
-				if ( is_array( $fold_key ) ) { $fold_key = md5( serialize( $fold_key ) ); }
+				if (is_array($fold_key)) $fold_key = md5(serialize($fold_key));
 
-				if ( empty( $known[ $fold_key ] ) ) { $known[ $fold_key ] = array(); }
-				$known[ $fold_key ][] = $marker;
+				if (empty($known[$fold_key])) $known[$fold_key] = array();
+				$known[$fold_key][] = $marker;
 			}
-			foreach ( $known as $idx => $list ) {
-				if ( empty( $list ) ) { continue; }
+			foreach ($known as $idx => $list) {
+				if (empty($list)) continue;
 
 				// Nothing to fold here, carry on
-				if ( 1 === count( $list ) ) {
-					$folded[] = end( $list );
+				if (1 === count($list)) {
+					$folded[] = end($list);
 					continue;
 				}
 
 				$tmp = array();
 				$description = '';
 
-				foreach ( $list as $mrk ) {
-					if ( empty( $tmp['position'] ) ) {
+				foreach ($list as $mrk) {
+					if (empty($tmp['position'])) {
 						// First folded item, copy and be done with it
-						$tmp = array_merge( $tmp, $mrk );
+						$tmp = array_merge($tmp, $mrk);
 					}
 					// Handle the cases when profile images are used as marker icons
 					$tmp['icon'] = $default_marker; // As this doesn't make sense anymore
 
 					$description .= '' .
-						( ! empty( $mrk['body'] ) ? $mrk['body'] : '') .
+						(!empty($mrk['body']) ? $mrk['body'] : '') .
 					'';
 				}
 
@@ -551,10 +510,10 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			}
 			$id = $id ? $id : md5( time() . rand() );
 
-			if ( ! class_exists( 'Agm_Mc_UserPages' ) ) {
+			if (!class_exists('Agm_Mc_UserPages')) {
 				// We don't have the map cluster add-on,
 				// so let's collapse the markers manually
-				$markers = $this->_fold_markers( $markers );
+				$markers = $this->_fold_markers($markers);
 			}
 
 			$map = $this->_model->get_map_defaults();
@@ -593,7 +552,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			$address_field = $this->_get_options( 'address_field' );
 			if ( ! $address_field ) { return false; }
 
-			// https://n3rds.work/forums/topic/visibility-issue-with-google-maps-and-bp-profile-add-on
+			// https://github.com/cp-psource/forums/topic/visibility-issue-with-google-maps-and-bp-profile-add-on
 			if ( ! self::bp_current_user_can_see_field( $user_id, $address_field ) ) { return false; }
 
 			$address = bp_get_profile_field_data(
@@ -668,8 +627,8 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 			);
 
 			// Catch protocol-less avatars
-			if ( preg_match( '~^//~', $avatar ) ) {
-				$avatar = preg_replace( '~^//~', (is_ssl() ? 'https://' : 'http://'), $avatar );
+			if (preg_match('~^//~', $avatar)) {
+				$avatar = preg_replace('~^//~', (is_ssl() ? 'https://' : 'http://'), $avatar);
 			}
 
 			return $avatar;
@@ -770,7 +729,7 @@ if ( defined( 'BP_PLUGIN_DIR' ) ) :
 					$val = xprofile_get_field_id_from_name( $val );
 				}
 
-				// https://n3rds.work/forums/topic/visibility-issue-with-google-maps-and-bp-profile-add-on
+				// https://github.com/cp-psource/forums/topic/visibility-issue-with-google-maps-and-bp-profile-add-on
 				if ( ! Agm_Bp_Pm_UserPages::bp_current_user_can_see_field( $user_id, $val ) ) {
 					$denied = true;
 					break;

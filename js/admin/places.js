@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -52,11 +52,11 @@ jQuery(function () {
 
 		jQuery.each(places, function () {
 			var place = this,
-				place_icon = new window.google.maps.marker.AdvancedMarkerElementImage(
+				place_icon = new window.google.maps.MarkerImage(
 					place.icon.toString(),
 					null, null, null, new window.google.maps.Size( 32, 32 )
 				),
-				place_marker = new window.google.maps.marker.AdvancedMarkerElement({
+				place_marker = new window.google.maps.Marker({
 					"title": place.name,
 					"map": map,
 					"icon": place_icon,
@@ -116,13 +116,13 @@ jQuery(function () {
 		var markup = '<fieldset id="agm-places">' +
 			'<legend>Google Places</legend>' +
 			'<input type="checkbox" id="agm-show_places" value="1" ' + (show_places ? 'checked="checked"' : '' ) + ' />' +
-			' <label for="agm-show_places">Google Places in der Nähe meiner Kartenmarkierungen anzeigen</label>' +
+			' <label for="agm-show_places">Show Google Places close to my map markers</label>' +
 			'<br />' +
-			'<label for="agm-places_radius">Zeige Google Places im Umkreis von ' +
+			'<label for="agm-places_radius">Show Google Places within ' +
 				'<input type="text" size="6" id="agm-places_radius" value="' + places_radius + '" />' +
-			' Metern der Markierung</label>' +
+			' meters of the marker</label>' +
 			'<br />' +
-			'<label>Beschränke die angezeigten Stellen auf folgende Typen:</label><br />' +
+			'<label>Limit shown places to these types:</label><br />' +
 			'<select multiple="multiple" id="agm-place-types">';
 
 		jQuery.each(data.defaults.place_types, function( val, lbl ) {
@@ -181,19 +181,19 @@ jQuery(function () {
 	// ----- Hooks -----
 
 	// Add options
-	jQuery(document).on( 'agm_google_maps-admin-options_initialized', init_options );
+	jQuery(document).bind( 'agm_google_maps-admin-options_initialized', init_options );
 
 	// Save Places options
-	jQuery(document).on( 'agm_google_maps-admin-save_request', save_options);
+	jQuery(document).bind( 'agm_google_maps-admin-save_request', save_options);
 
 	// Load Places
 	jQuery(document).on("agm_google_maps-admin-map_initialized", prepare_map);
 
 	// Repaint locations on options close
-	jQuery(document).on('agm_google_maps-admin-options_dialog-closed', options_closed);
+	jQuery(document).bind('agm_google_maps-admin-options_dialog-closed', options_closed);
 
 	// Repaint all places when adding a marker (inefficient, but easy)
-	jQuery(document).on( 'agm_google_maps-admin-marker_added', marker_added);
+	jQuery(document).bind( 'agm_google_maps-admin-marker_added', marker_added);
 
 	// Null out places for removed marker
 	jQuery(document).on("agm_google_maps-admin-marker_removed", marker_removed);

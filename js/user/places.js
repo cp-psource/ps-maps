@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
- * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+/*! Google Maps Pro - v2.9.4
+ * https://cp-psource.github.io/ps-maps/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 /*global window:false */
 /*global document:false */
 /*global _agm:false */
@@ -8,7 +8,7 @@
 
 
 // Load selected Places
-jQuery(document).on("agm_google_maps-user-map_initialized", function (e, map, data, markers) {
+jQuery(document).bind("agm_google_maps-user-map_initialized", function (e, map, data, markers) {
 	function initialize_all_markers_places (map, show, distance, types) {
 		var show_places = show,
 			places_radius = distance,
@@ -37,11 +37,11 @@ jQuery(document).on("agm_google_maps-user-map_initialized", function (e, map, da
 		var pos = marker.getPosition().toString();
 		jQuery.each(places, function () {
 			var place = this,
-				place_icon = new window.google.maps.marker.AdvancedMarkerElementImage(
+				place_icon = new window.google.maps.MarkerImage(
 					place.icon.toString(),
 					null, null, null, new window.google.maps.Size(32, 32)
 				),
-				place_marker = new window.google.maps.marker.AdvancedMarkerElement({
+				place_marker = new window.google.maps.Marker({
 					"title": place.name,
 					"map": map,
 					"icon": place_icon,

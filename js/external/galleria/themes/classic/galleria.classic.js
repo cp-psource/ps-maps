@@ -46,7 +46,7 @@ Galleria.addTheme({
         
         // toggle info
         if ( options._toggleInfo === true ) {
-            info.on( click, function() {
+            info.bind( click, function() {
                 info.toggle();
             });
         } else {
@@ -55,22 +55,23 @@ Galleria.addTheme({
 		}
         
         // bind some stuff
-        this.on('thumbnail', function(e) {
-            if (!touch) {
+        this.bind('thumbnail', function(e) {
+            
+            if (! touch ) {
                 // fade thumbnails
-                $(e.thumbTarget).css('opacity', 0.6).parent().on('mouseenter', function() {
+                $(e.thumbTarget).css('opacity', 0.6).parent().hover(function() {
                     $(this).not('.active').children().stop().fadeTo(100, 1);
-                }).on('mouseleave', function() {
+                }, function() {
                     $(this).not('.active').children().stop().fadeTo(400, 0.6);
                 });
-
-                if (e.index === options.show) {
-                    $(e.thumbTarget).css('opacity', 1);
+                
+                if ( e.index === options.show ) {
+                    $(e.thumbTarget).css('opacity',1);
                 }
             }
         });
         
-        this.on('loadstart', function(e) {
+        this.bind('loadstart', function(e) {
             if (!e.cached) {
                 this.$('loader').show().fadeTo(200, 0.4);
             }
@@ -80,7 +81,7 @@ Galleria.addTheme({
             $(e.thumbTarget).css('opacity',1).parent().siblings().children().css('opacity', 0.6);
         });
         
-        this.on('loadfinish', function(e) {
+        this.bind('loadfinish', function(e) {
             this.$('loader').fadeOut(200);
         });
     }

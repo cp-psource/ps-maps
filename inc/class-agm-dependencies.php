@@ -55,15 +55,15 @@ if ( ! is_admin() ) { // Doesn't work on admin
 			lib3()->ui->data(
 				'l10nStrings',
 				array(
-					'close' => __( 'Schließen', 'psmaps' ),
-					'get_directions' => __( 'Wegbeschreibung erhalten', 'psmaps' ),
-					'geocoding_error' => __( 'Beim Geokodieren Deines Standorts ist ein Fehler aufgetreten. Überprüfe die Adresse und versuche es erneut', 'psmaps' ),
-					'missing_waypoint' => __( 'Bitte gib Werte für Punkt A und Punkt B ein', 'psmaps' ),
-					'directions' => __( 'Wegbeschreibungen', 'psmaps' ),
-					'posts' => __( 'Beiträge', 'psmaps' ),
-					'showAll' => __( 'Alle zeigen', 'psmaps' ),
-					'hide' => __( 'Verbergen', 'psmaps' ),
-					'oops_no_directions' => __( 'Hoppla, wir konnten die Richtungen nicht berechnen', 'psmaps' ),
+					'close' => __( 'Close', AGM_LANG ),
+					'get_directions' => __( 'Get Directions', AGM_LANG ),
+					'geocoding_error' => __( 'There was an error geocoding your location. Check the address and try again', AGM_LANG ),
+					'missing_waypoint' => __( 'Please, enter values for both point A and point B', AGM_LANG ),
+					'directions' => __( 'Directions', AGM_LANG ),
+					'posts' => __( 'Posts', AGM_LANG ),
+					'showAll' => __( 'Show All', AGM_LANG ),
+					'hide' => __( 'Hide', AGM_LANG ),
+					'oops_no_directions' => __( 'Oops, we couldn\'t calculate the directions', AGM_LANG ),
 				),
 				'front'
 			);
@@ -79,15 +79,11 @@ if ( ! is_admin() ) { // Doesn't work on admin
 		 */
 		public static function js_data_object() {
 			$opt = apply_filters( 'agm_google_maps-options', get_option( 'agm_google_maps' ) );
-
-            //Removed  'panoramio'  from defaults['libraries'] array as Panoramio is discontinued by google.
-            //Leaving the "libraries" for future use
-
 			$defaults = array(
 				'ajax_url'     => admin_url( 'admin-ajax.php' ),
 				'root_url'     => AGM_PLUGIN_URL,
 				'is_multisite' => (int) is_multisite(),
-				'libraries'    => array(),
+				'libraries'    => array( 'panoramio' ),
 				'maps_api_key' => !empty($opt['map_api_key']) ? $opt['map_api_key'] : '',
 			);
 
