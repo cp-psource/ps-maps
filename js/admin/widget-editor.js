@@ -86,5 +86,5 @@ jQuery(function() {
 	jQuery('body').on( 'click', '.agm_create_new_map', createNewMap );
 
 	// Map saved; update the list and set selection
-	jQuery( document ).bind( 'agm-map-saved', update_map_list );
+	jQuery( document ).on( 'agm-map-saved', update_map_list );
 });
