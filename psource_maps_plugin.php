@@ -113,3 +113,9 @@ if ( is_admin() ) {
 		AgmDependencies::serve();
 	}
 }
+
+add_filter('mce_external_plugins', function($plugins) {
+    $plugins['ps_maps_button'] = plugins_url('js/admin/editor.js', __FILE__);
+    return $plugins;
+});
+

@@ -1,12 +1,14 @@
-=== PS Google Maps ===
-Contributors: DerN3rd (PSOURCE)
-Tags: maps, classicpress,
-Requires at least: 4.9
-Tested up to: 6.8.1
-Stable tag: 3.1.2
-Requires PHP: 7.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+---
+layout: psource-theme
+title: "PS Maps"
+---
+
+<h2 align="center" style="color:#38c2bb;">📚 PS Maps</h2>
+
+<div class="menu">
+  <a href="https://github.com/cp-psource/ps-maps/discussions" style="color:#38c2bb;">💬 Forum</a>
+  <a href="https://github.com/cp-psource/ps-maps/releases" style="color:#38c2bb;">📝 Download</a>
+</div>
 
 Einfaches Einbetten, Anpassen und Verwenden von Google Maps auf Deiner WordPress-Seite - in Posts, Seiten oder als benutzerfreundliches Widget kannst Du lokale Bilder anzeigen und Deinen Seiten-Besuchern in Sekundenschnelle eine Interaktive Googlemap mit einer Unzahl an Optionen und Möglichkeiten geben
 
@@ -41,53 +43,3 @@ Dieses Mapping-Plugin ist vollständig interaktiv!
 
 Zeige mit unseren erweiterten Steuerelementen, einschließlich Shortcodes mit IDs, ganz einfach mehrere Karten in einem einzigen Beitrag oder einer einzelnen Seite an und steuere die Breite und Höhe! 
 Füge jeder Karte mehrere Markierungen hinzu!
-
-[Projektseite](https://cp-psource.github.io/ps-maps/)
-[GitHub](https://github.com/piestingtal-source/ps-maps)
-
-[POWERED BY PSOURCE](https://github.com/cp-psource)
-
-
-== ChangeLog ==
-
-= 3.1.2 =
-
-* Fix: jQuery
-* Fix: Deprecated google.maps.Marker
-* PhP8 Modernisierungen
-
-= 3.1.1 =
-
-* Links aktualisiert
-* Updater 1.3
-
-= 3.1.0 =
-
-* Fix: PHP Fatal error: Uncaught TypeError: array_merge()
-
-= 3.0.9 =
-
-* Deprecated jQuery Fixes
-
-= 3.0.8 =
-
-* PHP8 Fixes
-* jQuery Fixes
-* Textoptimierung
-* Mehr ReadMe
-
-= 3.0.7 =
-
-* Fix Deprecated: htmlspecialchars()
-* PHP 8 Fixes
-* Textdomain angepasst
-* PsourceUpdater 1.2
-
-= 3.0.6 =
-
-* Textkorrekturen
-* Hilfe-Ressource hinzugefügt
-
-= 3.0.5 =
-
-* Release

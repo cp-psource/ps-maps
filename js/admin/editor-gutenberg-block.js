@@ -1,6 +1,6 @@
-/*! PS-Maps - v2.9.5
+/*! PS-Maps - v3.1.2
  * https://n3rds.work/piestingtal-source-project/ps-gmaps/
- * Copyright (c) 2018-2022; * Licensed GPLv2+ */
+ * Copyright (c) 2018-2025; * Licensed GPLv2+ */
 /*global window:false */
 /*global console:false*/
 /*global wp:false*/
